@@ -8,7 +8,6 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
-  - WZLBadge (1.2.5)
 
 DEPENDENCIES:
   - CYLTabBarController
@@ -18,7 +17,6 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - SDWebImage
-  - WZLBadge
 
 SPEC CHECKSUMS:
   CYLTabBarController: 2de9a4c26f50d33574398becf8e7b0aaed794240
@@ -28,8 +26,7 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
-  WZLBadge: 16c08aa0a645e2591690f21cbcb410a3d878c7ac
 
-PODFILE CHECKSUM: 21eb60d083b246467bddbcd0acaaf123a2c70a29
+PODFILE CHECKSUM: ca100f7ea2ce5854b28d03d71c4970f22badf7ca
 
 COCOAPODS: 1.2.1

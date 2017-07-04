@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "XHead.h"
 
 @interface ViewController ()
 
@@ -18,7 +19,7 @@
     [super viewDidLoad];
 
 
-
+    self.view.backgroundColor = kColor_yuebai;
     [self forTest];
 }
 

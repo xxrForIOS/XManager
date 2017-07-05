@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "XHead.h"
-
+#import "NAVViewController.h"
 @interface ViewController ()
 
 @end
@@ -20,11 +20,17 @@
 
 
     self.view.backgroundColor = kColor_yuebai;
-    [self forTest];
+    
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithActionBlock:^(id sender) {
+        
+        
+        self.view.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[[NAVViewController alloc]init]];
+    }]];
 }
 
 
 - (void)forTest {
+    
     NSLog(@"xxxx");
 }
 

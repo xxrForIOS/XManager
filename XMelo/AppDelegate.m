@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "XHead.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    
+    //导航条设置
+    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
+    
+    UIImage *colorImage = [XManager getImageFromColor:kColor_dai withSize:CGSizeMake(kScreenWidth, 64)];
+    [navigationBarAppearance setBackgroundImage:colorImage forBarMetrics:UIBarMetricsDefault];
+    [navigationBarAppearance setTintColor:[UIColor blackColor]];
+    [navigationBarAppearance setBarTintColor:[UIColor blackColor]];
+    [navigationBarAppearance setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor],
+                                                      NSFontAttributeName:[UIFont systemFontOfSize:17]}];
+    
     return YES;
 }
 

@@ -40,4 +40,42 @@
 #define kScreenWidth        [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight       [UIScreen mainScreen].bounds.size.height
 
+
+#define kImageName(n)       [UIImage imageNamed:n]
+#define kWeakSelf           autoreleasepool{} __weak typeof(self) selfWeak = self;
+
+#pragma mark- VALUE
+#define kIOSVersion         [[[UIDevice currentDevice] systemVersion] floatValue]
+#define kIOSVersion10       (kIOSVersion >= 10.0 && kIOSVersion < 11.0)
+#define kAPPVersion         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+#define kAPPBuild           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+
+#define kScreenWidth        [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight       [UIScreen mainScreen].bounds.size.height
+#define kIsNil(o)           (((o) == nil) || ([(o) isEqual:[NSNull null]]))
+#define kStringFormat(f,...)[NSString stringWithFormat:f,##__VA_ARGS__]
+
+
+#pragma mark- USERDEFAULT
+#define kUserDefault_set(__object, __key)\
+({\
+NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];\
+@synchronized([NSUserDefaults standardUserDefaults]){\
+[defaults setObject:__object forKey:__key];\
+[defaults synchronize];\
+}\
+})
+#define kUserDefault_get(k)     [[NSUserDefaults standardUserDefaults] objectForKey:k]
+#define kUserDefault_removeAll      [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]]
+#define kUserDefault_remove(n) [[NSUserDefaults standardUserDefaults]removeObjectForKey:n]
+
+#pragma mark- 判断是否模拟器
+#if TARGET_IPHONE_SIMULATOR
+#define kSimulator 1
+#elif TARGET_OS_IPHONE
+#define kSimulator 0
+#endif
+
+
+
 #endif /* XHead_h */

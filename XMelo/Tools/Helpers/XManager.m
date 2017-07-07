@@ -107,6 +107,133 @@
 }
 
 
+#pragma makr- 弹窗
++ (void)alertControllerWithTitle:(NSString *)title
+                         message:(NSString *)message
+                   confirmButton:(NSString *)confirmStr
+                    cancelButton:(NSString *)cancelStr
+                          showIn:(UIViewController *)vcc
+                    confirmBlock:(void (^)())cfBlock
+                     cancelBlock:(void (^)())ccBlock {
+    static UIAlertController  *alert = nil;
+    if (alert) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }
+    alert = [UIAlertController alertControllerWithTitle:title
+                                                message:message
+                                         preferredStyle:UIAlertControllerStyleAlert];
+    
+    if (cancelStr) {
+        [alert addAction:[UIAlertAction actionWithTitle:cancelStr
+                                                  style:UIAlertActionStyleDefault
+                                                handler:^(UIAlertAction * _Nonnull    action)  {
+                                                    if (ccBlock)  {
+                                                        ccBlock();
+                                                    }
+                                                }]];
+    }
+    
+    
+    [alert addAction:[UIAlertAction actionWithTitle:confirmStr
+                                              style:UIAlertActionStyleDestructive
+                                            handler:^(UIAlertAction * _Nonnull action) {
+                                                if (cfBlock)  {
+                                                    cfBlock();
+                                                }
+                                            }]];
+    
+    [vcc presentViewController:alert animated:YES completion:nil];
+}
+
++ (void)alertTextFiledWithTitle:(NSString *)title
+                        message:(NSString *)message
+                  confirmButton:(NSString *)confirmStr
+                   cancelButton:(NSString *)cancelStr
+                         showIn:(UIViewController *)vcc
+                 inputTextfield:(void (^)(UITextField *inputTF))inputBlock
+                   confirmBlock:(void (^)(UITextField *inputTF))cfBlock
+                    cancelBlock:(void (^)(UITextField *inputTF))ccBlock{
+    
+    static UIAlertController  *alert = nil;
+    if (alert) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }
+    
+    
+    alert = [UIAlertController alertControllerWithTitle:title
+                                                message:message
+                                         preferredStyle:UIAlertControllerStyleAlert];
+    __weak typeof(alert)weakAlert = alert;
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        if (inputBlock) {
+            inputBlock(textField);
+        }
+    }];
+    [alert addAction:[UIAlertAction actionWithTitle:confirmStr
+                                              style:UIAlertActionStyleDestructive
+                                            handler:^(UIAlertAction * _Nonnull action) {
+                                                if (cfBlock)  {
+                                                    cfBlock((UITextField *)weakAlert.textFields.firstObject);
+                                                }
+                                            }]];
+    
+    if (cancelStr) {
+        [alert addAction:[UIAlertAction actionWithTitle:cancelStr
+                                                  style:UIAlertActionStyleDefault
+                                                handler:^(UIAlertAction * _Nonnull    action)  {
+                                                    if (ccBlock)  {
+                                                        ccBlock((UITextField *)weakAlert.textFields.firstObject);
+                                                    }
+                                                }]];
+    }
+    
+    
+    [vcc presentViewController:alert animated:YES completion:nil];
+}
+
+
++ (void)showAlertWith:(NSString *)str confirm:(void(^)())aBlock{
+    
+    //    NSArray *array = [[UIApplication sharedApplication] windows];
+    UIViewController *rootController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    if (rootController == nil) {
+        rootController = [[[[UIApplication sharedApplication] windows] firstObject] rootViewController];
+    }
+    
+    [self   alertControllerWithTitle:@"提示"
+                             message:str
+                       confirmButton:@"知道了"
+                        cancelButton:nil
+                              showIn:rootController
+                        confirmBlock:aBlock
+                         cancelBlock:nil];
+    
+    
+}
+
++ (void)showAlertWith:(NSString *)str{
+    
+    [self showAlertWith:str  confirm:nil];
+}
+
+#pragma mark- 调用打电话
++ (void)callWithWithNumber:(NSString *)number{
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",number]];
+    if (kIOSVersion < 10.0) {
+        [[UIApplication sharedApplication] openURL:url];
+    }else{
+        [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
+            
+            if (!success) {
+                kLog(@"调用打电话出错");
+            }
+        }];
+    }
+}
+
 #pragma mark- gcd
 + (void)dispatchAfter:(int)interval timeout:(void(^)())timerOut {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(interval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

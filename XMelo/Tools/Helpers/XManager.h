@@ -19,7 +19,6 @@
 + (UIImage *)getImageFromColor:(UIColor *)color;
 + (UIImage *)getImageFromColor:(UIColor *)color withSize:(CGSize)size;
 
-
 ///格式化时间
 + (NSString *)timeGetDateFormat:(NSString *)dateString;
 

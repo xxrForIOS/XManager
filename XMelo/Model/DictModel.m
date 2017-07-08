@@ -6,6 +6,7 @@
 //  Copyright © 2017年 欣欣然. All rights reserved.
 //
 
+#import "DictModel.h"
 
 @implementation DictModel
 

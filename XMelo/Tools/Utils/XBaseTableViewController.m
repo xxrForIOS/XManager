@@ -37,15 +37,55 @@
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+
+    return self.numberOfSections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    
+    if (self.numberOfRowsInSection) {
+        return self.numberOfRowsInSection(section);
+    }else {
+        return 0;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat rowHeight = 0;
+    
+    if (self.heightForRowAtIndexPath) {
+        rowHeight = self.heightForRowAtIndexPath(indexPath);
+    } else {
+        rowHeight = self.tableView.rowHeight;
+    }
+    return rowHeight;
+}
+
+- (CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section {
+    
+    if (self.heightForHeadrAtIndexPath) {
+        return self.heightForHeadrAtIndexPath(section);
+    } else {
+        return 10.f;
+    }
+}
+
+- (CGFloat)tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section {
+    
+    if (self.heightForFooterAtIndexPath) {
+        return self.heightForFooterAtIndexPath(section);
+    } else {
+        return CGFLOAT_MIN;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (self.didSelectRowAtIndexPath) {
+        self.didSelectRowAtIndexPath(indexPath);
+    }
 }
 
 /*

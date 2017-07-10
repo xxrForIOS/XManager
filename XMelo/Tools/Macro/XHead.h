@@ -39,10 +39,11 @@
 #pragma mark- SCREEN
 #define kScreenWidth        [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight       [UIScreen mainScreen].bounds.size.height
-
-
+#define kFont(f)            [UIFont systemFontOfSize:f]
+#define kFontBold(f)        [UIFont boldSystemFontOfSize:f]
 #define kImageName(n)       [UIImage imageNamed:n]
 #define kWeakSelf           autoreleasepool{} __weak typeof(self) selfWeak = self;
+
 
 #pragma mark- VALUE
 #define kIOSVersion         [[[UIDevice currentDevice] systemVersion] floatValue]

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "XHead.h"
 #import "NAVViewController.h"
+#import "XViewController.h"
 @interface ViewController ()
 
 @end
@@ -24,7 +25,7 @@
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithActionBlock:^(id sender) {
         
         
-        self.view.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[[NAVViewController alloc]init]];
+        self.view.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[[XViewController alloc]init]];
     }]];
 }
 

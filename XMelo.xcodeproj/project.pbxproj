@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7D3691A56F3A55AD39BF3D88 /* libPods-XMelo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55944350D03FF90A8F8126C9 /* libPods-XMelo.a */; };
+		A713F8791F17A50F00FEA33E /* UIButton+ChangePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F8781F17A50F00FEA33E /* UIButton+ChangePosition.m */; };
+		A713F87F1F17A57300FEA33E /* XBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F87E1F17A57300FEA33E /* XBaseViewController.m */; };
+		A713F8821F17A87200FEA33E /* XViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F8811F17A87200FEA33E /* XViewController.m */; };
 		A71D184E1F0BAE0700BAE515 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D184D1F0BAE0700BAE515 /* main.m */; };
 		A71D18511F0BAE0700BAE515 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D18501F0BAE0700BAE515 /* AppDelegate.m */; };
 		A71D18571F0BAE0700BAE515 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71D18551F0BAE0700BAE515 /* Main.storyboard */; };
@@ -34,6 +37,12 @@
 /* Begin PBXFileReference section */
 		55944350D03FF90A8F8126C9 /* libPods-XMelo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XMelo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		691E65A6553354E2B37952FD /* Pods-XMelo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMelo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XMelo/Pods-XMelo.debug.xcconfig"; sourceTree = "<group>"; };
+		A713F8771F17A50F00FEA33E /* UIButton+ChangePosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ChangePosition.h"; sourceTree = "<group>"; };
+		A713F8781F17A50F00FEA33E /* UIButton+ChangePosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ChangePosition.m"; sourceTree = "<group>"; };
+		A713F87D1F17A57300FEA33E /* XBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBaseViewController.h; sourceTree = "<group>"; };
+		A713F87E1F17A57300FEA33E /* XBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBaseViewController.m; sourceTree = "<group>"; };
+		A713F8801F17A87200FEA33E /* XViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XViewController.h; sourceTree = "<group>"; };
+		A713F8811F17A87200FEA33E /* XViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XViewController.m; sourceTree = "<group>"; };
 		A71D18491F0BAE0700BAE515 /* XMelo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMelo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71D184D1F0BAE0700BAE515 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A71D184F1F0BAE0700BAE515 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -98,6 +107,49 @@
 				FFFA76AEF162E00BEC4508D1 /* Pods-XMelo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A713F87A1F17A51E00FEA33E /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				A713F8771F17A50F00FEA33E /* UIButton+ChangePosition.h */,
+				A713F8781F17A50F00FEA33E /* UIButton+ChangePosition.m */,
+				A72CD1911F0D04EE002C90BD /* UIControl+Block.h */,
+				A72CD1921F0D04EE002C90BD /* UIControl+Block.m */,
+				A72CD1931F0D04EE002C90BD /* UIGestureRecognizer+Block.h */,
+				A72CD1941F0D04EE002C90BD /* UIGestureRecognizer+Block.m */,
+			);
+			name = Control;
+			sourceTree = "<group>";
+		};
+		A713F87B1F17A52A00FEA33E /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				A72CD18B1F0D04EE002C90BD /* NSData+Add.h */,
+				A72CD18C1F0D04EE002C90BD /* NSData+Add.m */,
+				A72CD18D1F0D04EE002C90BD /* NSString+Add.h */,
+				A72CD18E1F0D04EE002C90BD /* NSString+Add.m */,
+				A72CD18F1F0D04EE002C90BD /* NSString+Check.h */,
+				A72CD1901F0D04EE002C90BD /* NSString+Check.m */,
+			);
+			name = Object;
+			sourceTree = "<group>";
+		};
+		A713F87C1F17A53500FEA33E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A72CD1951F0D04EE002C90BD /* UIImage+Scale.h */,
+				A72CD1961F0D04EE002C90BD /* UIImage+Scale.m */,
+				A72CD1971F0D04EE002C90BD /* UILabel+Frame.h */,
+				A72CD1981F0D04EE002C90BD /* UILabel+Frame.m */,
+				A72CD19B1F0D04EE002C90BD /* UITextView+Rich.h */,
+				A72CD19C1F0D04EE002C90BD /* UITextView+Rich.m */,
+				A72CD19D1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.h */,
+				A72CD19E1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.m */,
+				A72CD19F1F0D04EE002C90BD /* UIView+Add.h */,
+				A72CD1A01F0D04EE002C90BD /* UIView+Add.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		A71D18401F0BAE0700BAE515 = {
@@ -212,6 +264,8 @@
 			children = (
 				A72CD1F31F110D42002C90BD /* XBaseTableViewController.h */,
 				A72CD1F41F110D42002C90BD /* XBaseTableViewController.m */,
+				A713F87D1F17A57300FEA33E /* XBaseViewController.h */,
+				A713F87E1F17A57300FEA33E /* XBaseViewController.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -221,6 +275,8 @@
 			children = (
 				A7A8AB691F0BC737001338B0 /* ViewController.h */,
 				A7A8AB6A1F0BC737001338B0 /* ViewController.m */,
+				A713F8801F17A87200FEA33E /* XViewController.h */,
+				A713F8811F17A87200FEA33E /* XViewController.m */,
 				A72CD1AF1F0D07F1002C90BD /* NAVViewController.h */,
 				A72CD1B01F0D07F1002C90BD /* NAVViewController.m */,
 			);
@@ -230,26 +286,9 @@
 		A7B6AE441F0BCC790078B268 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				A72CD18B1F0D04EE002C90BD /* NSData+Add.h */,
-				A72CD18C1F0D04EE002C90BD /* NSData+Add.m */,
-				A72CD18D1F0D04EE002C90BD /* NSString+Add.h */,
-				A72CD18E1F0D04EE002C90BD /* NSString+Add.m */,
-				A72CD18F1F0D04EE002C90BD /* NSString+Check.h */,
-				A72CD1901F0D04EE002C90BD /* NSString+Check.m */,
-				A72CD1911F0D04EE002C90BD /* UIControl+Block.h */,
-				A72CD1921F0D04EE002C90BD /* UIControl+Block.m */,
-				A72CD1931F0D04EE002C90BD /* UIGestureRecognizer+Block.h */,
-				A72CD1941F0D04EE002C90BD /* UIGestureRecognizer+Block.m */,
-				A72CD1951F0D04EE002C90BD /* UIImage+Scale.h */,
-				A72CD1961F0D04EE002C90BD /* UIImage+Scale.m */,
-				A72CD1971F0D04EE002C90BD /* UILabel+Frame.h */,
-				A72CD1981F0D04EE002C90BD /* UILabel+Frame.m */,
-				A72CD19B1F0D04EE002C90BD /* UITextView+Rich.h */,
-				A72CD19C1F0D04EE002C90BD /* UITextView+Rich.m */,
-				A72CD19D1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.h */,
-				A72CD19E1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.m */,
-				A72CD19F1F0D04EE002C90BD /* UIView+Add.h */,
-				A72CD1A01F0D04EE002C90BD /* UIView+Add.m */,
+				A713F87A1F17A51E00FEA33E /* Control */,
+				A713F87B1F17A52A00FEA33E /* Object */,
+				A713F87C1F17A53500FEA33E /* View */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -398,10 +437,13 @@
 				A72CD1A21F0D04EE002C90BD /* NSString+Add.m in Sources */,
 				A72CD1A61F0D04EE002C90BD /* UIImage+Scale.m in Sources */,
 				A72CD1A31F0D04EE002C90BD /* NSString+Check.m in Sources */,
+				A713F8821F17A87200FEA33E /* XViewController.m in Sources */,
+				A713F87F1F17A57300FEA33E /* XBaseViewController.m in Sources */,
 				A71D18511F0BAE0700BAE515 /* AppDelegate.m in Sources */,
 				A72CD1AA1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.m in Sources */,
 				A72CD1AB1F0D04EE002C90BD /* UIView+Add.m in Sources */,
 				A71D184E1F0BAE0700BAE515 /* main.m in Sources */,
+				A713F8791F17A50F00FEA33E /* UIButton+ChangePosition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

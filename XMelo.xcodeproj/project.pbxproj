@@ -29,7 +29,6 @@
 		A72CD1AE1F0D0567002C90BD /* XConst.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1AD1F0D0567002C90BD /* XConst.m */; };
 		A72CD1B11F0D07F1002C90BD /* NAVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1B01F0D07F1002C90BD /* NAVViewController.m */; };
 		A72CD1EC1F10719D002C90BD /* DictModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1EB1F10719D002C90BD /* DictModel.m */; };
-		A72CD1F51F110D42002C90BD /* XBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1F41F110D42002C90BD /* XBaseTableViewController.m */; };
 		A7A8AB6B1F0BC737001338B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A8AB6A1F0BC737001338B0 /* ViewController.m */; };
 		A7B6AE431F0BCB310078B268 /* XManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B6AE421F0BCB310078B268 /* XManager.m */; };
 /* End PBXBuildFile section */
@@ -77,8 +76,6 @@
 		A72CD1B01F0D07F1002C90BD /* NAVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAVViewController.m; sourceTree = "<group>"; };
 		A72CD1EA1F10719D002C90BD /* DictModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictModel.h; sourceTree = "<group>"; };
 		A72CD1EB1F10719D002C90BD /* DictModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictModel.m; sourceTree = "<group>"; };
-		A72CD1F31F110D42002C90BD /* XBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBaseTableViewController.h; sourceTree = "<group>"; };
-		A72CD1F41F110D42002C90BD /* XBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBaseTableViewController.m; sourceTree = "<group>"; };
 		A7A8AB691F0BC737001338B0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A7A8AB6A1F0BC737001338B0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A7A8AB6D1F0BC7D0001338B0 /* XColorHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XColorHead.h; sourceTree = "<group>"; };
@@ -262,8 +259,6 @@
 		A7A8AB641F0BC33F001338B0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				A72CD1F31F110D42002C90BD /* XBaseTableViewController.h */,
-				A72CD1F41F110D42002C90BD /* XBaseTableViewController.m */,
 				A713F87D1F17A57300FEA33E /* XBaseViewController.h */,
 				A713F87E1F17A57300FEA33E /* XBaseViewController.m */,
 			);
@@ -430,7 +425,6 @@
 				A72CD1A41F0D04EE002C90BD /* UIControl+Block.m in Sources */,
 				A72CD1A51F0D04EE002C90BD /* UIGestureRecognizer+Block.m in Sources */,
 				A72CD1EC1F10719D002C90BD /* DictModel.m in Sources */,
-				A72CD1F51F110D42002C90BD /* XBaseTableViewController.m in Sources */,
 				A7A8AB6B1F0BC737001338B0 /* ViewController.m in Sources */,
 				A72CD1B11F0D07F1002C90BD /* NAVViewController.m in Sources */,
 				A72CD1A11F0D04EE002C90BD /* NSData+Add.m in Sources */,

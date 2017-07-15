@@ -31,6 +31,7 @@
 		A72CD1EC1F10719D002C90BD /* DictModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1EB1F10719D002C90BD /* DictModel.m */; };
 		A7A8AB6B1F0BC737001338B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A8AB6A1F0BC737001338B0 /* ViewController.m */; };
 		A7B6AE431F0BCB310078B268 /* XManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B6AE421F0BCB310078B268 /* XManager.m */; };
+		A7F3B3E31F1A21A500E683D0 /* XStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F3B3E21F1A21A500E683D0 /* XStepper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,8 @@
 		A7A8AB6E1F0BC97A001338B0 /* XHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHead.h; sourceTree = "<group>"; };
 		A7B6AE411F0BCB310078B268 /* XManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XManager.h; sourceTree = "<group>"; };
 		A7B6AE421F0BCB310078B268 /* XManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XManager.m; sourceTree = "<group>"; };
+		A7F3B3E11F1A21A500E683D0 /* XStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XStepper.h; sourceTree = "<group>"; };
+		A7F3B3E21F1A21A500E683D0 /* XStepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XStepper.m; sourceTree = "<group>"; };
 		FFFA76AEF162E00BEC4508D1 /* Pods-XMelo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMelo.release.xcconfig"; path = "Pods/Target Support Files/Pods-XMelo/Pods-XMelo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -261,6 +264,8 @@
 			children = (
 				A713F87D1F17A57300FEA33E /* XBaseViewController.h */,
 				A713F87E1F17A57300FEA33E /* XBaseViewController.m */,
+				A7F3B3E11F1A21A500E683D0 /* XStepper.h */,
+				A7F3B3E21F1A21A500E683D0 /* XStepper.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -437,6 +442,7 @@
 				A72CD1AA1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.m in Sources */,
 				A72CD1AB1F0D04EE002C90BD /* UIView+Add.m in Sources */,
 				A71D184E1F0BAE0700BAE515 /* main.m in Sources */,
+				A7F3B3E31F1A21A500E683D0 /* XStepper.m in Sources */,
 				A713F8791F17A50F00FEA33E /* UIButton+ChangePosition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

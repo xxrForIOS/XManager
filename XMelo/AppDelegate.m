@@ -22,11 +22,14 @@
     //导航条设置
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+    
     UIImage *colorImage = [XManager getImageFromColor:kColor_dai withSize:CGSizeMake(kScreenWidth, 64)];
     [navigationBarAppearance setBackgroundImage:colorImage forBarMetrics:UIBarMetricsDefault];
-    [navigationBarAppearance setTintColor:[UIColor blackColor]];
-    [navigationBarAppearance setBarTintColor:[UIColor blackColor]];
-    [navigationBarAppearance setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor],
+    [navigationBarAppearance setTintColor:[UIColor whiteColor]];
+    [navigationBarAppearance setBarTintColor:[UIColor whiteColor]];
+    [navigationBarAppearance setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
                                                       NSFontAttributeName:[UIFont systemFontOfSize:17]}];
     
     return YES;

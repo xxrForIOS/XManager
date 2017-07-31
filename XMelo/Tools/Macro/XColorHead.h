@@ -36,5 +36,6 @@
 #define kColor_dailan       kColorRGB(65,80,101)            //黛蓝
 #define kColor_yuebai       kColorRGB(215,236,241)          //月白
 #define kColor_feise        kColorRGB(237,87,254)           //妃色
+#define kColor_tuose        kColorRGB(168,132,98)           //妃色
 
 #endif /* XColorHead_h */

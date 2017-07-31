@@ -49,10 +49,9 @@
     
     self.introLabel = ({
         
-        
         UILabel *theLabel = [[UILabel alloc]init];
         theLabel.font = kFont(13);
-        theLabel.textColor = kColor_chabai;
+        theLabel.textColor = kColor_yan;
         theLabel.text = @"some";
         [self.contentView addSubview:theLabel];
         theLabel;

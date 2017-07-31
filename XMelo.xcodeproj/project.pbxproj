@@ -32,6 +32,11 @@
 		A76E10651F2ED9EF00E09AAE /* XCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A76E10641F2ED9EF00E09AAE /* XCell.m */; };
 		A7A8AB6B1F0BC737001338B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A8AB6A1F0BC737001338B0 /* ViewController.m */; };
 		A7B6AE431F0BCB310078B268 /* XManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B6AE421F0BCB310078B268 /* XManager.m */; };
+		A7EAFCAB1F2F6298008FE729 /* JTBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EAFCA81F2F6298008FE729 /* JTBaseNavigationController.m */; };
+		A7EAFCAC1F2F6298008FE729 /* JTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EAFCAA1F2F6298008FE729 /* JTNavigationController.m */; };
+		A7EAFCB21F2F659F008FE729 /* RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EAFCAF1F2F659F008FE729 /* RTRootNavigationController.m */; };
+		A7EAFCB31F2F659F008FE729 /* UIViewController+RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EAFCB11F2F659F008FE729 /* UIViewController+RTRootNavigationController.m */; };
+		A7EAFCB51F2F6744008FE729 /* ZWRPL6I1)WPIVE`QOT})_O0.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7EAFCB41F2F6744008FE729 /* ZWRPL6I1)WPIVE`QOT})_O0.gif */; };
 		A7F3B3E31F1A21A500E683D0 /* XStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F3B3E21F1A21A500E683D0 /* XStepper.m */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +92,15 @@
 		A7A8AB6E1F0BC97A001338B0 /* XHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHead.h; sourceTree = "<group>"; };
 		A7B6AE411F0BCB310078B268 /* XManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XManager.h; sourceTree = "<group>"; };
 		A7B6AE421F0BCB310078B268 /* XManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XManager.m; sourceTree = "<group>"; };
+		A7EAFCA71F2F6298008FE729 /* JTBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTBaseNavigationController.h; sourceTree = "<group>"; };
+		A7EAFCA81F2F6298008FE729 /* JTBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTBaseNavigationController.m; sourceTree = "<group>"; };
+		A7EAFCA91F2F6298008FE729 /* JTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTNavigationController.h; sourceTree = "<group>"; };
+		A7EAFCAA1F2F6298008FE729 /* JTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTNavigationController.m; sourceTree = "<group>"; };
+		A7EAFCAE1F2F659F008FE729 /* RTRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTRootNavigationController.h; sourceTree = "<group>"; };
+		A7EAFCAF1F2F659F008FE729 /* RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTRootNavigationController.m; sourceTree = "<group>"; };
+		A7EAFCB01F2F659F008FE729 /* UIViewController+RTRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RTRootNavigationController.h"; sourceTree = "<group>"; };
+		A7EAFCB11F2F659F008FE729 /* UIViewController+RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RTRootNavigationController.m"; sourceTree = "<group>"; };
+		A7EAFCB41F2F6744008FE729 /* ZWRPL6I1)WPIVE`QOT})_O0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ZWRPL6I1)WPIVE`QOT})_O0.gif"; sourceTree = "<group>"; };
 		A7F3B3E11F1A21A500E683D0 /* XStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XStepper.h; sourceTree = "<group>"; };
 		A7F3B3E21F1A21A500E683D0 /* XStepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XStepper.m; sourceTree = "<group>"; };
 		FFFA76AEF162E00BEC4508D1 /* Pods-XMelo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMelo.release.xcconfig"; path = "Pods/Target Support Files/Pods-XMelo/Pods-XMelo.release.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +262,8 @@
 		A7A8AB621F0BC33F001338B0 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				A7EAFCAD1F2F659F008FE729 /* RTRootNavigation */,
+				A7EAFCA61F2F6298008FE729 /* JTBaseNavigation */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -298,6 +314,29 @@
 				A713F87C1F17A53500FEA33E /* View */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		A7EAFCA61F2F6298008FE729 /* JTBaseNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				A7EAFCB41F2F6744008FE729 /* ZWRPL6I1)WPIVE`QOT})_O0.gif */,
+				A7EAFCA71F2F6298008FE729 /* JTBaseNavigationController.h */,
+				A7EAFCA81F2F6298008FE729 /* JTBaseNavigationController.m */,
+				A7EAFCA91F2F6298008FE729 /* JTNavigationController.h */,
+				A7EAFCAA1F2F6298008FE729 /* JTNavigationController.m */,
+			);
+			path = JTBaseNavigation;
+			sourceTree = "<group>";
+		};
+		A7EAFCAD1F2F659F008FE729 /* RTRootNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				A7EAFCAE1F2F659F008FE729 /* RTRootNavigationController.h */,
+				A7EAFCAF1F2F659F008FE729 /* RTRootNavigationController.m */,
+				A7EAFCB01F2F659F008FE729 /* UIViewController+RTRootNavigationController.h */,
+				A7EAFCB11F2F659F008FE729 /* UIViewController+RTRootNavigationController.m */,
+			);
+			path = RTRootNavigation;
 			sourceTree = "<group>";
 		};
 		B31DB93713A7DD39414E6ED8 /* Frameworks */ = {
@@ -371,6 +410,7 @@
 			files = (
 				A71D185C1F0BAE0700BAE515 /* LaunchScreen.storyboard in Resources */,
 				A71D18591F0BAE0700BAE515 /* Assets.xcassets in Resources */,
+				A7EAFCB51F2F6744008FE729 /* ZWRPL6I1)WPIVE`QOT})_O0.gif in Resources */,
 				A71D18571F0BAE0700BAE515 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +474,7 @@
 				A72CD1A91F0D04EE002C90BD /* UITextView+Rich.m in Sources */,
 				A7B6AE431F0BCB310078B268 /* XManager.m in Sources */,
 				A72CD1AE1F0D0567002C90BD /* XConst.m in Sources */,
+				A7EAFCB21F2F659F008FE729 /* RTRootNavigationController.m in Sources */,
 				A72CD1A71F0D04EE002C90BD /* UILabel+Frame.m in Sources */,
 				A72CD1A41F0D04EE002C90BD /* UIControl+Block.m in Sources */,
 				A72CD1A51F0D04EE002C90BD /* UIGestureRecognizer+Block.m in Sources */,
@@ -443,13 +484,16 @@
 				A72CD1A11F0D04EE002C90BD /* NSData+Add.m in Sources */,
 				A72CD1A21F0D04EE002C90BD /* NSString+Add.m in Sources */,
 				A72CD1A61F0D04EE002C90BD /* UIImage+Scale.m in Sources */,
+				A7EAFCAC1F2F6298008FE729 /* JTNavigationController.m in Sources */,
 				A72CD1A31F0D04EE002C90BD /* NSString+Check.m in Sources */,
 				A713F8821F17A87200FEA33E /* XViewController.m in Sources */,
 				A713F87F1F17A57300FEA33E /* XBaseViewController.m in Sources */,
 				A71D18511F0BAE0700BAE515 /* AppDelegate.m in Sources */,
 				A72CD1AA1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.m in Sources */,
+				A7EAFCB31F2F659F008FE729 /* UIViewController+RTRootNavigationController.m in Sources */,
 				A72CD1AB1F0D04EE002C90BD /* UIView+Add.m in Sources */,
 				A71D184E1F0BAE0700BAE515 /* main.m in Sources */,
+				A7EAFCAB1F2F6298008FE729 /* JTBaseNavigationController.m in Sources */,
 				A7F3B3E31F1A21A500E683D0 /* XStepper.m in Sources */,
 				A713F8791F17A50F00FEA33E /* UIButton+ChangePosition.m in Sources */,
 			);

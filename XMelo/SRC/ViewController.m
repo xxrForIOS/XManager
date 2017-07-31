@@ -11,9 +11,9 @@
 #import "NAVViewController.h"
 #import "XViewController.h"
 
-
-
-
+#import "JTNavigationController.h"
+#import "JTBaseNavigationController.h"
+#import "RTRootNavigationController.h"
 @interface ViewController ()
 
 @end
@@ -24,13 +24,21 @@
     [super viewDidLoad];
 
 
-    UIImage *sss = kImageName(@"xxx%@",@"dd");
+
     self.view.backgroundColor = kColor_yuebai;
     
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithActionBlock:^(id sender) {
         
         
-        self.view.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[[XViewController alloc]init]];
+        XViewController *rootVC = [[XViewController alloc]init];
+        
+        JTBaseNavigationController *navv = [[JTBaseNavigationController alloc] initWithRootViewController:rootVC];
+        navv.fullScreenPopGestureEnable = YES;
+        
+        RTRootNavigationController *newVV = [[RTRootNavigationController alloc] initWithRootViewController:rootVC];
+        
+        navv.backButtonImage = kImageName(@"ZWRPL6I1)WPIVE`QOT})_O0.gif");
+        self.view.window.rootViewController = navv;
     }]];
 }
 

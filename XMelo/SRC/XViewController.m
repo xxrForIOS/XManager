@@ -8,7 +8,7 @@
 
 #import "XViewController.h"
 #import "NAVViewController.h"
-#import "XStepper.h"
+#import "XCell.h"
 @interface XViewController ()
 
 @end
@@ -19,34 +19,27 @@
     [super viewDidLoad];
 
     @kWeakSelf;
-    self.numberOfSections = 2;
+    
+    self.tableView.height = kScreenHeight - 100;
+    
     self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
-        return 3;
+        return 10;
     };
-    
-    
-    self.heightForRowAtIndexPath = ^CGFloat(NSIndexPath *indexPath) {
-        return 50;
-    };
+
+    self.tableView.rowHeight = 70;
     
     self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
-      
-//        NSString *ssss = kStringFormat(@"这里是%ld",indexPath.row);
-//        [XManager showAlertWith:ssss];
         
-        [selfWeak.navigationController pushViewController:[[NAVViewController alloc]init] animated:YES];
+        kPush(selfWeak, [[NAVViewController alloc]init]);
     };
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    [self.tableView registerClass:[XCell class] forCellReuseIdentifier:@"cell"];
     self.cellForRowAtIndexPath = ^UITableViewCell *(UITableView *tableView, NSIndexPath *indexPath) {
       
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+        XCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
         
-        if (indexPath.row %2 == 0) {
-            
-            XStepper *sss = [[XStepper alloc]initWithFrame:CGRectMake(20, 10, 100, 30)];
-            [cell.contentView addSubview:sss];
-        }
+    
+
         return cell;
     };
 }

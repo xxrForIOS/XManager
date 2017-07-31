@@ -10,6 +10,10 @@
 #import "XHead.h"
 #import "NAVViewController.h"
 #import "XViewController.h"
+
+
+
+
 @interface ViewController ()
 
 @end
@@ -20,6 +24,7 @@
     [super viewDidLoad];
 
 
+    UIImage *sss = kImageName(@"xxx%@",@"dd");
     self.view.backgroundColor = kColor_yuebai;
     
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithActionBlock:^(id sender) {

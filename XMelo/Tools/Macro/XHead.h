@@ -9,55 +9,41 @@
 #ifndef XHead_h
 #define XHead_h
 
-#import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
+#import "XImport.h"
 
-#import "XColorHead.h"
-#import "XConst.h"
-#import "XManager.h"
 
-#import "UIGestureRecognizer+Block.h"
-#import "UIControl+Block.h"
-#import "UIView+Add.h"
-#import "UITextView+Rich.h"
-#import "UILabel+Frame.h"
-#import "UIImage+Scale.h"
-#import "NSString+Add.h"
-#import "NSString+Check.h"
-#import "NSData+Add.h"
-#import "UITextView+ZWPlaceHolder.h"
-
-#pragma mark- LOG
+///Log
 #ifdef DEBUG
-
+#define kLog(s, ...)        NSLog(@"%@",[NSString stringWithFormat:(s), ##__VA_ARGS__])
+#define kLogError(s, ...)   NSLog(@"%s %@", __func__,[NSString stringWithFormat:(s), ##__VA_ARGS__])
 #else
 #endif
 
-#define kLog(s, ...)        NSLog(@"%@",[NSString stringWithFormat:(s), ##__VA_ARGS__])
-#define kLogError(s, ...)   NSLog(@"%s %@", __func__,[NSString stringWithFormat:(s), ##__VA_ARGS__])
-
-#pragma mark- SCREEN
+///value
 #define kScreenWidth        [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight       [UIScreen mainScreen].bounds.size.height
-#define kFont(f)            [UIFont systemFontOfSize:f]
-#define kFontBold(f)        [UIFont boldSystemFontOfSize:f]
-#define kImageName(n)       [UIImage imageNamed:n]
-#define kWeakSelf           autoreleasepool{} __weak typeof(self) selfWeak = self;
 
-
-#pragma mark- VALUE
 #define kIOSVersion         [[[UIDevice currentDevice] systemVersion] floatValue]
-#define kIOSVersion10       (kIOSVersion >= 10.0 && kIOSVersion < 11.0)
+#define kIOS10              (kIOSVersion >= 10.0 && kIOSVersion < 11.0)
+#define kIOS9               (kIOSVersion >= 9.0 && kIOSVersion < 10.0)
+#define kIOS8               (kIOSVersion >= 8.0 && kIOSVersion < 9.0)
 #define kAPPVersion         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 #define kAPPBuild           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
 
-#define kScreenWidth        [UIScreen mainScreen].bounds.size.width
-#define kScreenHeight       [UIScreen mainScreen].bounds.size.height
-#define kIsNil(o)           (((o) == nil) || ([(o) isEqual:[NSNull null]]))
-#define kStringFormat(f,...)[NSString stringWithFormat:f,##__VA_ARGS__]
+#define kFont(f)            [UIFont systemFontOfSize:f]
+#define kFontBold(f)        [UIFont boldSystemFontOfSize:f]
 
 
-#pragma mark- USERDEFAULT
+
+///image
+#define kImageName(f,...)   [UIImage imageNamed:[NSString stringWithFormat:f,##__VA_ARGS__]]
+#define kImageUrl(f,...)    [NSURL URLWithString:[NSString stringWithFormat:f,##__VA_ARGS__]]
+
+///block
+#define kWeakSelf           autoreleasepool{} __weak typeof(self) selfWeak = self;
+#define kWeakObj(o)         autoreleasepool{} __weak typeof(o) o##Weak = o;
+
+///userDefault
 #define kUserDefault_set(__object, __key)\
 ({\
 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];\
@@ -70,12 +56,28 @@ NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];\
 #define kUserDefault_removeAll      [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]]
 #define kUserDefault_remove(n) [[NSUserDefaults standardUserDefaults]removeObjectForKey:n]
 
-#pragma mark- 判断是否模拟器
+///hud
+#define kCurrentController      [UIApplication sharedApplication].keyWindow.rootViewController
+#define kActivityHUDShowStr(s)  MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:(kCurrentController).view  animated:YES];hud.label.text = s;[UIApplication sharedApplication].networkActivityIndicatorVisible = YES
+#define kActivityHUDShow        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:(kCurrentController).view  animated:YES];hud.label.text = @"加载数据";[UIApplication sharedApplication].networkActivityIndicatorVisible = YES
+#define kActivityHUDHidden      [MBProgressHUD hideHUDForView:(kCurrentController).view animated:YES];[UIApplication sharedApplication].networkActivityIndicatorVisible = NO
+
+///simulator
 #if TARGET_IPHONE_SIMULATOR
 #define kSimulator 1
 #elif TARGET_OS_IPHONE
 #define kSimulator 0
 #endif
+
+#define kPush(pushFrom,pushTo)  [pushFrom.navigationController pushViewController:pushTo animated:YES]
+//#define kOpenAliPay(code)       [[AlipaySDK defaultService] payOrder:code fromScheme:YVAliPaySchemeUrl callback:nil]
+
+#define kStringFormat(f,...)    [NSString stringWithFormat:f,##__VA_ARGS__]
+
+
+
+
+
 
 
 

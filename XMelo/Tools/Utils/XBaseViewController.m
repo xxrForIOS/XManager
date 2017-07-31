@@ -7,6 +7,7 @@
 //
 
 #import "XBaseViewController.h"
+#import "MJRefresh.h"
 
 @interface XBaseViewController ()
 
@@ -33,76 +34,146 @@
     
     //隐藏多余的cell
     self.tableView.tableFooterView = [[UIView alloc]init];
-    
-    
 }
 
+#pragma mark- delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return self.numberOfSections;
+    return ({
+        NSInteger rows = 1;
+        if (self.numberOfSections) {
+            
+            rows = self.numberOfSections;
+        }
+        rows;
+    });
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    if (self.numberOfRowsInSection) {
-        return self.numberOfRowsInSection(section);
-    }else {
-        return 0;
-    }
+    return ({
+        NSInteger rows = 1;
+        if (self.numberOfRowsInSection) {
+            
+            rows = self.numberOfRowsInSection(section);
+        }
+        rows;
+    });
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat rowHeight = 0;
     
-    if (self.heightForRowAtIndexPath) {
-        rowHeight = self.heightForRowAtIndexPath(indexPath);
-    } else {
-        rowHeight = self.tableView.rowHeight;
-    }
-    return rowHeight;
+    
+    return ({
+        
+        CGFloat height = self.tableView.rowHeight;
+        if (self.heightForRowAtIndexPath) {
+            
+            height = self.heightForRowAtIndexPath(indexPath);
+        }
+        height;
+    });
 }
 
 - (CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section {
     
-    if (self.heightForHeadrAtIndexPath) {
-        return self.heightForHeadrAtIndexPath(section);
-    } else {
-        return 10.f;
-    }
+    return ({
+        
+        CGFloat height = xBaseHeadHeight;
+        if (self.heightForHeadrAtIndexPath) {
+            
+            height = self.heightForHeadrAtIndexPath(section);
+        }
+        height;
+    });
 }
 
 - (CGFloat)tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section {
     
-    if (self.heightForFooterAtIndexPath) {
-        return self.heightForFooterAtIndexPath(section);
-    } else {
-        return CGFLOAT_MIN;
-    }
+    return ({
+        
+        CGFloat height = CGFLOAT_MIN;
+        if (self.heightForFooterAtIndexPath) {
+            
+            height = self.heightForFooterAtIndexPath(section);
+        }
+        height;
+    });
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     if (self.didSelectRowAtIndexPath) {
+        
         self.didSelectRowAtIndexPath(indexPath);
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (self.cellForRowAtIndexPath) {
-        return self.cellForRowAtIndexPath(tableView,indexPath);
-    }else {
-        NSString *identi = @"baseCell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identi];
-        if (!cell) {
-            
-            cell = [[UITableViewCell alloc]initWithStyle:self.cellStyle reuseIdentifier:identi];
-            
-        }
+    return self.cellForRowAtIndexPath(tableView,indexPath);
+}
 
-        return cell;
-    }
+- (void)showFooerButtonWithTitle:(NSString *)title clickBlock:(void(^)(UIButton *aButton))aBlock {
+    
+    self.tableView.tableFooterView = ({
+        UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 90)];
+        bgView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        leftButton.frame = CGRectMake(40, 40, bgView.width - 80, 40);
+        leftButton.layer.cornerRadius = leftButton.height/2;
+        leftButton.layer.masksToBounds = YES;
+        leftButton.backgroundColor = [UIColor redColor];
+        [leftButton setTitle:title forState:UIControlStateNormal];
+        [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [leftButton addBlockWithblock:^(UIButton *button) {
+            
+            if (aBlock) {
+                aBlock(button);
+            }
+        }];
+        
+        [bgView addSubview:leftButton];
+        
+        bgView;
+    });
+}
+
+
+#pragma mark- 刷新
+- (void)updateDataFromHeadWith:(void(^)())block{
+    MJRefreshNormalHeader *headerrrr = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (block) {
+            block();
+            
+            //[self.tableView reloadData];
+            //[self.tableView.mj_header endRefreshing];
+        }
+    }];
+    
+    [headerrrr setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
+    headerrrr.lastUpdatedTimeLabel.hidden = YES;
+    headerrrr.automaticallyChangeAlpha = YES;
+    self.tableView.mj_header = headerrrr;
+    [self.tableView.mj_header beginRefreshing];
+}
+
+- (void)updateDataFromFootWith:(void(^)())block{
+    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        if (block) {
+            block();
+            
+            //[self.tableView reloadData];
+            //[self.tableView.mj_footer endRefreshing];
+            //[self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+    }];
+    
+    [footer setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
+    self.tableView.mj_footer = footer;
+    [self.tableView.mj_footer beginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "XHead.h"
 
-
+#define xBaseHeadHeight 10.f
 
 @interface XBaseViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
@@ -41,7 +41,13 @@
 ///创建cell
 @property (nonatomic,strong)    UITableViewCell *(^cellForRowAtIndexPath)(UITableView *tableView, NSIndexPath *indexPath);
 
+///下拉head刷新
+- (void)updateDataFromHeadWith:(void(^)())block;
 
+///上拉footer加载
+- (void)updateDataFromFootWith:(void(^)())block;
+
+- (void)showFooerButtonWithTitle:(NSString *)title clickBlock:(void(^)(UIButton *aButton))aBlock;
 
 /** 设置点击事件 */
 @property (nonatomic, copy) void(^didSelectRowAtIndexPath)(NSIndexPath *indexPath);

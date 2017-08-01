@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "XHead.h"
 
-#define xBaseHeadHeight 10.f
+#define xBaseHeadHeight CGFLOAT_MIN
 
 @interface XBaseViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
@@ -21,7 +21,7 @@
 ///包含多少个区 默认为1
 @property (nonatomic, assign)   NSInteger  numberOfSections;
 ///返回每个区多少行
-@property (nonatomic, assign)   NSInteger(^numberOfRowsInSection)(NSInteger section);
+@property (nonatomic, copy)     NSInteger(^numberOfRowsInSection)(NSInteger section);
 ///设置cell高度
 @property (nonatomic, copy)     CGFloat(^heightForRowAtIndexPath)(NSIndexPath *indexPath);
 

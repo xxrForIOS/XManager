@@ -27,16 +27,18 @@
 		A72CD1AA1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD19E1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.m */; };
 		A72CD1AB1F0D04EE002C90BD /* UIView+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1A01F0D04EE002C90BD /* UIView+Add.m */; };
 		A72CD1AE1F0D0567002C90BD /* XConst.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1AD1F0D0567002C90BD /* XConst.m */; };
-		A72CD1B11F0D07F1002C90BD /* NAVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1B01F0D07F1002C90BD /* NAVViewController.m */; };
 		A72CD1EC1F10719D002C90BD /* DictModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1EB1F10719D002C90BD /* DictModel.m */; };
 		A76E10651F2ED9EF00E09AAE /* XCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A76E10641F2ED9EF00E09AAE /* XCell.m */; };
 		A7A8AB6B1F0BC737001338B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A8AB6A1F0BC737001338B0 /* ViewController.m */; };
+		A7B372291F30A4180087972B /* backImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B372271F30A4180087972B /* backImage@2x.png */; };
+		A7B3722A1F30A4180087972B /* backImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B372281F30A4180087972B /* backImage@3x.png */; };
+		A7B3722D1F30AA730087972B /* XMelo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7B3722B1F30AA730087972B /* XMelo.xcdatamodeld */; };
+		A7B372301F30B14C0087972B /* XCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B3722F1F30B14C0087972B /* XCoreDataViewController.m */; };
 		A7B6AE431F0BCB310078B268 /* XManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B6AE421F0BCB310078B268 /* XManager.m */; };
 		A7EAFCAB1F2F6298008FE729 /* JTBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EAFCA81F2F6298008FE729 /* JTBaseNavigationController.m */; };
 		A7EAFCAC1F2F6298008FE729 /* JTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EAFCAA1F2F6298008FE729 /* JTNavigationController.m */; };
 		A7EAFCB21F2F659F008FE729 /* RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EAFCAF1F2F659F008FE729 /* RTRootNavigationController.m */; };
 		A7EAFCB31F2F659F008FE729 /* UIViewController+RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EAFCB11F2F659F008FE729 /* UIViewController+RTRootNavigationController.m */; };
-		A7EAFCB51F2F6744008FE729 /* ZWRPL6I1)WPIVE`QOT})_O0.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7EAFCB41F2F6744008FE729 /* ZWRPL6I1)WPIVE`QOT})_O0.gif */; };
 		A7F3B3E31F1A21A500E683D0 /* XStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F3B3E21F1A21A500E683D0 /* XStepper.m */; };
 /* End PBXBuildFile section */
 
@@ -79,8 +81,6 @@
 		A72CD1A01F0D04EE002C90BD /* UIView+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Add.m"; sourceTree = "<group>"; };
 		A72CD1AC1F0D0567002C90BD /* XConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XConst.h; sourceTree = "<group>"; };
 		A72CD1AD1F0D0567002C90BD /* XConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XConst.m; sourceTree = "<group>"; };
-		A72CD1AF1F0D07F1002C90BD /* NAVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVViewController.h; sourceTree = "<group>"; };
-		A72CD1B01F0D07F1002C90BD /* NAVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAVViewController.m; sourceTree = "<group>"; };
 		A72CD1EA1F10719D002C90BD /* DictModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictModel.h; sourceTree = "<group>"; };
 		A72CD1EB1F10719D002C90BD /* DictModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictModel.m; sourceTree = "<group>"; };
 		A76E10621F2EBFCA00E09AAE /* XImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XImport.h; sourceTree = "<group>"; };
@@ -90,6 +90,11 @@
 		A7A8AB6A1F0BC737001338B0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A7A8AB6D1F0BC7D0001338B0 /* XColorHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XColorHead.h; sourceTree = "<group>"; };
 		A7A8AB6E1F0BC97A001338B0 /* XHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHead.h; sourceTree = "<group>"; };
+		A7B372271F30A4180087972B /* backImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@2x.png"; sourceTree = "<group>"; };
+		A7B372281F30A4180087972B /* backImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@3x.png"; sourceTree = "<group>"; };
+		A7B3722C1F30AA730087972B /* XMelo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = XMelo.xcdatamodel; sourceTree = "<group>"; };
+		A7B3722E1F30B14C0087972B /* XCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCoreDataViewController.h; sourceTree = "<group>"; };
+		A7B3722F1F30B14C0087972B /* XCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCoreDataViewController.m; sourceTree = "<group>"; };
 		A7B6AE411F0BCB310078B268 /* XManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XManager.h; sourceTree = "<group>"; };
 		A7B6AE421F0BCB310078B268 /* XManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XManager.m; sourceTree = "<group>"; };
 		A7EAFCA71F2F6298008FE729 /* JTBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTBaseNavigationController.h; sourceTree = "<group>"; };
@@ -100,7 +105,6 @@
 		A7EAFCAF1F2F659F008FE729 /* RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTRootNavigationController.m; sourceTree = "<group>"; };
 		A7EAFCB01F2F659F008FE729 /* UIViewController+RTRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RTRootNavigationController.h"; sourceTree = "<group>"; };
 		A7EAFCB11F2F659F008FE729 /* UIViewController+RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RTRootNavigationController.m"; sourceTree = "<group>"; };
-		A7EAFCB41F2F6744008FE729 /* ZWRPL6I1)WPIVE`QOT})_O0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ZWRPL6I1)WPIVE`QOT})_O0.gif"; sourceTree = "<group>"; };
 		A7F3B3E11F1A21A500E683D0 /* XStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XStepper.h; sourceTree = "<group>"; };
 		A7F3B3E21F1A21A500E683D0 /* XStepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XStepper.m; sourceTree = "<group>"; };
 		FFFA76AEF162E00BEC4508D1 /* Pods-XMelo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMelo.release.xcconfig"; path = "Pods/Target Support Files/Pods-XMelo/Pods-XMelo.release.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 				A71D184D1F0BAE0700BAE515 /* main.m */,
 				A71D18551F0BAE0700BAE515 /* Main.storyboard */,
 				A71D185A1F0BAE0700BAE515 /* LaunchScreen.storyboard */,
+				A7B3722B1F30AA730087972B /* XMelo.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -298,10 +303,10 @@
 				A7A8AB6A1F0BC737001338B0 /* ViewController.m */,
 				A713F8801F17A87200FEA33E /* XViewController.h */,
 				A713F8811F17A87200FEA33E /* XViewController.m */,
+				A7B3722E1F30B14C0087972B /* XCoreDataViewController.h */,
+				A7B3722F1F30B14C0087972B /* XCoreDataViewController.m */,
 				A76E10631F2ED9EF00E09AAE /* XCell.h */,
 				A76E10641F2ED9EF00E09AAE /* XCell.m */,
-				A72CD1AF1F0D07F1002C90BD /* NAVViewController.h */,
-				A72CD1B01F0D07F1002C90BD /* NAVViewController.m */,
 			);
 			path = SRC;
 			sourceTree = "<group>";
@@ -319,7 +324,8 @@
 		A7EAFCA61F2F6298008FE729 /* JTBaseNavigation */ = {
 			isa = PBXGroup;
 			children = (
-				A7EAFCB41F2F6744008FE729 /* ZWRPL6I1)WPIVE`QOT})_O0.gif */,
+				A7B372271F30A4180087972B /* backImage@2x.png */,
+				A7B372281F30A4180087972B /* backImage@3x.png */,
 				A7EAFCA71F2F6298008FE729 /* JTBaseNavigationController.h */,
 				A7EAFCA81F2F6298008FE729 /* JTBaseNavigationController.m */,
 				A7EAFCA91F2F6298008FE729 /* JTNavigationController.h */,
@@ -410,8 +416,9 @@
 			files = (
 				A71D185C1F0BAE0700BAE515 /* LaunchScreen.storyboard in Resources */,
 				A71D18591F0BAE0700BAE515 /* Assets.xcassets in Resources */,
-				A7EAFCB51F2F6744008FE729 /* ZWRPL6I1)WPIVE`QOT})_O0.gif in Resources */,
+				A7B3722A1F30A4180087972B /* backImage@3x.png in Resources */,
 				A71D18571F0BAE0700BAE515 /* Main.storyboard in Resources */,
+				A7B372291F30A4180087972B /* backImage@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,8 +477,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7B372301F30B14C0087972B /* XCoreDataViewController.m in Sources */,
 				A76E10651F2ED9EF00E09AAE /* XCell.m in Sources */,
 				A72CD1A91F0D04EE002C90BD /* UITextView+Rich.m in Sources */,
+				A7B3722D1F30AA730087972B /* XMelo.xcdatamodeld in Sources */,
 				A7B6AE431F0BCB310078B268 /* XManager.m in Sources */,
 				A72CD1AE1F0D0567002C90BD /* XConst.m in Sources */,
 				A7EAFCB21F2F659F008FE729 /* RTRootNavigationController.m in Sources */,
@@ -480,7 +489,6 @@
 				A72CD1A51F0D04EE002C90BD /* UIGestureRecognizer+Block.m in Sources */,
 				A72CD1EC1F10719D002C90BD /* DictModel.m in Sources */,
 				A7A8AB6B1F0BC737001338B0 /* ViewController.m in Sources */,
-				A72CD1B11F0D07F1002C90BD /* NAVViewController.m in Sources */,
 				A72CD1A11F0D04EE002C90BD /* NSData+Add.m in Sources */,
 				A72CD1A21F0D04EE002C90BD /* NSString+Add.m in Sources */,
 				A72CD1A61F0D04EE002C90BD /* UIImage+Scale.m in Sources */,
@@ -659,6 +667,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A7B3722B1F30AA730087972B /* XMelo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A7B3722C1F30AA730087972B /* XMelo.xcdatamodel */,
+			);
+			currentVersion = A7B3722C1F30AA730087972B /* XMelo.xcdatamodel */;
+			path = XMelo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A71D18411F0BAE0700BAE515 /* Project object */;
 }

@@ -8,4 +8,5 @@ pod 'DZNEmptyDataSet'
 pod 'CYLTabBarController'
 pod 'MJExtension'
 pod 'GDPerformanceView'
+pod 'IQKeyboardManager'
 end

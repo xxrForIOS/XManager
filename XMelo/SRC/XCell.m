@@ -40,7 +40,7 @@
     self.nameLabel = ({
         
         UILabel *theLabel = [[UILabel alloc]init];
-        theLabel.font = kFont(15);
+        theLabel.font = kFontTheme(15);
         theLabel.textColor = kColorIceBlue1;
         theLabel.text = @"some";
         [self.contentView addSubview:theLabel];
@@ -50,19 +50,11 @@
     self.introLabel = ({
         
         UILabel *theLabel = [[UILabel alloc]init];
-        theLabel.font = kFont(13);
+        theLabel.font = kFontTheme(13);
         theLabel.textColor = kColor_yan;
         theLabel.text = @"some";
         [self.contentView addSubview:theLabel];
         theLabel;
-    });
-
-    self.countView = ({
-        
-        XStepper *theView = [[XStepper alloc]initWithFrame:CGRectMake(kScreenWidth - 130, 20, 120, 30)];
-        theView.text = @"1";
-        [self.contentView addSubview:theView];
-        theView;
     });
     
     return self;
@@ -72,11 +64,11 @@
     [super layoutSubviews];
     
     self.headView.frame = CGRectMake(20, 10, 50, 50);
+    self.headView.layer.cornerRadius = self.headView.height/2;
+    self.headView.layer.masksToBounds = YES;
     
     self.nameLabel.frame = CGRectMake(self.headView.x + self.headView.width + 10, 10, (kScreenWidth - self.headView.width - 60)/2, 20);
     self.introLabel.frame = CGRectMake(self.nameLabel.x, self.nameLabel.y + 25, self.nameLabel.width, 20);
-    
-    
 }
 
 

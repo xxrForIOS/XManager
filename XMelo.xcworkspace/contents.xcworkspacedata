@@ -2,6 +2,30 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:XSonModel+CoreDataClass.h">
+   </FileRef>
+   <FileRef
+      location = "group:XSonModel+CoreDataClass.m">
+   </FileRef>
+   <FileRef
+      location = "group:XSonModel+CoreDataProperties.h">
+   </FileRef>
+   <FileRef
+      location = "group:XSonModel+CoreDataProperties.m">
+   </FileRef>
+   <FileRef
+      location = "group:XMainModel+CoreDataClass.h">
+   </FileRef>
+   <FileRef
+      location = "group:XMainModel+CoreDataClass.m">
+   </FileRef>
+   <FileRef
+      location = "group:XMainModel+CoreDataProperties.h">
+   </FileRef>
+   <FileRef
+      location = "group:XMainModel+CoreDataProperties.m">
+   </FileRef>
+   <FileRef
       location = "group:XMelo.xcodeproj">
    </FileRef>
    <FileRef

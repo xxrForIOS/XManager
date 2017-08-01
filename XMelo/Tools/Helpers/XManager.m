@@ -254,7 +254,44 @@
     });
 }
 
++ (NSString *)timeGetDateFormat:(NSString *)dateString format:(dateFormatShowType)type {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    
+    switch (type) {
+        case dateFormatShowTypeYMDHM:
+            [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
+            break;
+        case dateFormatShowTypeMDHM:
+            [dateFormat setDateFormat:@"MM-dd HH:mm"];
+            break;
+            
+        case dateFormatShowTypeHM:
+            [dateFormat setDateFormat:@"HH分mm秒"];
+            break;
+            
+        default:
+            break;
+    }
+    
+    [dateFormat setTimeZone:[NSTimeZone localTimeZone]]; //Asia/shanghai +8:00
+    int64_t timestamp = [dateString longLongValue]/1000 ;//毫秒级别除以1000
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
+    NSString *str = [dateFormat stringFromDate:date];
+    return str;
+}
 
++ (NSString *)timeGetTimeStampSinceNow{
+    
+    return [self timeGetTimeStampSinceNow:0];
+}
+
++ (NSString *)timeGetTimeStampSinceNow:(int)second{
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSinceNow:second];
+    NSTimeInterval time = [date timeIntervalSince1970]*1000;
+    NSString *timeString = [NSString stringWithFormat:@"%.0f", time];
+    return timeString;
+}
 
 #pragma mark- 获取设备名
 + (NSString *)getDeviceName

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '69840988D5B12CA5675E88DA17B3FD56'
+               BlueprintIdentifier = '51F5E604BD784AE6FA767C1CCD0E51C2'
                BlueprintName = 'Pods-XMelo'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-XMelo.a'>

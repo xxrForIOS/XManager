@@ -7,10 +7,14 @@
 //
 
 #import "XViewController.h"
-#import "NAVViewController.h"
 #import "XCell.h"
+
+#import "XCoreDataViewController.h"
+
 @interface XViewController ()
 
+@property (nonatomic, strong) NSArray           *datas;
+@property (nonatomic, strong) UIView            *bottomTool;
 @end
 
 @implementation XViewController
@@ -18,30 +22,64 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.datas = @[@"core data",
+                   @"custom cell",
+                   @"ssss",
+                   @"something"];
     @kWeakSelf;
     
-    self.tableView.height = kScreenHeight - 100;
+    self.tableView.height = kScreenHeight - 64 - 50;
     
     self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
-        return 10;
+       
+        return selfWeak.datas.count;
     };
 
-    self.tableView.rowHeight = 70;
+    self.tableView.rowHeight = kCellHeight;
+    
+    
+    self.heightForHeadrAtIndexPath = ^CGFloat(NSInteger section) {
+      
+        return 5.0f;
+    };
     
     self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
         
-        kPush(selfWeak, [[NAVViewController alloc]init]);
+        NSArray *pushVC = @[[[XCoreDataViewController alloc]init]];
+        
+        if (indexPath.row == 0) {
+            kPush(selfWeak, pushVC[indexPath.row]);
+        }
     };
     
-    [self.tableView registerClass:[XCell class] forCellReuseIdentifier:@"cell"];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     self.cellForRowAtIndexPath = ^UITableViewCell *(UITableView *tableView, NSIndexPath *indexPath) {
       
-        XCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
         
-    
-
+        cell.textLabel.text = selfWeak.datas[indexPath.row];
         return cell;
     };
+    
+    selfWeak.bottomTool = ({
+        
+        UIView *theView = [[UIView alloc]initWithFrame:CGRectMake(0, self.tableView.y + selfWeak.tableView.height, kScreenWidth, 50)];
+        theView.backgroundColor = [UIColor whiteColor];
+        
+        UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        theButton.frame = CGRectMake(kScreenWidth - 100, 5, 80, 40);
+        theButton.backgroundColor = [UIColor redColor];
+        [theButton setTitle:@"确定" forState:UIControlStateNormal];
+        [theButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        theButton.titleLabel.font = kFontTheme(15);
+        [theView addSubview:theButton];
+        
+        [theButton addBlockWithblock:^(id sender) {
+           
+            [XManager showAlertWith:@"逗你玩"];
+        }];
+        theView;
+    });
 }
 
 - (void)didReceiveMemoryWarning {

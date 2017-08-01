@@ -79,7 +79,7 @@
     
     return ({
         
-        CGFloat height = xBaseHeadHeight;
+        CGFloat height = CGFLOAT_MIN;
         if (self.heightForHeadrAtIndexPath) {
             
             height = self.heightForHeadrAtIndexPath(section);

@@ -20,6 +20,14 @@
 #endif
 
 ///value
+
+#define kCellHeight         50
+
+
+
+
+
+
 #define kScreenWidth        [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight       [UIScreen mainScreen].bounds.size.height
 
@@ -30,7 +38,8 @@
 #define kAPPVersion         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 #define kAPPBuild           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
 
-#define kFont(f)            [UIFont systemFontOfSize:f]
+
+#define kFontTheme(f)       [UIFont fontWithName:@"Menlo" size:f]
 #define kFontBold(f)        [UIFont boldSystemFontOfSize:f]
 
 

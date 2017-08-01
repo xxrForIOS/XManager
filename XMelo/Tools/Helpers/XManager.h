@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "XHead.h"
 
+typedef NS_ENUM(NSInteger, dateFormatShowType) {
+    dateFormatShowTypeYMDHM,                    //2017-05-26 21:49
+    dateFormatShowTypeMDHM,                     //05-26 21:49
+    dateFormatShowTypeHM,                       //21:49
+};
 @interface XManager : NSObject
 
 
@@ -55,5 +60,14 @@
 
 /** block单弹窗*/
 + (void)showAlertWith:(NSString *)str confirm:(void(^)())aBlock;
+
+/** 定制格式化时间*/
++ (NSString *)timeGetDateFormat:(NSString *)dateString format:(dateFormatShowType)type;
+
+/** 获取当前时间戳*/
++ (NSString *)timeGetTimeStampSinceNow;
+
+/** 获取距离时间戳*/
++ (NSString *)timeGetTimeStampSinceNow:(int)second;
 
 @end

@@ -17,7 +17,7 @@
 @property (nonatomic, strong) UIImageView   *headView;
 @property (nonatomic, strong) UILabel       *nameLabel;
 @property (nonatomic, strong) UILabel       *introLabel;
-@property (nonatomic, strong) XStepper      *countView;
+
 @property (nonatomic, strong) DictModel     *model;
 
 @end

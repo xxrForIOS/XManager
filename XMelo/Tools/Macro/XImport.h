@@ -26,8 +26,7 @@
 #import "NSString+Check.h"
 #import "NSData+Add.h"
 #import "UITextView+ZWPlaceHolder.h"
-
-
+#import "YVImagePicker.h"
 #import "XStepper.h"
 
 #endif /* XImport_h */

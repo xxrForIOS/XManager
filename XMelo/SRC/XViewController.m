@@ -8,8 +8,8 @@
 
 #import "XViewController.h"
 #import "XCell.h"
-
 #import "XCoreDataViewController.h"
+#import "MJRefresh.h"
 
 @interface XViewController ()
 
@@ -57,17 +57,23 @@
       
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
         
+        if (cell) {
+            for (UIView *theView in cell.contentView.subviews) {
+                [theView removeFromSuperview];
+            }
+        }
         cell.textLabel.text = selfWeak.datas[indexPath.row];
         return cell;
     };
     
     selfWeak.bottomTool = ({
         
-        UIView *theView = [[UIView alloc]initWithFrame:CGRectMake(0, self.tableView.y + selfWeak.tableView.height, kScreenWidth, 50)];
+        UIView *theView = [[UIView alloc]initWithFrame:CGRectMake(0, kScreenHeight - 45 - 64, kScreenWidth, 45)];
         theView.backgroundColor = [UIColor whiteColor];
+        [self.view addSubview:theView];
         
         UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        theButton.frame = CGRectMake(kScreenWidth - 100, 5, 80, 40);
+        theButton.frame = CGRectMake(kScreenWidth - 100, 0, 100, 45);
         theButton.backgroundColor = [UIColor redColor];
         [theButton setTitle:@"确定" forState:UIControlStateNormal];
         [theButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -80,7 +86,9 @@
         }];
         theView;
     });
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

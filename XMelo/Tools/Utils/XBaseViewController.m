@@ -8,8 +8,10 @@
 
 #import "XBaseViewController.h"
 #import "MJRefresh.h"
+#import "UIScrollView+EmptyDataSet.h"
 
-@interface XBaseViewController ()
+
+@interface XBaseViewController () <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @end
 
@@ -31,10 +33,51 @@
         [self.view addSubview:theTable];
         theTable;
     });
+    self.tableView.emptyDataSetSource = self;
+    self.tableView.emptyDataSetDelegate = self;
     
     //隐藏多余的cell
     self.tableView.tableFooterView = [[UIView alloc]init];
 }
+
+- (BOOL) emptyDataSetShouldAllowImageViewAnimate:(UIScrollView *)scrollView {
+    return YES;
+}
+
+- (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView
+{
+    [_tableView.mj_header beginRefreshing];
+    
+    NSLog(@"emptyDataSetDidTapButton");
+    // Do something
+}
+
+- (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView
+{
+    return [UIColor groupTableViewBackgroundColor];
+}
+
+- (UIImage *)buttonImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state {
+    return kImageName(@"placeholder_image");
+}
+
+- (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView
+{
+    return YES;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #pragma mark- delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

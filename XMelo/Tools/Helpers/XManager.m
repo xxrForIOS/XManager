@@ -235,6 +235,27 @@
     }
 }
 
+
++ (void)addRightBarItemInViewController:(UIViewController *)vcc itemTitle:(NSString *)str andItemBlock:(void(^)(UIButton *aButton))aBlock{
+    CGFloat width = [str boundingRectWithSize:CGSizeMake(MAXFLOAT, 60)
+                                      options:NSStringDrawingUsesLineFragmentOrigin
+                                   attributes:@{NSFontAttributeName : kFontTheme(17)}
+                                      context:nil].size.width;
+    
+    UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    theButton.frame = CGRectMake(0, 2, width, 60);
+    [theButton setTitle:str forState:UIControlStateNormal];
+    [theButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    theButton.titleLabel.font = kFontTheme(17);
+    [theButton addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
+        if (aBlock) {
+            UIButton *button = (UIButton *)sender;
+            aBlock(button);
+        }
+    }];
+    vcc.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:theButton];
+}
+
 #pragma mark- gcd
 + (void)dispatchAfter:(int)interval timeout:(void(^)())timerOut {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(interval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

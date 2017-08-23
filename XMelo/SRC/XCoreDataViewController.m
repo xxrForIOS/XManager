@@ -40,6 +40,13 @@
     self.cellForRowAtIndexPath = ^UITableViewCell *(UITableView *tableView, NSIndexPath *indexPath) {
       
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+        
+        for (UIView *theView in cell.contentView.subviews) {
+            
+            [theView removeFromSuperview];
+        }
+        
+        kLog(@"xxx %p",cell);
         cell.textLabel.text = [XManager timeGetTimeStampSinceNow];
         return cell;
     };

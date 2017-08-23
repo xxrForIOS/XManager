@@ -36,6 +36,7 @@ typedef NS_ENUM(NSInteger, dateFormatShowType) {
 ///打电话
 + (void)callWithWithNumber:(NSString *)number;
 
++ (void)addRightBarItemInViewController:(UIViewController *)vcc itemTitle:(NSString *)str andItemBlock:(void(^)(UIButton *aButton))aBlock;
 
 /** 弹窗*/
 + (void)alertControllerWithTitle:(NSString *)title

@@ -12,7 +12,10 @@
 #import "JTNavigationController.h"
 #import "JTBaseNavigationController.h"
 
-@interface ViewController ()
+#import "UploadImageViewController.h"
+@interface ViewController () <UISearchBarDelegate>
+
+@property (nonatomic, strong) UISearchBar       *searchBar;
 
 @end
 
@@ -26,12 +29,15 @@
     
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithActionBlock:^(id sender) {
         
-        XViewController *firstVC = [[XViewController alloc] init];
+         UploadImageViewController *firstVC = [[UploadImageViewController alloc] init];
         JTNavigationController *navvvvvvvv = [[JTNavigationController alloc]initWithRootViewController:firstVC];
         JTBaseNavigationController *firstNav = [[JTBaseNavigationController alloc] initWithRootViewController:navvvvvvvv];
         self.view.window.rootViewController = firstNav;
     }]];
+    
+
 }
+
 
 
 - (void)forTest {

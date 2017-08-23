@@ -8,14 +8,39 @@
 
 #import "AppDelegate.h"
 #import "XHead.h"
-
+///
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
-
+/*
+ ///获取当前界面
+ - (UIViewController *)presentingVC{
+ UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+ if (window.windowLevel != UIWindowLevelNormal){
+ NSArray *windows = [[UIApplication sharedApplication] windows];
+ for(UIWindow * tmpWin in windows){
+ if (tmpWin.windowLevel == UIWindowLevelNormal){
+ window = tmpWin;
+ break;
+ }
+ }
+ }
+ UIViewController *result = window.rootViewController;
+ while (result.presentedViewController) {
+ result = result.presentedViewController;
+ }
+ if ([result isKindOfClass:[CYLTabBarController class]]) {
+ result = [(CYLTabBarController *)result selectedViewController];
+ }
+ if ([result isKindOfClass:[UINavigationController class]]) {
+ result = [(UINavigationController *)result topViewController];
+ }
+ return result;
+ }
+ */
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     

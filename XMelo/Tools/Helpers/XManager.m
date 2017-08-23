@@ -258,6 +258,7 @@
 
 #pragma mark- gcd
 + (void)dispatchAfter:(int)interval timeout:(void(^)())timerOut {
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(interval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         timerOut();

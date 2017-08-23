@@ -30,10 +30,10 @@
 		A72CD1EC1F10719D002C90BD /* DictModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1EB1F10719D002C90BD /* DictModel.m */; };
 		A76E10651F2ED9EF00E09AAE /* XCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A76E10641F2ED9EF00E09AAE /* XCell.m */; };
 		A7744C6A1F4D1B560018369D /* UploadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7744C691F4D1B560018369D /* UploadImageViewController.m */; };
-		A7744C6C1F4D1C8B0018369D /* uploadImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A7744C6B1F4D1C8A0018369D /* uploadImage.png */; };
 		A7744C6F1F4D1EEA0018369D /* UploadImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7744C6E1F4D1EEA0018369D /* UploadImageCell.m */; };
 		A7744C721F4D253C0018369D /* YVImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A7744C711F4D253C0018369D /* YVImagePicker.m */; };
 		A7A8AB6B1F0BC737001338B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A8AB6A1F0BC737001338B0 /* ViewController.m */; };
+		A7A9BAB51F4DB1DF0000C5E3 /* uploadImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A7A9BAB41F4DB1DF0000C5E3 /* uploadImage.png */; };
 		A7B372291F30A4180087972B /* backImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B372271F30A4180087972B /* backImage@2x.png */; };
 		A7B3722A1F30A4180087972B /* backImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B372281F30A4180087972B /* backImage@3x.png */; };
 		A7B3722D1F30AA730087972B /* XMelo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7B3722B1F30AA730087972B /* XMelo.xcdatamodeld */; };
@@ -92,7 +92,6 @@
 		A76E10641F2ED9EF00E09AAE /* XCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCell.m; sourceTree = "<group>"; };
 		A7744C681F4D1B560018369D /* UploadImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadImageViewController.h; sourceTree = "<group>"; };
 		A7744C691F4D1B560018369D /* UploadImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadImageViewController.m; sourceTree = "<group>"; };
-		A7744C6B1F4D1C8A0018369D /* uploadImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uploadImage.png; sourceTree = "<group>"; };
 		A7744C6D1F4D1EEA0018369D /* UploadImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadImageCell.h; sourceTree = "<group>"; };
 		A7744C6E1F4D1EEA0018369D /* UploadImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadImageCell.m; sourceTree = "<group>"; };
 		A7744C701F4D253C0018369D /* YVImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YVImagePicker.h; sourceTree = "<group>"; };
@@ -101,6 +100,7 @@
 		A7A8AB6A1F0BC737001338B0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A7A8AB6D1F0BC7D0001338B0 /* XColorHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XColorHead.h; sourceTree = "<group>"; };
 		A7A8AB6E1F0BC97A001338B0 /* XHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHead.h; sourceTree = "<group>"; };
+		A7A9BAB41F4DB1DF0000C5E3 /* uploadImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uploadImage.png; sourceTree = "<group>"; };
 		A7B372271F30A4180087972B /* backImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@2x.png"; sourceTree = "<group>"; };
 		A7B372281F30A4180087972B /* backImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@3x.png"; sourceTree = "<group>"; };
 		A7B3722C1F30AA730087972B /* XMelo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = XMelo.xcdatamodel; sourceTree = "<group>"; };
@@ -242,6 +242,7 @@
 		A7A8AB5D1F0BC33F001338B0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A7A9BAB41F4DB1DF0000C5E3 /* uploadImage.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -312,7 +313,6 @@
 			children = (
 				A7A8AB691F0BC737001338B0 /* ViewController.h */,
 				A7A8AB6A1F0BC737001338B0 /* ViewController.m */,
-				A7744C6B1F4D1C8A0018369D /* uploadImage.png */,
 				A7744C6D1F4D1EEA0018369D /* UploadImageCell.h */,
 				A7744C6E1F4D1EEA0018369D /* UploadImageCell.m */,
 				A7744C681F4D1B560018369D /* UploadImageViewController.h */,
@@ -433,7 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7744C6C1F4D1C8B0018369D /* uploadImage.png in Resources */,
+				A7A9BAB51F4DB1DF0000C5E3 /* uploadImage.png in Resources */,
 				A71D185C1F0BAE0700BAE515 /* LaunchScreen.storyboard in Resources */,
 				A71D18591F0BAE0700BAE515 /* Assets.xcassets in Resources */,
 				A7B3722A1F30A4180087972B /* backImage@3x.png in Resources */,
@@ -649,10 +649,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A4YQ2CD2PR;
 				INFOPLIST_FILE = XMelo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xxr.XMelo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -663,10 +664,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A4YQ2CD2PR;
 				INFOPLIST_FILE = XMelo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xxr.XMelo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -1,6 +1,7 @@
 PODS:
   - CYLTabBarController (1.10.0)
   - DZNEmptyDataSet (1.8.1)
+  - FSTextView (1.2)
   - GDPerformanceView (1.3.1)
   - IQKeyboardManager (4.0.9)
   - MBProgressHUD (1.0.0)
@@ -13,6 +14,7 @@ PODS:
 DEPENDENCIES:
   - CYLTabBarController
   - DZNEmptyDataSet
+  - FSTextView
   - GDPerformanceView
   - IQKeyboardManager
   - MBProgressHUD
@@ -23,6 +25,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   CYLTabBarController: 2de9a4c26f50d33574398becf8e7b0aaed794240
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  FSTextView: f31326462439506786bd0eb7478dee9c02aa9b45
   GDPerformanceView: d70d646bf7022a3dfd64222e4966f403bfffef19
   IQKeyboardManager: 322c7405df3eb5f7e50dede32ea937bf3d4364e0
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
@@ -30,6 +33,6 @@ SPEC CHECKSUMS:
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: a1aab6030bea48a37d0e6673ff5aca69dc672c6a
+PODFILE CHECKSUM: 1d01aff6a43cfa5ff0041d4d91e48b2caa633186
 
 COCOAPODS: 1.2.1

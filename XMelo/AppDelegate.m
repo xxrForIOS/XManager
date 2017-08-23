@@ -58,6 +58,16 @@
     [navigationBarAppearance setTitleTextAttributes:@{NSForegroundColorAttributeName:theMeColor,
                                                       NSFontAttributeName:kFontTheme(17)}];
     
+    
+    //处理键盘遮盖
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
+    manager.toolbarDoneBarButtonItemText = @"完成";
+    manager.enableAutoToolbar = YES;
+    manager.toolbarManageBehaviour = IQAutoToolbarByTag;
+    
     return YES;
 }
 

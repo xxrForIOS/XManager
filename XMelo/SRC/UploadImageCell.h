@@ -12,7 +12,7 @@
 @interface UploadImageCell : UITableViewCell
 
 @property (nonatomic, copy)     void(^uploadImage)(NSArray *images, CGFloat cellHeight);
-
+@property (nonatomic, strong)   UILabel     *remarkLabel;
 
 - (void)configImagesWith:(NSArray<UIImage *> *)images;
 @end

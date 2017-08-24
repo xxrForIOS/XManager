@@ -32,8 +32,10 @@
 		A7744C6A1F4D1B560018369D /* UploadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7744C691F4D1B560018369D /* UploadImageViewController.m */; };
 		A7744C6F1F4D1EEA0018369D /* UploadImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7744C6E1F4D1EEA0018369D /* UploadImageCell.m */; };
 		A7744C721F4D253C0018369D /* YVImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A7744C711F4D253C0018369D /* YVImagePicker.m */; };
+		A795B77A1F4EB91B003C7EAD /* YVAgreementView.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7791F4EB91B003C7EAD /* YVAgreementView.m */; };
 		A7A8AB6B1F0BC737001338B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A8AB6A1F0BC737001338B0 /* ViewController.m */; };
 		A7A9BAB51F4DB1DF0000C5E3 /* uploadImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A7A9BAB41F4DB1DF0000C5E3 /* uploadImage.png */; };
+		A7A9BAB71F4DB58F0000C5E3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7A9BAB61F4DB58F0000C5E3 /* Default-568h@2x.png */; };
 		A7B372291F30A4180087972B /* backImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B372271F30A4180087972B /* backImage@2x.png */; };
 		A7B3722A1F30A4180087972B /* backImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B372281F30A4180087972B /* backImage@3x.png */; };
 		A7B3722D1F30AA730087972B /* XMelo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7B3722B1F30AA730087972B /* XMelo.xcdatamodeld */; };
@@ -96,11 +98,14 @@
 		A7744C6E1F4D1EEA0018369D /* UploadImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadImageCell.m; sourceTree = "<group>"; };
 		A7744C701F4D253C0018369D /* YVImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YVImagePicker.h; sourceTree = "<group>"; };
 		A7744C711F4D253C0018369D /* YVImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YVImagePicker.m; sourceTree = "<group>"; };
+		A795B7781F4EB91B003C7EAD /* YVAgreementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YVAgreementView.h; sourceTree = "<group>"; };
+		A795B7791F4EB91B003C7EAD /* YVAgreementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YVAgreementView.m; sourceTree = "<group>"; };
 		A7A8AB691F0BC737001338B0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A7A8AB6A1F0BC737001338B0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A7A8AB6D1F0BC7D0001338B0 /* XColorHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XColorHead.h; sourceTree = "<group>"; };
 		A7A8AB6E1F0BC97A001338B0 /* XHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHead.h; sourceTree = "<group>"; };
 		A7A9BAB41F4DB1DF0000C5E3 /* uploadImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uploadImage.png; sourceTree = "<group>"; };
+		A7A9BAB61F4DB58F0000C5E3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A7B372271F30A4180087972B /* backImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@2x.png"; sourceTree = "<group>"; };
 		A7B372281F30A4180087972B /* backImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@3x.png"; sourceTree = "<group>"; };
 		A7B3722C1F30AA730087972B /* XMelo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = XMelo.xcdatamodel; sourceTree = "<group>"; };
@@ -188,6 +193,7 @@
 		A71D18401F0BAE0700BAE515 = {
 			isa = PBXGroup;
 			children = (
+				A7A9BAB61F4DB58F0000C5E3 /* Default-568h@2x.png */,
 				A71D184B1F0BAE0700BAE515 /* XMelo */,
 				A71D184A1F0BAE0700BAE515 /* Products */,
 				009A76A58571CFBF265E866F /* Pods */,
@@ -302,6 +308,8 @@
 			children = (
 				A713F87D1F17A57300FEA33E /* XBaseViewController.h */,
 				A713F87E1F17A57300FEA33E /* XBaseViewController.m */,
+				A795B7781F4EB91B003C7EAD /* YVAgreementView.h */,
+				A795B7791F4EB91B003C7EAD /* YVAgreementView.m */,
 				A7F3B3E11F1A21A500E683D0 /* XStepper.h */,
 				A7F3B3E21F1A21A500E683D0 /* XStepper.m */,
 			);
@@ -438,6 +446,7 @@
 				A71D18591F0BAE0700BAE515 /* Assets.xcassets in Resources */,
 				A7B3722A1F30A4180087972B /* backImage@3x.png in Resources */,
 				A71D18571F0BAE0700BAE515 /* Main.storyboard in Resources */,
+				A7A9BAB71F4DB58F0000C5E3 /* Default-568h@2x.png in Resources */,
 				A7B372291F30A4180087972B /* backImage@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +516,7 @@
 				A72CD1A71F0D04EE002C90BD /* UILabel+Frame.m in Sources */,
 				A72CD1A41F0D04EE002C90BD /* UIControl+Block.m in Sources */,
 				A72CD1A51F0D04EE002C90BD /* UIGestureRecognizer+Block.m in Sources */,
+				A795B77A1F4EB91B003C7EAD /* YVAgreementView.m in Sources */,
 				A72CD1EC1F10719D002C90BD /* DictModel.m in Sources */,
 				A7A8AB6B1F0BC737001338B0 /* ViewController.m in Sources */,
 				A72CD1A11F0D04EE002C90BD /* NSData+Add.m in Sources */,
@@ -653,7 +663,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xxr.XMelo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -668,7 +678,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xxr.XMelo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

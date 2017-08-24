@@ -235,7 +235,8 @@
     }
 }
 
-
+//TODO: ss
+//FIXME: sss
 + (void)addRightBarItemInViewController:(UIViewController *)vcc itemTitle:(NSString *)str andItemBlock:(void(^)(UIButton *aButton))aBlock{
     CGFloat width = [str boundingRectWithSize:CGSizeMake(MAXFLOAT, 60)
                                       options:NSStringDrawingUsesLineFragmentOrigin

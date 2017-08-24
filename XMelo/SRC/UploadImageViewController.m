@@ -46,14 +46,14 @@
     self.cellForRowAtIndexPath = ^UITableViewCell *(UITableView *tableView, NSIndexPath *indexPath) {
       
         
-        if (indexPath.row == 0) {
-            
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-            cell.textLabel.text = @"custom cell for something";
-            cell.textLabel.font = kFontTheme(14);
-            cell.textLabel.textColor = [UIColor blackColor];
-            return cell;
-        }
+//        if (indexPath.row == 0) {
+//            
+//            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+//            cell.textLabel.text = @"custom cell for something";
+//            cell.textLabel.font = kFontTheme(14);
+//            cell.textLabel.textColor = [UIColor blackColor];
+//            return cell;
+//        }
         
         if (indexPath.row == 1) {
             
@@ -77,9 +77,8 @@
                 [cellWeak configImagesWith:selfWeak.uploadImages];
             };
             return cell;
-        }
-
-        if (indexPath.row == 2) {
+        } else {
+            
             
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
             cell.textLabel.text = @"[tableView dequeueReusableCellWithIdentifier:@\"cell\" forIndexPath:indexPath]";
@@ -88,6 +87,7 @@
             cell.textLabel.textColor = [UIColor blackColor];
             return cell;
         }
+
         return nil;
     };
 }
@@ -109,6 +109,7 @@
     }
 
 }
+
 
 
 - (void)didReceiveMemoryWarning {

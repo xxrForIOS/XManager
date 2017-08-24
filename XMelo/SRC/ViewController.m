@@ -32,13 +32,13 @@
 
     self.view.backgroundColor = kColor_yuebai;
     
-//    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithActionBlock:^(id sender) {
-//        
-//        UploadImageViewController *firstVC = [[UploadImageViewController alloc] init];
-//        JTNavigationController *navvvvvvvv = [[JTNavigationController alloc]initWithRootViewController:firstVC];
-//        JTBaseNavigationController *firstNav = [[JTBaseNavigationController alloc] initWithRootViewController:navvvvvvvv];
-//        self.view.window.rootViewController = firstNav;
-//    }]];
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithActionBlock:^(id sender) {
+        
+        UploadImageViewController *firstVC = [[UploadImageViewController alloc] init];
+        JTNavigationController *navvvvvvvv = [[JTNavigationController alloc]initWithRootViewController:firstVC];
+        JTBaseNavigationController *firstNav = [[JTBaseNavigationController alloc] initWithRootViewController:navvvvvvvv];
+        self.view.window.rootViewController = firstNav;
+    }]];
     
     
     self.fsTextView = [[FSTextView alloc]initWithFrame:CGRectMake(15, 250, kScreenWidth - 30, 50)];

@@ -41,13 +41,21 @@
 ///创建cell
 @property (nonatomic,strong)    UITableViewCell *(^cellForRowAtIndexPath)(UITableView *tableView, NSIndexPath *indexPath);
 
+
+
 ///下拉head刷新
 - (void)updateDataFromHeadWith:(void(^)())block;
 
 ///上拉footer加载
 - (void)updateDataFromFootWith:(void(^)())block;
 
+
+///新按钮
+- (void)showNewFooterAgreementTitle:(NSString *)fullStr clickString:(NSString *)clickStr buttonWithTitle:(NSString *)title clickBlock:(void(^)(UIButton *aButton, BOOL isRead))aBlock;
+///单个footer按钮
 - (void)showFooerButtonWithTitle:(NSString *)title clickBlock:(void(^)(UIButton *aButton))aBlock;
+///两个footer按钮 右侧 kColorRGB(13, 192, 241);
+- (void)showFooerButtonWithleft:(NSString *)lTitle lBlock:(void(^)(UIButton *aButton))lBlock right:(NSString *)rTitle rBlock:(void(^)(UIButton *aButton))rBlock;
 
 /** 设置点击事件 */
 @property (nonatomic, copy) void(^didSelectRowAtIndexPath)(NSIndexPath *indexPath);

@@ -70,7 +70,7 @@
                 
                 selfWeak.theUploadCellHeght = cellHeight;
                 
-                NSIndexPath *theIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+                NSIndexPath *theIndexPath = [NSIndexPath indexPathForRow:2 inSection:0];
                 [selfWeak.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:theIndexPath,nil]
                                           withRowAnimation:UITableViewRowAnimationNone];
                 

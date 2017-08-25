@@ -68,6 +68,7 @@
     self.headView.layer.masksToBounds = YES;
     
     self.nameLabel.frame = CGRectMake(self.headView.x + self.headView.width + 10, 10, (kScreenWidth - self.headView.width - 60)/2, 20);
+    
     self.introLabel.frame = CGRectMake(self.nameLabel.x, self.nameLabel.y + 25, self.nameLabel.width, 20);
 }
 

@@ -12,7 +12,8 @@
 @interface UploadImageCell : UITableViewCell
 
 @property (nonatomic, copy)     void(^uploadImage)(NSArray *images, CGFloat cellHeight);
-@property (nonatomic, strong)   UILabel     *remarkLabel;
+@property (nonatomic, strong)   UILabel         *remarkLabel;
+@property (nonatomic, assign)   NSInteger       maxImages;
 
 - (void)configImagesWith:(NSArray<UIImage *> *)images;
 @end

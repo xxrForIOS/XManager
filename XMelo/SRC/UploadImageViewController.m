@@ -14,6 +14,9 @@
 @property (nonatomic, assign) CGFloat           theUploadCellHeght;
 @property (nonatomic, strong) NSMutableArray    *uploadImages;
 
+
+@property (nonatomic, strong) NSMutableArray    *cellHeights;
+
 @end
 
 
@@ -25,11 +28,18 @@
     self.navigationItem.title = @"上传图片";
     self.uploadImages = [NSMutableArray arrayWithCapacity:6];
     self.theUploadCellHeght = ((kScreenWidth - 40) / 3 + 10) + 10;
+    self.cellHeights = [NSMutableArray arrayWithCapacity:6];
+    
+    [self.cellHeights addObject:[NSNumber numberWithFloat:50]];
+    [self.cellHeights addObject:[NSNumber numberWithFloat:((kScreenWidth - 10 * 4) / 3 + 10 )]];
+    [self.cellHeights addObject:[NSNumber numberWithFloat:((kScreenWidth - 10 * 4) / 3 + 10 )]];
+    [self.cellHeights addObject:[NSNumber numberWithFloat:((kScreenWidth - 10 * 4) / 3 + 10 )]];
+
     @kWeakSelf;
 
     self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
         
-        return 3;
+        return 4;
     };
     
     self.heightForRowAtIndexPath = ^CGFloat(NSIndexPath *indexPath) {
@@ -37,7 +47,10 @@
         NSArray *heights = @[@50,
                              [NSNumber numberWithFloat:selfWeak.theUploadCellHeght + 10],
                              @100];
-        return [heights[indexPath.row] floatValue];
+        
+        
+        
+        return [selfWeak.cellHeights[indexPath.row] floatValue];
     };
     
     [self.tableView registerClass:[UploadImageCell class] forCellReuseIdentifier:@"uploadCell"];
@@ -45,17 +58,14 @@
 
     self.cellForRowAtIndexPath = ^UITableViewCell *(UITableView *tableView, NSIndexPath *indexPath) {
       
-        
-//        if (indexPath.row == 0) {
-//            
-//            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-//            cell.textLabel.text = @"custom cell for something";
-//            cell.textLabel.font = kFontTheme(14);
-//            cell.textLabel.textColor = [UIColor blackColor];
-//            return cell;
-//        }
-        
-        if (indexPath.row == 1) {
+        if (indexPath.row == 0) {
+            
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+            cell.textLabel.text = @"custom cell for something";
+            cell.textLabel.font = kFontTheme(14);
+            cell.textLabel.textColor = [UIColor blackColor];
+            return cell;
+        } else {
             
             UploadImageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"uploadCell" forIndexPath:indexPath];
             
@@ -68,27 +78,22 @@
                 }
                 selfWeak.uploadImages = [NSMutableArray arrayWithArray:images];
                 
-                selfWeak.theUploadCellHeght = cellHeight;
+                [selfWeak.cellHeights replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithFloat:cellHeight]];
+                //            selfWeak.theUploadCellHeght = cellHeight;
                 
-                NSIndexPath *theIndexPath = [NSIndexPath indexPathForRow:2 inSection:0];
+                NSIndexPath *theIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
                 [selfWeak.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:theIndexPath,nil]
                                           withRowAnimation:UITableViewRowAnimationNone];
                 
                 [cellWeak configImagesWith:selfWeak.uploadImages];
             };
-            return cell;
-        } else {
             
             
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-            cell.textLabel.text = @"[tableView dequeueReusableCellWithIdentifier:@\"cell\" forIndexPath:indexPath]";
-            cell.textLabel.font = kFontTheme(14);
-            cell.textLabel.numberOfLines = 0;
-            cell.textLabel.textColor = [UIColor blackColor];
+            if (indexPath.row %2 == 0) {
+                cell.maxImages = 6;
+            }
             return cell;
         }
-
-        return nil;
     };
 }
 

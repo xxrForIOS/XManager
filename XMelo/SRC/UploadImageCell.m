@@ -29,50 +29,10 @@
     
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.uploadImages = [NSMutableArray arrayWithCapacity:6];
-    
+    self.maxImages = 3;
+
     CGFloat imageWidth = (kScreenWidth - 10 * 4) / 3;
-    NSMutableArray *tmpButtons = [NSMutableArray arrayWithCapacity:6];
-    for (int index = 0; index < 6; index ++) {
-        
-        UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        theButton.hidden = YES;
-        theButton.frame = CGRectMake(10 + (imageWidth + 10) * (index % 3),
-                                     10 + (imageWidth + 10) * (index / 3),
-                                     imageWidth, imageWidth);
-        [self.contentView addSubview:theButton];
-        theButton.tag = 100 + index;
-        theButton.layer.masksToBounds = YES;
-        [tmpButtons addObject:theButton];
-        
-        
-        UIButton *deleButton = ({
-            UIButton *dele = [UIButton buttonWithType:UIButtonTypeCustom];
-            dele.frame = CGRectMake(theButton.width - 20, 0, 20, 20);
-            dele.layer.cornerRadius = 10;
-            [dele setBackgroundColor:[UIColor redColor]];
-            [dele setTitle:@"×" forState:UIControlStateNormal];
-            dele.titleLabel.font = [UIFont boldSystemFontOfSize:18];
-            [dele addBlockWithblock:^(id sender) {
-               
-                if ([theButton.currentImage isKindOfClass:[UIImage class]]) {
-                    
-                    UIImage *theImage = self.uploadImages[theButton.tag - 100];
-                    if (theImage) {
-                    
-                        [self.uploadImages removeObjectAtIndex:theButton.tag - 100];
-                        [self updateUploadImageButtonFrame];
-                        if (self.uploadImages) {
-                            
-                            self.uploadImage(self.uploadImages, [self getFinalHeightWith]);
-                        }
-                    }
-                }
-            }];
-            dele;
-        });
-        [theButton addSubview:deleButton];
-    }
-    self.uplodImageButtons = [NSArray arrayWithArray:tmpButtons];
+    self.uplodImageButtons = [self configCustomImageButtom:_maxImages];
 
     
     self.upLoadButton = ({
@@ -122,7 +82,7 @@
         [theImageButton setImage:self.uploadImages[index] forState:UIControlStateNormal];
     }
     
-    if (self.uploadImages.count != 6) {
+    if (self.uploadImages.count != _maxImages) {
         
         self.upLoadButton.hidden = NO;
         UIButton *theImageButton = self.uplodImageButtons[self.uploadImages.count];
@@ -133,13 +93,75 @@
     }
 }
 
+
+
+- (void)setMaxImages:(NSInteger)maxImages {
+    _maxImages = maxImages;
+    
+    self.uplodImageButtons = [self configCustomImageButtom:maxImages];
+}
+
+- (NSMutableArray *)configCustomImageButtom:(NSInteger)count {
+    
+    
+    CGFloat imageWidth = (kScreenWidth - 10 * 4) / 3;
+    NSMutableArray *tmpButtons = [NSMutableArray arrayWithCapacity:6];
+    for (int index = 0; index < _maxImages; index ++) {
+        
+        UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        theButton.hidden = YES;
+        theButton.frame = CGRectMake(10 + (imageWidth + 10) * (index % 3),
+                                     10 + (imageWidth + 10) * (index / 3),
+                                     imageWidth, imageWidth);
+        [self.contentView addSubview:theButton];
+        theButton.tag = 100 + index;
+        theButton.layer.masksToBounds = YES;
+        [tmpButtons addObject:theButton];
+        
+        
+        UIButton *deleButton = ({
+            UIButton *dele = [UIButton buttonWithType:UIButtonTypeCustom];
+            dele.frame = CGRectMake(theButton.width - 20, 0, 20, 20);
+            dele.layer.cornerRadius = 10;
+            [dele setBackgroundColor:[UIColor redColor]];
+            [dele setTitle:@"×" forState:UIControlStateNormal];
+            dele.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+            [dele addBlockWithblock:^(id sender) {
+                
+                if ([theButton.currentImage isKindOfClass:[UIImage class]]) {
+                    
+                    UIImage *theImage = self.uploadImages[theButton.tag - 100];
+                    if (theImage) {
+                        
+                        [self.uploadImages removeObjectAtIndex:theButton.tag - 100];
+                        [self updateUploadImageButtonFrame];
+                        if (self.uploadImages) {
+                            
+                            self.uploadImage(self.uploadImages, [self getFinalHeightWith]);
+                        }
+                    }
+                }
+            }];
+            dele;
+        });
+        [theButton addSubview:deleButton];
+    }
+    return tmpButtons;
+}
+
+
 - (CGFloat)getFinalHeightWith{
     
-    int row = (int)self.uploadImages.count / 3;
-    if (self.uploadImages.count >= 6) {
+    int row = 0;
+    
+    if (self.maxImages == 6) {
         
-        row = 1;
+        if (self.uploadImages.count >= 3 && self.uploadImages.count <= 6) {
+            
+            row = 1;
+        }
     }
+
     
     CGFloat height = ((kScreenWidth - 10 * 4) / 3 + 10 ) * (row + 1);
     return height;

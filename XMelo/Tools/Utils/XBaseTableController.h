@@ -11,7 +11,7 @@
 
 #define xBaseHeadHeight CGFLOAT_MIN
 
-@interface XBaseViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface XBaseTableController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 
 @property (nonatomic, strong)   UITableView             *tableView;

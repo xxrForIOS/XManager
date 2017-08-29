@@ -43,12 +43,6 @@
     };
     
     self.heightForRowAtIndexPath = ^CGFloat(NSIndexPath *indexPath) {
-      
-        NSArray *heights = @[@50,
-                             [NSNumber numberWithFloat:selfWeak.theUploadCellHeght + 10],
-                             @100];
-        
-        
         
         return [selfWeak.cellHeights[indexPath.row] floatValue];
     };

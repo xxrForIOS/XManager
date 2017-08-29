@@ -8,46 +8,26 @@
 
 #import "AppDelegate.h"
 #import "XHead.h"
-///
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
-/*
- ///获取当前界面
- - (UIViewController *)presentingVC{
- UIWindow * window = [[UIApplication sharedApplication] keyWindow];
- if (window.windowLevel != UIWindowLevelNormal){
- NSArray *windows = [[UIApplication sharedApplication] windows];
- for(UIWindow * tmpWin in windows){
- if (tmpWin.windowLevel == UIWindowLevelNormal){
- window = tmpWin;
- break;
- }
- }
- }
- UIViewController *result = window.rootViewController;
- while (result.presentedViewController) {
- result = result.presentedViewController;
- }
- if ([result isKindOfClass:[CYLTabBarController class]]) {
- result = [(CYLTabBarController *)result selectedViewController];
- }
- if ([result isKindOfClass:[UINavigationController class]]) {
- result = [(UINavigationController *)result topViewController];
- }
- return result;
- }
- */
+//FIXME: fixme
+//TODO: todo
+//???: ???
+///!!!: !!!
+//MARK: mark
+//MARK:- mark line
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     
     //导航条设置
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
     
-//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+//[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     UIColor *theMeColor = [UIColor blackColor];
     UIImage *colorImage = [XManager getImageFromColor:kColorIceBlue withSize:CGSizeMake(kScreenWidth, 64)];
@@ -57,7 +37,6 @@
     [navigationBarAppearance setShadowImage:[UIImage new]];
     [navigationBarAppearance setTitleTextAttributes:@{NSForegroundColorAttributeName:theMeColor,
                                                       NSFontAttributeName:kFontTheme(17)}];
-    
     
     //处理键盘遮盖
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];

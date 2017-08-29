@@ -43,7 +43,7 @@
         theButton.frame = CGRectMake(10, 10, imageWidth, imageWidth);
         [theButton addBlockWithblock:^(id sender) {
             
-            [YVImagePicker showImagePickerViewIn:self.viewController handler:^(UIImage *pickerImagePic) {
+            [XImagePicker showImagePickerViewIn:self.viewController handler:^(UIImage *pickerImagePic) {
                 
                 [self.uploadImages addObject:pickerImagePic];
                 if (self.uploadImages) {

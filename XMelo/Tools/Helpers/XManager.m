@@ -219,6 +219,25 @@
     [self showAlertWith:str  confirm:nil];
 }
 
++ (void)showHUDWithString:(NSString *)str confirm:(void(^)())aBlock{
+    
+    UIView *theView = [UIApplication sharedApplication].keyWindow.rootViewController.view;
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:theView animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = str;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        if (aBlock) {
+            
+            [MBProgressHUD hideHUDForView:theView animated:YES];
+            aBlock();
+        }
+    });
+}
+
+
 #pragma mark- 调用打电话
 + (void)callWithWithNumber:(NSString *)number{
     
@@ -235,8 +254,6 @@
     }
 }
 
-//TODO: ss
-//FIXME: sss
 + (void)addRightBarItemInViewController:(UIViewController *)vcc itemTitle:(NSString *)str andItemBlock:(void(^)(UIButton *aButton))aBlock{
     CGFloat width = [str boundingRectWithSize:CGSizeMake(MAXFLOAT, 60)
                                       options:NSStringDrawingUsesLineFragmentOrigin

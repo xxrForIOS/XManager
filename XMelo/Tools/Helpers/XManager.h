@@ -62,6 +62,9 @@ typedef NS_ENUM(NSInteger, dateFormatShowType) {
 /** block单弹窗*/
 + (void)showAlertWith:(NSString *)str confirm:(void(^)())aBlock;
 
++ (void)showHUDWithString:(NSString *)str confirm:(void(^)())aBlock;
+
+
 /** 定制格式化时间*/
 + (NSString *)timeGetDateFormat:(NSString *)dateString format:(dateFormatShowType)type;
 

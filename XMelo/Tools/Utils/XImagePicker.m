@@ -1,29 +1,25 @@
 //
-//  YVImagePicker.m
-//  YiWeiZD
+//  XImagePicker.m
+//  XMelo
 //
-//  Created by X.Melody on 17/5/2.
-//  Copyright © 2017年 一喂直达. All rights reserved.
+//  Created by X.Melo on 2017/8/26.
+//  Copyright © 2017年 欣欣然. All rights reserved.
 //
 
-#import "YVImagePicker.h"
-#import <objc/runtime.h>
-
+#import "XImagePicker.h"
 
 static char     xImagePickerViewBlockKey;
+@interface XImagePicker() <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@interface YVImagePicker()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
-    
-    
-}
 
 @end
 
-@implementation YVImagePicker
 
 
-+ (YVImagePicker *)sharedManager {
-    static YVImagePicker *sharedManager = nil;
+@implementation XImagePicker
+
++ (XImagePicker *)sharedManager {
+    static XImagePicker *sharedManager = nil;
     
     @synchronized (self) {
         
@@ -38,9 +34,9 @@ static char     xImagePickerViewBlockKey;
 
 #pragma mark- 相册相机选择照片的actionsheet
 + (void)showImagePickerViewIn:(UIViewController *)vcc handler:(pickerImagePic)aBlock{
-   
+    
     __block UIViewController    *theVC = vcc;
-    __block YVImagePicker       *theSelf = [self sharedManager];
+    __block XImagePicker       *theSelf = [self sharedManager];
     objc_setAssociatedObject(theSelf, &xImagePickerViewBlockKey, aBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"照片"
                                                                    message:@"您可以选择不同的图片"
@@ -78,18 +74,17 @@ static char     xImagePickerViewBlockKey;
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     
     if ([[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:@"public.image"]) {
-    
+        
         UIImage *aImage = [info objectForKey:@"UIImagePickerControllerEditedImage"];//编辑之后的图片
         pickerImagePic block = objc_getAssociatedObject(self, &xImagePickerViewBlockKey);
         [picker dismissViewControllerAnimated:YES completion:^{
             
             if (block) {
-            
+                
                 block(aImage);
             }
         }];
     }
 }
-
 
 @end

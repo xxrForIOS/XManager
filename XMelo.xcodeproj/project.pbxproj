@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		7D3691A56F3A55AD39BF3D88 /* libPods-XMelo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55944350D03FF90A8F8126C9 /* libPods-XMelo.a */; };
 		A713F8791F17A50F00FEA33E /* UIButton+ChangePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F8781F17A50F00FEA33E /* UIButton+ChangePosition.m */; };
-		A713F87F1F17A57300FEA33E /* XBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F87E1F17A57300FEA33E /* XBaseViewController.m */; };
-		A713F8821F17A87200FEA33E /* XViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F8811F17A87200FEA33E /* XViewController.m */; };
+		A713F87F1F17A57300FEA33E /* XBaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F87E1F17A57300FEA33E /* XBaseTableController.m */; };
+		A713F8821F17A87200FEA33E /* XListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F8811F17A87200FEA33E /* XListViewController.m */; };
 		A71D184E1F0BAE0700BAE515 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D184D1F0BAE0700BAE515 /* main.m */; };
 		A71D18511F0BAE0700BAE515 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D18501F0BAE0700BAE515 /* AppDelegate.m */; };
 		A71D18571F0BAE0700BAE515 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71D18551F0BAE0700BAE515 /* Main.storyboard */; };
@@ -28,14 +28,17 @@
 		A72CD1AB1F0D04EE002C90BD /* UIView+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1A01F0D04EE002C90BD /* UIView+Add.m */; };
 		A72CD1AE1F0D0567002C90BD /* XConst.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1AD1F0D0567002C90BD /* XConst.m */; };
 		A72CD1EC1F10719D002C90BD /* DictModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1EB1F10719D002C90BD /* DictModel.m */; };
+		A767F0F91F5560BD00432627 /* XImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A767F0F61F5560BD00432627 /* XImagePicker.m */; };
+		A767F0FA1F5560BD00432627 /* YVPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A767F0F81F5560BD00432627 /* YVPickerView.m */; };
 		A76E10651F2ED9EF00E09AAE /* XCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A76E10641F2ED9EF00E09AAE /* XCell.m */; };
-		A7744C6A1F4D1B560018369D /* UploadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7744C691F4D1B560018369D /* UploadImageViewController.m */; };
-		A7744C6F1F4D1EEA0018369D /* UploadImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7744C6E1F4D1EEA0018369D /* UploadImageCell.m */; };
-		A7744C721F4D253C0018369D /* YVImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A7744C711F4D253C0018369D /* YVImagePicker.m */; };
 		A795B77A1F4EB91B003C7EAD /* YVAgreementView.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7791F4EB91B003C7EAD /* YVAgreementView.m */; };
 		A795B77F1F501735003C7EAD /* uploadImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A795B77E1F501735003C7EAD /* uploadImage.png */; };
+		A795B7871F511201003C7EAD /* UploadImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7821F511201003C7EAD /* UploadImageCell.m */; };
+		A795B7881F511201003C7EAD /* UploadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7841F511201003C7EAD /* UploadImageViewController.m */; };
+		A795B7921F5117EF003C7EAD /* XPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7911F5117EF003C7EAD /* XPickerViewController.m */; };
+		A795B7961F511C56003C7EAD /* XInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7951F511C56003C7EAD /* XInputViewController.m */; };
+		A795B7991F51234D003C7EAD /* XBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7981F51234D003C7EAD /* XBaseController.m */; };
 		A7A8AB6B1F0BC737001338B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A8AB6A1F0BC737001338B0 /* ViewController.m */; };
-		A7A9BAB71F4DB58F0000C5E3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7A9BAB61F4DB58F0000C5E3 /* Default-568h@2x.png */; };
 		A7B372291F30A4180087972B /* backImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B372271F30A4180087972B /* backImage@2x.png */; };
 		A7B3722A1F30A4180087972B /* backImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B372281F30A4180087972B /* backImage@3x.png */; };
 		A7B3722D1F30AA730087972B /* XMelo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7B3722B1F30AA730087972B /* XMelo.xcdatamodeld */; };
@@ -53,10 +56,10 @@
 		691E65A6553354E2B37952FD /* Pods-XMelo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMelo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XMelo/Pods-XMelo.debug.xcconfig"; sourceTree = "<group>"; };
 		A713F8771F17A50F00FEA33E /* UIButton+ChangePosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ChangePosition.h"; sourceTree = "<group>"; };
 		A713F8781F17A50F00FEA33E /* UIButton+ChangePosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ChangePosition.m"; sourceTree = "<group>"; };
-		A713F87D1F17A57300FEA33E /* XBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBaseViewController.h; sourceTree = "<group>"; };
-		A713F87E1F17A57300FEA33E /* XBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBaseViewController.m; sourceTree = "<group>"; };
-		A713F8801F17A87200FEA33E /* XViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XViewController.h; sourceTree = "<group>"; };
-		A713F8811F17A87200FEA33E /* XViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XViewController.m; sourceTree = "<group>"; };
+		A713F87D1F17A57300FEA33E /* XBaseTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBaseTableController.h; sourceTree = "<group>"; };
+		A713F87E1F17A57300FEA33E /* XBaseTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBaseTableController.m; sourceTree = "<group>"; };
+		A713F8801F17A87200FEA33E /* XListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XListViewController.h; sourceTree = "<group>"; };
+		A713F8811F17A87200FEA33E /* XListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XListViewController.m; sourceTree = "<group>"; };
 		A71D18491F0BAE0700BAE515 /* XMelo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMelo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71D184D1F0BAE0700BAE515 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A71D184F1F0BAE0700BAE515 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,23 +92,30 @@
 		A72CD1AD1F0D0567002C90BD /* XConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XConst.m; sourceTree = "<group>"; };
 		A72CD1EA1F10719D002C90BD /* DictModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictModel.h; sourceTree = "<group>"; };
 		A72CD1EB1F10719D002C90BD /* DictModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictModel.m; sourceTree = "<group>"; };
+		A767F0F51F5560BD00432627 /* XImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XImagePicker.h; sourceTree = "<group>"; };
+		A767F0F61F5560BD00432627 /* XImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XImagePicker.m; sourceTree = "<group>"; };
+		A767F0F71F5560BD00432627 /* YVPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YVPickerView.h; sourceTree = "<group>"; };
+		A767F0F81F5560BD00432627 /* YVPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YVPickerView.m; sourceTree = "<group>"; };
 		A76E10621F2EBFCA00E09AAE /* XImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XImport.h; sourceTree = "<group>"; };
 		A76E10631F2ED9EF00E09AAE /* XCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCell.h; sourceTree = "<group>"; };
 		A76E10641F2ED9EF00E09AAE /* XCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCell.m; sourceTree = "<group>"; };
-		A7744C681F4D1B560018369D /* UploadImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadImageViewController.h; sourceTree = "<group>"; };
-		A7744C691F4D1B560018369D /* UploadImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadImageViewController.m; sourceTree = "<group>"; };
-		A7744C6D1F4D1EEA0018369D /* UploadImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadImageCell.h; sourceTree = "<group>"; };
-		A7744C6E1F4D1EEA0018369D /* UploadImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadImageCell.m; sourceTree = "<group>"; };
-		A7744C701F4D253C0018369D /* YVImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YVImagePicker.h; sourceTree = "<group>"; };
-		A7744C711F4D253C0018369D /* YVImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YVImagePicker.m; sourceTree = "<group>"; };
 		A795B7781F4EB91B003C7EAD /* YVAgreementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YVAgreementView.h; sourceTree = "<group>"; };
 		A795B7791F4EB91B003C7EAD /* YVAgreementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YVAgreementView.m; sourceTree = "<group>"; };
 		A795B77E1F501735003C7EAD /* uploadImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uploadImage.png; sourceTree = "<group>"; };
+		A795B7811F511201003C7EAD /* UploadImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadImageCell.h; sourceTree = "<group>"; };
+		A795B7821F511201003C7EAD /* UploadImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadImageCell.m; sourceTree = "<group>"; };
+		A795B7831F511201003C7EAD /* UploadImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadImageViewController.h; sourceTree = "<group>"; };
+		A795B7841F511201003C7EAD /* UploadImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadImageViewController.m; sourceTree = "<group>"; };
+		A795B7901F5117EF003C7EAD /* XPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPickerViewController.h; sourceTree = "<group>"; };
+		A795B7911F5117EF003C7EAD /* XPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPickerViewController.m; sourceTree = "<group>"; };
+		A795B7941F511C56003C7EAD /* XInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XInputViewController.h; sourceTree = "<group>"; };
+		A795B7951F511C56003C7EAD /* XInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XInputViewController.m; sourceTree = "<group>"; };
+		A795B7971F51234D003C7EAD /* XBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBaseController.h; sourceTree = "<group>"; };
+		A795B7981F51234D003C7EAD /* XBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBaseController.m; sourceTree = "<group>"; };
 		A7A8AB691F0BC737001338B0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A7A8AB6A1F0BC737001338B0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A7A8AB6D1F0BC7D0001338B0 /* XColorHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XColorHead.h; sourceTree = "<group>"; };
 		A7A8AB6E1F0BC97A001338B0 /* XHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHead.h; sourceTree = "<group>"; };
-		A7A9BAB61F4DB58F0000C5E3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A7B372271F30A4180087972B /* backImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@2x.png"; sourceTree = "<group>"; };
 		A7B372281F30A4180087972B /* backImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@3x.png"; sourceTree = "<group>"; };
 		A7B3722C1F30AA730087972B /* XMelo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = XMelo.xcdatamodel; sourceTree = "<group>"; };
@@ -193,7 +203,6 @@
 		A71D18401F0BAE0700BAE515 = {
 			isa = PBXGroup;
 			children = (
-				A7A9BAB61F4DB58F0000C5E3 /* Default-568h@2x.png */,
 				A71D184B1F0BAE0700BAE515 /* XMelo */,
 				A71D184A1F0BAE0700BAE515 /* Products */,
 				009A76A58571CFBF265E866F /* Pods */,
@@ -245,6 +254,66 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A767F0FB1F5560CB00432627 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A713F87D1F17A57300FEA33E /* XBaseTableController.h */,
+				A713F87E1F17A57300FEA33E /* XBaseTableController.m */,
+				A795B7971F51234D003C7EAD /* XBaseController.h */,
+				A795B7981F51234D003C7EAD /* XBaseController.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		A795B7801F511201003C7EAD /* UploadImage */ = {
+			isa = PBXGroup;
+			children = (
+				A795B7811F511201003C7EAD /* UploadImageCell.h */,
+				A795B7821F511201003C7EAD /* UploadImageCell.m */,
+				A795B7831F511201003C7EAD /* UploadImageViewController.h */,
+				A795B7841F511201003C7EAD /* UploadImageViewController.m */,
+			);
+			path = UploadImage;
+			sourceTree = "<group>";
+		};
+		A795B78D1F51170A003C7EAD /* head */ = {
+			isa = PBXGroup;
+			children = (
+				A7A8AB6D1F0BC7D0001338B0 /* XColorHead.h */,
+				A76E10621F2EBFCA00E09AAE /* XImport.h */,
+				A72CD1AC1F0D0567002C90BD /* XConst.h */,
+				A72CD1AD1F0D0567002C90BD /* XConst.m */,
+			);
+			name = head;
+			sourceTree = "<group>";
+		};
+		A795B78E1F5117B5003C7EAD /* Coredata */ = {
+			isa = PBXGroup;
+			children = (
+				A7B3722E1F30B14C0087972B /* XCoreDataViewController.h */,
+				A7B3722F1F30B14C0087972B /* XCoreDataViewController.m */,
+			);
+			name = Coredata;
+			sourceTree = "<group>";
+		};
+		A795B78F1F5117C2003C7EAD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A76E10631F2ED9EF00E09AAE /* XCell.h */,
+				A76E10641F2ED9EF00E09AAE /* XCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		A795B7931F511C37003C7EAD /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				A795B7901F5117EF003C7EAD /* XPickerViewController.h */,
+				A795B7911F5117EF003C7EAD /* XPickerViewController.m */,
+			);
+			name = Picker;
+			sourceTree = "<group>";
+		};
 		A7A8AB5D1F0BC33F001338B0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,11 +363,8 @@
 		A7A8AB631F0BC33F001338B0 /* Macro */ = {
 			isa = PBXGroup;
 			children = (
-				A7A8AB6D1F0BC7D0001338B0 /* XColorHead.h */,
-				A76E10621F2EBFCA00E09AAE /* XImport.h */,
-				A72CD1AC1F0D0567002C90BD /* XConst.h */,
-				A72CD1AD1F0D0567002C90BD /* XConst.m */,
 				A7A8AB6E1F0BC97A001338B0 /* XHead.h */,
+				A795B78D1F51170A003C7EAD /* head */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -306,8 +372,11 @@
 		A7A8AB641F0BC33F001338B0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				A713F87D1F17A57300FEA33E /* XBaseViewController.h */,
-				A713F87E1F17A57300FEA33E /* XBaseViewController.m */,
+				A767F0F51F5560BD00432627 /* XImagePicker.h */,
+				A767F0F61F5560BD00432627 /* XImagePicker.m */,
+				A767F0F71F5560BD00432627 /* YVPickerView.h */,
+				A767F0F81F5560BD00432627 /* YVPickerView.m */,
+				A767F0FB1F5560CB00432627 /* Base */,
 				A795B7781F4EB91B003C7EAD /* YVAgreementView.h */,
 				A795B7791F4EB91B003C7EAD /* YVAgreementView.m */,
 				A7F3B3E11F1A21A500E683D0 /* XStepper.h */,
@@ -321,18 +390,14 @@
 			children = (
 				A7A8AB691F0BC737001338B0 /* ViewController.h */,
 				A7A8AB6A1F0BC737001338B0 /* ViewController.m */,
-				A7744C6D1F4D1EEA0018369D /* UploadImageCell.h */,
-				A7744C6E1F4D1EEA0018369D /* UploadImageCell.m */,
-				A7744C681F4D1B560018369D /* UploadImageViewController.h */,
-				A7744C691F4D1B560018369D /* UploadImageViewController.m */,
-				A7744C701F4D253C0018369D /* YVImagePicker.h */,
-				A7744C711F4D253C0018369D /* YVImagePicker.m */,
-				A713F8801F17A87200FEA33E /* XViewController.h */,
-				A713F8811F17A87200FEA33E /* XViewController.m */,
-				A7B3722E1F30B14C0087972B /* XCoreDataViewController.h */,
-				A7B3722F1F30B14C0087972B /* XCoreDataViewController.m */,
-				A76E10631F2ED9EF00E09AAE /* XCell.h */,
-				A76E10641F2ED9EF00E09AAE /* XCell.m */,
+				A713F8801F17A87200FEA33E /* XListViewController.h */,
+				A713F8811F17A87200FEA33E /* XListViewController.m */,
+				A795B7941F511C56003C7EAD /* XInputViewController.h */,
+				A795B7951F511C56003C7EAD /* XInputViewController.m */,
+				A795B7931F511C37003C7EAD /* Picker */,
+				A795B7801F511201003C7EAD /* UploadImage */,
+				A795B78E1F5117B5003C7EAD /* Coredata */,
+				A795B78F1F5117C2003C7EAD /* Cell */,
 			);
 			path = SRC;
 			sourceTree = "<group>";
@@ -446,7 +511,6 @@
 				A7B3722A1F30A4180087972B /* backImage@3x.png in Resources */,
 				A795B77F1F501735003C7EAD /* uploadImage.png in Resources */,
 				A71D18571F0BAE0700BAE515 /* Main.storyboard in Resources */,
-				A7A9BAB71F4DB58F0000C5E3 /* Default-568h@2x.png in Resources */,
 				A7B372291F30A4180087972B /* backImage@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,11 +573,15 @@
 				A7B372301F30B14C0087972B /* XCoreDataViewController.m in Sources */,
 				A76E10651F2ED9EF00E09AAE /* XCell.m in Sources */,
 				A72CD1A91F0D04EE002C90BD /* UITextView+Rich.m in Sources */,
+				A795B7881F511201003C7EAD /* UploadImageViewController.m in Sources */,
 				A7B3722D1F30AA730087972B /* XMelo.xcdatamodeld in Sources */,
+				A767F0FA1F5560BD00432627 /* YVPickerView.m in Sources */,
 				A7B6AE431F0BCB310078B268 /* XManager.m in Sources */,
+				A795B7921F5117EF003C7EAD /* XPickerViewController.m in Sources */,
 				A72CD1AE1F0D0567002C90BD /* XConst.m in Sources */,
 				A7EAFCB21F2F659F008FE729 /* RTRootNavigationController.m in Sources */,
 				A72CD1A71F0D04EE002C90BD /* UILabel+Frame.m in Sources */,
+				A767F0F91F5560BD00432627 /* XImagePicker.m in Sources */,
 				A72CD1A41F0D04EE002C90BD /* UIControl+Block.m in Sources */,
 				A72CD1A51F0D04EE002C90BD /* UIGestureRecognizer+Block.m in Sources */,
 				A795B77A1F4EB91B003C7EAD /* YVAgreementView.m in Sources */,
@@ -524,16 +592,16 @@
 				A72CD1A61F0D04EE002C90BD /* UIImage+Scale.m in Sources */,
 				A7EAFCAC1F2F6298008FE729 /* JTNavigationController.m in Sources */,
 				A72CD1A31F0D04EE002C90BD /* NSString+Check.m in Sources */,
-				A713F8821F17A87200FEA33E /* XViewController.m in Sources */,
-				A713F87F1F17A57300FEA33E /* XBaseViewController.m in Sources */,
+				A713F8821F17A87200FEA33E /* XListViewController.m in Sources */,
+				A713F87F1F17A57300FEA33E /* XBaseTableController.m in Sources */,
+				A795B7991F51234D003C7EAD /* XBaseController.m in Sources */,
+				A795B7871F511201003C7EAD /* UploadImageCell.m in Sources */,
+				A795B7961F511C56003C7EAD /* XInputViewController.m in Sources */,
 				A71D18511F0BAE0700BAE515 /* AppDelegate.m in Sources */,
-				A7744C6F1F4D1EEA0018369D /* UploadImageCell.m in Sources */,
 				A72CD1AA1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.m in Sources */,
-				A7744C6A1F4D1B560018369D /* UploadImageViewController.m in Sources */,
 				A7EAFCB31F2F659F008FE729 /* UIViewController+RTRootNavigationController.m in Sources */,
 				A72CD1AB1F0D04EE002C90BD /* UIView+Add.m in Sources */,
 				A71D184E1F0BAE0700BAE515 /* main.m in Sources */,
-				A7744C721F4D253C0018369D /* YVImagePicker.m in Sources */,
 				A7EAFCAB1F2F6298008FE729 /* JTBaseNavigationController.m in Sources */,
 				A7F3B3E31F1A21A500E683D0 /* XStepper.m in Sources */,
 				A713F8791F17A50F00FEA33E /* UIButton+ChangePosition.m in Sources */,

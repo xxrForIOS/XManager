@@ -6,16 +6,16 @@
 //  Copyright © 2017年 欣欣然. All rights reserved.
 //
 
-#import "XBaseViewController.h"
+#import "XBaseTableController.h"
 #import "MJRefresh.h"
 #import "UIScrollView+EmptyDataSet.h"
 #import "YVAgreementView.h"
 
-@interface XBaseViewController () <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
+@interface XBaseTableController () <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @end
 
-@implementation XBaseViewController
+@implementation XBaseTableController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

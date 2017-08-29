@@ -6,50 +6,48 @@
 //  Copyright © 2017年 欣欣然. All rights reserved.
 //
 
-#import "XViewController.h"
-#import "XCell.h"
+#import "XListViewController.h"
 #import "XCoreDataViewController.h"
-#import "MJRefresh.h"
+#import "UploadImageViewController.h"
+#import "XPickerViewController.h"
+#import "XInputViewController.h"
 
-@interface XViewController ()
+@interface XListViewController ()
 
 @property (nonatomic, strong) NSArray           *datas;
+@property (nonatomic, strong) NSArray           *controllers;
 @property (nonatomic, strong) UIView            *bottomTool;
 @end
 
-@implementation XViewController
+@implementation XListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.datas = @[@"core data",
-                   @"custom cell",
-                   @"ssss",
-                   @"something"];
-    @kWeakSelf;
+                   @"upload image cell",
+                   @"picker",
+                   @"input",
+                   
+                   ];
+    self.controllers = @[[[XCoreDataViewController alloc]init],
+                         [[UploadImageViewController alloc]init],
+                         [[XPickerViewController alloc]init],
+                         [[XInputViewController alloc]init]
+                         ];
     
     self.tableView.height = kScreenHeight - 64 - 50;
+    self.tableView.rowHeight = kCellHeight;
+    @kWeakSelf;
     
     self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
        
         return selfWeak.datas.count;
     };
-
-    self.tableView.rowHeight = kCellHeight;
-    
     
     self.heightForHeadrAtIndexPath = ^CGFloat(NSInteger section) {
       
         return 5.0f;
-    };
-    
-    self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
-        
-        NSArray *pushVC = @[[[XCoreDataViewController alloc]init]];
-        
-        if (indexPath.row == 0) {
-            kPush(selfWeak, pushVC[indexPath.row]);
-        }
     };
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -64,6 +62,12 @@
         }
         cell.textLabel.text = selfWeak.datas[indexPath.row];
         return cell;
+    };
+    
+    self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
+        
+        UIViewController *vcc = selfWeak.controllers[indexPath.row];
+        kPush(selfWeak, vcc);
     };
     
     selfWeak.bottomTool = ({
@@ -86,7 +90,6 @@
         }];
         theView;
     });
-    
 }
 
 

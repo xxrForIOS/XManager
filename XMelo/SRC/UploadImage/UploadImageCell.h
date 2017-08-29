@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XHead.h"
+#import "XImagePicker.h"
 
 @interface UploadImageCell : UITableViewCell
 

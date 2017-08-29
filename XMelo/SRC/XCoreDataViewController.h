@@ -6,8 +6,8 @@
 //  Copyright © 2017年 欣欣然. All rights reserved.
 //
 
-#import "XBaseViewController.h"
+#import "XBaseTableController.h"
 
-@interface XCoreDataViewController : XBaseViewController
+@interface XCoreDataViewController : XBaseTableController
 
 @end

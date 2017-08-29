@@ -6,9 +6,8 @@
 //  Copyright © 2017年 欣欣然. All rights reserved.
 //
 
-#import "XBaseViewController.h"
-#import "YVImagePicker.h"
+#import "XBaseTableController.h"
 
-@interface UploadImageViewController : XBaseViewController
+@interface UploadImageViewController : XBaseTableController
 
 @end

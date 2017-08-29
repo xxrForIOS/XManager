@@ -1,25 +1,23 @@
 //
-//  YVImagePicker.h
-//  YiWeiZD
+//  XImagePicker.h
+//  XMelo
 //
-//  Created by X.Melody on 17/5/2.
-//  Copyright © 2017年 一喂直达. All rights reserved.
+//  Created by X.Melo on 2017/8/26.
+//  Copyright © 2017年 欣欣然. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "XHead.h"
 
 typedef void(^pickerImagePic)(UIImage *pickerImagePic);
-
-
-@interface YVImagePicker : NSObject
-
+@interface XImagePicker : NSObject
 
 
 @property (copy, nonatomic) pickerImagePic              pickerImagePic;
 
 
-
 + (void)showImagePickerViewIn:(UIViewController *)vcc handler:(pickerImagePic)aBlock;
+
+
 
 @end

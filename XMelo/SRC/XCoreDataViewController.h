@@ -7,6 +7,7 @@
 //
 
 #import "XBaseTableController.h"
+#import "XHead.h"
 
 @interface XCoreDataViewController : XBaseTableController
 

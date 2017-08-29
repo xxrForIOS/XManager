@@ -2,7 +2,7 @@
 //  XSonModel+CoreDataProperties.h
 //  
 //
-//  Created by X.Melo on 2017/8/1.
+//  Created by X.Melo on 2017/8/29.
 //
 //
 
@@ -15,11 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<XSonModel *> *)fetchRequest;
 
+@property (nonatomic) int16_t age;
 @property (nullable, nonatomic, copy) NSString *name;
-@property (nullable, nonatomic, copy) NSString *sonId;
-@property (nullable, nonatomic, copy) NSString *time;
-@property (nullable, nonatomic, copy) NSString *title;
-@property (nullable, nonatomic, copy) NSString *content;
+@property (nonatomic) float height;
+@property (nonatomic) int16_t sonId;
+@property (nonatomic) int16_t createTime;
 
 @end
 

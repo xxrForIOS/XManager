@@ -84,8 +84,9 @@ NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];\
 #define kStringFormat(f,...)    [NSString stringWithFormat:f,##__VA_ARGS__]
 
 
+#define kContext            ((AppDelegate *)[UIApplication sharedApplication].delegate).persistentContainer.viewContext
 
-
+#define kDelegate           (AppDelegate *)[[UIApplication sharedApplication] delegate]
 
 
 

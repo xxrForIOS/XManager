@@ -2,7 +2,7 @@
 //  XSonModel+CoreDataProperties.m
 //  
 //
-//  Created by X.Melo on 2017/8/1.
+//  Created by X.Melo on 2017/8/29.
 //
 //
 
@@ -14,10 +14,10 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"XSonModel"];
 }
 
+@dynamic age;
 @dynamic name;
+@dynamic height;
 @dynamic sonId;
-@dynamic time;
-@dynamic title;
-@dynamic content;
+@dynamic createTime;
 
 @end

@@ -40,6 +40,7 @@
 @property (nonatomic, copy)     UIView *(^viewForFooterInSection)(NSInteger section);
 ///创建cell
 @property (nonatomic,strong)    UITableViewCell *(^cellForRowAtIndexPath)(UITableView *tableView, NSIndexPath *indexPath);
+@property (nonatomic,copy)      void(^creatCellView)(UITableViewCell *cell, NSIndexPath *indexPath);
 
 
 

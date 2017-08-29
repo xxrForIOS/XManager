@@ -11,6 +11,8 @@
 #import "UIScrollView+EmptyDataSet.h"
 #import "YVAgreementView.h"
 
+#define kCellIdentifier @"baseCell"
+
 @interface XBaseTableController () <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @end
@@ -33,6 +35,8 @@
         [self.view addSubview:theTable];
         theTable;
     });
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
+
     self.tableView.emptyDataSetSource = self;
     self.tableView.emptyDataSetDelegate = self;
     
@@ -249,16 +253,32 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    if (self.didSelectRowAtIndexPath) {
-        
-        self.didSelectRowAtIndexPath(indexPath);
-    }
+    !self.didSelectRowAtIndexPath ?: self.didSelectRowAtIndexPath(indexPath);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return self.cellForRowAtIndexPath(tableView,indexPath);
+    if (self.cellForRowAtIndexPath) {
+        
+        return self.cellForRowAtIndexPath(tableView,indexPath);
+    }else {
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
+        [self creatCellView:cell With:indexPath];
+        return cell;
+    }
+    
+    //cell.separatorInset = UIEdgeInsetsMake(0, kScreenWidth, 0, 0);
+}
+
+- (void)creatCellView:(UITableViewCell *)cell With:(NSIndexPath *)indexPath {
+    
+    for (UIView *theView in cell.contentView.subviews) {
+        
+        [theView removeFromSuperview];
+    }
+    
+    !self.creatCellView ?: self.creatCellView(cell, indexPath);
 }
 
 

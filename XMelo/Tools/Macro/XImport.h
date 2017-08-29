@@ -12,6 +12,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
+#import "AppDelegate.h"
 
 //MARK: head
 #import "XColorHead.h"
@@ -36,4 +37,6 @@
 
 //Mark: libs
 #import "MBProgressHUD.h"
+#import "MJRefresh.h"
+
 #endif /* XImport_h */

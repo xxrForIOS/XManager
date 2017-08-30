@@ -8,6 +8,7 @@
 
 #import "UploadImageViewController.h"
 #import "UploadImageCell.h"
+#import "UIScrollView+SpringHeadView.h"
 
 @interface UploadImageViewController ()
 
@@ -31,9 +32,16 @@
     self.cellHeights = [NSMutableArray arrayWithCapacity:6];
     
     [self.cellHeights addObject:[NSNumber numberWithFloat:50]];
-    [self.cellHeights addObject:[NSNumber numberWithFloat:((kScreenWidth - 10 * 4) / 3 + 10 )]];
-    [self.cellHeights addObject:[NSNumber numberWithFloat:((kScreenWidth - 10 * 4) / 3 + 10 )]];
-    [self.cellHeights addObject:[NSNumber numberWithFloat:((kScreenWidth - 10 * 4) / 3 + 10 )]];
+    [self.cellHeights addObject:[NSNumber numberWithFloat:((kScreenWidth - 10 * 4) / 3 + 20 )]];
+    [self.cellHeights addObject:[NSNumber numberWithFloat:((kScreenWidth - 10 * 4) / 3 + 20 )]];
+    [self.cellHeights addObject:[NSNumber numberWithFloat:((kScreenWidth - 10 * 4) / 3 + 20 )]];
+
+    [self.tableView addSpringHeadView:({
+        
+        UIImageView *theView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
+        theView.image = kImageName(@"wish_top");
+        theView;
+    })];
 
     @kWeakSelf;
 
@@ -72,7 +80,7 @@
                 }
                 selfWeak.uploadImages = [NSMutableArray arrayWithArray:images];
                 
-                [selfWeak.cellHeights replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithFloat:cellHeight]];
+                [selfWeak.cellHeights replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithFloat:cellHeight + 10]];
                 //            selfWeak.theUploadCellHeght = cellHeight;
                 
                 NSIndexPath *theIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];

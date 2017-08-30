@@ -9,17 +9,12 @@
 #import "ViewController.h"
 #import "XHead.h"
 #import "XListViewController.h"
-
 #import "JTNavigationController.h"
 #import "JTBaseNavigationController.h"
+
 @interface ViewController () 
 
 @property (nonatomic, strong) UISearchBar       *searchBar;
-
-
-
-
-@property (atomic, strong) NSString          *target;
 
 
 @end

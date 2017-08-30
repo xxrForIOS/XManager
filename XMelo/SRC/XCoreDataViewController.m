@@ -9,6 +9,7 @@
 #import "XCoreDataViewController.h"
 #import "XSonModel+CoreDataClass.h"
 #import "XSonModel+CoreDataProperties.h"
+#import "UIScrollView+SpringHeadView.h"
 
 
 @interface XCoreDataViewController ()
@@ -81,7 +82,7 @@
         cell.textLabel.text = kStringFormat(@"name: %@ age: %d height: %f",theModel.name, theModel.age, theModel.height);
     };
     
-    
+
     
     [self updateDataFromHeadWith:^{
         

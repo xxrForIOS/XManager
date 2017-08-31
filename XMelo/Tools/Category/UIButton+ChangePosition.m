@@ -11,7 +11,7 @@
 @implementation UIButton (ChangePosition)
 
 
-- (void)changePosition:(imageStyleStyle)style space:(CGFloat)space {
+- (void)changePosition:(XRButtonDrawStyle)style space:(CGFloat)space {
     [self setTitle:self.currentTitle forState:UIControlStateNormal];
     [self setImage:self.currentImage forState:UIControlStateNormal];
     
@@ -39,25 +39,25 @@
     CGFloat changedHeight = labelHeight + imageHeight + space - tempHeight;
     
     switch (style) {
-        case imageStyleStyleLeft:
+        case XRButtonDrawStyleLeft:
             self.imageEdgeInsets = UIEdgeInsetsMake(0, -space/2, 0, space/2);
             self.titleEdgeInsets = UIEdgeInsetsMake(0, space/2, 0, -space/2);
             self.contentEdgeInsets = UIEdgeInsetsMake(0, space/2, 0, space/2);
             break;
             
-        case imageStyleStyleRight:
+        case XRButtonDrawStyleRight:
             self.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth + space/2, 0, -(labelWidth + space/2));
             self.titleEdgeInsets = UIEdgeInsetsMake(0, -(imageWidth + space/2), 0, imageWidth + space/2);
             self.contentEdgeInsets = UIEdgeInsetsMake(0, space/2, 0, space/2);
             break;
             
-        case imageStyleStyleTop:
+        case XRButtonDrawStyleTop:
             self.imageEdgeInsets = UIEdgeInsetsMake(-imageOffsetY, imageOffsetX, imageOffsetY, -imageOffsetX);
             self.titleEdgeInsets = UIEdgeInsetsMake(labelOffsetY, -labelOffsetX, -labelOffsetY, labelOffsetX);
             self.contentEdgeInsets = UIEdgeInsetsMake(imageOffsetY, -changedWidth/2, changedHeight-imageOffsetY, -changedWidth/2);
             break;
             
-        case imageStyleStyleBottom:
+        case XRButtonDrawStyleBottom:
             self.imageEdgeInsets = UIEdgeInsetsMake(imageOffsetY, imageOffsetX, -imageOffsetY, -imageOffsetX);
             self.titleEdgeInsets = UIEdgeInsetsMake(-labelOffsetY, -labelOffsetX, labelOffsetY, labelOffsetX);
             self.contentEdgeInsets = UIEdgeInsetsMake(changedHeight-imageOffsetY, -changedWidth/2, imageOffsetY, -changedWidth/2);

@@ -67,6 +67,8 @@ static const int block_key;
     [targets removeAllObjects];
 }
 
+
+
 - (NSMutableArray *)p_xAllUIGestureRecognizerBlockTargets {
     NSMutableArray *targets = objc_getAssociatedObject(self, &block_key);
     if (!targets) {

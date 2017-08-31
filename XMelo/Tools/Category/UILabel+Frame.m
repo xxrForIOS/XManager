@@ -18,8 +18,8 @@
 @implementation UILabel (Frame)
 
 
-
-- (void)updateHeigh{
+//MARK:- update frame
+- (void)updateHeight{
     /*
      
      //富文本计算高度
@@ -51,7 +51,7 @@
     self.frame = tmpRect;
 }
 
-- (void)updateHeighMargin:(CGFloat)margin {
+- (void)updateHeightMargin:(CGFloat)margin {
     CGSize size = [self.text boundingRectWithSize:CGSizeMake(self.frame.size.width, MAXFLOAT)
                                           options:NSStringDrawingUsesLineFragmentOrigin
                                        attributes:@{NSFontAttributeName : self.font}
@@ -99,18 +99,29 @@
 }
 
 
-- (void)changeFont:(UIFont *)font withRange:(NSRange)range{
+//MARK:- change value
+- (void)changeFont:(UIFont *)font range:(NSRange)range{
+    
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
     [str addAttribute:NSFontAttributeName value:font range:range];
     self.attributedText = str;
 }
 
-- (void)changeFont:(UIFont *)font withString:(NSString *)string isRepetition:(BOOL)isRe{
-    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
+- (void)changeFont:(UIFont *)font string:(NSString *)string{
     
-    if (isRe) {
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
+    [str addAttribute:NSFontAttributeName value:font range:[self.text rangeOfString:string]];
+    self.attributedText = str;
+}
+
+- (void)changeFont:(UIFont *)font string:(NSString *)string repetition:(BOOL)isRepetition{
+   
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
+    if (isRepetition) {
+        
         NSRange range = [self.text rangeOfString:string options:NSBackwardsSearch range:NSMakeRange(0, self.text.length)];
         while(range.location != NSNotFound){
+            
             [str addAttribute:NSFontAttributeName value:font range:range];
             NSUInteger start = 0;
             NSUInteger end = range.location;
@@ -118,25 +129,35 @@
             range = [self.text rangeOfString:string options:NSBackwardsSearch range:temp];
         }
     }else{
+        
         [str addAttribute:NSFontAttributeName value:font range:[self.text rangeOfString:string]];
     }
     self.attributedText = str;
 }
 
 
-
-
-- (void)changeColor:(UIColor *)color withRange:(NSRange)range{
+- (void)changeColor:(UIColor *)color range:(NSRange)range{
+    
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
     [str addAttribute:NSForegroundColorAttributeName value:color range:range];
     self.attributedText = str;
 }
 
-- (void)changeColor:(UIColor *)color withString:(NSString *)string isRepetition:(BOOL)isRe{
+- (void)changeColor:(UIColor *)color string:(NSString *)string{
+    
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    if (isRe) {
+    [str addAttribute:NSForegroundColorAttributeName value:color range:[self.text rangeOfString:string]];
+    self.attributedText = str;
+}
+
+- (void)changeColor:(UIColor *)color string:(NSString *)string repetition:(BOOL)isRepetition{
+   
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
+    if (isRepetition) {
+    
         NSRange range = [self.text rangeOfString:string options:NSBackwardsSearch range:NSMakeRange(0, self.text.length)];
         while(range.location != NSNotFound){
+        
             [str addAttribute:NSForegroundColorAttributeName value:color range:range];
             NSUInteger start = 0;
             NSUInteger end = range.location;
@@ -144,6 +165,7 @@
             range = [self.text rangeOfString:string options:NSBackwardsSearch range:temp];
         }
     }else{
+        
         [str addAttribute:NSForegroundColorAttributeName value:color range:[self.text rangeOfString:string]];
     }
     self.attributedText = str;

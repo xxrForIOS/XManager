@@ -11,35 +11,16 @@
 
 @interface UIControl (Block)
 
-
-
-
-/**
- 移除所有响应
- */
+///移除所有响应
 - (void)removeAllTargets;
 
-
-
-/**
- 添加带有block的响应
-
- @param controlEvents 响应事件
- @param block 回调
- */
+///添加带有block的响应
 - (void)addBlockForControlEvents:(UIControlEvents)controlEvents block:(void (^)(id sender))block;
 
-/**
- 添加block
- 
- @param block 回调
- */
-- (void)addBlockWithblock:(void (^)(id sender))block;
+///button添加block
+- (void)addBlockWithblock:(void (^)(UIButton *theBlockButton))block;
 
-/**
- 移除带有block的响应
-
- @param controlEvents 响应事件
- */
+///移除带有block的响应
 - (void)removeAllBlocksForControlEvents:(UIControlEvents)controlEvents;
+
 @end

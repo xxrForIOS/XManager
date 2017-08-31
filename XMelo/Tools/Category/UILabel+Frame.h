@@ -11,21 +11,23 @@
 @interface UILabel (Frame)
 
 
-/**
- 根据当前条件重设label高度
- */
-- (void)updateHeigh;
-- (void)updateHeighMargin:(CGFloat)margin;
+///根据当前条件重设label高度
+- (void)updateHeight;
+- (void)updateHeightMargin:(CGFloat)margin;
+
+///根据当前条件重设label宽度
 - (void)updateWidth;
 - (void)updateWidthMargin:(CGFloat)margin;
 
 
-/**
- 修改部分文字属性
- */
-- (void)changeFont:(UIFont *)font withRange:(NSRange)range;
-- (void)changeFont:(UIFont *)font withString:(NSString *)string isRepetition:(BOOL)isRe;
-- (void)changeColor:(UIColor *)color withRange:(NSRange)range;
-- (void)changeColor:(UIColor *)color withString:(NSString *)string isRepetition:(BOOL)isRe;
+///修改label部分文字大小
+- (void)changeFont:(UIFont *)font range:(NSRange)range;
+- (void)changeFont:(UIFont *)font string:(NSString *)string;
+- (void)changeFont:(UIFont *)font string:(NSString *)string repetition:(BOOL)isRepetition;
+
+///修改label部分文字颜色
+- (void)changeColor:(UIColor *)color range:(NSRange)range;
+- (void)changeColor:(UIColor *)color string:(NSString *)string;
+- (void)changeColor:(UIColor *)color string:(NSString *)string repetition:(BOOL)isRepetition;
 
 @end

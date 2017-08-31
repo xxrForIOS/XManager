@@ -11,24 +11,12 @@
 @interface UIGestureRecognizer (Block)
 
 
-/**
- 创建带有block的手势实例
-
- */
+///创建带有block的手势实例
 - (instancetype)initWithActionBlock:(void (^)(id sender))block;
 
-
-
-/**
- 添加block回调
- 
- */
+///添加block回调
 - (void)addActionBlock:(void (^)(id sender))block;
 
-
-
-/**
- 移除所有block回调
- */
+///移除所有block回调
 - (void)removeAllActionBlocks;
 @end

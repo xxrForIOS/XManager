@@ -9,22 +9,22 @@
 #import <UIKit/UIKit.h>
 
 ///图片文字显示位置
-typedef NS_ENUM(NSInteger, imageStyleStyle) {
+typedef NS_ENUM(NSInteger, XRButtonDrawStyle) {
 
     ///图片左 文字右
-    imageStyleStyleLeft    = 0,
+    XRButtonDrawStyleLeft    = 0,
     ///图片右 文字左
-    imageStyleStyleRight   = 1,
+    XRButtonDrawStyleRight   = 1,
     ///图片上 文字下
-    imageStyleStyleTop     = 2,
+    XRButtonDrawStyleTop     = 2,
     ///图片下 文字上
-    imageStyleStyleBottom  = 3
+    XRButtonDrawStyleBottom  = 3
 };
 
 @interface UIButton (ChangePosition)
 
 
 ///改变图片和文字的位置
-- (void)changePosition:(imageStyleStyle)style space:(CGFloat)space;
+- (void)changePosition:(XRButtonDrawStyle)style space:(CGFloat)space;
 
 @end

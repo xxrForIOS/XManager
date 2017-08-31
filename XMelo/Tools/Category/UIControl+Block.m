@@ -58,11 +58,11 @@ static const int block_key;
     [targets addObject:target];
 }
 
-- (void)addBlockWithblock:(void (^)(id sender))block {
-    _XControlBlockTarget *target = [[_XControlBlockTarget alloc]
-                                    initWithBlock:block events:UIControlEventTouchUpInside];
+- (void)addBlockWithblock:(void (^)(UIButton *theBlockButton))block {
+    _XControlBlockTarget *target = [[_XControlBlockTarget alloc]initWithBlock:block events:UIControlEventTouchUpInside];
     [self addTarget:target action:@selector(invoke:) forControlEvents:UIControlEventTouchUpInside];
     NSMutableArray *targets = [self p_allUIControlBlockTargets];
+    [self removeAllBlocksForControlEvents:UIControlEventTouchUpInside];
     [targets addObject:target];
 }
 

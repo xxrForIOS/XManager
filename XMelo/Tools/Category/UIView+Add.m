@@ -106,7 +106,6 @@
         next = [next nextResponder];
     } while (next != nil);
     return nil;
-    
 }
 
 @end

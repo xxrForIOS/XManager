@@ -49,63 +49,9 @@
     UIImage *theImage=UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return theImage;
-    
 }
 
-#pragma mark- 时间格式化
-+ (NSString *)timeGetDateFormat:(NSString *)dateString{
-    
-    NSDate *currentDate = [NSDate date];
-    NSDate *otherDate = [NSDate dateWithTimeIntervalSince1970:[dateString longLongValue]/1000];
-    
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
-    [dateFormat setTimeZone:[NSTimeZone localTimeZone]];
-    
-    NSTimeInterval time = [currentDate timeIntervalSinceDate:otherDate];
-    
-    
-    NSString *dateStr = @"";
-    
-    if (time <= 60) {
-        
-        dateStr = @"刚刚";
-    }else if(time <= 60 * 60){
-        
-        dateStr = [NSString stringWithFormat:@"%d分钟前",(int)time/60];
-    }else if(time <= 60 * 60 * 24){
-        
-        [dateFormat setDateFormat:@"YYYY/MM/dd"];
-        NSString *otherDay = [dateFormat stringFromDate:otherDate];
-        NSString *currentDay = [dateFormat stringFromDate:currentDate];
-        [dateFormat setDateFormat:@"HH:mm"];
-        
-        if ([otherDay isEqualToString:currentDay]) {
-            
-            dateStr = [NSString stringWithFormat:@"今天 %@",[dateFormat stringFromDate:otherDate]];
-        }else{
-            
-            dateStr = [NSString stringWithFormat:@"昨天 %@",[dateFormat stringFromDate:otherDate]];
-        }
-    }else {
-        
-        [dateFormat setDateFormat:@"yyyy"];
-        NSString    *otherYear = [dateFormat stringFromDate:otherDate];
-        NSString    *currentYear = [dateFormat stringFromDate:currentDate];
-        
-        if ([otherYear isEqualToString:currentYear]) {
-            
-            [dateFormat setDateFormat:@"MM-dd HH:mm"];
-            dateStr = [dateFormat stringFromDate:otherDate];
-        }else{
-            
-            [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
-            dateStr = [dateFormat stringFromDate:otherDate];
-        }
-    }
-    
-    return dateStr;
-}
+
 
 
 #pragma makr- 弹窗
@@ -196,7 +142,7 @@
 
 + (void)showAlertWith:(NSString *)str confirm:(void(^)())aBlock{
     
-    //    NSArray *array = [[UIApplication sharedApplication] windows];
+    //NSArray *array = [[UIApplication sharedApplication] windows];
     UIViewController *rootController = [UIApplication sharedApplication].keyWindow.rootViewController;
     
     if (rootController == nil) {
@@ -219,7 +165,7 @@
     [self showAlertWith:str  confirm:nil];
 }
 
-+ (void)showHUDWithString:(NSString *)str confirm:(void(^)())aBlock{
++ (void)showHUDWithString:(NSString *)str completion:(void(^)())completion{
     
     UIView *theView = [UIApplication sharedApplication].keyWindow.rootViewController.view;
     
@@ -229,22 +175,24 @@
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        if (aBlock) {
+        if (completion) {
             
             [MBProgressHUD hideHUDForView:theView animated:YES];
-            aBlock();
+            completion();
         }
     });
 }
 
 
 #pragma mark- 调用打电话
-+ (void)callWithWithNumber:(NSString *)number{
++ (void)callWithNumber:(NSString *)number{
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",number]];
     if (kIOSVersion < 10.0) {
+       
         [[UIApplication sharedApplication] openURL:url];
     }else{
+        
         [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
             
             if (!success) {
@@ -274,12 +222,12 @@
     vcc.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:theButton];
 }
 
-#pragma mark- gcd
-+ (void)dispatchAfter:(int)interval timeout:(void(^)())timerOut {
+//MARK:- gcd
++ (void)dispatchAfter:(int)time completion:(void(^)())completion {
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(interval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        timerOut();
+        !completion ?: completion();
     });
 }
 
@@ -294,18 +242,73 @@
     });
 }
 
-+ (NSString *)timeGetDateFormat:(NSString *)dateString format:(dateFormatShowType)type {
+//MARK:- 时间格式化
++ (NSString *)timeGetDateFormat:(NSString *)dateString{
+    
+    NSDate *currentDate = [NSDate date];
+    NSDate *otherDate = [NSDate dateWithTimeIntervalSince1970:[dateString longLongValue]/1000];
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormat setTimeZone:[NSTimeZone localTimeZone]];
+    
+    NSTimeInterval time = [currentDate timeIntervalSinceDate:otherDate];
+    
+    
+    NSString *dateStr = @"";
+    
+    if (time <= 60) {
+        
+        dateStr = @"刚刚";
+    }else if(time <= 60 * 60){
+        
+        dateStr = [NSString stringWithFormat:@"%d分钟前",(int)time/60];
+    }else if(time <= 60 * 60 * 24){
+        
+        [dateFormat setDateFormat:@"YYYY/MM/dd"];
+        NSString *otherDay = [dateFormat stringFromDate:otherDate];
+        NSString *currentDay = [dateFormat stringFromDate:currentDate];
+        [dateFormat setDateFormat:@"HH:mm"];
+        
+        if ([otherDay isEqualToString:currentDay]) {
+            
+            dateStr = [NSString stringWithFormat:@"今天 %@",[dateFormat stringFromDate:otherDate]];
+        }else{
+            
+            dateStr = [NSString stringWithFormat:@"昨天 %@",[dateFormat stringFromDate:otherDate]];
+        }
+    }else {
+        
+        [dateFormat setDateFormat:@"yyyy"];
+        NSString    *otherYear = [dateFormat stringFromDate:otherDate];
+        NSString    *currentYear = [dateFormat stringFromDate:currentDate];
+        
+        if ([otherYear isEqualToString:currentYear]) {
+            
+            [dateFormat setDateFormat:@"MM-dd HH:mm"];
+            dateStr = [dateFormat stringFromDate:otherDate];
+        }else{
+            
+            [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
+            dateStr = [dateFormat stringFromDate:otherDate];
+        }
+    }
+    
+    return dateStr;
+}
+
++ (NSString *)timeGetDateFormat:(NSString *)dateString format:(XRDateFormatType)type {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     
     switch (type) {
-        case dateFormatShowTypeYMDHM:
+        case XRDateFormatTypeYMDHM:
             [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
             break;
-        case dateFormatShowTypeMDHM:
+        case XRDateFormatTypeMDHM:
             [dateFormat setDateFormat:@"MM-dd HH:mm"];
             break;
             
-        case dateFormatShowTypeHM:
+        case XRDateFormatTypeHM:
             [dateFormat setDateFormat:@"HH分mm秒"];
             break;
             
@@ -362,44 +365,6 @@
     if ([deviceString isEqualToString:@"iPhone9,2"])    return @"港行、国行iPhone 7 Plus";
     if ([deviceString isEqualToString:@"iPhone9,3"])    return @"美版、台版iPhone 7";
     if ([deviceString isEqualToString:@"iPhone9,4"])    return @"美版、台版iPhone 7 Plus";
-    
-    if ([deviceString isEqualToString:@"iPod1,1"])      return @"iPod Touch 1G";
-    if ([deviceString isEqualToString:@"iPod2,1"])      return @"iPod Touch 2G";
-    if ([deviceString isEqualToString:@"iPod3,1"])      return @"iPod Touch 3G";
-    if ([deviceString isEqualToString:@"iPod4,1"])      return @"iPod Touch 4G";
-    if ([deviceString isEqualToString:@"iPod5,1"])      return @"iPod Touch (5 Gen)";
-    
-    if ([deviceString isEqualToString:@"iPad1,1"])      return @"iPad";
-    if ([deviceString isEqualToString:@"iPad1,2"])      return @"iPad 3G";
-    if ([deviceString isEqualToString:@"iPad2,1"])      return @"iPad 2 (WiFi)";
-    if ([deviceString isEqualToString:@"iPad2,2"])      return @"iPad 2";
-    if ([deviceString isEqualToString:@"iPad2,3"])      return @"iPad 2 (CDMA)";
-    if ([deviceString isEqualToString:@"iPad2,4"])      return @"iPad 2";
-    if ([deviceString isEqualToString:@"iPad2,5"])      return @"iPad Mini (WiFi)";
-    if ([deviceString isEqualToString:@"iPad2,6"])      return @"iPad Mini";
-    if ([deviceString isEqualToString:@"iPad2,7"])      return @"iPad Mini (GSM+CDMA)";
-    if ([deviceString isEqualToString:@"iPad3,1"])      return @"iPad 3 (WiFi)";
-    if ([deviceString isEqualToString:@"iPad3,2"])      return @"iPad 3 (GSM+CDMA)";
-    if ([deviceString isEqualToString:@"iPad3,3"])      return @"iPad 3";
-    if ([deviceString isEqualToString:@"iPad3,4"])      return @"iPad 4 (WiFi)";
-    if ([deviceString isEqualToString:@"iPad3,5"])      return @"iPad 4";
-    if ([deviceString isEqualToString:@"iPad3,6"])      return @"iPad 4 (GSM+CDMA)";
-    if ([deviceString isEqualToString:@"iPad4,1"])      return @"iPad Air (WiFi)";
-    if ([deviceString isEqualToString:@"iPad4,2"])      return @"iPad Air (Cellular)";
-    if ([deviceString isEqualToString:@"iPad4,4"])      return @"iPad Mini 2 (WiFi)";
-    if ([deviceString isEqualToString:@"iPad4,5"])      return @"iPad Mini 2 (Cellular)";
-    if ([deviceString isEqualToString:@"iPad4,6"])      return @"iPad Mini 2";
-    if ([deviceString isEqualToString:@"iPad4,7"])      return @"iPad Mini 3";
-    if ([deviceString isEqualToString:@"iPad4,8"])      return @"iPad Mini 3";
-    if ([deviceString isEqualToString:@"iPad4,9"])      return @"iPad Mini 3";
-    if ([deviceString isEqualToString:@"iPad5,1"])      return @"iPad Mini 4 (WiFi)";
-    if ([deviceString isEqualToString:@"iPad5,2"])      return @"iPad Mini 4 (LTE)";
-    if ([deviceString isEqualToString:@"iPad5,3"])      return @"iPad Air 2";
-    if ([deviceString isEqualToString:@"iPad5,4"])      return @"iPad Air 2";
-    if ([deviceString isEqualToString:@"iPad6,3"])      return @"iPad Pro 9.7";
-    if ([deviceString isEqualToString:@"iPad6,4"])      return @"iPad Pro 9.7";
-    if ([deviceString isEqualToString:@"iPad6,7"])      return @"iPad Pro 12.9";
-    if ([deviceString isEqualToString:@"iPad6,8"])      return @"iPad Pro 12.9";
     
     if ([deviceString isEqualToString:@"i386"])         return @"Simulator";
     if ([deviceString isEqualToString:@"x86_64"])       return @"Simulator";

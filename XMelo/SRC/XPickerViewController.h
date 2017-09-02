@@ -7,7 +7,8 @@
 //
 
 #import "XBaseController.h"
+#import "XBaseTableController.h"
 
-@interface XPickerViewController : XBaseController
+@interface XPickerViewController : XBaseTableController
 
 @end

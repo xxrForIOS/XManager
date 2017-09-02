@@ -114,7 +114,7 @@
     XSonModel *theModel = self.datas[indexPath.row];
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"删除" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         
-        [XManager alertControllerWithTitle:@"提示" message:@"确定删除此服务" confirmButton:@"确定" cancelButton:@"取消" showIn:self confirmBlock:^{
+        [XManager alertControllerWithTitle:@"提示" message:@"确定删除此服务" confirmButton:@"确定" cancelButton:@"取消" confirmBlock:^{
             
             NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"XSonModel"];
 //            request.predicate = [NSPredicate predicateWithFormat:@"orderId = %@",theModel.orderId];

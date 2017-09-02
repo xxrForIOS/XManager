@@ -32,23 +32,34 @@ typedef NS_ENUM(NSInteger, XRDateFormatType) {
 
 
 
-///gcd延时操作
+///MARK:- gcd延时操作
 + (void)dispatchAfter:(int)time completion:(void(^)())timerOut;
 
-///gcd开辟子线程
+///MARK: gcd开辟子线程
 + (void)dispatchAsynac:(void(^)())asyncBlock mainQueue:(void(^)())mainBlock;
 
-///打电话
+
+///MARK:- 打电话
 + (void)callWithNumber:(NSString *)number;
 
+
+///MARK:- 导航条右上角添加文字按钮
 + (void)addRightBarItemInViewController:(UIViewController *)vcc itemTitle:(NSString *)str andItemBlock:(void(^)(UIButton *aButton))aBlock;
 
-/** 弹窗*/
+
+///MARK:- 弹窗
++ (void)showAlertWith:(NSString *)str;
++ (void)showAlertWith:(NSString *)str confirm:(void(^)())aBlock;
++ (void)showAlertWith:(NSString *)str confirm:(void(^)())afBlock cancel:(void(^)())ccBlock;
+
+///MARK: 会消失的弹窗
++ (void)showHUDWithString:(NSString *)str completion:(void(^)())completion;
+
+///弹窗主体方法
 + (void)alertControllerWithTitle:(NSString *)title
                          message:(NSString *)message
                    confirmButton:(NSString *)confirmStr
                     cancelButton:(NSString *)cancelStr
-                          showIn:(UIViewController *)vcc
                     confirmBlock:(void (^)())cfBlock
                      cancelBlock:(void (^)())ccBlock;
 
@@ -61,13 +72,6 @@ typedef NS_ENUM(NSInteger, XRDateFormatType) {
                    confirmBlock:(void (^)(UITextField *inputTF))cfBlock
                     cancelBlock:(void (^)(UITextField *inputTF))ccBlock;
 
-
-+ (void)showAlertWith:(NSString *)str;
-
-/** block单弹窗*/
-+ (void)showAlertWith:(NSString *)str confirm:(void(^)())aBlock;
-
-+ (void)showHUDWithString:(NSString *)str completion:(void(^)())completion;
 
 
 ///格式化时间 今天昨天

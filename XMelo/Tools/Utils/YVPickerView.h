@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "XHead.h"
 
-typedef void(^yvPickerChooseObject)(id chooseObj);
+typedef void(^ XRPickerChooseObject)(id chooseObj);
 @interface YVPickerView : NSObject
 
 
-+ (void)showPickerIn:(UIViewController *)vcc withDatas:(NSArray *)datas handler:(yvPickerChooseObject)aBlock;
++ (void)showPickerIn:(UIViewController *)vcc withDatas:(NSArray *)datas handler:(XRPickerChooseObject)aBlock;
 
 @end

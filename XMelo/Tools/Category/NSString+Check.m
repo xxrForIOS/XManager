@@ -214,7 +214,19 @@
     }
     return  NO;
 }
+
+
+- (BOOL)isSameCompareNoCaseWith:(NSString *)string{
+
+    //NSOrderedDescending判断两对象值的大小(按字母顺序进行比较，astring02小于astring01为真)
+    BOOL result1 = [self caseInsensitiveCompare:string] == NSOrderedSame;
     
+    //NSCaseInsensitiveSearch:不区分大小写比较 NSLiteralSearch:进行完全比较，区分大小写 NSNumericSearch:比较字符串的字符个数，而不是字符值。
+    BOOL result2 = [self compare:string options:NSCaseInsensitiveSearch | NSNumericSearch] == NSOrderedSame;
+    
+    return result1 && result2;
+}
+
     
 
 @end

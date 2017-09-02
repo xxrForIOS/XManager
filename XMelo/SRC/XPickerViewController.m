@@ -7,11 +7,14 @@
 //
 
 #import "XPickerViewController.h"
+#import "YVPickerView.h"
 
-@interface XPickerViewController ()<UIPickerViewDelegate, UIPickerViewDataSource>
+@interface XPickerViewController ()
 
-@property (nonatomic, strong) UIPickerView      *picker;
-@property (nonatomic, strong) UILabel           *contentLabel;
+@property (nonatomic, strong) UIButton      *stringButton;
+@property (nonatomic, strong) UIButton      *imageButton;
+@property (nonatomic, copy)   NSString      *chooseString;
+@property (nonatomic, strong) UIImage       *chooseImage;
 
 @end
 
@@ -20,56 +23,92 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.navigationItem.title = @"picker";
-    
+    self.navigationItem.title = @"custom picker";
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
-    self.picker = ({
+    @kWeakSelf;
+    self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
         
+        return 2;
+    };
+    
+    self.heightForRowAtIndexPath = ^CGFloat(NSIndexPath *indexPath) {
         
-        UIPickerView *picker = [[UIPickerView alloc]initWithFrame:CGRectMake(0, kScreenHeight - 64 - 200, kScreenWidth, 200)];
-        picker.delegate = self;
-        picker.dataSource = self;
-        picker.backgroundColor = [UIColor whiteColor];
-        [self.view addSubview:picker];
-        picker;
-    });
+        return 50;
+    };
     
-    self.contentLabel = ({
+    NSArray *labelTexts = @[@"show string picker", @"show image picker"];
+    self.creatCellView = ^(UITableViewCell *cell, NSIndexPath *indexPath) {
+      
+        cell.textLabel.text = labelTexts[indexPath.row];
+        cell.textLabel.font = kFontTheme(14);
         
-        UILabel *theLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 200, kScreenWidth - 20, 30)];
-        theLabel.textAlignment = NSTextAlignmentCenter;
-        theLabel.font = kFontTheme(15);
-        theLabel.backgroundColor = [UIColor cyanColor];
-        theLabel.textColor = [UIColor blackColor];
-
-        [self.view addSubview:theLabel];
-        theLabel;
-    });
+        //textlabel会覆盖右侧自定义控件 只是显示的话，透明背景颜色即可 如需交互还是老老实实全自定义
+        cell.textLabel.backgroundColor = [UIColor clearColor];
+        if (indexPath.row == 0) {
+            
+            selfWeak.stringButton = ({
+                
+                UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
+                theButton.frame = CGRectMake(kScreenWidth - 70, 5, 70, 40);
+                theButton.titleLabel.font = kFontTheme(15);
+                [theButton setTitleColor:kColor_yan forState:UIControlStateNormal];
+                [cell.contentView addSubview:theButton];
+                theButton;
+            });
+            [selfWeak.stringButton setTitle:selfWeak.chooseString forState:UIControlStateNormal];
+        }
+        
+        if (indexPath.row == 1) {
+            
+            selfWeak.imageButton = ({
+                
+                UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
+                theButton.frame = CGRectMake(kScreenWidth - 70, 5, 70, 40);
+                [cell.contentView addSubview:theButton];
+                theButton;
+            });
+            [selfWeak.imageButton setImage:selfWeak.chooseImage forState:UIControlStateNormal];
+        }
+    };
+    
+    self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
+      
+        [YVPickerView showPickerIn:selfWeak withDatas:[selfWeak configDatasIn:indexPath] handler:^(id chooseObj) {
+            
+            if (indexPath.row == 0) {
+                
+                selfWeak.chooseString = (NSString *)chooseObj;
+                [selfWeak.stringButton setTitle:(NSString *)chooseObj forState:UIControlStateNormal];
+            } else {
+                
+                selfWeak.chooseImage = (UIImage *)chooseObj;
+                [selfWeak.imageButton setImage:(UIImage *)chooseObj forState:UIControlStateNormal];
+            }
+        }];
+    };
 }
 
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+- (NSArray *)configDatasIn:(NSIndexPath *)indexPath {
     
-    return 2;
-}
+    NSMutableArray *tmpArray = [NSMutableArray arrayWithCapacity:0];
+    if (indexPath.row == 0) {
+        
+        for (int index = 0; index < 11; index ++) {
+            
+            NSString *theString = kStringFormat(@"%u",arc4random()%100);
+            [tmpArray addObject:theString];
+        }
+    } else {
+        
+        for (int index = 0; index < 10; index ++) {
+            
+            UIImage *theImage = kImageName(@"wish_grab_%d",index + 1);
+            [tmpArray addObject:theImage];
+        }
+    }
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    
-    return 5;
-}
-
-- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
-    
-    return 50;
-}
-
-
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(nullable UIView *)view __TVOS_PROHIBITED {
-    
-    UIImageView *theView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
-    theView.backgroundColor = kColorRandom;
-    return theView;
+    return [NSArray arrayWithArray:tmpArray];
 }
 
 - (void)didReceiveMemoryWarning {

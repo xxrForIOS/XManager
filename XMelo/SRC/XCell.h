@@ -19,5 +19,4 @@
 @property (nonatomic, strong) UILabel       *introLabel;
 
 @property (nonatomic, strong) DictModel     *model;
-
 @end

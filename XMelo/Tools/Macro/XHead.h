@@ -82,11 +82,8 @@ NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];\
 //#define kOpenAliPay(code)       [[AlipaySDK defaultService] payOrder:code fromScheme:YVAliPaySchemeUrl callback:nil]
 
 #define kStringFormat(f,...)    [NSString stringWithFormat:f,##__VA_ARGS__]
-
-
-#define kContext            ((AppDelegate *)[UIApplication sharedApplication].delegate).persistentContainer.viewContext
-
-#define kDelegate           (AppDelegate *)[[UIApplication sharedApplication] delegate]
+#define kContext                ((AppDelegate *)[UIApplication sharedApplication].delegate).persistentContainer.viewContext
+#define kDelegate               (AppDelegate *)[[UIApplication sharedApplication] delegate]
 
 
 

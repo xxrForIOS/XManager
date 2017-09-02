@@ -12,6 +12,7 @@
 #import "JTNavigationController.h"
 #import "JTBaseNavigationController.h"
 
+#import "NNValidationView.h"
 @interface ViewController () 
 
 @property (nonatomic, strong) UISearchBar       *searchBar;
@@ -62,7 +63,7 @@
         
         [XManager showHUDWithString:@"Oops I Dit It Again" completion:^{
             
-//            [self configRootViewController];
+            [self configRootViewController];
         }];
     }];
     

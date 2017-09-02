@@ -29,7 +29,7 @@
     self.cellStyle = UITableViewCellStyleDefault;
     
     self.tableView = ({
-        UITableView *theTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:self.tableStyle];
+        UITableView *theTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64) style:self.tableStyle];
         theTable.delegate = self;
         theTable.dataSource = self;
         [self.view addSubview:theTable];
@@ -40,6 +40,10 @@
     self.tableView.emptyDataSetSource = self;
     self.tableView.emptyDataSetDelegate = self;
     
+    //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
+    //cell.separatorInset = UIEdgeInsetsMake(0, kScreenWidth, 0, 0);
+
     //隐藏多余的cell
     self.tableView.tableFooterView = [[UIView alloc]init];
 }
@@ -267,8 +271,11 @@
         [self creatCellView:cell With:indexPath];
         return cell;
     }
-    
-    //cell.separatorInset = UIEdgeInsetsMake(0, kScreenWidth, 0, 0);
+//    if (cell) {
+//        for (UIView *theView in cell.contentView.subviews) {
+//            [theView removeFromSuperview];
+//        }
+//    }
 }
 
 - (void)creatCellView:(UITableViewCell *)cell With:(NSIndexPath *)indexPath {

@@ -9,6 +9,7 @@
 #import "YVPickerView.h"
 
 static char     yvPickerViewKey;
+
 @interface YVPickerView() <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic, strong) NSArray       *datas;
@@ -31,7 +32,7 @@ static char     yvPickerViewKey;
     return sharedManager;
 }
 
-+ (void)showPickerIn:(UIViewController *)vcc withDatas:(NSArray *)datas handler:(yvPickerChooseObject)aBlock {
++ (void)showPickerIn:(UIViewController *)vcc withDatas:(NSArray *)datas handler:(XRPickerChooseObject)aBlock {
     
     __block UIViewController *theVC = vcc;
     __block YVPickerView *theSelf = [self sharedManager];
@@ -121,7 +122,7 @@ static char     yvPickerViewKey;
 
     self.isChoose = YES;
     id chooseObje = self.datas[row];
-    yvPickerChooseObject block = objc_getAssociatedObject(self, &yvPickerViewKey);
+    XRPickerChooseObject block = objc_getAssociatedObject(self, &yvPickerViewKey);
     !block ?: block(chooseObje);
 }
 

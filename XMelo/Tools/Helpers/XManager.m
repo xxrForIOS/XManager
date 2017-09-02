@@ -51,45 +51,132 @@
     return theImage;
 }
 
+//MARK:- 获取当前界面所在vc
++ (UIViewController *)currentViewController{
+    
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    if (window.windowLevel != UIWindowLevelNormal){
+        
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows){
+            
+            if (tmpWin.windowLevel == UIWindowLevelNormal){
+                
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    UIViewController *result = window.rootViewController;
+    while (result.presentedViewController) {
+        
+        result = result.presentedViewController;
+    }
+    if ([result isKindOfClass:[UINavigationController class]]) {
+        
+        result = [(UINavigationController *)result topViewController];
+    }
+    return result;
+}
 
+//MARK:- 弹窗
++ (void)showAlertWith:(NSString *)str{
+    
+    [self showAlertWith:str confirm:nil];
+}
 
++ (void)showAlertWith:(NSString *)str confirm:(void(^)())aBlock{
+    
+    [self showAlertWith:str confirm:aBlock cancel:nil];
+}
 
-#pragma makr- 弹窗
++ (void)showAlertWith:(NSString *)str confirm:(void(^)())afBlock cancel:(void(^)())ccBlock{
+    
+    if (ccBlock) {
+        
+        [self alertControllerWithTitle:@"提示"
+                               message:str
+                         confirmButton:@"确定"
+                          cancelButton:@"取消"
+                          confirmBlock:afBlock
+                           cancelBlock:ccBlock];
+    } else {
+        
+        [self alertControllerWithTitle:@"提示"
+                               message:str
+                         confirmButton:@"确定"
+                          cancelButton:nil
+                          confirmBlock:afBlock
+                           cancelBlock:nil];
+    }
+
+}
+
+//弹窗基础方法
 + (void)alertControllerWithTitle:(NSString *)title
                          message:(NSString *)message
                    confirmButton:(NSString *)confirmStr
                     cancelButton:(NSString *)cancelStr
-                          showIn:(UIViewController *)vcc
                     confirmBlock:(void (^)())cfBlock
                      cancelBlock:(void (^)())ccBlock {
-    static UIAlertController  *alert = nil;
-    if (alert) {
-        [alert dismissViewControllerAnimated:YES completion:nil];
+    
+    UIViewController *controller = [self currentViewController];
+    
+    ///判断当前界面是否为alertcontroller
+    if ([controller isKindOfClass:[UIAlertController class]]) {
+        
+        UIAlertController *currAl = (UIAlertController *)controller;
+        [currAl dismissViewControllerAnimated:YES completion:^{
+            
+            ///上一个弹窗dismiss之后再弹出心的
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                           message:message
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            if (cancelStr) {
+                
+                [alert addAction:[UIAlertAction actionWithTitle:cancelStr style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)  {
+                    
+                    !ccBlock ?: ccBlock();
+                }]];
+            }
+            
+            [alert addAction:[UIAlertAction actionWithTitle:confirmStr style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                
+                if (cfBlock)  {
+                    
+                    cfBlock();
+                }
+            }]];
+            
+            ///重新获取当前界面
+            [[self currentViewController] presentViewController:alert animated:YES completion:nil];
+        }];
+    } else {
+        
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                       message:message
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        if (cancelStr) {
+            
+            [alert addAction:[UIAlertAction actionWithTitle:cancelStr style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)  {
+                
+                !ccBlock ?: ccBlock();
+            }]];
+        }
+        
+        [alert addAction:[UIAlertAction actionWithTitle:confirmStr style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            
+            if (cfBlock)  {
+                
+                cfBlock();
+            }
+        }]];
+        
+        [controller presentViewController:alert animated:YES completion:nil];
     }
-    alert = [UIAlertController alertControllerWithTitle:title
-                                                message:message
-                                         preferredStyle:UIAlertControllerStyleAlert];
-    
-    if (cancelStr) {
-        [alert addAction:[UIAlertAction actionWithTitle:cancelStr
-                                                  style:UIAlertActionStyleDefault
-                                                handler:^(UIAlertAction * _Nonnull    action)  {
-                                                    if (ccBlock)  {
-                                                        ccBlock();
-                                                    }
-                                                }]];
-    }
-    
-    
-    [alert addAction:[UIAlertAction actionWithTitle:confirmStr
-                                              style:UIAlertActionStyleDestructive
-                                            handler:^(UIAlertAction * _Nonnull action) {
-                                                if (cfBlock)  {
-                                                    cfBlock();
-                                                }
-                                            }]];
-    
-    [vcc presentViewController:alert animated:YES completion:nil];
 }
 
 + (void)alertTextFiledWithTitle:(NSString *)title
@@ -140,31 +227,6 @@
 }
 
 
-+ (void)showAlertWith:(NSString *)str confirm:(void(^)())aBlock{
-    
-    //NSArray *array = [[UIApplication sharedApplication] windows];
-    UIViewController *rootController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    
-    if (rootController == nil) {
-        rootController = [[[[UIApplication sharedApplication] windows] firstObject] rootViewController];
-    }
-    
-    [self   alertControllerWithTitle:@"提示"
-                             message:str
-                       confirmButton:@"知道了"
-                        cancelButton:nil
-                              showIn:rootController
-                        confirmBlock:aBlock
-                         cancelBlock:nil];
-    
-    
-}
-
-+ (void)showAlertWith:(NSString *)str{
-    
-    [self showAlertWith:str  confirm:nil];
-}
-
 + (void)showHUDWithString:(NSString *)str completion:(void(^)())completion{
     
     UIView *theView = [UIApplication sharedApplication].keyWindow.rootViewController.view;
@@ -182,6 +244,7 @@
         }
     });
 }
+
 
 
 #pragma mark- 调用打电话
@@ -202,6 +265,7 @@
     }
 }
 
+//MARK:- 导航条右上角添加文字按钮
 + (void)addRightBarItemInViewController:(UIViewController *)vcc itemTitle:(NSString *)str andItemBlock:(void(^)(UIButton *aButton))aBlock{
     CGFloat width = [str boundingRectWithSize:CGSizeMake(MAXFLOAT, 60)
                                       options:NSStringDrawingUsesLineFragmentOrigin

@@ -35,6 +35,8 @@
 		A767F0F91F5560BD00432627 /* XImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A767F0F61F5560BD00432627 /* XImagePicker.m */; };
 		A767F0FA1F5560BD00432627 /* YVPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A767F0F81F5560BD00432627 /* YVPickerView.m */; };
 		A76E10651F2ED9EF00E09AAE /* XCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A76E10641F2ED9EF00E09AAE /* XCell.m */; };
+		A771A2D11F5CF7A800035284 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A771A2D01F5CF7A800035284 /* WebViewController.m */; };
+		A771A2EA1F5E6A5800035284 /* XUploadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A771A2E91F5E6A5800035284 /* XUploadCell.m */; };
 		A795B77A1F4EB91B003C7EAD /* YVAgreementView.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7791F4EB91B003C7EAD /* YVAgreementView.m */; };
 		A795B77F1F501735003C7EAD /* uploadImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A795B77E1F501735003C7EAD /* uploadImage.png */; };
 		A795B7871F511201003C7EAD /* UploadImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7821F511201003C7EAD /* UploadImageCell.m */; };
@@ -111,6 +113,10 @@
 		A76E10621F2EBFCA00E09AAE /* XImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XImport.h; sourceTree = "<group>"; };
 		A76E10631F2ED9EF00E09AAE /* XCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCell.h; sourceTree = "<group>"; };
 		A76E10641F2ED9EF00E09AAE /* XCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCell.m; sourceTree = "<group>"; };
+		A771A2CF1F5CF7A800035284 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		A771A2D01F5CF7A800035284 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		A771A2E81F5E6A5800035284 /* XUploadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XUploadCell.h; sourceTree = "<group>"; };
+		A771A2E91F5E6A5800035284 /* XUploadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XUploadCell.m; sourceTree = "<group>"; };
 		A795B7781F4EB91B003C7EAD /* YVAgreementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YVAgreementView.h; sourceTree = "<group>"; };
 		A795B7791F4EB91B003C7EAD /* YVAgreementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YVAgreementView.m; sourceTree = "<group>"; };
 		A795B77E1F501735003C7EAD /* uploadImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uploadImage.png; sourceTree = "<group>"; };
@@ -304,11 +310,22 @@
 			name = ImageValidation;
 			sourceTree = "<group>";
 		};
+		A771A2D21F5CFE2500035284 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				A771A2CF1F5CF7A800035284 /* WebViewController.h */,
+				A771A2D01F5CF7A800035284 /* WebViewController.m */,
+			);
+			name = Web;
+			sourceTree = "<group>";
+		};
 		A795B7801F511201003C7EAD /* UploadImage */ = {
 			isa = PBXGroup;
 			children = (
 				A795B7811F511201003C7EAD /* UploadImageCell.h */,
 				A795B7821F511201003C7EAD /* UploadImageCell.m */,
+				A771A2E81F5E6A5800035284 /* XUploadCell.h */,
+				A771A2E91F5E6A5800035284 /* XUploadCell.m */,
 				A795B7831F511201003C7EAD /* UploadImageViewController.h */,
 				A795B7841F511201003C7EAD /* UploadImageViewController.m */,
 			);
@@ -435,6 +452,7 @@
 				A7A8AB6A1F0BC737001338B0 /* ViewController.m */,
 				A713F8801F17A87200FEA33E /* XListViewController.h */,
 				A713F8811F17A87200FEA33E /* XListViewController.m */,
+				A771A2D21F5CFE2500035284 /* Web */,
 				A771A27A1F59903300035284 /* ImageValidation */,
 				A721BD291F5941F9008EBF9A /* Font */,
 				A721BD251F593B4C008EBF9A /* Input */,
@@ -625,6 +643,7 @@
 				A721BD2F1F5980EA008EBF9A /* ImageValidationViewController.m in Sources */,
 				A795B7921F5117EF003C7EAD /* XPickerViewController.m in Sources */,
 				A72CD1AE1F0D0567002C90BD /* XConst.m in Sources */,
+				A771A2D11F5CF7A800035284 /* WebViewController.m in Sources */,
 				A7EAFCB21F2F659F008FE729 /* RTRootNavigationController.m in Sources */,
 				A72CD1A71F0D04EE002C90BD /* UILabel+Frame.m in Sources */,
 				A767F0F91F5560BD00432627 /* XImagePicker.m in Sources */,
@@ -633,6 +652,7 @@
 				A795B77A1F4EB91B003C7EAD /* YVAgreementView.m in Sources */,
 				A70DA5231F564D730059935B /* UIScrollView+SpringHeadView.m in Sources */,
 				A72CD1EC1F10719D002C90BD /* DictModel.m in Sources */,
+				A771A2EA1F5E6A5800035284 /* XUploadCell.m in Sources */,
 				A7A8AB6B1F0BC737001338B0 /* ViewController.m in Sources */,
 				A72CD1A11F0D04EE002C90BD /* NSData+Add.m in Sources */,
 				A72CD1A21F0D04EE002C90BD /* NSString+Add.m in Sources */,

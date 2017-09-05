@@ -17,7 +17,6 @@
 
 @property (nonatomic, strong) UISearchBar       *searchBar;
 
-
 @end
 
 @implementation ViewController
@@ -35,11 +34,14 @@
     [theLabel changeColor:[UIColor redColor] string:@"e" repetition:YES];
     [theLabel changeFont:kFontTheme(10) string:@"e"];
     
+
     
     UIView *theView = [[UIView alloc]initWithFrame:CGRectMake(30, 200, kScreenWidth - 60, 50)];
-    theView.layer.cornerRadius = theView.height/2;
     theView.backgroundColor = [UIColor redColor];
+    [theView changeCorner:UIRectCornerTopLeft | UIRectCornerBottomLeft cornerRadii:theView.height/2];
+    theView.layer.masksToBounds = YES;
     [self.view addSubview:theView];
+    
     
     theView.userInteractionEnabled = YES;
     [theView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithActionBlock:^(id sender) {

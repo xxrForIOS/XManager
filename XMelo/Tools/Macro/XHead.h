@@ -42,7 +42,11 @@
 #define kFontTheme(f)       [UIFont fontWithName:@"Menlo" size:f]
 #define kFontBold(f)        [UIFont boldSystemFontOfSize:f]
 
-
+#define kColorThemeOrange   kColorHex(0xfb6b2b)
+#define kColorThemeRed      kColorHex(0xfc4c4c)
+#define kColorThemeBlack    kColorHex(0x2a2e36)
+#define kColorThemeGray     kColorHex(0x959595)
+#define kColorThemeBlue     kColorHex(0x2a83fb)
 
 ///image
 #define kImageName(f,...)   [UIImage imageNamed:[NSString stringWithFormat:f,##__VA_ARGS__]]

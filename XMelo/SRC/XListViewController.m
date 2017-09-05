@@ -70,7 +70,6 @@
     
     self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
         
-        
         kPush(selfWeak, selfWeak.controllers[indexPath.row]);
     };
     

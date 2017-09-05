@@ -20,7 +20,8 @@
 @property (nonatomic,   assign) CGSize  size;
 @property (nonatomic,   assign) CGPoint orign;
 
-
+@property (nonatomic,   assign, readonly) CGFloat maxX;
+@property (nonatomic,   assign, readonly) CGFloat maxY;
 
 /**
  获取当前所在的viewController
@@ -28,5 +29,8 @@
  @return viewController
  */
 - (UIViewController *)viewController;
+
+
+- (void)changeCorner:(UIRectCorner)corners cornerRadii:(CGFloat)radii;
 
 @end

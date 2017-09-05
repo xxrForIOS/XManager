@@ -7,8 +7,10 @@
 //
 
 #import "UploadImageViewController.h"
-#import "UploadImageCell.h"
 #import "UIScrollView+SpringHeadView.h"
+
+#import "UploadImageCell.h"
+#import "XUploadCell.h"
 
 @interface UploadImageViewController ()
 
@@ -32,9 +34,9 @@
     self.cellHeights = [NSMutableArray arrayWithCapacity:6];
     
     [self.cellHeights addObject:[NSNumber numberWithFloat:50]];
-    [self.cellHeights addObject:[NSNumber numberWithFloat:((kScreenWidth - 10 * 4) / 3 + 20 )]];
-    [self.cellHeights addObject:[NSNumber numberWithFloat:((kScreenWidth - 10 * 4) / 3 + 20 )]];
-    [self.cellHeights addObject:[NSNumber numberWithFloat:((kScreenWidth - 10 * 4) / 3 + 20 )]];
+    [self.cellHeights addObject:[NSNumber numberWithFloat:50]];
+    [self.cellHeights addObject:[NSNumber numberWithFloat:50]];
+    [self.cellHeights addObject:[NSNumber numberWithFloat:50]];
 
     [self.tableView addSpringHeadView:({
         
@@ -56,6 +58,7 @@
     };
     
     [self.tableView registerClass:[UploadImageCell class] forCellReuseIdentifier:@"uploadCell"];
+    [self.tableView registerClass:[XUploadCell class] forCellReuseIdentifier:@"theCell"];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
 
     self.cellForRowAtIndexPath = ^UITableViewCell *(UITableView *tableView, NSIndexPath *indexPath) {
@@ -69,31 +72,46 @@
             return cell;
         } else {
             
-            UploadImageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"uploadCell" forIndexPath:indexPath];
-            
-            @kWeakObj(cell);
-            cell.uploadImage = ^(NSArray *images, CGFloat cellHeight) {
+            XUploadCell *cell = [tableView dequeueReusableCellWithIdentifier:@"theCell" forIndexPath:indexPath];
+            cell.cellOpenBlock = ^(CGFloat cellHeight) {
                 
+                [selfWeak.cellHeights replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithFloat:cellHeight]];
+                NSIndexPath *theIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+                [selfWeak.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:theIndexPath,nil]
+                                          withRowAnimation:UITableViewRowAnimationNone];
+            };
+            
+            cell.upImageBlock = ^(NSArray *images) {
+              
                 if (selfWeak.uploadImages) {
                     
                     [selfWeak.uploadImages removeAllObjects];
                 }
                 selfWeak.uploadImages = [NSMutableArray arrayWithArray:images];
-                
-                [selfWeak.cellHeights replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithFloat:cellHeight + 10]];
-                //            selfWeak.theUploadCellHeght = cellHeight;
-                
-                NSIndexPath *theIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-                [selfWeak.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:theIndexPath,nil]
-                                          withRowAnimation:UITableViewRowAnimationNone];
-                
-                [cellWeak configImagesWith:selfWeak.uploadImages];
             };
             
-            
-            if (indexPath.row %2 == 0) {
-                cell.maxImages = 6;
-            }
+//            UploadImageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"uploadCell" forIndexPath:indexPath];
+//            cell.uploadImage = ^(NSArray *images, CGFloat cellHeight) {
+//                
+//                if (selfWeak.uploadImages) {
+//                    
+//                    [selfWeak.uploadImages removeAllObjects];
+//                }
+//                selfWeak.uploadImages = [NSMutableArray arrayWithArray:images];
+//                
+//                [selfWeak.cellHeights replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithFloat:cellHeight + 10]];
+//                //            selfWeak.theUploadCellHeght = cellHeight;
+//                
+//                NSIndexPath *theIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//                [selfWeak.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:theIndexPath,nil]
+//                                          withRowAnimation:UITableViewRowAnimationNone];
+//                
+//                [cellWeak configImagesWith:selfWeak.uploadImages];
+//            };
+//
+//            if (indexPath.row %2 == 0) {
+//                cell.maxImages = 6;
+//            }
             return cell;
         }
     };

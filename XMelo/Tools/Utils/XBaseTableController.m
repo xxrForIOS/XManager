@@ -29,7 +29,8 @@
     self.cellStyle = UITableViewCellStyleDefault;
     
     self.tableView = ({
-        UITableView *theTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64) style:self.tableStyle];
+        UITableView *theTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64)
+                                                            style:self.tableStyle];
         theTable.delegate = self;
         theTable.dataSource = self;
         [self.view addSubview:theTable];
@@ -49,30 +50,31 @@
 }
 
 - (BOOL) emptyDataSetShouldAllowImageViewAnimate:(UIScrollView *)scrollView {
+    
     return YES;
 }
 
-- (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView
-{
-    [_tableView.mj_header beginRefreshing];
+- (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView{
     
-    NSLog(@"emptyDataSetDidTapButton");
-    // Do something
+    return YES;
 }
 
-- (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView
-{
+- (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView{
+    
+    [_tableView.mj_header beginRefreshing];
+}
+
+- (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView{
+    
     return [UIColor groupTableViewBackgroundColor];
 }
 
 - (UIImage *)buttonImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state {
+   
     return kImageName(@"placeholder_image");
 }
 
-- (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView
-{
-    return YES;
-}
+
 
 
 - (void)showNewFooterAgreementTitle:(NSString *)fullStr clickString:(NSString *)clickStr buttonWithTitle:(NSString *)buttonTitle clickBlock:(void(^)(UIButton *aButton, BOOL isRead))aBlock {
@@ -112,6 +114,7 @@
 - (void)showFooerButtonWithTitle:(NSString *)title clickBlock:(void(^)(UIButton *aButton))aBlock {
     
     self.tableView.tableFooterView = ({
+        
         UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 90)];
         bgView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -129,7 +132,6 @@
         }];
         
         [bgView addSubview:leftButton];
-        
         bgView;
     });
 }
@@ -216,7 +218,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
     return ({
         
         CGFloat height = self.tableView.rowHeight;
@@ -271,11 +272,6 @@
         [self creatCellView:cell With:indexPath];
         return cell;
     }
-//    if (cell) {
-//        for (UIView *theView in cell.contentView.subviews) {
-//            [theView removeFromSuperview];
-//        }
-//    }
 }
 
 - (void)creatCellView:(UITableViewCell *)cell With:(NSIndexPath *)indexPath {

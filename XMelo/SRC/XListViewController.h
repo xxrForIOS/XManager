@@ -10,4 +10,5 @@
 
 @interface XListViewController : XBaseTableController
 
+@property (nonatomic, copy) NSString        *animation;
 @end

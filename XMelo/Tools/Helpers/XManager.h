@@ -85,4 +85,8 @@ typedef NS_ENUM(NSInteger, XRDateFormatType) {
 /** 获取距离时间戳*/
 + (NSString *)timeGetTimeStampSinceNow:(int)second;
 
++ (NSString*)weekDayStr;
+    
++ (NSString *)weekdayString;
+
 @end

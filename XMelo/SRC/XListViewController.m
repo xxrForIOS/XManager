@@ -13,7 +13,7 @@
 #import "XInputViewController.h"
 #import "FontViewController.h"
 #import "ImageValidationViewController.h"
-
+#import "TableViewAnimationKit.h"
 @interface XListViewController ()
 
 @property (nonatomic, strong) NSArray           *datas;
@@ -27,6 +27,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+
+    
 
     
     self.datas = @[@"core data",
@@ -55,7 +58,7 @@
        
         return selfWeak.datas.count;
     };
-    
+
     self.heightForHeadrAtIndexPath = ^CGFloat(NSInteger section) {
       
         return 1;
@@ -104,13 +107,33 @@
     
     
     
-    [XManager addRightBarItemInViewController:self itemTitle:@"show" andItemBlock:^(UIButton *aButton) {
+    [XManager addRightBarItemInViewController:self itemTitle:@"dismiss" andItemBlock:^(UIButton *aButton) {
        
-        
+        [self dismissViewControllerAnimated:YES completion:nil];
     }];
+    
+
+    [self startWithAnimation:self.animation];
 }
 
-
+- (void)startWithAnimation:(NSString *)string {
+    
+    self.tableView.hidden = YES;
+    [XManager dispatchAfter:1 completion:^{
+        
+        self.tableView.hidden = NO;
+        if ([string isEqualToString:@"move"])           [TableViewAnimationKit moveAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"alpha"])          [TableViewAnimationKit alphaAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"fall"])           [TableViewAnimationKit fallAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"shake"])          [TableViewAnimationKit shakeAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"over"])           [TableViewAnimationKit overTurnAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"toTop"])          [TableViewAnimationKit toTopAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"spring"])         [TableViewAnimationKit springListAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"shrink"])         [TableViewAnimationKit shrinkToTopAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"layDonw"])        [TableViewAnimationKit layDonwAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"rote"])           [TableViewAnimationKit roteAnimationWithTableView:self.tableView];
+    }];
+}
 
 
 - (void)didReceiveMemoryWarning {

@@ -10,6 +10,7 @@
 #import "MJRefresh.h"
 #import "UIScrollView+EmptyDataSet.h"
 #import "YVAgreementView.h"
+#import "TableViewAnimationKit.h"
 
 #define kCellIdentifier @"baseCell"
 
@@ -47,7 +48,23 @@
 
     //隐藏多余的cell
     self.tableView.tableFooterView = [[UIView alloc]init];
+    
+//    [self performSelector:@selector(loadData) withObject:nil afterDelay:1];
 }
+
+
+- (void)loadData {
+    
+    [self.tableView reloadData];
+}
+
+
+
+
+
+
+
+
 
 - (BOOL) emptyDataSetShouldAllowImageViewAnimate:(UIScrollView *)scrollView {
     
@@ -283,6 +300,7 @@
     
     !self.creatCellView ?: self.creatCellView(cell, indexPath);
 }
+
 
 
 #pragma mark- 刷新

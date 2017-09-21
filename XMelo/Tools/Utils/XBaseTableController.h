@@ -45,10 +45,10 @@
 
 
 ///下拉head刷新
-- (void)updateDataFromHeadWith:(void(^)())block;
+- (void)updateDataFromHeadWith:(void(^)(void))block;
 
 ///上拉footer加载
-- (void)updateDataFromFootWith:(void(^)())block;
+- (void)updateDataFromFootWith:(void(^)(void))block;
 
 
 ///新按钮

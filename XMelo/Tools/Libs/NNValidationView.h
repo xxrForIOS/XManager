@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^NNChangeValidationCodeBlock)();
+typedef void(^NNChangeValidationCodeBlock)(void);
 
 @interface NNValidationView : UIView
 

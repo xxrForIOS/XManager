@@ -85,12 +85,12 @@
     [self alertControllerWithTitle:@"提示" message:str confirmButton:@"确定" cancelButton:nil confirmBlock:nil cancelBlock:nil];
 }
 
-+ (void)showAlertWith:(NSString *)str confirm:(void(^)())aBlock{
++ (void)showAlertWith:(NSString *)str confirm:(void(^)(void))aBlock{
     
     [self alertControllerWithTitle:@"提示" message:str confirmButton:@"确定" cancelButton:nil confirmBlock:aBlock cancelBlock:nil];
 }
 
-+ (void)showAlertWith:(NSString *)str confirm:(void(^)())afBlock cancel:(void(^)())ccBlock{
++ (void)showAlertWith:(NSString *)str confirm:(void(^)(void))afBlock cancel:(void(^)(void))ccBlock{
     
     [self alertControllerWithTitle:@"提示" message:str confirmButton:@"确定" cancelButton:@"取消" confirmBlock:afBlock cancelBlock:ccBlock];
 }
@@ -100,8 +100,8 @@
                          message:(NSString *)message
                    confirmButton:(NSString *)confirmStr
                     cancelButton:(NSString *)cancelStr
-                    confirmBlock:(void (^)())cfBlock
-                     cancelBlock:(void (^)())ccBlock {
+                    confirmBlock:(void (^)(void))cfBlock
+                     cancelBlock:(void (^)(void))ccBlock {
     
     UIViewController *controller = [self currentViewController];
     
@@ -210,7 +210,7 @@
 }
 
 
-+ (void)showHUDWithString:(NSString *)str completion:(void(^)())completion{
++ (void)showHUDWithString:(NSString *)str completion:(void(^)(void))completion{
     
     UIView *theView = [UIApplication sharedApplication].keyWindow.rootViewController.view;
     
@@ -270,7 +270,7 @@
 }
 
 //MARK:- gcd
-+ (void)dispatchAfter:(int)time completion:(void(^)())completion {
++ (void)dispatchAfter:(int)time completion:(void(^)(void))completion {
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
@@ -278,7 +278,7 @@
     });
 }
 
-+ (void)dispatchAsynac:(void(^)())asyncBlock mainQueue:(void(^)())mainBlock {
++ (void)dispatchAsynac:(void(^)(void))asyncBlock mainQueue:(void(^)(void))mainBlock {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         
         asyncBlock();

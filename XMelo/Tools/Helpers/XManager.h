@@ -33,10 +33,10 @@ typedef NS_ENUM(NSInteger, XRDateFormatType) {
 
 
 ///MARK:- gcd延时操作
-+ (void)dispatchAfter:(int)time completion:(void(^)())timerOut;
++ (void)dispatchAfter:(int)time completion:(void(^)(void))timerOut;
 
 ///MARK: gcd开辟子线程
-+ (void)dispatchAsynac:(void(^)())asyncBlock mainQueue:(void(^)())mainBlock;
++ (void)dispatchAsynac:(void(^)(void))asyncBlock mainQueue:(void(^)())mainBlock;
 
 
 ///MARK:- 打电话
@@ -49,19 +49,19 @@ typedef NS_ENUM(NSInteger, XRDateFormatType) {
 
 ///MARK:- 弹窗
 + (void)showAlertWith:(NSString *)str;
-+ (void)showAlertWith:(NSString *)str confirm:(void(^)())aBlock;
-+ (void)showAlertWith:(NSString *)str confirm:(void(^)())afBlock cancel:(void(^)())ccBlock;
++ (void)showAlertWith:(NSString *)str confirm:(void(^)(void))aBlock;
++ (void)showAlertWith:(NSString *)str confirm:(void(^)(void))afBlock cancel:(void(^)(void))ccBlock;
 
 ///MARK: 会消失的弹窗
-+ (void)showHUDWithString:(NSString *)str completion:(void(^)())completion;
++ (void)showHUDWithString:(NSString *)str completion:(void(^)(void))completion;
 
 ///弹窗主体方法
 + (void)alertControllerWithTitle:(NSString *)title
                          message:(NSString *)message
                    confirmButton:(NSString *)confirmStr
                     cancelButton:(NSString *)cancelStr
-                    confirmBlock:(void (^)())cfBlock
-                     cancelBlock:(void (^)())ccBlock;
+                    confirmBlock:(void (^)(void))cfBlock
+                     cancelBlock:(void (^)(void))ccBlock;
 
 + (void)alertTextFiledWithTitle:(NSString *)title
                         message:(NSString *)message

@@ -18,7 +18,7 @@
 @interface YVAgreementView : NSObject
 
 
-typedef void (^yvClickableBlock)();
+typedef void (^yvClickableBlock)(void);
 
 
 //左侧按钮是否勾选
@@ -38,5 +38,5 @@ typedef void (^yvClickableBlock)();
                      clickString:(NSString *)cString
                        addInView:(UIView *)inView
                        withFrame:(CGRect)frame
-                         handler:(void(^)())aBlock;
+                         handler:(void(^)(void))aBlock;
 @end

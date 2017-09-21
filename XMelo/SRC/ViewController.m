@@ -14,6 +14,7 @@
 #import <CoreText/CoreText.h>
 #import "NNValidationView.h"
 
+
 @interface ViewController () 
 
 @property (nonatomic, strong) UISearchBar       *searchBar;
@@ -22,57 +23,15 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    NSArray *modes = [UITextInputMode activeInputModes];
-//    
-//    for (UITextInputMode *inputMode in modes) {
-//        
-//        NSString *language = [inputMode primaryLanguage];
-//        
-//        NSLog(@"xxx %@",language);
-//    }
-//    
-//    UITextInputMode *inputMode = [UITextInputMode activeInputModes][1];
-//    
-//    NSString *xxx = [[UIApplication sharedApplication]textInputMode].primaryLanguage;
-//    UIView *theView = [[UIView alloc]initWithFrame:CGRectMake(30, 200, kScreenWidth - 60, 50)];
-//    theView.backgroundColor = [UIColor redColor];
-//    [theView changeCorner:UIRectCornerTopLeft | UIRectCornerBottomLeft cornerRadii:theView.height/2];
-//    theView.layer.masksToBounds = YES;
-//    [self.view addSubview:theView];
-//    
-//    
-//    theView.userInteractionEnabled = YES;
-//    [theView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithActionBlock:^(id sender) {
-//        
-//        [UIView animateWithDuration:0.75 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//            
-//            if (theView.width == 50) {
-//                
-//                theView.frame = CGRectMake(30, 200, kScreenWidth - 60, 50);
-//            } else {
-//                
-//                theView.frame = CGRectMake(kScreenWidth/2 - 25, 200, 50, 50);
-//            }
-//        } completion:nil];
-//    }]];
-/*
- 
- + (void)moveAnimationWithTableView:(UITableView *)tableView;
- + (void)alphaAnimationWithTableView:(UITableView *)tableView;
- + (void)fallAnimationWithTableView:(UITableView *)tableView;
- + (void)shakeAnimationWithTableView:(UITableView *)tableView;
- + (void)overTurnAnimationWithTableView:(UITableView *)tableView;
- + (void)toTopAnimationWithTableView:(UITableView *)tableView;
- + (void)springListAnimationWithTableView:(UITableView *)tableView;
- + (void)shrinkToTopAnimationWithTableView:(UITableView *)tableView;
- + (void)layDonwAnimationWithTableView:(UITableView *)tableView;
- + (void)roteAnimationWithTableView:(UITableView *)tableView;
- */
+    
 
+
+    
     NSArray *animations = @[@"move",
                             @"alpha",
                             @"fall",
@@ -91,6 +50,7 @@
         theButton.frame = CGRectMake(20 + (theWidth + 10) * (index%4), 200 + (35 + 20) * (index/4), theWidth, 35);
         theButton.layer.cornerRadius = theButton.height/2;
         theButton.layer.borderColor = [UIColor redColor].CGColor;
+        [theButton changeCorner:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:5];
         [theButton setTitle:animations[index] forState:UIControlStateNormal];
         [theButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         theButton.backgroundColor = [UIColor whiteColor];
@@ -108,7 +68,21 @@
         }];
     }
     
-
+    NSInteger count = 4;
+    CGFloat imageWidth = kScreenWidth - 12 * 2;
+    
+    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, kScreenHeight - 210, kScreenWidth, 200)];
+    scrollView.backgroundColor = [UIColor brownColor];
+    scrollView.contentSize = CGSizeMake(12 + kScreenWidth * count, 200);
+    scrollView.pagingEnabled = YES;
+    [self.view addSubview:scrollView];
+    
+    for (int index = 0; index < count; index ++) {
+        
+        UIView *imageView = [[UIView alloc]initWithFrame:CGRectMake(12 + kScreenWidth * index, 5, imageWidth, 200)];
+        imageView.backgroundColor = kColorRandom;
+        [scrollView addSubview:imageView];
+    }
     
 //    [UIView animateWithDuration:2 animations:^{
 //        
@@ -120,14 +94,12 @@
 //            [self configRootViewController];
 //        }];
 //    }];
-    
+//    
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithActionBlock:^(id sender) {
         
         [self configRootViewController];
     }]];
 }
-
-
 
 - (void)configRootViewController {
     
@@ -135,7 +107,7 @@
     JTNavigationController *navvvvvvvv = [[JTNavigationController alloc]initWithRootViewController:firstVC];
     JTBaseNavigationController *firstNav = [[JTBaseNavigationController alloc] initWithRootViewController:navvvvvvvv];
     [self presentViewController:firstNav animated:YES completion:nil];
-//    self.view.window.rootViewController = firstNav;
+    self.view.window.rootViewController = firstNav;
 }
 
 

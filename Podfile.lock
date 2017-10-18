@@ -1,12 +1,15 @@
 PODS:
   - CYLTabBarController (1.10.0)
   - DZNEmptyDataSet (1.8.1)
+  - FBRetainCycleDetector (0.1.3)
   - FSTextView (1.2)
   - GDPerformanceView (1.3.1)
   - IQKeyboardManager (4.0.9)
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
+  - MLeaksFinder (0.2.1):
+    - FBRetainCycleDetector
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
@@ -20,19 +23,22 @@ DEPENDENCIES:
   - MBProgressHUD
   - MJExtension
   - MJRefresh
+  - MLeaksFinder
   - SDWebImage
 
 SPEC CHECKSUMS:
   CYLTabBarController: 2de9a4c26f50d33574398becf8e7b0aaed794240
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  FBRetainCycleDetector: f0c7b290bf48ae77f6ae060843ce34ae341781eb
   FSTextView: f31326462439506786bd0eb7478dee9c02aa9b45
   GDPerformanceView: d70d646bf7022a3dfd64222e4966f403bfffef19
   IQKeyboardManager: 322c7405df3eb5f7e50dede32ea937bf3d4364e0
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  MLeaksFinder: '0850e2f2abc7227adc4d4e2d1992b431264eb4d5'
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: 1d01aff6a43cfa5ff0041d4d91e48b2caa633186
+PODFILE CHECKSUM: 55009845af3d4d520def110f5fd7b5443b1875b3
 
 COCOAPODS: 1.2.1

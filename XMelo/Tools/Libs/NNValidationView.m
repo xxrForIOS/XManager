@@ -42,13 +42,13 @@
 
 #pragma mark - 更换验证码
 - (void)changeValidationCode {
-    NSMutableString *getStr = [[NSMutableString alloc] initWithCapacity:self.charCount];
+//    NSMutableString *getStr = [[NSMutableString alloc] initWithCapacity:self.charCount];
     self.charString = [[NSMutableString alloc] initWithCapacity:self.charCount];
     
     for(NSInteger i = 0; i < self.charCount; i++) {
         NSInteger index = arc4random() % ([self.charArray count]);
-        getStr = [self.charArray objectAtIndex:index];
-        self.charString = (NSMutableString *)[self.charString stringByAppendingString:getStr];
+//        getStr = [self.charArray objectAtIndex:index];
+        self.charString = (NSMutableString *)[self.charString stringByAppendingString:[self.charArray objectAtIndex:index]];
     }
     
     if (self.changeValidationCodeBlock) {

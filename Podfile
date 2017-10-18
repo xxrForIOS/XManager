@@ -10,5 +10,6 @@ pod 'MJExtension'
 pod 'GDPerformanceView'
 pod 'IQKeyboardManager'
 pod 'FSTextView'
+pod 'MLeaksFinder'
 
 end

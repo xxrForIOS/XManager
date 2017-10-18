@@ -14,13 +14,13 @@
 #import "FontViewController.h"
 #import "ImageValidationViewController.h"
 #import "TableViewAnimationKit.h"
+
+#import "CutOutViewController.h"
+
 @interface XListViewController ()
 
 @property (nonatomic, strong) NSArray           *datas;
 @property (nonatomic, strong) NSArray           *controllers;
-@property (nonatomic, strong) UIView            *bottomTool;
-
-@property (nonatomic, strong) NSTimer            *timerrr;
 @end
 
 @implementation XListViewController
@@ -28,10 +28,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
-    
-
-    
     self.datas = @[@"core data",
                    @"upload image cell",
                    @"block picker",
@@ -72,68 +68,40 @@
     };
     
     self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
-        
-        kPush(selfWeak, selfWeak.controllers[indexPath.row]);
-    };
-    
-    
-    selfWeak.bottomTool = ({
-        
-        UIView *theView = [[UIView alloc]initWithFrame:CGRectMake(0, kScreenHeight - 45 - 64, kScreenWidth, 45)];
-        theView.backgroundColor = [UIColor whiteColor];
-        [self.view addSubview:theView];
-        
-        UILabel *toolLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 0, theView.width - 130, 45)];
-        toolLabel.textAlignment = NSTextAlignmentRight;
-        toolLabel.textColor = kColor_yan;
-        toolLabel.font = kFontTheme(14);
-        toolLabel.text = @"敢问世间爱恨情仇有几重";
-        [theView addSubview:toolLabel];
-        
-        UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        theButton.frame = CGRectMake(kScreenWidth - 100, 0, 100, 45);
-        theButton.backgroundColor = [UIColor redColor];
-        [theButton setTitle:@"确定" forState:UIControlStateNormal];
-        [theButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        theButton.titleLabel.font = kFontTheme(15);
-        [theView addSubview:theButton];
-        
-        [theButton addBlockWithblock:^(id sender) {
 
-            [XManager showAlertWith:@"逗你玩"];
-        }];
-        theView;
-    });
-    
+		[selfWeak.navigationController pushViewController:selfWeak.controllers[indexPath.row] animated:YES];
+//        kPush(selfWeak, selfWeak.controllers[indexPath.row]);
+    };
+
     
     
     [XManager addRightBarItemInViewController:self itemTitle:@"dismiss" andItemBlock:^(UIButton *aButton) {
-       
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }];
-    
 
-    [self startWithAnimation:self.animation];
+        [selfWeak dismissViewControllerAnimated:YES completion:nil];
+    }];
+
+
+//    [self startWithAnimation:self.animation];
 }
 
-- (void)startWithAnimation:(NSString *)string {
-    
-    self.tableView.hidden = YES;
-    [XManager dispatchAfter:1 completion:^{
-        
-        self.tableView.hidden = NO;
-        if ([string isEqualToString:@"move"])           [TableViewAnimationKit moveAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"alpha"])          [TableViewAnimationKit alphaAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"fall"])           [TableViewAnimationKit fallAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"shake"])          [TableViewAnimationKit shakeAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"over"])           [TableViewAnimationKit overTurnAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"toTop"])          [TableViewAnimationKit toTopAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"spring"])         [TableViewAnimationKit springListAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"shrink"])         [TableViewAnimationKit shrinkToTopAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"layDonw"])        [TableViewAnimationKit layDonwAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"rote"])           [TableViewAnimationKit roteAnimationWithTableView:self.tableView];
-    }];
-}
+//- (void)startWithAnimation:(NSString *)string {
+//
+//    self.tableView.hidden = YES;
+//    [XManager dispatchAfter:1 completion:^{
+//
+//        self.tableView.hidden = NO;
+//        if ([string isEqualToString:@"move"])           [TableViewAnimationKit moveAnimationWithTableView:self.tableView];
+//        if ([string isEqualToString:@"alpha"])          [TableViewAnimationKit alphaAnimationWithTableView:self.tableView];
+//        if ([string isEqualToString:@"fall"])           [TableViewAnimationKit fallAnimationWithTableView:self.tableView];
+//        if ([string isEqualToString:@"shake"])          [TableViewAnimationKit shakeAnimationWithTableView:self.tableView];
+//        if ([string isEqualToString:@"over"])           [TableViewAnimationKit overTurnAnimationWithTableView:self.tableView];
+//        if ([string isEqualToString:@"toTop"])          [TableViewAnimationKit toTopAnimationWithTableView:self.tableView];
+//        if ([string isEqualToString:@"spring"])         [TableViewAnimationKit springListAnimationWithTableView:self.tableView];
+//        if ([string isEqualToString:@"shrink"])         [TableViewAnimationKit shrinkToTopAnimationWithTableView:self.tableView];
+//        if ([string isEqualToString:@"layDonw"])        [TableViewAnimationKit layDonwAnimationWithTableView:self.tableView];
+//        if ([string isEqualToString:@"rote"])           [TableViewAnimationKit roteAnimationWithTableView:self.tableView];
+//    }];
+//}
 
 
 - (void)didReceiveMemoryWarning {

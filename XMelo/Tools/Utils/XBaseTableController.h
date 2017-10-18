@@ -39,7 +39,7 @@
 ///设置尾部view
 @property (nonatomic, copy)     UIView *(^viewForFooterInSection)(NSInteger section);
 ///创建cell
-@property (nonatomic,strong)    UITableViewCell *(^cellForRowAtIndexPath)(UITableView *tableView, NSIndexPath *indexPath);
+@property (nonatomic,copy)      UITableViewCell *(^cellForRowAtIndexPath)(UITableView *tableView, NSIndexPath *indexPath);
 @property (nonatomic,copy)      void(^creatCellView)(UITableViewCell *cell, NSIndexPath *indexPath);
 
 
@@ -61,5 +61,6 @@
 /** 设置点击事件 */
 @property (nonatomic, copy) void(^didSelectRowAtIndexPath)(NSIndexPath *indexPath);
 
+//- (BOOL)willDealloc;
 
 @end

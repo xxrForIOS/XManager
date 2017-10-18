@@ -19,8 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.fonts = [UIFont familyNames];
+    self.fonts = [[UIFont familyNames] copy];
     self.navigationItem.title = @"系统字体一览";
+
     @kWeakSelf;
     self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
         
@@ -39,11 +40,11 @@
         cell.textLabel.textColor = [UIColor blackColor];
     };
     
-    self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
-      
-        [XManager showAlertWith:selfWeak.fonts[indexPath.row]];
-        kLog(@"font: %@",selfWeak.fonts[indexPath.row]);
-    };
+//    self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
+//
+//        [XManager showAlertWith:selfWeak.fonts[indexPath.row]];
+//        kLog(@"font: %@",selfWeak.fonts[indexPath.row]);
+//    };
 }
 
 - (void)didReceiveMemoryWarning {

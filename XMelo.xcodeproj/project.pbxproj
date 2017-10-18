@@ -20,6 +20,7 @@
 		A721BD281F593E56008EBF9A /* FontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A721BD271F593E56008EBF9A /* FontViewController.m */; };
 		A721BD2C1F597FC0008EBF9A /* NNValidationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A721BD2B1F597FC0008EBF9A /* NNValidationView.m */; };
 		A721BD2F1F5980EA008EBF9A /* ImageValidationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A721BD2E1F5980EA008EBF9A /* ImageValidationViewController.m */; };
+		A72308821F91FC0E00B68441 /* UINavigationItem+ResetBack.m in Sources */ = {isa = PBXBuildFile; fileRef = A72308801F91FC0D00B68441 /* UINavigationItem+ResetBack.m */; };
 		A72CD1A11F0D04EE002C90BD /* NSData+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD18C1F0D04EE002C90BD /* NSData+Add.m */; };
 		A72CD1A21F0D04EE002C90BD /* NSString+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD18E1F0D04EE002C90BD /* NSString+Add.m */; };
 		A72CD1A31F0D04EE002C90BD /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1901F0D04EE002C90BD /* NSString+Check.m */; };
@@ -51,6 +52,7 @@
 		A7B3722D1F30AA730087972B /* XMelo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7B3722B1F30AA730087972B /* XMelo.xcdatamodeld */; };
 		A7B372301F30B14C0087972B /* XCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B3722F1F30B14C0087972B /* XCoreDataViewController.m */; };
 		A7B6AE431F0BCB310078B268 /* XManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B6AE421F0BCB310078B268 /* XManager.m */; };
+		A7E92F321F8C796100F05F1F /* CutOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E92F311F8C796100F05F1F /* CutOutViewController.m */; };
 		A7EAFCAB1F2F6298008FE729 /* JTBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EAFCA81F2F6298008FE729 /* JTBaseNavigationController.m */; };
 		A7EAFCAC1F2F6298008FE729 /* JTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EAFCAA1F2F6298008FE729 /* JTNavigationController.m */; };
 		A7EAFCB21F2F659F008FE729 /* RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EAFCAF1F2F659F008FE729 /* RTRootNavigationController.m */; };
@@ -83,6 +85,8 @@
 		A721BD2B1F597FC0008EBF9A /* NNValidationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNValidationView.m; sourceTree = "<group>"; };
 		A721BD2D1F5980EA008EBF9A /* ImageValidationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageValidationViewController.h; sourceTree = "<group>"; };
 		A721BD2E1F5980EA008EBF9A /* ImageValidationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageValidationViewController.m; sourceTree = "<group>"; };
+		A72308801F91FC0D00B68441 /* UINavigationItem+ResetBack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+ResetBack.m"; sourceTree = "<group>"; };
+		A72308811F91FC0D00B68441 /* UINavigationItem+ResetBack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+ResetBack.h"; sourceTree = "<group>"; };
 		A72CD18B1F0D04EE002C90BD /* NSData+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Add.h"; sourceTree = "<group>"; };
 		A72CD18C1F0D04EE002C90BD /* NSData+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Add.m"; sourceTree = "<group>"; };
 		A72CD18D1F0D04EE002C90BD /* NSString+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Add.h"; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 		A7B3722F1F30B14C0087972B /* XCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCoreDataViewController.m; sourceTree = "<group>"; };
 		A7B6AE411F0BCB310078B268 /* XManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XManager.h; sourceTree = "<group>"; };
 		A7B6AE421F0BCB310078B268 /* XManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XManager.m; sourceTree = "<group>"; };
+		A7E92F301F8C796100F05F1F /* CutOutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CutOutViewController.h; sourceTree = "<group>"; };
+		A7E92F311F8C796100F05F1F /* CutOutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CutOutViewController.m; sourceTree = "<group>"; };
 		A7EAFCA71F2F6298008FE729 /* JTBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTBaseNavigationController.h; sourceTree = "<group>"; };
 		A7EAFCA81F2F6298008FE729 /* JTBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTBaseNavigationController.m; sourceTree = "<group>"; };
 		A7EAFCA91F2F6298008FE729 /* JTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTNavigationController.h; sourceTree = "<group>"; };
@@ -181,6 +187,8 @@
 		A713F87A1F17A51E00FEA33E /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				A72308811F91FC0D00B68441 /* UINavigationItem+ResetBack.h */,
+				A72308801F91FC0D00B68441 /* UINavigationItem+ResetBack.m */,
 				A713F8771F17A50F00FEA33E /* UIButton+ChangePosition.h */,
 				A713F8781F17A50F00FEA33E /* UIButton+ChangePosition.m */,
 				A72CD1911F0D04EE002C90BD /* UIControl+Block.h */,
@@ -457,6 +465,8 @@
 				A7A8AB6A1F0BC737001338B0 /* ViewController.m */,
 				A713F8801F17A87200FEA33E /* XListViewController.h */,
 				A713F8811F17A87200FEA33E /* XListViewController.m */,
+				A7E92F301F8C796100F05F1F /* CutOutViewController.h */,
+				A7E92F311F8C796100F05F1F /* CutOutViewController.m */,
 				A771A2D21F5CFE2500035284 /* Web */,
 				A771A27A1F59903300035284 /* ImageValidation */,
 				A721BD291F5941F9008EBF9A /* Font */,
@@ -648,6 +658,7 @@
 				A721BD2F1F5980EA008EBF9A /* ImageValidationViewController.m in Sources */,
 				A795B7921F5117EF003C7EAD /* XPickerViewController.m in Sources */,
 				A72CD1AE1F0D0567002C90BD /* XConst.m in Sources */,
+				A72308821F91FC0E00B68441 /* UINavigationItem+ResetBack.m in Sources */,
 				A771A2D11F5CF7A800035284 /* WebViewController.m in Sources */,
 				A7EAFCB21F2F659F008FE729 /* RTRootNavigationController.m in Sources */,
 				A72CD1A71F0D04EE002C90BD /* UILabel+Frame.m in Sources */,
@@ -666,6 +677,7 @@
 				A7EAFCAC1F2F6298008FE729 /* JTNavigationController.m in Sources */,
 				A72CD1A31F0D04EE002C90BD /* NSString+Check.m in Sources */,
 				A713F8821F17A87200FEA33E /* XListViewController.m in Sources */,
+				A7E92F321F8C796100F05F1F /* CutOutViewController.m in Sources */,
 				A721BD281F593E56008EBF9A /* FontViewController.m in Sources */,
 				A713F87F1F17A57300FEA33E /* XBaseTableController.m in Sources */,
 				A795B7991F51234D003C7EAD /* XBaseController.m in Sources */,

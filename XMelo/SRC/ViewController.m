@@ -17,7 +17,6 @@
 
 @interface ViewController () 
 
-@property (nonatomic, strong) UISearchBar       *searchBar;
 
 @end
 
@@ -104,10 +103,14 @@
 - (void)configRootViewController {
     
     XListViewController *firstVC = [[XListViewController alloc] init];
-    JTNavigationController *navvvvvvvv = [[JTNavigationController alloc]initWithRootViewController:firstVC];
-    JTBaseNavigationController *firstNav = [[JTBaseNavigationController alloc] initWithRootViewController:navvvvvvvv];
-    [self presentViewController:firstNav animated:YES completion:nil];
-    self.view.window.rootViewController = firstNav;
+//    JTNavigationController *navvvvvvvv = [[JTNavigationController alloc]initWithRootViewController:firstVC];
+//    JTBaseNavigationController *firstNav = [[JTBaseNavigationController alloc] initWithRootViewController:navvvvvvvv];
+//    [self presentViewController:firstNav animated:YES completion:nil];
+//    self.view.window.rootViewController = firstNav;
+
+
+	UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:firstVC];
+	[self presentViewController:nav animated:YES completion:nil];
 }
 
 

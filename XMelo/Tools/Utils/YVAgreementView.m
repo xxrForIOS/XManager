@@ -36,7 +36,7 @@ static char                     yvClickableKey;
                      clickString:(NSString *)cString
                        addInView:(UIView *)inView
                        withFrame:(CGRect)frame
-                         handler:(void(^)())aBlock{
+						 handler:(void(^)(void))aBlock{
 
     
     objc_setAssociatedObject([self sharedManager],

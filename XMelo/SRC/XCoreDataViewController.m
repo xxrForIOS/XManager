@@ -33,26 +33,26 @@
     
     
     [XManager addRightBarItemInViewController:self itemTitle:@"添加" andItemBlock:^(UIButton *aButton) {
-        
+
         if ([selfWeak.nameTF.text isEqualToString:@""] ||
             [selfWeak.ageTF.text isEqualToString:@""] ||
             [selfWeak.heightTF.text isEqualToString:@""]) {
-            
+
             [XManager showAlertWith:@"空值啊,魂淡"];
             return;
         }
-        
+
         XSonModel *theModel = [NSEntityDescription insertNewObjectForEntityForName:@"XSonModel" inManagedObjectContext:kContext];
         theModel.name = selfWeak.nameTF.text;
         theModel.age = selfWeak.ageTF.text.integerValue;
         theModel.height = selfWeak.heightTF.text.floatValue;
         [kDelegate saveContext];
-        
+
         selfWeak.nameTF.text = @"";
         selfWeak.ageTF.text = @"";
         selfWeak.heightTF.text = @"";
     }];
-    
+
     
     self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
        

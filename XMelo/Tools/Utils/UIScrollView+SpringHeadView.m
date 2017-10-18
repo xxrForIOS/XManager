@@ -15,6 +15,9 @@ static char UIScrollViewSpringHeadView;
 
 - (void)setTopView:(UIView *)topView{
     [self willChangeValueForKey:@"SpringHeadView"];
+	
+	
+	
     objc_setAssociatedObject(self, &UIScrollViewSpringHeadView,
                              topView,
                              OBJC_ASSOCIATION_ASSIGN);

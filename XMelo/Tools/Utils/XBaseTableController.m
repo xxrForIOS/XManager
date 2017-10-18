@@ -53,19 +53,6 @@
 }
 
 
-- (void)loadData {
-    
-    [self.tableView reloadData];
-}
-
-
-
-
-
-
-
-
-
 - (BOOL) emptyDataSetShouldAllowImageViewAnimate:(UIScrollView *)scrollView {
     
     return YES;
@@ -209,102 +196,68 @@
 
 
 #pragma mark- delegate
+//MARK:- tablview
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return ({
-        NSInteger rows = 1;
-        if (self.numberOfSections) {
-            
-            rows = self.numberOfSections;
-        }
-        rows;
-    });
+
+	return self.numberOfSections ?: 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return ({
-        NSInteger rows = 1;
-        if (self.numberOfRowsInSection) {
-            
-            rows = self.numberOfRowsInSection(section);
-        }
-        rows;
-    });
+
+	return self.numberOfRowsInSection ? self.numberOfRowsInSection(section) : 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return ({
-        
-        CGFloat height = self.tableView.rowHeight;
-        if (self.heightForRowAtIndexPath) {
-            
-            height = self.heightForRowAtIndexPath(indexPath);
-        }
-        height;
-    });
+
+	return self.heightForRowAtIndexPath ? self.heightForRowAtIndexPath(indexPath) : tableView.rowHeight;
 }
 
 - (CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section {
-    
-    return ({
-        
-        CGFloat height = CGFLOAT_MIN;
-        if (self.heightForHeadrAtIndexPath) {
-            
-            height = self.heightForHeadrAtIndexPath(section);
-        }
-        height;
-    });
+
+	return self.heightForHeadrAtIndexPath ? self.heightForHeadrAtIndexPath(section) : CGFLOAT_MIN;
 }
 
 - (CGFloat)tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section {
-    
-    return ({
-        
-        CGFloat height = CGFLOAT_MIN;
-        if (self.heightForFooterAtIndexPath) {
-            
-            height = self.heightForFooterAtIndexPath(section);
-        }
-        height;
-    });
+
+	return self.heightForFooterAtIndexPath ? self.heightForFooterAtIndexPath(section) : CGFLOAT_MIN;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    !self.didSelectRowAtIndexPath ?: self.didSelectRowAtIndexPath(indexPath);
+
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	!self.didSelectRowAtIndexPath ?: self.didSelectRowAtIndexPath(indexPath);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (self.cellForRowAtIndexPath) {
-        
-        return self.cellForRowAtIndexPath(tableView,indexPath);
-    }else {
-        
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
-        [self creatCellView:cell With:indexPath];
-        return cell;
-    }
+
+	if (self.cellForRowAtIndexPath) {
+
+		return self.cellForRowAtIndexPath(tableView,indexPath);
+	}else {
+
+		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
+		[self creatCellView:cell With:indexPath];
+		return cell;
+	}
+
+	//cell.separatorInset = UIEdgeInsetsMake(0, kScreenWidth, 0, 0);
 }
 
+//MARK:- 自定义方法
 - (void)creatCellView:(UITableViewCell *)cell With:(NSIndexPath *)indexPath {
-    
-    for (UIView *theView in cell.contentView.subviews) {
-        
-        [theView removeFromSuperview];
-    }
-    
-    !self.creatCellView ?: self.creatCellView(cell, indexPath);
+
+	for (UIView *theView in cell.contentView.subviews) {
+
+		[theView removeFromSuperview];
+	}
+	cell.selectionStyle = UITableViewCellSelectionStyleNone;
+	!self.creatCellView ?: self.creatCellView(cell, indexPath);
 }
 
 
 
 #pragma mark- 刷新
-- (void)updateDataFromHeadWith:(void(^)())block{
+- (void)updateDataFromHeadWith:(void(^)(void))block{
     MJRefreshNormalHeader *headerrrr = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         if (block) {
             block();
@@ -321,7 +274,7 @@
     [self.tableView.mj_header beginRefreshing];
 }
 
-- (void)updateDataFromFootWith:(void(^)())block{
+- (void)updateDataFromFootWith:(void(^)(void))block{
     MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         if (block) {
             block();
@@ -342,6 +295,66 @@
     // Dispose of any resources that can be recreated.
 }
 
+//- (BOOL)willDealloc
+//{
+//	__weak id weakSelf = self;
+//	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3*NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//
+//		[weakSelf assertNotDealloc];
+//	});
+//	return YES;
+//}
+
+- (void)assertNotDealloc
+{
+	[XBaseTableController getAllProperties:self];
+
+//	NSAssert(NO, @"");
+}
+
++ (NSArray *)getAllProperties:(id)obj
+{
+	u_int count;
+
+	//使用class_copyPropertyList及property_getName获取类的属性列表及每个属性的名称
+
+	objc_property_t *properties  =class_copyPropertyList([obj class], &count);
+	NSMutableArray *propertiesArray = [NSMutableArray arrayWithCapacity:count];
+	for (int i = 0; i<count; i++)
+	{
+		const char* propertyName =property_getName(properties[i]);
+		NSLog(@"属性%@\n",[NSString stringWithUTF8String: propertyName]);
+		[propertiesArray addObject: [NSString stringWithUTF8String: propertyName]];
+	}
+	free(properties);
+	return propertiesArray;
+}
+
+- (instancetype)getProperties:(Class)cls{
+
+	// 获取当前类的所有属性
+	unsigned int count;// 记录属性个数
+	objc_property_t *properties = class_copyPropertyList(cls, &count);
+	// 遍历
+	NSMutableArray *mArray = [NSMutableArray array];
+	for (int i = 0; i < count; i++) {
+
+		// An opaque type that represents an Objective-C declared property.
+		// objc_property_t 属性类型
+		objc_property_t property = properties[i];
+		// 获取属性的名称 C语言字符串
+		const char *cName = property_getName(property);
+
+		NSLog(@"xxxxx %@",cName);
+
+
+		// 转换为Objective C 字符串
+		NSString *name = [NSString stringWithCString:cName encoding:NSUTF8StringEncoding];
+		[mArray addObject:name];
+	}
+
+	return mArray.copy;
+}
 /*
 #pragma mark - Navigation
 

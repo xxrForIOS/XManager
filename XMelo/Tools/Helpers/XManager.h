@@ -36,7 +36,7 @@ typedef NS_ENUM(NSInteger, XRDateFormatType) {
 + (void)dispatchAfter:(int)time completion:(void(^)(void))timerOut;
 
 ///MARK: gcd开辟子线程
-+ (void)dispatchAsynac:(void(^)(void))asyncBlock mainQueue:(void(^)())mainBlock;
++ (void)dispatchAsynac:(void(^)(void))asyncBlock mainQueue:(void(^)(void))mainBlock;
 
 
 ///MARK:- 打电话

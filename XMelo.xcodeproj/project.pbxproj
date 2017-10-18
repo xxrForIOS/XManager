@@ -47,16 +47,10 @@
 		A795B7961F511C56003C7EAD /* XInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7951F511C56003C7EAD /* XInputViewController.m */; };
 		A795B7991F51234D003C7EAD /* XBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7981F51234D003C7EAD /* XBaseController.m */; };
 		A7A8AB6B1F0BC737001338B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A8AB6A1F0BC737001338B0 /* ViewController.m */; };
-		A7B372291F30A4180087972B /* backImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B372271F30A4180087972B /* backImage@2x.png */; };
-		A7B3722A1F30A4180087972B /* backImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B372281F30A4180087972B /* backImage@3x.png */; };
 		A7B3722D1F30AA730087972B /* XMelo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7B3722B1F30AA730087972B /* XMelo.xcdatamodeld */; };
 		A7B372301F30B14C0087972B /* XCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B3722F1F30B14C0087972B /* XCoreDataViewController.m */; };
 		A7B6AE431F0BCB310078B268 /* XManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B6AE421F0BCB310078B268 /* XManager.m */; };
 		A7E92F321F8C796100F05F1F /* CutOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E92F311F8C796100F05F1F /* CutOutViewController.m */; };
-		A7EAFCAB1F2F6298008FE729 /* JTBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EAFCA81F2F6298008FE729 /* JTBaseNavigationController.m */; };
-		A7EAFCAC1F2F6298008FE729 /* JTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EAFCAA1F2F6298008FE729 /* JTNavigationController.m */; };
-		A7EAFCB21F2F659F008FE729 /* RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EAFCAF1F2F659F008FE729 /* RTRootNavigationController.m */; };
-		A7EAFCB31F2F659F008FE729 /* UIViewController+RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EAFCB11F2F659F008FE729 /* UIViewController+RTRootNavigationController.m */; };
 		A7F3B3E31F1A21A500E683D0 /* XStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F3B3E21F1A21A500E683D0 /* XStepper.m */; };
 /* End PBXBuildFile section */
 
@@ -141,8 +135,6 @@
 		A7A8AB6A1F0BC737001338B0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A7A8AB6D1F0BC7D0001338B0 /* XColorHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XColorHead.h; sourceTree = "<group>"; };
 		A7A8AB6E1F0BC97A001338B0 /* XHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHead.h; sourceTree = "<group>"; };
-		A7B372271F30A4180087972B /* backImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@2x.png"; sourceTree = "<group>"; };
-		A7B372281F30A4180087972B /* backImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@3x.png"; sourceTree = "<group>"; };
 		A7B3722C1F30AA730087972B /* XMelo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = XMelo.xcdatamodel; sourceTree = "<group>"; };
 		A7B3722E1F30B14C0087972B /* XCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCoreDataViewController.h; sourceTree = "<group>"; };
 		A7B3722F1F30B14C0087972B /* XCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCoreDataViewController.m; sourceTree = "<group>"; };
@@ -150,14 +142,6 @@
 		A7B6AE421F0BCB310078B268 /* XManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XManager.m; sourceTree = "<group>"; };
 		A7E92F301F8C796100F05F1F /* CutOutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CutOutViewController.h; sourceTree = "<group>"; };
 		A7E92F311F8C796100F05F1F /* CutOutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CutOutViewController.m; sourceTree = "<group>"; };
-		A7EAFCA71F2F6298008FE729 /* JTBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTBaseNavigationController.h; sourceTree = "<group>"; };
-		A7EAFCA81F2F6298008FE729 /* JTBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTBaseNavigationController.m; sourceTree = "<group>"; };
-		A7EAFCA91F2F6298008FE729 /* JTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTNavigationController.h; sourceTree = "<group>"; };
-		A7EAFCAA1F2F6298008FE729 /* JTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTNavigationController.m; sourceTree = "<group>"; };
-		A7EAFCAE1F2F659F008FE729 /* RTRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTRootNavigationController.h; sourceTree = "<group>"; };
-		A7EAFCAF1F2F659F008FE729 /* RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTRootNavigationController.m; sourceTree = "<group>"; };
-		A7EAFCB01F2F659F008FE729 /* UIViewController+RTRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RTRootNavigationController.h"; sourceTree = "<group>"; };
-		A7EAFCB11F2F659F008FE729 /* UIViewController+RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RTRootNavigationController.m"; sourceTree = "<group>"; };
 		A7F3B3E11F1A21A500E683D0 /* XStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XStepper.h; sourceTree = "<group>"; };
 		A7F3B3E21F1A21A500E683D0 /* XStepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XStepper.m; sourceTree = "<group>"; };
 		FFFA76AEF162E00BEC4508D1 /* Pods-XMelo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMelo.release.xcconfig"; path = "Pods/Target Support Files/Pods-XMelo/Pods-XMelo.release.xcconfig"; sourceTree = "<group>"; };
@@ -425,8 +409,6 @@
 			children = (
 				A721BD2A1F597FC0008EBF9A /* NNValidationView.h */,
 				A721BD2B1F597FC0008EBF9A /* NNValidationView.m */,
-				A7EAFCAD1F2F659F008FE729 /* RTRootNavigation */,
-				A7EAFCA61F2F6298008FE729 /* JTBaseNavigation */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -487,30 +469,6 @@
 				A713F87C1F17A53500FEA33E /* View */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		A7EAFCA61F2F6298008FE729 /* JTBaseNavigation */ = {
-			isa = PBXGroup;
-			children = (
-				A7B372271F30A4180087972B /* backImage@2x.png */,
-				A7B372281F30A4180087972B /* backImage@3x.png */,
-				A7EAFCA71F2F6298008FE729 /* JTBaseNavigationController.h */,
-				A7EAFCA81F2F6298008FE729 /* JTBaseNavigationController.m */,
-				A7EAFCA91F2F6298008FE729 /* JTNavigationController.h */,
-				A7EAFCAA1F2F6298008FE729 /* JTNavigationController.m */,
-			);
-			path = JTBaseNavigation;
-			sourceTree = "<group>";
-		};
-		A7EAFCAD1F2F659F008FE729 /* RTRootNavigation */ = {
-			isa = PBXGroup;
-			children = (
-				A7EAFCAE1F2F659F008FE729 /* RTRootNavigationController.h */,
-				A7EAFCAF1F2F659F008FE729 /* RTRootNavigationController.m */,
-				A7EAFCB01F2F659F008FE729 /* UIViewController+RTRootNavigationController.h */,
-				A7EAFCB11F2F659F008FE729 /* UIViewController+RTRootNavigationController.m */,
-			);
-			path = RTRootNavigation;
 			sourceTree = "<group>";
 		};
 		B31DB93713A7DD39414E6ED8 /* Frameworks */ = {
@@ -585,10 +543,8 @@
 			files = (
 				A71D185C1F0BAE0700BAE515 /* LaunchScreen.storyboard in Resources */,
 				A71D18591F0BAE0700BAE515 /* Assets.xcassets in Resources */,
-				A7B3722A1F30A4180087972B /* backImage@3x.png in Resources */,
 				A795B77F1F501735003C7EAD /* uploadImage.png in Resources */,
 				A71D18571F0BAE0700BAE515 /* Main.storyboard in Resources */,
-				A7B372291F30A4180087972B /* backImage@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,7 +616,6 @@
 				A72CD1AE1F0D0567002C90BD /* XConst.m in Sources */,
 				A72308821F91FC0E00B68441 /* UINavigationItem+ResetBack.m in Sources */,
 				A771A2D11F5CF7A800035284 /* WebViewController.m in Sources */,
-				A7EAFCB21F2F659F008FE729 /* RTRootNavigationController.m in Sources */,
 				A72CD1A71F0D04EE002C90BD /* UILabel+Frame.m in Sources */,
 				A767F0F91F5560BD00432627 /* XImagePicker.m in Sources */,
 				A72CD1A41F0D04EE002C90BD /* UIControl+Block.m in Sources */,
@@ -674,7 +629,6 @@
 				A72CD1A21F0D04EE002C90BD /* NSString+Add.m in Sources */,
 				A72CD1A61F0D04EE002C90BD /* UIImage+Scale.m in Sources */,
 				A74AACE91F6786AB0053066D /* TableViewAnimationKit.m in Sources */,
-				A7EAFCAC1F2F6298008FE729 /* JTNavigationController.m in Sources */,
 				A72CD1A31F0D04EE002C90BD /* NSString+Check.m in Sources */,
 				A713F8821F17A87200FEA33E /* XListViewController.m in Sources */,
 				A7E92F321F8C796100F05F1F /* CutOutViewController.m in Sources */,
@@ -685,10 +639,8 @@
 				A795B7961F511C56003C7EAD /* XInputViewController.m in Sources */,
 				A71D18511F0BAE0700BAE515 /* AppDelegate.m in Sources */,
 				A72CD1AA1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.m in Sources */,
-				A7EAFCB31F2F659F008FE729 /* UIViewController+RTRootNavigationController.m in Sources */,
 				A72CD1AB1F0D04EE002C90BD /* UIView+Add.m in Sources */,
 				A71D184E1F0BAE0700BAE515 /* main.m in Sources */,
-				A7EAFCAB1F2F6298008FE729 /* JTBaseNavigationController.m in Sources */,
 				A7F3B3E31F1A21A500E683D0 /* XStepper.m in Sources */,
 				A713F8791F17A50F00FEA33E /* UIButton+ChangePosition.m in Sources */,
 			);

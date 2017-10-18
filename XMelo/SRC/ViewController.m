@@ -9,8 +9,6 @@
 #import "ViewController.h"
 #import "XHead.h"
 #import "XListViewController.h"
-#import "JTNavigationController.h"
-#import "JTBaseNavigationController.h"
 #import <CoreText/CoreText.h>
 #import "NNValidationView.h"
 
@@ -61,9 +59,8 @@
            
             XListViewController *vcc = [[XListViewController alloc]init];
             vcc.animation = theBlockButton.currentTitle;
-            JTNavigationController *navvvvvvvv = [[JTNavigationController alloc]initWithRootViewController:vcc];
-            JTBaseNavigationController *firstNav = [[JTBaseNavigationController alloc] initWithRootViewController:navvvvvvvv];
-            [self presentViewController:firstNav animated:YES completion:nil];
+			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vcc];
+            [self presentViewController:nav animated:YES completion:nil];
         }];
     }
     

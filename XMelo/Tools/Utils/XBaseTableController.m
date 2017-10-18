@@ -345,7 +345,7 @@
 		// 获取属性的名称 C语言字符串
 		const char *cName = property_getName(property);
 
-		NSLog(@"xxxxx %@",cName);
+		NSLog(@"xxxxx %s",cName);
 
 
 		// 转换为Objective C 字符串

@@ -23,6 +23,7 @@
 //MARK:- mark line
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+	///你说啥?!
     
     //导航条设置
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];

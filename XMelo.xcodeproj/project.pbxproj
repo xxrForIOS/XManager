@@ -380,19 +380,11 @@
 			children = (
 				A7A8AB631F0BC33F001338B0 /* Macro */,
 				A7B6AE441F0BCC790078B268 /* Category */,
-				A7A8AB601F0BC33F001338B0 /* General */,
 				A7A8AB611F0BC33F001338B0 /* Helpers */,
 				A7A8AB621F0BC33F001338B0 /* Libs */,
 				A7A8AB641F0BC33F001338B0 /* Utils */,
 			);
 			path = Tools;
-			sourceTree = "<group>";
-		};
-		A7A8AB601F0BC33F001338B0 /* General */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = General;
 			sourceTree = "<group>";
 		};
 		A7A8AB611F0BC33F001338B0 /* Helpers */ = {

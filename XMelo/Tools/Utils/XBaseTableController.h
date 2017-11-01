@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XHead.h"
+
 
 #define xBaseHeadHeight CGFLOAT_MIN
 

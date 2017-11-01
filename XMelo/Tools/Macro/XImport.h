@@ -15,14 +15,13 @@
 #import "AppDelegate.h"
 
 //MARK: head
-#import "XColorHead.h"
+#import "XColor.h"
 #import "XConst.h"
 #import "XManager.h"
 
 //MARK: category
-#import "UIGestureRecognizer+Block.h"
-#import "UIControl+Block.h"
 #import "UIView+Add.h"
+#import "UIButton+ChangePosition.h"
 #import "UITextView+Rich.h"
 #import "UILabel+Frame.h"
 #import "UIImage+Scale.h"
@@ -38,5 +37,6 @@
 //Mark: libs
 #import "MBProgressHUD.h"
 #import "MJRefresh.h"
+#import "ReactiveObjC.h"
 
 #endif /* XImport_h */

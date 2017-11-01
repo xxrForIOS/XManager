@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "XHead.h"
 
 @interface AppDelegate ()
 
@@ -107,7 +106,7 @@
                     abort();
                 } else {
                     
-                    kLog(@"creat table success");
+                    NSLog(@"creat table success");
                 }
             }];
         }
@@ -129,7 +128,7 @@
         abort();
     } else {
         
-        kLog(@"location data save successed");
+        NSLog(@"location data save successed");
     }
 }
 

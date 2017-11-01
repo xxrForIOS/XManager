@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XHead.h"
+
 
 ///时间显示格式
 typedef NS_ENUM(NSInteger, XRDateFormatType) {

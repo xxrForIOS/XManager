@@ -7,7 +7,7 @@
 //
 
 #import "XStepper.h"
-#import "XHead.h"
+
 
 @interface XStepper()
 @property (nonatomic, strong) UIButton                *leftButton;

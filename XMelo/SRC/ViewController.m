@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "XHead.h"
+
 #import "XListViewController.h"
 #import <CoreText/CoreText.h>
 #import "NNValidationView.h"
@@ -28,7 +28,9 @@
     
 
 
-    
+	
+	
+//	kPush(<#pushFrom#>, <#pushTo#>)
     NSArray *animations = @[@"move",
                             @"alpha",
                             @"fall",
@@ -55,13 +57,19 @@
         theButton.layer.masksToBounds = YES;
         theButton.titleLabel.font = kFontTheme(12);
         [self.view addSubview:theButton];
-        [theButton addBlockWithblock:^(UIButton *theBlockButton) {
-           
-            XListViewController *vcc = [[XListViewController alloc]init];
-            vcc.animation = theBlockButton.currentTitle;
-			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vcc];
-            [self presentViewController:nav animated:YES completion:nil];
-        }];
+
+		[theButton addBlockWithTouchUpInside:^(UIButton *sender) {
+
+			sender.backgroundColor = kColorRandom;
+		}];
+
+//		[[theButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+//
+//			XListViewController *vcc = [[XListViewController alloc]init];
+//			vcc.animation = theBlockButton.currentTitle;
+//			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vcc];
+//			[self presentViewController:nav animated:YES completion:nil];
+//		}]
     }
     
     NSInteger count = 4;
@@ -91,10 +99,10 @@
 //        }];
 //    }];
 //    
-    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithActionBlock:^(id sender) {
-        
-        [self configRootViewController];
-    }]];
+//    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithActionBlock:^(id sender) {
+//
+//        [self configRootViewController];
+//    }]];
 }
 
 - (void)configRootViewController {

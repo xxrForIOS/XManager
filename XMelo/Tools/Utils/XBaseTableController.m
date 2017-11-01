@@ -104,13 +104,13 @@
         [theButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [bgView addSubview:theButton];
         
-        [theButton addBlockWithblock:^(UIButton *button) {
-            
-            if (aBlock) {
-                aBlock(button,[YVAgreementView sharedManager].isRead);
-            }
-        }];
-        
+//        [theButton addBlockWithblock:^(UIButton *button) {
+//
+//            if (aBlock) {
+//                aBlock(button,[YVAgreementView sharedManager].isRead);
+//            }
+//        }];
+
         bgView;
     });
 }
@@ -128,12 +128,12 @@
         leftButton.backgroundColor = [UIColor redColor];
         [leftButton setTitle:title forState:UIControlStateNormal];
         [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [leftButton addBlockWithblock:^(UIButton *button) {
-            
-            if (aBlock) {
-                aBlock(button);
-            }
-        }];
+//        [leftButton addBlockWithblock:^(UIButton *button) {
+//            
+//            if (aBlock) {
+//                aBlock(button);
+//            }
+//        }];
         
         [bgView addSubview:leftButton];
         bgView;
@@ -157,27 +157,27 @@
         leftButton.backgroundColor = [UIColor orangeColor];
         [leftButton setTitle:lTitle forState:UIControlStateNormal];
         [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [leftButton addBlockWithblock:^(UIButton *button) {
-            
-            if (lBlock) {
-                lBlock(button);
-            }
-        }];
-        
+//        [leftButton addBlockWithblock:^(UIButton *button) {
+//
+//            if (lBlock) {
+//                lBlock(button);
+//            }
+//        }];
+
         UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
         rightButton.frame = CGRectMake(15 + width + 10, 25, width * 2, 45);
         rightButton.layer.cornerRadius = 5;
         rightButton.layer.masksToBounds = YES;
-        rightButton.backgroundColor = kColorRGB(13, 192, 241);
+        rightButton.backgroundColor = kColorRGB(13, 192, 241,1);
         [rightButton setTitle:rTitle forState:UIControlStateNormal];
         [rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [rightButton addBlockWithblock:^(UIButton *button) {
-            
-            if (rBlock) {
-                rBlock(button);
-            }
-        }];
-        
+//        [rightButton addBlockWithblock:^(UIButton *button) {
+//
+//            if (rBlock) {
+//                rBlock(button);
+//            }
+//        }];
+
         [bgView addSubview:leftButton];
         [bgView addSubview:rightButton];
         bgView;

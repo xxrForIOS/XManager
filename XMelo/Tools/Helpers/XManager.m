@@ -242,7 +242,7 @@
         [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
             
             if (!success) {
-                kLog(@"调用打电话出错");
+                NSLog(@"调用打电话出错");
             }
         }];
     }
@@ -260,12 +260,12 @@
     [theButton setTitle:str forState:UIControlStateNormal];
     [theButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     theButton.titleLabel.font = kFontTheme(17);
-    [theButton addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
-        if (aBlock) {
-            UIButton *button = (UIButton *)sender;
-            aBlock(button);
-        }
-    }];
+//    [theButton addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
+//        if (aBlock) {
+//            UIButton *button = (UIButton *)sender;
+//            aBlock(button);
+//        }
+//    }];
     vcc.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:theButton];
 }
 

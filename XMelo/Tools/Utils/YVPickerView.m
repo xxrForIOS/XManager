@@ -45,17 +45,17 @@ static char     yvPickerViewKey;
     theView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
     [theVC.navigationController.view addSubview:theView];
     theView.userInteractionEnabled = YES;
-    [theView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithActionBlock:^(id sender) {
-        
-        [theView removeFromSuperview];
-        if (!theSelf.isChoose) {
-            
-            !aBlock ?: aBlock(datas[0]);
-        }
-    }]];
-    
+//    [theView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithActionBlock:^(id sender) {
+//
+//        [theView removeFromSuperview];
+//        if (!theSelf.isChoose) {
+//
+//            !aBlock ?: aBlock(datas[0]);
+//        }
+//    }]];
+
     UIView *toolBar = [[UIView alloc]initWithFrame:CGRectMake(0, theView.height - 216 - 40, kScreenWidth, 40)];
-    toolBar.backgroundColor = kColorRGB(240, 240, 240);
+    toolBar.backgroundColor = kColorRGB(240, 240, 240,1);
     [theView addSubview:toolBar];
     
     UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -63,17 +63,17 @@ static char     yvPickerViewKey;
     [theButton setTitle:@"完成" forState:0];
     [theButton setTitleColor:kColorHex(0x2a83fb) forState:UIControlStateNormal];
     theButton.titleLabel.font = kFontTheme(15);
-    theButton.backgroundColor = kColorRGB(240, 240, 240);
+    theButton.backgroundColor = kColorRGB(240, 240, 240,1);
     [toolBar addSubview:theButton];
-    [theButton addBlockWithblock:^(UIButton *button) {
-        
-        [theView removeFromSuperview];
-        if (!theSelf.isChoose) {
-            
-            !aBlock ?: aBlock(datas[0]);
-        }
-    }];
-    
+//    [theButton addBlockWithblock:^(UIButton *button) {
+//
+//        [theView removeFromSuperview];
+//        if (!theSelf.isChoose) {
+//            
+//            !aBlock ?: aBlock(datas[0]);
+//        }
+//    }];
+
     UIPickerView *thePicker = [[UIPickerView alloc]initWithFrame:CGRectMake(0, kScreenHeight - 216, kScreenWidth, 216)];
     thePicker.delegate = theSelf;
     thePicker.dataSource = theSelf;

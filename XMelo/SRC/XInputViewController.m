@@ -7,7 +7,7 @@
 //
 
 #import "XInputViewController.h"
-#import "XHead.h"
+
 #import "FSTextView.h"
 
 @interface XInputViewController ()

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XHead.h"
+
 
 typedef void(^ XRPickerChooseObject)(id chooseObj);
 @interface YVPickerView : NSObject

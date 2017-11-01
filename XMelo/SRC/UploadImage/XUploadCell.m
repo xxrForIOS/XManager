@@ -76,20 +76,20 @@
         [theButton setBackgroundImage:[XManager getImageFromColor:[UIColor redColor]] forState:UIControlStateNormal];
         theButton.selected = NO;
         
-        [theButton addBlockWithblock:^(UIButton *button) {
-            
-            if (button.isSelected == NO) {
-                
-                self.bgView.hidden = NO;
-                button.selected = YES;
-                self.cellOpenBlock((kScreenWidth - 10 * 4) / 3 + 50 + 20);
-            } else {
-                
-                self.bgView.hidden = YES;
-                button.selected = NO;
-                self.cellOpenBlock(50);
-            }
-        }];
+//        [theButton addBlockWithblock:^(UIButton *button) {
+//
+//            if (button.isSelected == NO) {
+//
+//                self.bgView.hidden = NO;
+//                button.selected = YES;
+//                self.cellOpenBlock((kScreenWidth - 10 * 4) / 3 + 50 + 20);
+//            } else {
+//
+//                self.bgView.hidden = YES;
+//                button.selected = NO;
+//                self.cellOpenBlock(50);
+//            }
+//        }];
         [self.contentView addSubview:theButton];
         theButton;
     });
@@ -125,19 +125,19 @@
             [dele setBackgroundColor:[UIColor redColor]];
             [dele setTitle:@"×" forState:UIControlStateNormal];
             dele.titleLabel.font = [UIFont boldSystemFontOfSize:18];
-            [dele addBlockWithblock:^(id sender) {
-                
-                if ([theButton.currentImage isKindOfClass:[UIImage class]]) {
-                    
-                    UIImage *theImage = self.uploadImages[theButton.tag - 100];
-                    if (theImage) {
-                        
-                        [self.uploadImages removeObjectAtIndex:theButton.tag - 100];
-                        [self configImagesWith:self.uploadImages];
-                        !self.uploadImages ?: self.upImageBlock(self.uploadImages);
-                    }
-                }
-            }];
+//            [dele addBlockWithblock:^(id sender) {
+//
+//                if ([theButton.currentImage isKindOfClass:[UIImage class]]) {
+//
+//                    UIImage *theImage = self.uploadImages[theButton.tag - 100];
+//                    if (theImage) {
+//
+//                        [self.uploadImages removeObjectAtIndex:theButton.tag - 100];
+//                        [self configImagesWith:self.uploadImages];
+//                        !self.uploadImages ?: self.upImageBlock(self.uploadImages);
+//                    }
+//                }
+//            }];
             dele;
         })];
         self.uplodImageButtons = [NSArray arrayWithArray:tmpButton];
@@ -149,15 +149,15 @@
         [theButton setImage:kImageName(@"uploadImage") forState:UIControlStateNormal];
         [theButton setImage:kImageName(@"uploadImage") forState:UIControlStateSelected];
         theButton.frame = CGRectMake(10, 10, imageWidth, imageWidth);
-        [theButton addBlockWithblock:^(id sender) {
-            
-            [XImagePicker showImagePickerViewIn:self.viewController handler:^(UIImage *pickerImagePic) {
-                
-                [self.uploadImages addObject:pickerImagePic];
-                [self configImagesWith:self.uploadImages];
-                !self.upImageBlock ?: self.upImageBlock(self.uploadImages);
-            }];
-        }];
+//        [theButton addBlockWithblock:^(id sender) {
+//            
+//            [XImagePicker showImagePickerViewIn:self.viewController handler:^(UIImage *pickerImagePic) {
+//                
+//                [self.uploadImages addObject:pickerImagePic];
+//                [self configImagesWith:self.uploadImages];
+//                !self.upImageBlock ?: self.upImageBlock(self.uploadImages);
+//            }];
+//        }];
         [self.bgView addSubview:theButton];
         theButton;
     });

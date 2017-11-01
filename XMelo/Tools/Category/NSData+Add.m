@@ -19,7 +19,7 @@
                                            encoding:NSUTF8StringEncoding];
     if (![aStr isKindOfClass:[NSString class]]) {
 
-        kLogError(@"解析不成功");
+        NSLogError(@"解析不成功");
         return nil;
     }
     return aStr;

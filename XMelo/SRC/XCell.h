@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XHead.h"
+
 #import "DictModel.h"
 
 

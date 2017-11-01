@@ -63,13 +63,13 @@
 			sender.backgroundColor = kColorRandom;
 		}];
 
-//		[[theButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-//
-//			XListViewController *vcc = [[XListViewController alloc]init];
-//			vcc.animation = theBlockButton.currentTitle;
-//			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vcc];
-//			[self presentViewController:nav animated:YES completion:nil];
-//		}]
+		[[theButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIButton * _Nullable x) {
+
+			XListViewController *vcc = [[XListViewController alloc]init];
+			vcc.animation = x.currentTitle;
+			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vcc];
+			[self presentViewController:nav animated:YES completion:nil];
+		}];
     }
     
     NSInteger count = 4;

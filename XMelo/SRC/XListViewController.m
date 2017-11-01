@@ -35,14 +35,14 @@
                    @"system fonts",
                    @"image validation"
                    ];
-    
-    self.controllers = @[[[XCoreDataViewController alloc]init],
-                         [[UploadImageViewController alloc]init],
-                         [[XPickerViewController alloc]init],
-                         [[XInputViewController alloc]init],
-                         [[FontViewController alloc]init],
-                         [[ImageValidationViewController alloc]init]
-                         ];
+
+
+	self.controllers = @[@"XCoreDataViewController",
+						 @"UploadImageViewController",
+						 @"XPickerViewController",
+						 @"XInputViewController",
+						 @"FontViewController",
+						 @"ImageValidationViewController"];
     
     self.tableView.height = kScreenHeight - 64 - 50;
     self.tableView.rowHeight = 50;
@@ -69,7 +69,11 @@
     
     self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
 
-		[selfWeak.navigationController pushViewController:selfWeak.controllers[indexPath.row] animated:YES];
+		Class cls = NSClassFromString(selfWeak.controllers[indexPath.row]);
+//		UIViewController *vc = [[cls alloc] init];
+		kPush(selfWeak, [[cls alloc] init]);
+
+//		[selfWeak.navigationController pushViewController:selfWeak.controllers[indexPath.row] animated:YES];
 //        kPush(selfWeak, selfWeak.controllers[indexPath.row]);
     };
 

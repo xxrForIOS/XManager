@@ -213,7 +213,9 @@
 + (void)showHUDWithString:(NSString *)str completion:(void(^)(void))completion{
     
     UIView *theView = [UIApplication sharedApplication].keyWindow.rootViewController.view;
-    
+
+
+	theView = [XManager currentViewController].view;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:theView animated:YES];
     hud.mode = MBProgressHUDModeText;
     hud.label.text = str;
@@ -260,6 +262,7 @@
     [theButton setTitle:str forState:UIControlStateNormal];
     [theButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     theButton.titleLabel.font = kFontTheme(17);
+	[theButton addBlockWithTouchUpInside:aBlock];
 //    [theButton addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
 //        if (aBlock) {
 //            UIButton *button = (UIButton *)sender;

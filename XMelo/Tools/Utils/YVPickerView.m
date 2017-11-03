@@ -45,6 +45,19 @@ static char     yvPickerViewKey;
     theView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
     [theVC.navigationController.view addSubview:theView];
     theView.userInteractionEnabled = YES;
+
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
+	[theView addGestureRecognizer:tap];
+	[[tap rac_gestureSignal] subscribeNext:^(id x) {
+
+		[theView removeFromSuperview];
+		if (!theSelf.isChoose) {
+			
+			!aBlock ?: aBlock(datas[0]);
+		}
+	}];
+
+
 //    [theView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithActionBlock:^(id sender) {
 //
 //        [theView removeFromSuperview];
@@ -65,6 +78,14 @@ static char     yvPickerViewKey;
     theButton.titleLabel.font = kFontTheme(15);
     theButton.backgroundColor = kColorRGB(240, 240, 240,1);
     [toolBar addSubview:theButton];
+	[theButton addBlockWithTouchUpInside:^(UIButton *sender) {
+
+		[theView removeFromSuperview];
+		if (!theSelf.isChoose) {
+
+			!aBlock ?: aBlock(datas[0]);
+		}
+	}];
 //    [theButton addBlockWithblock:^(UIButton *button) {
 //
 //        [theView removeFromSuperview];

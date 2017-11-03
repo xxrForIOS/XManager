@@ -30,33 +30,59 @@
     self.datas = [NSMutableArray arrayWithCapacity:0];
     self.tableView.rowHeight = 50;
     @kWeakSelf;
+
+//	[[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"xxalert" object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+//
+//		[XManager showHUDWithString:@"alert in list" completion:^{
+//
+//			NSLog(@"do do subscribeNext");
+//		}];
+//	}];
+
+	[[[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"xxalert" object:nil] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSNotification * _Nullable x) {
+
+		[XManager showHUDWithString:@"alert in list" completion:^{
+
+			NSLog(@"do do rac_willDeallocSignal");
+		}];
+	}];
+
+	[XManager addRightBarItemInViewController:self itemTitle:@"dismiss" andItemBlock:^(UIButton *aButton) {
+
+//		[selfWeak dismissViewControllerAnimated:YES completion:nil];
+
+		kPop(selfWeak);
+		[XManager dispatchAfter:5 completion:^{
+
+			[[NSNotificationCenter defaultCenter]postNotificationName:@"xxalert" object:nil userInfo:nil];;
+		}];
+	}];
     
-    
-    [XManager addRightBarItemInViewController:self itemTitle:@"添加" andItemBlock:^(UIButton *aButton) {
-
-        if ([selfWeak.nameTF.text isEqualToString:@""] ||
-            [selfWeak.ageTF.text isEqualToString:@""] ||
-            [selfWeak.heightTF.text isEqualToString:@""]) {
-
-            [XManager showAlertWith:@"空值啊,魂淡"];
-            return;
-        }
-
-        XSonModel *theModel = [NSEntityDescription insertNewObjectForEntityForName:@"XSonModel" inManagedObjectContext:kContext];
-        theModel.name = selfWeak.nameTF.text;
-        theModel.age = selfWeak.ageTF.text.integerValue;
-        theModel.height = selfWeak.heightTF.text.floatValue;
-        [kDelegate saveContext];
-
-        selfWeak.nameTF.text = @"";
-        selfWeak.ageTF.text = @"";
-        selfWeak.heightTF.text = @"";
-    }];
+//    [XManager addRightBarItemInViewController:self itemTitle:@"添加" andItemBlock:^(UIButton *aButton) {
+//
+//        if ([selfWeak.nameTF.text isEqualToString:@""] ||
+//            [selfWeak.ageTF.text isEqualToString:@""] ||
+//            [selfWeak.heightTF.text isEqualToString:@""]) {
+//
+//            [XManager showAlertWith:@"空值啊,魂淡"];
+//            return;
+//        }
+//
+//        XSonModel *theModel = [NSEntityDescription insertNewObjectForEntityForName:@"XSonModel" inManagedObjectContext:kContext];
+//        theModel.name = selfWeak.nameTF.text;
+//        theModel.age = selfWeak.ageTF.text.integerValue;
+//        theModel.height = selfWeak.heightTF.text.floatValue;
+//        [kDelegate saveContext];
+//
+//        selfWeak.nameTF.text = @"";
+//        selfWeak.ageTF.text = @"";
+//        selfWeak.heightTF.text = @"";
+//    }];
 
     
     self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
        
-        return selfWeak.datas.count;
+        return self.datas.count;
     };
     
     
@@ -209,6 +235,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+
+	[super viewWillDisappear:animated];
+
+//	[[NSNotificationCenter defaultCenter]removeObserver:self];
+
+	[[NSNotificationCenter defaultCenter]rac_willDeallocSignal];
 }
 
 /*

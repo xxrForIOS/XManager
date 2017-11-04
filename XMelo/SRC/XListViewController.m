@@ -17,6 +17,8 @@
 
 #import "CutOutViewController.h"
 
+#define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+
 @interface XListViewController ()
 
 @property (nonatomic, strong) NSArray           *datas;
@@ -49,7 +51,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.navigationItem.title = @"XMelo";
     @kWeakSelf;
-    
+
     self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
        
         return selfWeak.datas.count;
@@ -79,10 +81,18 @@
 
     };
 
+//	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),)
+
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+//		NSLog(@"xxx get",);
+	});
+
 	[[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"xxalert" object:nil] subscribeNext:^(NSNotification * _Nullable x) {
 
 		NSLog(@"addobserver list");
 	}];
+
 
 	[XManager addRightBarItemInViewController:self itemTitle:@"dismiss" andItemBlock:^(UIButton *aButton) {
 

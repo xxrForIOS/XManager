@@ -12,7 +12,6 @@
 #import <CoreText/CoreText.h>
 #import "NNValidationView.h"
 
-
 @interface ViewController () 
 
 

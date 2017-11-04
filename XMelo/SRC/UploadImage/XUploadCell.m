@@ -75,22 +75,23 @@
         [theButton setBackgroundImage:[XManager getImageFromColor:[UIColor cyanColor]] forState:UIControlStateSelected];
         [theButton setBackgroundImage:[XManager getImageFromColor:[UIColor redColor]] forState:UIControlStateNormal];
         theButton.selected = NO;
-        
-//        [theButton addBlockWithblock:^(UIButton *button) {
-//
-//            if (button.isSelected == NO) {
-//
-//                self.bgView.hidden = NO;
-//                button.selected = YES;
-//                self.cellOpenBlock((kScreenWidth - 10 * 4) / 3 + 50 + 20);
-//            } else {
-//
-//                self.bgView.hidden = YES;
-//                button.selected = NO;
-//                self.cellOpenBlock(50);
-//            }
-//        }];
-        [self.contentView addSubview:theButton];
+
+		@kWeakSelf;
+		[theButton addBlockWithTouchUpInside:^(UIButton *sender) {
+
+			if (sender.isSelected == NO) {
+
+				selfWeak.bgView.hidden = NO;
+				sender.selected = YES;
+				selfWeak.cellOpenBlock((kScreenWidth - 10 * 4) / 3 + 50 + 20);
+			} else {
+
+				selfWeak.bgView.hidden = YES;
+				sender.selected = NO;
+				selfWeak.cellOpenBlock(50);
+			}
+		}];
+        [selfWeak.contentView addSubview:theButton];
         theButton;
     });
     
@@ -118,26 +119,29 @@
         [tmpButton addObject:theButton];
         
         [theButton addSubview:({
-            
+
             UIButton *dele = [UIButton buttonWithType:UIButtonTypeCustom];
             dele.frame = CGRectMake(theButton.width - 20, 0, 20, 20);
             dele.layer.cornerRadius = 10;
             [dele setBackgroundColor:[UIColor redColor]];
             [dele setTitle:@"×" forState:UIControlStateNormal];
             dele.titleLabel.font = [UIFont boldSystemFontOfSize:18];
-//            [dele addBlockWithblock:^(id sender) {
+
+			@kWeakSelf;
+			[dele addBlockWithTouchUpInside:^(UIButton *sender) {
+
+
+				if ([theButton.currentImage isKindOfClass:[UIImage class]]) {
 //
-//                if ([theButton.currentImage isKindOfClass:[UIImage class]]) {
+//					UIImage *theImage = selfWeak.uploadImages[theButton.tag - 100];
+//					if (theImage) {
 //
-//                    UIImage *theImage = self.uploadImages[theButton.tag - 100];
-//                    if (theImage) {
-//
-//                        [self.uploadImages removeObjectAtIndex:theButton.tag - 100];
-//                        [self configImagesWith:self.uploadImages];
-//                        !self.uploadImages ?: self.upImageBlock(self.uploadImages);
-//                    }
-//                }
-//            }];
+//						[selfWeak.uploadImages removeObjectAtIndex:theButton.tag - 100];
+//						[selfWeak configImagesWith:selfWeak.uploadImages];
+//						!selfWeak.uploadImages ?: selfWeak.upImageBlock(selfWeak.uploadImages);
+//					}
+				}
+			}];
             dele;
         })];
         self.uplodImageButtons = [NSArray arrayWithArray:tmpButton];
@@ -149,15 +153,16 @@
         [theButton setImage:kImageName(@"uploadImage") forState:UIControlStateNormal];
         [theButton setImage:kImageName(@"uploadImage") forState:UIControlStateSelected];
         theButton.frame = CGRectMake(10, 10, imageWidth, imageWidth);
-//        [theButton addBlockWithblock:^(id sender) {
-//            
-//            [XImagePicker showImagePickerViewIn:self.viewController handler:^(UIImage *pickerImagePic) {
-//                
-//                [self.uploadImages addObject:pickerImagePic];
-//                [self configImagesWith:self.uploadImages];
-//                !self.upImageBlock ?: self.upImageBlock(self.uploadImages);
-//            }];
-//        }];
+		[theButton addBlockWithTouchUpInside:^(UIButton *sender) {
+
+//			@kWeakSelf;
+//			[XImagePicker showImagePickerViewIn:selfWeak.viewController handler:^(UIImage *pickerImagePic) {
+//
+//				[selfWeak.uploadImages addObject:pickerImagePic];
+//				[selfWeak configImagesWith:selfWeak.uploadImages];
+//				!selfWeak.upImageBlock ?: selfWeak.upImageBlock(selfWeak.uploadImages);
+//			}];
+		}];
         [self.bgView addSubview:theButton];
         theButton;
     });

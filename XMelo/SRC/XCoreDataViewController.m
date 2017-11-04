@@ -82,7 +82,7 @@
     
     self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
        
-        return self.datas.count;
+        return selfWeak.datas.count;
     };
     
     

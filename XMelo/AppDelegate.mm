@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+//#import <WCDB/WCDB.h>
+//#import "DictModel+WCTTableCoding.h"
 
 @interface AppDelegate ()
 
@@ -50,6 +52,38 @@
     return YES;
 }
 
+//-(BOOL)creatDataBaseWithName:(NSString *)tableName{
+//
+//	//获取沙盒根目录
+//	NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+//	// 文件路径
+//	NSString *filePath = [documentsPath stringByAppendingPathComponent:@"model.sqlite"];
+////	NSLog(@"path = %@",filePath);
+//	WCTDatabase *database = [[WCTDatabase alloc]initWithPath:filePath];
+//	// 数据库加密
+//	//NSData *password = [@"MyPassword" dataUsingEncoding:NSASCIIStringEncoding];
+//	//[database setCipherKey:password];
+//	//测试数据库是否能够打开
+//	if ([database canOpen]) {
+//
+//		// WCDB大量使用延迟初始化（Lazy initialization）的方式管理对象，因此SQLite连接会在第一次被访问时被打开。开发者不需要手动打开数据库。
+//		// 先判断表是不是已经存在
+//		if ([database isOpened]) {
+//
+//			if ([database isTableExists:tableName]) {
+//
+//				NSLog(@"表已经存在");
+//				return NO;
+//			}else
+//
+//				[database createTableOfName:tableName withColumnDefList:nil];
+//
+//				// 创建方法
+//				return [database createTableAndIndexesOfName:tableName withClass:Message.class];
+//		}
+//	}
+//	return NO;
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

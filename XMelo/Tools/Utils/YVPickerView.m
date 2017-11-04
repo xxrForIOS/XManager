@@ -86,14 +86,15 @@ static char     yvPickerViewKey;
 			!aBlock ?: aBlock(datas[0]);
 		}
 	}];
-//    [theButton addBlockWithblock:^(UIButton *button) {
-//
-//        [theView removeFromSuperview];
-//        if (!theSelf.isChoose) {
-//            
-//            !aBlock ?: aBlock(datas[0]);
-//        }
-//    }];
+
+	[theButton addBlockWithTouchUpInside:^(UIButton *sender) {
+
+		[theView removeFromSuperview];
+		if (!theSelf.isChoose) {
+
+			!aBlock ?: aBlock(datas[0]);
+		}
+	}];
 
     UIPickerView *thePicker = [[UIPickerView alloc]initWithFrame:CGRectMake(0, kScreenHeight - 216, kScreenWidth, 216)];
     thePicker.delegate = theSelf;

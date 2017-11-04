@@ -10,4 +10,6 @@ pod 'IQKeyboardManager'
 pod 'FSTextView'
 pod 'MLeaksFinder'
 pod 'ReactiveObjC'
+#pod 'WCDB'
+
 end

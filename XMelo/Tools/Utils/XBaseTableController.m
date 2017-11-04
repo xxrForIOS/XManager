@@ -103,14 +103,10 @@
         [theButton setTitle:buttonTitle forState:UIControlStateNormal];
         [theButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [bgView addSubview:theButton];
-        
-//        [theButton addBlockWithblock:^(UIButton *button) {
-//
-//            if (aBlock) {
-//                aBlock(button,[YVAgreementView sharedManager].isRead);
-//            }
-//        }];
+		[theButton addBlockWithTouchUpInside:^(UIButton *sender) {
 
+			!aBlock ?: aBlock(sender,[YVAgreementView sharedManager].isRead);
+		}];
         bgView;
     });
 }
@@ -128,13 +124,7 @@
         leftButton.backgroundColor = [UIColor redColor];
         [leftButton setTitle:title forState:UIControlStateNormal];
         [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//        [leftButton addBlockWithblock:^(UIButton *button) {
-//            
-//            if (aBlock) {
-//                aBlock(button);
-//            }
-//        }];
-        
+		[leftButton addBlockWithTouchUpInside:aBlock];
         [bgView addSubview:leftButton];
         bgView;
     });
@@ -157,12 +147,7 @@
         leftButton.backgroundColor = [UIColor orangeColor];
         [leftButton setTitle:lTitle forState:UIControlStateNormal];
         [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//        [leftButton addBlockWithblock:^(UIButton *button) {
-//
-//            if (lBlock) {
-//                lBlock(button);
-//            }
-//        }];
+		[leftButton addBlockWithTouchUpInside:lBlock];
 
         UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
         rightButton.frame = CGRectMake(15 + width + 10, 25, width * 2, 45);
@@ -171,12 +156,7 @@
         rightButton.backgroundColor = kColorRGB(13, 192, 241,1);
         [rightButton setTitle:rTitle forState:UIControlStateNormal];
         [rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//        [rightButton addBlockWithblock:^(UIButton *button) {
-//
-//            if (rBlock) {
-//                rBlock(button);
-//            }
-//        }];
+		[rightButton addBlockWithTouchUpInside:rBlock];
 
         [bgView addSubview:leftButton];
         [bgView addSubview:rightButton];

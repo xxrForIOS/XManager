@@ -263,12 +263,6 @@
     [theButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     theButton.titleLabel.font = kFontTheme(17);
 	[theButton addBlockWithTouchUpInside:aBlock];
-//    [theButton addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
-//        if (aBlock) {
-//            UIButton *button = (UIButton *)sender;
-//            aBlock(button);
-//        }
-//    }];
     vcc.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:theButton];
 }
 

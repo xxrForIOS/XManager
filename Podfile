@@ -1,4 +1,4 @@
-platform:ios, '8.2'
+platform:ios, '10.0'
 target 'XMelo’ do
 
 pod 'MLeaksFinder'

@@ -25,9 +25,31 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     
+	UIButton * testButton = [[UIButton alloc] initWithFrame:CGRectMake(50, 74, 200, 64)];
+//	[testButton setBackgroundColor:[UIColor lightGrayColor]];
+	[testButton addTarget:self action:@selector(onButtonClickAction:) forControlEvents:UIControlEventTouchUpInside];
+	[self.view addSubview:testButton];
 
+	CALayer * temp = [CALayer layer];
+	temp.frame = CGRectMake(1, 1, testButton.bounds.size.width - 2, testButton.bounds.size.height - 2);
+	[temp setBackgroundColor:[UIColor redColor].CGColor];
+//	temp.borderColor = [UIColor blackColor].CGColor;
+//	temp.borderWidth = 1;
 
-	
+	UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:temp.bounds byRoundingCorners:UIRectCornerBottomLeft|UIRectCornerBottomRight cornerRadii:CGSizeMake(32, 32)];
+
+	CAShapeLayer * mask  = [[CAShapeLayer alloc] initWithLayer:temp];
+	mask.path = path.CGPath;
+	temp.mask = mask;
+	[testButton.layer addSublayer:temp];
+
+//	UIBezierPath * path2 = [UIBezierPath bezierPathWithRoundedRect:testButton.bounds byRoundingCorners:UIRectCornerBottomLeft|UIRectCornerBottomRight cornerRadii:CGSizeMake(4, 4)];
+//	CAShapeLayer * mask2  = [[CAShapeLayer alloc] initWithLayer:temp];
+//	mask2.path = path2.CGPath;
+//	testButton.layer.mask = mask2;
+
+	testButton.layer.masksToBounds = YES;
+
 	
 //	kPush(<#pushFrom#>, <#pushTo#>)
     NSArray *animations = @[@"move",
@@ -46,14 +68,15 @@
 
         UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
         theButton.frame = CGRectMake(20 + (theWidth + 10) * (index%4), 200 + (35 + 20) * (index/4), theWidth, 35);
-        theButton.layer.cornerRadius = theButton.height/2;
+//        theButton.layer.cornerRadius = theButton.height/2;
         theButton.layer.borderColor = [UIColor redColor].CGColor;
-        [theButton changeCorner:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:5];
         [theButton setTitle:animations[index] forState:UIControlStateNormal];
         [theButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         theButton.backgroundColor = [UIColor whiteColor];
-        theButton.layer.borderWidth = 1;
-        theButton.layer.masksToBounds = YES;
+//        theButton.layer.masksToBounds = YES;
+
+		[theButton changeCorner:UIRectCornerTopLeft | UIRectCornerBottomRight cornerRadii:theButton.height/2];
+		theButton.layer.borderWidth = 1;
         theButton.titleLabel.font = kFontTheme(12);
         [self.view addSubview:theButton];
 
@@ -107,12 +130,6 @@
 - (void)configRootViewController {
     
     XListViewController *firstVC = [[XListViewController alloc] init];
-//    JTNavigationController *navvvvvvvv = [[JTNavigationController alloc]initWithRootViewController:firstVC];
-//    JTBaseNavigationController *firstNav = [[JTBaseNavigationController alloc] initWithRootViewController:navvvvvvvv];
-//    [self presentViewController:firstNav animated:YES completion:nil];
-//    self.view.window.rootViewController = firstNav;
-
-
 	UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:firstVC];
 	[self presentViewController:nav animated:YES completion:nil];
 }

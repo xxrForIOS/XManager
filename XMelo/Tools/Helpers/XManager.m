@@ -212,22 +212,7 @@
 
 + (void)showHUDWithString:(NSString *)str completion:(void(^)(void))completion{
     
-    UIView *theView = [UIApplication sharedApplication].keyWindow.rootViewController.view;
 
-
-	theView = [XManager currentViewController].view;
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:theView animated:YES];
-    hud.mode = MBProgressHUDModeText;
-    hud.label.text = str;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        if (completion) {
-            
-            [MBProgressHUD hideHUDForView:theView animated:YES];
-            completion();
-        }
-    });
 }
 
 
@@ -236,18 +221,12 @@
 + (void)callWithNumber:(NSString *)number{
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",number]];
-    if (kIOSVersion < 10.0) {
-       
-        [[UIApplication sharedApplication] openURL:url];
-    }else{
-        
-        [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
-            
-            if (!success) {
-                NSLog(@"调用打电话出错");
-            }
-        }];
-    }
+	[[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
+
+		if (!success) {
+			NSLog(@"调用打电话出错");
+		}
+	}];
 }
 
 //MARK:- 导航条右上角添加文字按钮

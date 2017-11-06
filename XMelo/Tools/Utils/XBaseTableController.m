@@ -7,14 +7,14 @@
 //
 
 #import "XBaseTableController.h"
-#import "MJRefresh.h"
-#import "UIScrollView+EmptyDataSet.h"
+//#import "MJRefresh.h"
+//#import "UIScrollView+EmptyDataSet.h"
 #import "YVAgreementView.h"
 #import "TableViewAnimationKit.h"
 
 #define kCellIdentifier @"baseCell"
 
-@interface XBaseTableController () <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
+@interface XBaseTableController () //<DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @end
 
@@ -39,9 +39,9 @@
     });
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
 
-    self.tableView.emptyDataSetSource = self;
-    self.tableView.emptyDataSetDelegate = self;
-    
+//    self.tableView.emptyDataSetSource = self;
+//    self.tableView.emptyDataSetDelegate = self;
+
     //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     //cell.separatorInset = UIEdgeInsetsMake(0, kScreenWidth, 0, 0);
@@ -65,7 +65,7 @@
 
 - (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView{
     
-    [_tableView.mj_header beginRefreshing];
+//    [_tableView.mj_header beginRefreshing];
 }
 
 - (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView{
@@ -238,36 +238,36 @@
 
 #pragma mark- 刷新
 - (void)updateDataFromHeadWith:(void(^)(void))block{
-    MJRefreshNormalHeader *headerrrr = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        if (block) {
-            block();
-            
-            //[self.tableView reloadData];
-            //[self.tableView.mj_header endRefreshing];
-        }
-    }];
-    
-    [headerrrr setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
-    headerrrr.lastUpdatedTimeLabel.hidden = YES;
-    headerrrr.automaticallyChangeAlpha = YES;
-    self.tableView.mj_header = headerrrr;
-    [self.tableView.mj_header beginRefreshing];
+//    MJRefreshNormalHeader *headerrrr = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        if (block) {
+//            block();
+//
+//            //[self.tableView reloadData];
+//            //[self.tableView.mj_header endRefreshing];
+//        }
+//    }];
+//
+//    [headerrrr setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
+//    headerrrr.lastUpdatedTimeLabel.hidden = YES;
+//    headerrrr.automaticallyChangeAlpha = YES;
+//    self.tableView.mj_header = headerrrr;
+//    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)updateDataFromFootWith:(void(^)(void))block{
-    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        if (block) {
-            block();
-            
-            //[self.tableView reloadData];
-            //[self.tableView.mj_footer endRefreshing];
-            //[self.tableView.mj_footer endRefreshingWithNoMoreData];
-        }
-    }];
-    
-    [footer setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
-    self.tableView.mj_footer = footer;
-    [self.tableView.mj_footer beginRefreshing];
+//    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+//        if (block) {
+//            block();
+//
+//            //[self.tableView reloadData];
+//            //[self.tableView.mj_footer endRefreshing];
+//            //[self.tableView.mj_footer endRefreshingWithNoMoreData];
+//        }
+//    }];
+//
+//    [footer setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
+//    self.tableView.mj_footer = footer;
+//    [self.tableView.mj_footer beginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -127,7 +127,7 @@
             [dele setTitle:@"×" forState:UIControlStateNormal];
             dele.titleLabel.font = [UIFont boldSystemFontOfSize:18];
 
-			@kWeakSelf;
+//			@kWeakSelf;
 			[dele addBlockWithTouchUpInside:^(UIButton *sender) {
 
 

@@ -13,7 +13,7 @@
 		A713F87F1F17A57300FEA33E /* XBaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F87E1F17A57300FEA33E /* XBaseTableController.m */; };
 		A713F8821F17A87200FEA33E /* XListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F8811F17A87200FEA33E /* XListViewController.m */; };
 		A71D184E1F0BAE0700BAE515 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D184D1F0BAE0700BAE515 /* main.m */; };
-		A71D18511F0BAE0700BAE515 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A71D18501F0BAE0700BAE515 /* AppDelegate.mm */; };
+		A71D18511F0BAE0700BAE515 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D18501F0BAE0700BAE515 /* AppDelegate.m */; };
 		A71D18571F0BAE0700BAE515 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71D18551F0BAE0700BAE515 /* Main.storyboard */; };
 		A71D18591F0BAE0700BAE515 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71D18581F0BAE0700BAE515 /* Assets.xcassets */; };
 		A71D185C1F0BAE0700BAE515 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71D185A1F0BAE0700BAE515 /* LaunchScreen.storyboard */; };
@@ -66,7 +66,7 @@
 		A71D18491F0BAE0700BAE515 /* XMelo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMelo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71D184D1F0BAE0700BAE515 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A71D184F1F0BAE0700BAE515 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A71D18501F0BAE0700BAE515 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		A71D18501F0BAE0700BAE515 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A71D18561F0BAE0700BAE515 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A71D18581F0BAE0700BAE515 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A71D185B1F0BAE0700BAE515 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				A71D184F1F0BAE0700BAE515 /* AppDelegate.h */,
-				A71D18501F0BAE0700BAE515 /* AppDelegate.mm */,
+				A71D18501F0BAE0700BAE515 /* AppDelegate.m */,
 				A7A8AB5D1F0BC33F001338B0 /* Resource */,
 				A7A8AB5F1F0BC33F001338B0 /* Tools */,
 				A7A8AB681F0BC737001338B0 /* SRC */,
@@ -610,7 +610,7 @@
 				A795B7991F51234D003C7EAD /* XBaseController.m in Sources */,
 				A795B7871F511201003C7EAD /* UploadImageCell.m in Sources */,
 				A795B7961F511C56003C7EAD /* XInputViewController.m in Sources */,
-				A71D18511F0BAE0700BAE515 /* AppDelegate.mm in Sources */,
+				A71D18511F0BAE0700BAE515 /* AppDelegate.m in Sources */,
 				A72CD1AA1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.m in Sources */,
 				A72CD1AB1F0D04EE002C90BD /* UIView+Add.m in Sources */,
 				A71D184E1F0BAE0700BAE515 /* main.m in Sources */,
@@ -753,36 +753,7 @@
 				INFOPLIST_FILE = XMelo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-all_load",
-					"-l\"DZNEmptyDataSet\"",
-					"-l\"FBRetainCycleDetector\"",
-					"-l\"FSTextView\"",
-					"-l\"IQKeyboardManager\"",
-					"-l\"MBProgressHUD\"",
-					"-l\"MJExtension\"",
-					"-l\"MJRefresh\"",
-					"-l\"MLeaksFinder\"",
-					"-l\"ReactiveObjC\"",
-					"-l\"SDWebImage\"",
-					"-l\"c++\"",
-					"-l\"z\"",
-					"-framework",
-					"\"CoreFoundation\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"ImageIO\"",
-					"-framework",
-					"\"QuartzCore\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"UIKit\"",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xxr.XMelo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -799,36 +770,7 @@
 				INFOPLIST_FILE = XMelo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-all_load",
-					"-l\"DZNEmptyDataSet\"",
-					"-l\"FBRetainCycleDetector\"",
-					"-l\"FSTextView\"",
-					"-l\"IQKeyboardManager\"",
-					"-l\"MBProgressHUD\"",
-					"-l\"MJExtension\"",
-					"-l\"MJRefresh\"",
-					"-l\"MLeaksFinder\"",
-					"-l\"ReactiveObjC\"",
-					"-l\"SDWebImage\"",
-					"-l\"c++\"",
-					"-l\"z\"",
-					"-framework",
-					"\"CoreFoundation\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"ImageIO\"",
-					"-framework",
-					"\"QuartzCore\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"UIKit\"",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xxr.XMelo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

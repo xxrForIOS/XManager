@@ -46,16 +46,16 @@ static char     yvPickerViewKey;
     [theVC.navigationController.view addSubview:theView];
     theView.userInteractionEnabled = YES;
 
-	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
-	[theView addGestureRecognizer:tap];
-	[[tap rac_gestureSignal] subscribeNext:^(id x) {
-
-		[theView removeFromSuperview];
-		if (!theSelf.isChoose) {
-			
-			!aBlock ?: aBlock(datas[0]);
-		}
-	}];
+//	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
+//	[theView addGestureRecognizer:tap];
+//	[[tap rac_gestureSignal] subscribeNext:^(id x) {
+//
+//		[theView removeFromSuperview];
+//		if (!theSelf.isChoose) {
+//
+//			!aBlock ?: aBlock(datas[0]);
+//		}
+//	}];
 
 
 //    [theView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithActionBlock:^(id sender) {

@@ -14,12 +14,13 @@
 
 #import "XImport.h"
 
-//log
+// DEBUG模式下进行调试打印
 #ifdef DEBUG
-#define NSLog(s, ...)        NSLog(@"%@",[NSString stringWithFormat:(s), ##__VA_ARGS__])
-#define NSLogError(s, ...)   NSLog(@"%s %@", __func__,[NSString stringWithFormat:(s), ##__VA_ARGS__])
+#define YVLog(fmt, ...)  printf("%s %s + %d => %s \n\n", __TIME__ , __FUNCTION__, __LINE__, [[NSString stringWithFormat:fmt, ##__VA_ARGS__]UTF8String])
 #else
+#define YVLog(...)   {}
 #endif
+
 
 //value
 #define kIOSVersion         [[[UIDevice currentDevice] systemVersion] floatValue]

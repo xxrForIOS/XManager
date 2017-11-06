@@ -43,7 +43,7 @@
    
     CGFloat theWidth = (kScreenWidth - 40 - 10 * 3)/4;
     for (int index = 0; index < animations.count; index ++) {
-        
+
         UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
         theButton.frame = CGRectMake(20 + (theWidth + 10) * (index%4), 200 + (35 + 20) * (index/4), theWidth, 35);
         theButton.layer.cornerRadius = theButton.height/2;
@@ -62,31 +62,31 @@
 			sender.backgroundColor = kColorRandom;
 		}];
 
-		[[theButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIButton * _Nullable x) {
+//		[[theButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIButton * _Nullable x) {
+//
+//			XListViewController *vcc = [[XListViewController alloc]init];
+//			vcc.animation = x.currentTitle;
+//			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vcc];
+//			[self presentViewController:nav animated:YES completion:nil];
+//		}];
+    }
+    
+//    NSInteger count = 4;
+//    CGFloat imageWidth = kScreenWidth - 12 * 2;
+//
+//    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, kScreenHeight - 210, kScreenWidth, 200)];
+//    scrollView.backgroundColor = [UIColor brownColor];
+//    scrollView.contentSize = CGSizeMake(12 + kScreenWidth * count, 200);
+//    scrollView.pagingEnabled = YES;
+//    [self.view addSubview:scrollView];
+//
+//    for (int index = 0; index < count; index ++) {
+//
+//        UIView *imageView = [[UIView alloc]initWithFrame:CGRectMake(12 + kScreenWidth * index, 5, imageWidth, 200)];
+//        imageView.backgroundColor = kColorRandom;
+//        [scrollView addSubview:imageView];
+//    }
 
-			XListViewController *vcc = [[XListViewController alloc]init];
-			vcc.animation = x.currentTitle;
-			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vcc];
-			[self presentViewController:nav animated:YES completion:nil];
-		}];
-    }
-    
-    NSInteger count = 4;
-    CGFloat imageWidth = kScreenWidth - 12 * 2;
-    
-    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, kScreenHeight - 210, kScreenWidth, 200)];
-    scrollView.backgroundColor = [UIColor brownColor];
-    scrollView.contentSize = CGSizeMake(12 + kScreenWidth * count, 200);
-    scrollView.pagingEnabled = YES;
-    [self.view addSubview:scrollView];
-    
-    for (int index = 0; index < count; index ++) {
-        
-        UIView *imageView = [[UIView alloc]initWithFrame:CGRectMake(12 + kScreenWidth * index, 5, imageWidth, 200)];
-        imageView.backgroundColor = kColorRandom;
-        [scrollView addSubview:imageView];
-    }
-    
 //    [UIView animateWithDuration:2 animations:^{
 //        
 //        self.view.backgroundColor = kColor_yuebai;

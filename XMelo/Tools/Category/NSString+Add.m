@@ -18,7 +18,7 @@
     NSData *aData = [self dataUsingEncoding:NSUTF8StringEncoding];
     
     if (![aData isKindOfClass:[NSData class]]) {
-        NSLogError(@"解析不成功");
+        YVLog(@"解析不成功");
         return nil;
     }
     return aData;

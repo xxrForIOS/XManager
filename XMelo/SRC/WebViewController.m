@@ -32,10 +32,6 @@
         [self.view addSubview:webView];
         webView;
     });
-    
-    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
-
-    manager.enableAutoToolbar = NO;
 }
 
 - (void)didReceiveMemoryWarning {

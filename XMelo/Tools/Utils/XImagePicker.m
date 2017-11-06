@@ -56,7 +56,7 @@ static char     xImagePickerViewBlockKey;
         
         if (![UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear]) {
             
-            NSLogError(@"模拟器不支持拍照");
+            YVLog(@"模拟器不支持拍照");
             return ;
         }
         

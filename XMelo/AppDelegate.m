@@ -20,33 +20,33 @@
 //???: ???
 ///!!!: !!!
 //MARK: mark
-//MARK:- mark line
+//MARK:- line
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     
     //导航条设置
-    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
-    
-//[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
-    UIColor *theMeColor = [UIColor blackColor];
-    UIImage *colorImage = [XManager getImageFromColor:kColorIceBlue withSize:CGSizeMake(kScreenWidth, 64)];
-    [navigationBarAppearance setBackgroundImage:colorImage forBarMetrics:UIBarMetricsDefault];
-    [navigationBarAppearance setTintColor:theMeColor];
-    [navigationBarAppearance setBarTintColor:theMeColor];
-    [navigationBarAppearance setShadowImage:[UIImage new]];
-    [navigationBarAppearance setTitleTextAttributes:@{NSForegroundColorAttributeName:theMeColor,
-                                                      NSFontAttributeName:kFontTheme(17)}];
-    
-    //处理键盘遮盖
-    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
-    manager.enable = YES;
-    manager.shouldResignOnTouchOutside = YES;
-    manager.shouldToolbarUsesTextFieldTintColor = YES;
-    manager.toolbarDoneBarButtonItemText = @"完成";
-    manager.enableAutoToolbar = YES;
-    manager.toolbarManageBehaviour = IQAutoToolbarByTag;
-    
+//    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
+//
+////[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+//
+//    UIColor *theMeColor = [UIColor blackColor];
+//    UIImage *colorImage = [XManager getImageFromColor:kColorIceBlue withSize:CGSizeMake(kScreenWidth, 64)];
+//    [navigationBarAppearance setBackgroundImage:colorImage forBarMetrics:UIBarMetricsDefault];
+//    [navigationBarAppearance setTintColor:theMeColor];
+//    [navigationBarAppearance setBarTintColor:theMeColor];
+//    [navigationBarAppearance setShadowImage:[UIImage new]];
+//    [navigationBarAppearance setTitleTextAttributes:@{NSForegroundColorAttributeName:theMeColor,
+//                                                      NSFontAttributeName:kFontTheme(17)}];
+//
+//    //处理键盘遮盖
+//    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+//    manager.enable = YES;
+//    manager.shouldResignOnTouchOutside = YES;
+//    manager.shouldToolbarUsesTextFieldTintColor = YES;
+//    manager.toolbarDoneBarButtonItemText = @"完成";
+//    manager.enableAutoToolbar = YES;
+//    manager.toolbarManageBehaviour = IQAutoToolbarByTag;
+
     return YES;
 }
 

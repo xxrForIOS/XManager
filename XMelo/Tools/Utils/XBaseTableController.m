@@ -20,6 +20,25 @@
 
 @implementation XBaseTableController
 
+
+//+ (void)load {
+//
+//	static dispatch_once_t onceToken;
+//	dispatch_once(&onceToken, ^{
+//
+//		UINavigationBar *navigationBarAppearance = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[XBaseTableController class]]];
+//		NSDictionary *textAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+//		UIImage *colorImage = [XManager getImageFromColor:kColorThemeOrange withSize:CGSizeMake(kScreenWidth, 64)];
+//		[navigationBarAppearance setBackgroundImage:colorImage forBarMetrics:UIBarMetricsDefault];
+//		[navigationBarAppearance setTitleTextAttributes:textAttributes];
+//		[navigationBarAppearance setTintColor:[UIColor whiteColor]];
+//		[navigationBarAppearance setBarTintColor:[UIColor whiteColor]];
+//		[navigationBarAppearance setShadowImage:[[UIImage alloc]init]];
+//		[[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : kColorThemeOrange} forState:UIControlStateNormal];
+//	});
+//}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 

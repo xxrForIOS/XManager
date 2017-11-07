@@ -18,7 +18,6 @@
 
 @implementation TableViewAnimationKit
 
-
 + (void)moveAnimationWithTableView:(UITableView *)tableView {
     
     NSArray *cells = tableView.visibleCells;

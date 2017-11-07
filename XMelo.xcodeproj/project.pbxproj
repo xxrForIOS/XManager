@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7D3691A56F3A55AD39BF3D88 /* libPods-XMelo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55944350D03FF90A8F8126C9 /* libPods-XMelo.a */; };
+		A7085D031F973D4300398477 /* XMeloDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7085D021F973D4300398477 /* XMeloDelegate.m */; };
 		A70DA5231F564D730059935B /* UIScrollView+SpringHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A70DA5221F564D730059935B /* UIScrollView+SpringHeadView.m */; };
 		A713F8791F17A50F00FEA33E /* UIButton+ChangePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F8781F17A50F00FEA33E /* UIButton+ChangePosition.m */; };
 		A713F87F1F17A57300FEA33E /* XBaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F87E1F17A57300FEA33E /* XBaseTableController.m */; };
@@ -57,6 +58,8 @@
 /* Begin PBXFileReference section */
 		55944350D03FF90A8F8126C9 /* libPods-XMelo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XMelo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		691E65A6553354E2B37952FD /* Pods-XMelo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMelo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XMelo/Pods-XMelo.debug.xcconfig"; sourceTree = "<group>"; };
+		A7085D011F973D4300398477 /* XMeloDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMeloDelegate.h; sourceTree = "<group>"; };
+		A7085D021F973D4300398477 /* XMeloDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMeloDelegate.m; sourceTree = "<group>"; };
 		A70DA5211F564D730059935B /* UIScrollView+SpringHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SpringHeadView.h"; sourceTree = "<group>"; };
 		A70DA5221F564D730059935B /* UIScrollView+SpringHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SpringHeadView.m"; sourceTree = "<group>"; };
 		A713F8771F17A50F00FEA33E /* UIButton+ChangePosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ChangePosition.h"; sourceTree = "<group>"; };
@@ -236,6 +239,8 @@
 			children = (
 				A71D184F1F0BAE0700BAE515 /* AppDelegate.h */,
 				A71D18501F0BAE0700BAE515 /* AppDelegate.m */,
+				A7085D011F973D4300398477 /* XMeloDelegate.h */,
+				A7085D021F973D4300398477 /* XMeloDelegate.m */,
 				A7A8AB5D1F0BC33F001338B0 /* Resource */,
 				A7A8AB5F1F0BC33F001338B0 /* Tools */,
 				A7A8AB681F0BC737001338B0 /* SRC */,
@@ -333,8 +338,8 @@
 			isa = PBXGroup;
 			children = (
 				A7A8AB6D1F0BC7D0001338B0 /* XColorHead.h */,
-				A72CD1AC1F0D0567002C90BD /* XConst.h */,
 				A76E10621F2EBFCA00E09AAE /* XImport.h */,
+				A72CD1AC1F0D0567002C90BD /* XConst.h */,
 				A72CD1AD1F0D0567002C90BD /* XConst.m */,
 			);
 			name = head;
@@ -607,6 +612,7 @@
 				A721BD2C1F597FC0008EBF9A /* NNValidationView.m in Sources */,
 				A76E10651F2ED9EF00E09AAE /* XCell.m in Sources */,
 				A72CD1A91F0D04EE002C90BD /* UITextView+Rich.m in Sources */,
+				A7085D031F973D4300398477 /* XMeloDelegate.m in Sources */,
 				A795B7881F511201003C7EAD /* UploadImageViewController.m in Sources */,
 				A7B3722D1F30AA730087972B /* XMelo.xcdatamodeld in Sources */,
 				A767F0FA1F5560BD00432627 /* YVPickerView.m in Sources */,

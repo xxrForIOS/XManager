@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+<<<<<<< HEAD
 #import <IQKeyboardManager.h>
 #import "XMeloDelegate.h"
+=======
+//#import <IQKeyboardManager.h>
+>>>>>>> 7ff4b8d953003c37a2214766e8c5d8fed47bb3c2
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

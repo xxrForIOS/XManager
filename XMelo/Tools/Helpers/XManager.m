@@ -24,6 +24,39 @@
     return _sharedManager;
 }
 
++ (void)addRradualColorFor:(UIView *)theView colors:(NSArray *)colors showType:(YVRradualColorShowType)type {
+
+	CAGradientLayer *gradientLayer0 = [[CAGradientLayer alloc] init];
+	gradientLayer0.cornerRadius = 12.5;
+	gradientLayer0.frame = theView.bounds;
+	gradientLayer0.colors = colors;
+
+	if (type == YVRradualColorShowTypeLeftRight) {
+
+		[gradientLayer0 setStartPoint:CGPointMake(0, 0.5)];
+		[gradientLayer0 setEndPoint:CGPointMake(1, 0.5)];
+	}
+
+	if (type == YVRradualColorShowTypeTopBottom) {
+
+		[gradientLayer0 setStartPoint:CGPointMake(0.5, 0)];
+		[gradientLayer0 setEndPoint:CGPointMake(0.5, 1.0)];
+	}
+
+	if (type == YVRradualColorShowTypeLTopToRBottom) {
+
+		[gradientLayer0 setStartPoint:CGPointMake(0, 0)];
+		[gradientLayer0 setEndPoint:CGPointMake(1, 1)];
+	}
+
+	if (type == YVRradualColorShowTypeLBottomToRTop) {
+
+		[gradientLayer0 setStartPoint:CGPointMake(0, 1)];
+		[gradientLayer0 setEndPoint:CGPointMake(1, 0)];
+	}
+
+	[theView.layer addSublayer:gradientLayer0];
+}
 
 #pragma mark- 纯色图片
 + (UIImage *)getImageFromColor:(UIColor *)color withSize:(CGSize)size{
@@ -212,20 +245,7 @@
 
 + (void)showHUDWithString:(NSString *)str completion:(void(^)(void))completion{
     
-    UIView *theView = [UIApplication sharedApplication].keyWindow.rootViewController.view;
-    
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:theView animated:YES];
-    hud.mode = MBProgressHUDModeText;
-    hud.label.text = str;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        if (completion) {
-            
-            [MBProgressHUD hideHUDForView:theView animated:YES];
-            completion();
-        }
-    });
+
 }
 
 
@@ -234,18 +254,12 @@
 + (void)callWithNumber:(NSString *)number{
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",number]];
-    if (kIOSVersion < 10.0) {
-       
-        [[UIApplication sharedApplication] openURL:url];
-    }else{
-        
-        [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
-            
-            if (!success) {
-                kLog(@"调用打电话出错");
-            }
-        }];
-    }
+	[[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
+
+		if (!success) {
+			NSLog(@"调用打电话出错");
+		}
+	}];
 }
 
 //MARK:- 导航条右上角添加文字按钮
@@ -260,12 +274,7 @@
     [theButton setTitle:str forState:UIControlStateNormal];
     [theButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     theButton.titleLabel.font = kFontTheme(17);
-    [theButton addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
-        if (aBlock) {
-            UIButton *button = (UIButton *)sender;
-            aBlock(button);
-        }
-    }];
+	[theButton addBlockWithTouchUpInside:aBlock];
     vcc.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:theButton];
 }
 

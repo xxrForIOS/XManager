@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XHead.h"
+
 
 typedef void(^pickerImagePic)(UIImage *pickerImagePic);
 @interface XImagePicker : NSObject

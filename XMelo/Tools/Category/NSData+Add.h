@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XHead.h"
 @interface NSData (Add)
 
 

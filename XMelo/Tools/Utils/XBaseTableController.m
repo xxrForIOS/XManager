@@ -7,14 +7,14 @@
 //
 
 #import "XBaseTableController.h"
-#import "MJRefresh.h"
-#import "UIScrollView+EmptyDataSet.h"
+//#import "MJRefresh.h"
+//#import "UIScrollView+EmptyDataSet.h"
 #import "YVAgreementView.h"
 #import "TableViewAnimationKit.h"
 
 #define kCellIdentifier @"baseCell"
 
-@interface XBaseTableController () <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
+@interface XBaseTableController () //<DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @end
 
@@ -58,9 +58,9 @@
     });
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
 
-    self.tableView.emptyDataSetSource = self;
-    self.tableView.emptyDataSetDelegate = self;
-    
+//    self.tableView.emptyDataSetSource = self;
+//    self.tableView.emptyDataSetDelegate = self;
+
     //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     //cell.separatorInset = UIEdgeInsetsMake(0, kScreenWidth, 0, 0);
@@ -84,7 +84,7 @@
 
 - (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView{
     
-    [_tableView.mj_header beginRefreshing];
+//    [_tableView.mj_header beginRefreshing];
 }
 
 - (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView{
@@ -122,14 +122,10 @@
         [theButton setTitle:buttonTitle forState:UIControlStateNormal];
         [theButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [bgView addSubview:theButton];
-        
-        [theButton addBlockWithblock:^(UIButton *button) {
-            
-            if (aBlock) {
-                aBlock(button,[YVAgreementView sharedManager].isRead);
-            }
-        }];
-        
+		[theButton addBlockWithTouchUpInside:^(UIButton *sender) {
+
+			!aBlock ?: aBlock(sender,[YVAgreementView sharedManager].isRead);
+		}];
         bgView;
     });
 }
@@ -147,13 +143,7 @@
         leftButton.backgroundColor = [UIColor redColor];
         [leftButton setTitle:title forState:UIControlStateNormal];
         [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [leftButton addBlockWithblock:^(UIButton *button) {
-            
-            if (aBlock) {
-                aBlock(button);
-            }
-        }];
-        
+		[leftButton addBlockWithTouchUpInside:aBlock];
         [bgView addSubview:leftButton];
         bgView;
     });
@@ -176,27 +166,17 @@
         leftButton.backgroundColor = [UIColor orangeColor];
         [leftButton setTitle:lTitle forState:UIControlStateNormal];
         [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [leftButton addBlockWithblock:^(UIButton *button) {
-            
-            if (lBlock) {
-                lBlock(button);
-            }
-        }];
-        
+		[leftButton addBlockWithTouchUpInside:lBlock];
+
         UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
         rightButton.frame = CGRectMake(15 + width + 10, 25, width * 2, 45);
         rightButton.layer.cornerRadius = 5;
         rightButton.layer.masksToBounds = YES;
-        rightButton.backgroundColor = kColorRGB(13, 192, 241);
+        rightButton.backgroundColor = kColorRGB(13, 192, 241,1);
         [rightButton setTitle:rTitle forState:UIControlStateNormal];
         [rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [rightButton addBlockWithblock:^(UIButton *button) {
-            
-            if (rBlock) {
-                rBlock(button);
-            }
-        }];
-        
+		[rightButton addBlockWithTouchUpInside:rBlock];
+
         [bgView addSubview:leftButton];
         [bgView addSubview:rightButton];
         bgView;
@@ -277,36 +257,36 @@
 
 #pragma mark- 刷新
 - (void)updateDataFromHeadWith:(void(^)(void))block{
-    MJRefreshNormalHeader *headerrrr = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        if (block) {
-            block();
-            
-            //[self.tableView reloadData];
-            //[self.tableView.mj_header endRefreshing];
-        }
-    }];
-    
-    [headerrrr setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
-    headerrrr.lastUpdatedTimeLabel.hidden = YES;
-    headerrrr.automaticallyChangeAlpha = YES;
-    self.tableView.mj_header = headerrrr;
-    [self.tableView.mj_header beginRefreshing];
+//    MJRefreshNormalHeader *headerrrr = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        if (block) {
+//            block();
+//
+//            //[self.tableView reloadData];
+//            //[self.tableView.mj_header endRefreshing];
+//        }
+//    }];
+//
+//    [headerrrr setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
+//    headerrrr.lastUpdatedTimeLabel.hidden = YES;
+//    headerrrr.automaticallyChangeAlpha = YES;
+//    self.tableView.mj_header = headerrrr;
+//    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)updateDataFromFootWith:(void(^)(void))block{
-    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        if (block) {
-            block();
-            
-            //[self.tableView reloadData];
-            //[self.tableView.mj_footer endRefreshing];
-            //[self.tableView.mj_footer endRefreshingWithNoMoreData];
-        }
-    }];
-    
-    [footer setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
-    self.tableView.mj_footer = footer;
-    [self.tableView.mj_footer beginRefreshing];
+//    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+//        if (block) {
+//            block();
+//
+//            //[self.tableView reloadData];
+//            //[self.tableView.mj_footer endRefreshing];
+//            //[self.tableView.mj_footer endRefreshingWithNoMoreData];
+//        }
+//    }];
+//
+//    [footer setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
+//    self.tableView.mj_footer = footer;
+//    [self.tableView.mj_footer beginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {

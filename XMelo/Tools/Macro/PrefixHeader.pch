@@ -1,0 +1,77 @@
+//
+//  PrefixHeader.pch
+//  XMelo
+//
+//  Created by X.Melo on 2017/10/31.
+//  Copyright © 2017年 欣欣然. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "XImport.h"
+
+// DEBUG模式下进行调试打印
+#ifdef DEBUG
+#define YVLog(fmt, ...)  	printf("%s %s + %d => %s \n\n", __TIME__ , __FUNCTION__, __LINE__, [[NSString stringWithFormat:fmt, ##__VA_ARGS__]UTF8String])
+#else
+#define YVLog(...) 			{}
+#endif
+
+
+//value
+#define kIOSVersion         [[[UIDevice currentDevice] systemVersion] floatValue]
+#define kFontTheme(f)       [UIFont fontWithName:@"Menlo" size:f]
+#define kFontBold(f)        [UIFont boldSystemFontOfSize:f]
+
+
+
+///image
+#define kImageName(f,...)   [UIImage imageNamed:[NSString stringWithFormat:f,##__VA_ARGS__]]
+#define kImageUrl(f,...)    [NSURL URLWithString:[NSString stringWithFormat:f,##__VA_ARGS__]]
+
+///block
+#define kWeakSelf           autoreleasepool{} __weak typeof(self) selfWeak = self;
+#define kWeakObj(o)         autoreleasepool{} __weak typeof(o) o##Weak = o;
+
+///userDefault
+#define kUserDefault_set(__object, __key) ({\
+NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];\
+@synchronized([NSUserDefaults standardUserDefaults]){\
+[defaults setObject:__object forKey:__key];\
+[defaults synchronize];}})
+
+#define kUserDefault_get(k)     [[NSUserDefaults standardUserDefaults] objectForKey:k]
+#define kUserDefault_removeAll  [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]]
+#define kUserDefault_remove(n)  [[NSUserDefaults standardUserDefaults]removeObjectForKey:n]
+
+///hud
+#define kCurrentController      [UIApplication sharedApplication].keyWindow.rootViewController
+#define kActivityHUDShowStr(s)  MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:(kCurrentController).view  animated:YES];hud.label.text = s
+#define kActivityHUDShow        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:(kCurrentController).view  animated:YES];hud.label.text = @"加载数据"
+#define kActivityHUDHidden      [MBProgressHUD hideHUDForView:(kCurrentController).view animated:YES];
+
+///simulator
+#if TARGET_IPHONE_SIMULATOR
+#define kSimulator 1
+#elif TARGET_OS_IPHONE
+#define kSimulator 0
+#endif
+
+#define kPush(pushFrom,pushTo)  [pushFrom.navigationController pushViewController:pushTo animated:YES]
+#define kPop(current)           [current.navigationController popViewControllerAnimated:YES]
+
+
+#define kStringFormat(f,...)    [NSString stringWithFormat:f,##__VA_ARGS__]
+#define kContext                ((AppDelegate *)[UIApplication sharedApplication].delegate).persistentContainer.viewContext
+#define kDelegate               (AppDelegate *)[[UIApplication sharedApplication] delegate]
+
+
+#define kScreenWidth            [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight           [UIScreen mainScreen].bounds.size.height
+
+
+#endif /* PrefixHeader_pch */

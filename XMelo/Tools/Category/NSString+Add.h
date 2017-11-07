@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XHead.h"
+
 
 @interface NSString (Add)
 

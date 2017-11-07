@@ -1,15 +1,15 @@
-platform:ios, '8.2'
+platform:ios, '10.0'
 target 'XMelo’ do
 
+pod 'MLeaksFinder'
 pod 'MBProgressHUD'
 pod 'SDWebImage'
 pod 'MJRefresh'
-pod 'DZNEmptyDataSet'
-pod 'CYLTabBarController'
 pod 'MJExtension'
-pod 'GDPerformanceView'
+pod 'DZNEmptyDataSet'
 pod 'IQKeyboardManager'
 pod 'FSTextView'
-pod 'MLeaksFinder'
+pod 'ReactiveObjC'
+#pod 'WCDB'
 
 end

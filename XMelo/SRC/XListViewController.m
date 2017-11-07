@@ -17,6 +17,8 @@
 
 #import "CutOutViewController.h"
 
+#define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+
 @interface XListViewController ()
 
 @property (nonatomic, strong) NSArray           *datas;
@@ -35,21 +37,21 @@
                    @"system fonts",
                    @"image validation"
                    ];
-    
-    self.controllers = @[[[XCoreDataViewController alloc]init],
-                         [[UploadImageViewController alloc]init],
-                         [[XPickerViewController alloc]init],
-                         [[XInputViewController alloc]init],
-                         [[FontViewController alloc]init],
-                         [[ImageValidationViewController alloc]init]
-                         ];
+
+
+	self.controllers = @[@"XCoreDataViewController",
+						 @"UploadImageViewController",
+						 @"XPickerViewController",
+						 @"XInputViewController",
+						 @"FontViewController",
+						 @"ImageValidationViewController"];
     
     self.tableView.height = kScreenHeight - 64 - 50;
-    self.tableView.rowHeight = kCellHeight;
+    self.tableView.rowHeight = 50;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.navigationItem.title = @"XMelo";
     @kWeakSelf;
-    
+
     self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
        
         return selfWeak.datas.count;
@@ -69,40 +71,73 @@
     
     self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
 
-		[selfWeak.navigationController pushViewController:selfWeak.controllers[indexPath.row] animated:YES];
+		Class cls = NSClassFromString(selfWeak.controllers[indexPath.row]);
+//		UIViewController *vc = [[cls alloc] init];
+		kPush(selfWeak, [[cls alloc] init]);
+
+//		[selfWeak.navigationController pushViewController:selfWeak.controllers[indexPath.row] animated:YES];
 //        kPush(selfWeak, selfWeak.controllers[indexPath.row]);
+
+
     };
 
-    
-    
-    [XManager addRightBarItemInViewController:self itemTitle:@"dismiss" andItemBlock:^(UIButton *aButton) {
+//	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),)
 
-        [selfWeak dismissViewControllerAnimated:YES completion:nil];
-    }];
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
+//		NSLog(@"xxx get",);
+	});
+
+//	[[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"xxalert" object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+//
+//		YVLog(@"addobserver list");
+//	}];
+
+
+	[XManager addRightBarItemInViewController:self itemTitle:@"dismiss" andItemBlock:^(UIButton *aButton) {
+
+		[[NSNotificationCenter defaultCenter]postNotificationName:@"xxalert" object:nil userInfo:nil];;
+	}];
 
 //    [self startWithAnimation:self.animation];
 }
 
-//- (void)startWithAnimation:(NSString *)string {
-//
-//    self.tableView.hidden = YES;
-//    [XManager dispatchAfter:1 completion:^{
-//
-//        self.tableView.hidden = NO;
-//        if ([string isEqualToString:@"move"])           [TableViewAnimationKit moveAnimationWithTableView:self.tableView];
-//        if ([string isEqualToString:@"alpha"])          [TableViewAnimationKit alphaAnimationWithTableView:self.tableView];
-//        if ([string isEqualToString:@"fall"])           [TableViewAnimationKit fallAnimationWithTableView:self.tableView];
-//        if ([string isEqualToString:@"shake"])          [TableViewAnimationKit shakeAnimationWithTableView:self.tableView];
-//        if ([string isEqualToString:@"over"])           [TableViewAnimationKit overTurnAnimationWithTableView:self.tableView];
-//        if ([string isEqualToString:@"toTop"])          [TableViewAnimationKit toTopAnimationWithTableView:self.tableView];
-//        if ([string isEqualToString:@"spring"])         [TableViewAnimationKit springListAnimationWithTableView:self.tableView];
-//        if ([string isEqualToString:@"shrink"])         [TableViewAnimationKit shrinkToTopAnimationWithTableView:self.tableView];
-//        if ([string isEqualToString:@"layDonw"])        [TableViewAnimationKit layDonwAnimationWithTableView:self.tableView];
-//        if ([string isEqualToString:@"rote"])           [TableViewAnimationKit roteAnimationWithTableView:self.tableView];
-//    }];
-//}
+- (void)startWithAnimation:(NSString *)string {
 
+    self.tableView.hidden = YES;
+    [XManager dispatchAfter:1 completion:^{
+
+        self.tableView.hidden = NO;
+        if ([string isEqualToString:@"move"])           [TableViewAnimationKit moveAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"alpha"])          [TableViewAnimationKit alphaAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"fall"])           [TableViewAnimationKit fallAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"shake"])          [TableViewAnimationKit shakeAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"over"])           [TableViewAnimationKit overTurnAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"toTop"])          [TableViewAnimationKit toTopAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"spring"])         [TableViewAnimationKit springListAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"shrink"])         [TableViewAnimationKit shrinkToTopAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"layDonw"])        [TableViewAnimationKit layDonwAnimationWithTableView:self.tableView];
+        if ([string isEqualToString:@"rote"])           [TableViewAnimationKit roteAnimationWithTableView:self.tableView];
+    }];
+}
+
+//- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
+//	UIContextualAction *favourRowAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"收藏" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+//
+//		UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//		CGFloat red   = (arc4random() % 256) / 256.0;
+//		CGFloat green = (arc4random() % 256) / 256.0;
+//		CGFloat blue  = (arc4random() % 256) / 256.0;
+//
+//		cell.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+//
+//		completionHandler(YES);
+//	}];
+//	favourRowAction.backgroundColor = [UIColor orangeColor];
+//
+//	UISwipeActionsConfiguration *favourRowConfiguration = [UISwipeActionsConfiguration configurationWithActions:@[favourRowAction]];
+//	return favourRowConfiguration;
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

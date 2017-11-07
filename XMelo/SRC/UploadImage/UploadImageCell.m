@@ -41,18 +41,18 @@
         [theButton setImage:kImageName(@"uploadImage") forState:UIControlStateNormal];
         [theButton setImage:kImageName(@"uploadImage") forState:UIControlStateSelected];
         theButton.frame = CGRectMake(10, 10, imageWidth, imageWidth);
-        [theButton addBlockWithblock:^(id sender) {
-            
-            [XImagePicker showImagePickerViewIn:self.viewController handler:^(UIImage *pickerImagePic) {
-                
-                [self.uploadImages addObject:pickerImagePic];
-                if (self.uploadImages) {
-                    
-                    self.uploadImage(self.uploadImages, [self getFinalHeightWith]);
-                }
-                [self updateUploadImageButtonFrame];
-            }];
-        }];
+		[theButton addBlockWithTouchUpInside:^(UIButton *sender) {
+
+			[XImagePicker showImagePickerViewIn:self.viewController handler:^(UIImage *pickerImagePic) {
+
+				[self.uploadImages addObject:pickerImagePic];
+				if (self.uploadImages) {
+
+					self.uploadImage(self.uploadImages, [self getFinalHeightWith]);
+				}
+				[self updateUploadImageButtonFrame];
+			}];
+		}];
         [self.contentView addSubview:theButton];
         theButton;
     });
@@ -126,22 +126,22 @@
             [dele setBackgroundColor:[UIColor redColor]];
             [dele setTitle:@"×" forState:UIControlStateNormal];
             dele.titleLabel.font = [UIFont boldSystemFontOfSize:18];
-            [dele addBlockWithblock:^(id sender) {
-                
-                if ([theButton.currentImage isKindOfClass:[UIImage class]]) {
-                    
-                    UIImage *theImage = self.uploadImages[theButton.tag - 100];
-                    if (theImage) {
-                        
-                        [self.uploadImages removeObjectAtIndex:theButton.tag - 100];
-                        [self updateUploadImageButtonFrame];
-                        if (self.uploadImages) {
-                            
-                            self.uploadImage(self.uploadImages, [self getFinalHeightWith]);
-                        }
-                    }
-                }
-            }];
+			[dele addBlockWithTouchUpInside:^(UIButton *sender) {
+
+				if ([theButton.currentImage isKindOfClass:[UIImage class]]) {
+
+					UIImage *theImage = self.uploadImages[theButton.tag - 100];
+					if (theImage) {
+
+						[self.uploadImages removeObjectAtIndex:theButton.tag - 100];
+						[self updateUploadImageButtonFrame];
+						if (self.uploadImages) {
+
+							self.uploadImage(self.uploadImages, [self getFinalHeightWith]);
+						}
+					}
+				}
+			}];
             dele;
         });
         [theButton addSubview:deleButton];

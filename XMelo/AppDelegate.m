@@ -14,11 +14,36 @@
 
 @implementation AppDelegate
 
+<<<<<<< HEAD
+//FIXME: fixme
+//TODO: todo
+//???: ???
+///!!!: !!!
+//MARK: mark
+//MARK:- line
+=======
+>>>>>>> 7ff4b8d953003c37a2214766e8c5d8fed47bb3c2
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
 	///你说啥?!
     
     //导航条设置
+<<<<<<< HEAD
+//    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
+//
+////[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+//
+//    UIColor *theMeColor = [UIColor blackColor];
+//    UIImage *colorImage = [XManager getImageFromColor:kColorIceBlue withSize:CGSizeMake(kScreenWidth, 64)];
+//    [navigationBarAppearance setBackgroundImage:colorImage forBarMetrics:UIBarMetricsDefault];
+//    [navigationBarAppearance setTintColor:theMeColor];
+//    [navigationBarAppearance setBarTintColor:theMeColor];
+//    [navigationBarAppearance setShadowImage:[UIImage new]];
+//    [navigationBarAppearance setTitleTextAttributes:@{NSForegroundColorAttributeName:theMeColor,
+//                                                      NSFontAttributeName:kFontTheme(17)}];
+//
+//    //处理键盘遮盖
+=======
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
     
 //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
@@ -33,6 +58,7 @@
                                                       NSFontAttributeName:kFontTheme(17)}];
     
     //处理键盘遮盖
+>>>>>>> 7ff4b8d953003c37a2214766e8c5d8fed47bb3c2
 //    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
 //    manager.enable = YES;
 //    manager.shouldResignOnTouchOutside = YES;

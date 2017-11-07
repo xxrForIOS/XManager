@@ -24,6 +24,39 @@
     return _sharedManager;
 }
 
++ (void)addRradualColorFor:(UIView *)theView colors:(NSArray *)colors showType:(YVRradualColorShowType)type {
+
+	CAGradientLayer *gradientLayer0 = [[CAGradientLayer alloc] init];
+	gradientLayer0.cornerRadius = 12.5;
+	gradientLayer0.frame = theView.bounds;
+	gradientLayer0.colors = colors;
+
+	if (type == YVRradualColorShowTypeLeftRight) {
+
+		[gradientLayer0 setStartPoint:CGPointMake(0, 0.5)];
+		[gradientLayer0 setEndPoint:CGPointMake(1, 0.5)];
+	}
+
+	if (type == YVRradualColorShowTypeTopBottom) {
+
+		[gradientLayer0 setStartPoint:CGPointMake(0.5, 0)];
+		[gradientLayer0 setEndPoint:CGPointMake(0.5, 1.0)];
+	}
+
+	if (type == YVRradualColorShowTypeLTopToRBottom) {
+
+		[gradientLayer0 setStartPoint:CGPointMake(0, 0)];
+		[gradientLayer0 setEndPoint:CGPointMake(1, 1)];
+	}
+
+	if (type == YVRradualColorShowTypeLBottomToRTop) {
+
+		[gradientLayer0 setStartPoint:CGPointMake(0, 1)];
+		[gradientLayer0 setEndPoint:CGPointMake(1, 0)];
+	}
+
+	[theView.layer addSublayer:gradientLayer0];
+}
 
 #pragma mark- 纯色图片
 + (UIImage *)getImageFromColor:(UIColor *)color withSize:(CGSize)size{

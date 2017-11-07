@@ -12,6 +12,12 @@
 #import <CoreText/CoreText.h>
 #import "NNValidationView.h"
 
+#define kColorThemeOrange   kColorHex(0xfb6b2b)
+#define kColorThemeRed      kColorHex(0xfc4c4c)
+#define kColorThemeBlack    kColorHex(0x2a2e36)
+#define kColorThemeGray     kColorHex(0x959595)
+#define kColorThemeBlue     kColorHex(0x2a83fb)
+#define kColorThemeLine     kColorHex(0xeaeaea)
 @interface ViewController () 
 
 
@@ -25,30 +31,49 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     
-	UIButton * testButton = [[UIButton alloc] initWithFrame:CGRectMake(50, 74, 200, 64)];
-//	[testButton setBackgroundColor:[UIColor lightGrayColor]];
-	[testButton addTarget:self action:@selector(onButtonClickAction:) forControlEvents:UIControlEventTouchUpInside];
-	[self.view addSubview:testButton];
+//	UIView *colorView = [[UIView alloc] init];
+//	[colorView setFrame:CGRectMake(10, 190,
+//								   self.view.frame.size.width - 20,
+//								   35 * 3 + 40 + 10 * 2)];
+//	[self.view addSubview:colorView];
 
-	CALayer * temp = [CALayer layer];
-	temp.frame = CGRectMake(1, 1, testButton.bounds.size.width - 2, testButton.bounds.size.height - 2);
-	[temp setBackgroundColor:[UIColor redColor].CGColor];
-//	temp.borderColor = [UIColor blackColor].CGColor;
-//	temp.borderWidth = 1;
+//	[XManager addRradualColorFor:colorView colors:@[(id)kColor_chi.CGColor, (id)kColor_dailan.CGColor] showType:YVRradualColorShowTypeBottomToTop];
 
-	UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:temp.bounds byRoundingCorners:UIRectCornerBottomLeft|UIRectCornerBottomRight cornerRadii:CGSizeMake(32, 32)];
+	for (int index = 0; index < 4; index ++) {
 
-	CAShapeLayer * mask  = [[CAShapeLayer alloc] initWithLayer:temp];
-	mask.path = path.CGPath;
-	temp.mask = mask;
-	[testButton.layer addSublayer:temp];
+		UIButton *theView = [UIButton buttonWithType:UIButtonTypeCustom];
 
-//	UIBezierPath * path2 = [UIBezierPath bezierPathWithRoundedRect:testButton.bounds byRoundingCorners:UIRectCornerBottomLeft|UIRectCornerBottomRight cornerRadii:CGSizeMake(4, 4)];
-//	CAShapeLayer * mask2  = [[CAShapeLayer alloc] initWithLayer:temp];
-//	mask2.path = path2.CGPath;
-//	testButton.layer.mask = mask2;
+		theView.frame = CGRectMake(20, 20 + (150 + 10) * index, kScreenWidth - 40, 150);
+		[self.view addSubview:theView];
+		[theView addBlockWithTouchUpInside:^(UIButton *sender) {
 
-	testButton.layer.masksToBounds = YES;
+			[XManager addRradualColorFor:sender
+								  colors:@[(id)kColorRandom.CGColor,
+										   (id)kColorRandom.CGColor]
+								showType:index];
+		}];
+		[XManager addRradualColorFor:theView
+							  colors:@[(id)kColorThemeRed.CGColor,
+									   (id)kColorThemeBlack.CGColor]
+							showType:index];
+	}
+//	CAGradientLayer *gradient = [CAGradientLayer layer];
+//	gradient.frame = colorView.bounds;
+//	gradient.colors = [NSArray arrayWithObjects:
+//					   (id)[UIColor colorWithRed:0 green:143/255.0 blue:234/255.0 alpha:1.0].CGColor,
+////					   (id)[UIColor colorWithRed:0 green:173/255.0 blue:234/255.0 alpha:1.0].CGColor,
+//					   (id)[UIColor whiteColor].CGColor, nil];
+//	[colorView.layer addSublayer:gradient];
+
+//	CAGradientLayer *gradientLayer0 = [[CAGradientLayer alloc] init];
+//	gradientLayer0.cornerRadius = 12.5;
+//	gradientLayer0.frame = colorView.bounds;
+//	gradientLayer0.colors = @[(id)kColor_chi.CGColor,
+//							  (id)kColor_dailan.CGColor];
+//	gradientLayer0.locations = @[@0.2, @1];
+//	[gradientLayer0 setStartPoint:CGPointMake(0, 0.5)];
+//	[gradientLayer0 setEndPoint:CGPointMake(1, 0.5)];
+//	[colorView.layer addSublayer:gradientLayer0];
 
 	
 //	kPush(<#pushFrom#>, <#pushTo#>)
@@ -67,18 +92,19 @@
     for (int index = 0; index < animations.count; index ++) {
 
         UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        theButton.frame = CGRectMake(20 + (theWidth + 10) * (index%4), 200 + (35 + 20) * (index/4), theWidth, 35);
+        theButton.frame = CGRectMake(20 + (theWidth + 10) * (index%4),
+									 200 + (35 + 20) * (index/4), theWidth, 35);
 //        theButton.layer.cornerRadius = theButton.height/2;
         theButton.layer.borderColor = [UIColor redColor].CGColor;
         [theButton setTitle:animations[index] forState:UIControlStateNormal];
         [theButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        theButton.backgroundColor = [UIColor whiteColor];
+        theButton.backgroundColor = kColorRandom;
 //        theButton.layer.masksToBounds = YES;
 
 		[theButton changeCorner:UIRectCornerTopLeft | UIRectCornerBottomRight cornerRadii:theButton.height/2];
-		theButton.layer.borderWidth = 1;
+//		theButton.layer.borderWidth = 1;
         theButton.titleLabel.font = kFontTheme(12);
-        [self.view addSubview:theButton];
+//        [self.view addSubview:theButton];
 
 		[theButton addBlockWithTouchUpInside:^(UIButton *sender) {
 

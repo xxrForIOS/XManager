@@ -12,6 +12,9 @@
 #import <CoreText/CoreText.h>
 #import "NNValidationView.h"
 
+#import "SignInViewController.h"
+#import "ThirdSignViewController.h"
+
 #define kColorThemeOrange   kColorHex(0xfb6b2b)
 #define kColorThemeRed      kColorHex(0xfc4c4c)
 #define kColorThemeBlack    kColorHex(0x2a2e36)
@@ -47,10 +50,18 @@
 		[self.view addSubview:theView];
 		[theView addBlockWithTouchUpInside:^(UIButton *sender) {
 
-			[XManager addRradualColorFor:sender
-								  colors:@[(id)kColorRandom.CGColor,
-										   (id)kColorRandom.CGColor]
-								showType:index];
+//			[XManager addRradualColorFor:sender
+//								  colors:@[(id)kColorRandom.CGColor,
+//										   (id)kColorRandom.CGColor]
+//								showType:index];
+
+			[self addAnimation:sender];
+
+//			SignInViewController *firstVC = [[SignInViewController alloc] init];
+			ThirdSignViewController *firstVC = [[ThirdSignViewController alloc] init];
+
+			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:firstVC];
+			[self presentViewController:nav animated:YES completion:nil];
 		}];
 		[XManager addRradualColorFor:theView
 							  colors:@[(id)kColorThemeRed.CGColor,
@@ -151,6 +162,32 @@
 //
 //        [self configRootViewController];
 //    }]];
+}
+
+- (void) addAnimation:(UIView *)theView {
+
+	CABasicAnimation *rotationAnimation;
+	rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.y"];
+	rotationAnimation.toValue = @(M_PI * 1);
+	rotationAnimation.duration = 1;
+	rotationAnimation.cumulative = YES;
+//	rotationAnimation.repeatCount = 10
+	[theView.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+
+//	theView.userInteractionEnabled = NO;
+
+//	CGAffineTransform transform = CGAffineTransformRotate(theView.transform,M_PI);
+//	[UIView beginAnimations:@"rotate" context:nil ];
+//	[UIView setAnimationDuration:0.5];
+//	[UIView setAnimationDelegate:self];
+//	theView.userInteractionEnabled = NO;
+//	[theView setTransform:transform];
+//	[UIView commitAnimations];
+
+//	[XManager dispatchAfter:1 completion:^{
+//
+//		theView.userInteractionEnabled = YES;
+//	}];
 }
 
 - (void)configRootViewController {

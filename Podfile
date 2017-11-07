@@ -11,5 +11,6 @@ pod 'IQKeyboardManager'
 pod 'FSTextView'
 pod 'ReactiveObjC'
 #pod 'WCDB'
+pod 'JTCalendar'
 
 end

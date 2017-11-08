@@ -60,12 +60,7 @@
 /* Begin PBXFileReference section */
 		55944350D03FF90A8F8126C9 /* libPods-XMelo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XMelo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		691E65A6553354E2B37952FD /* Pods-XMelo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMelo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XMelo/Pods-XMelo.debug.xcconfig"; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		A7085D011F973D4300398477 /* XMeloDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMeloDelegate.h; sourceTree = "<group>"; };
-		A7085D021F973D4300398477 /* XMeloDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMeloDelegate.m; sourceTree = "<group>"; };
-=======
 		A7086E751FA8A48900BA51B1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
->>>>>>> 7ff4b8d953003c37a2214766e8c5d8fed47bb3c2
 		A70DA5211F564D730059935B /* UIScrollView+SpringHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SpringHeadView.h"; sourceTree = "<group>"; };
 		A70DA5221F564D730059935B /* UIScrollView+SpringHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SpringHeadView.m"; sourceTree = "<group>"; };
 		A713F8771F17A50F00FEA33E /* UIButton+ChangePosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ChangePosition.h"; sourceTree = "<group>"; };
@@ -352,20 +347,7 @@
 			path = UploadImage;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-		A795B78D1F51170A003C7EAD /* head */ = {
-			isa = PBXGroup;
-			children = (
-				A7A8AB6D1F0BC7D0001338B0 /* XColorHead.h */,
-				A76E10621F2EBFCA00E09AAE /* XImport.h */,
-				A72CD1AC1F0D0567002C90BD /* XConst.h */,
-				A72CD1AD1F0D0567002C90BD /* XConst.m */,
-			);
-			name = head;
-			sourceTree = "<group>";
-		};
-=======
->>>>>>> 7ff4b8d953003c37a2214766e8c5d8fed47bb3c2
+
 		A795B78E1F5117B5003C7EAD /* Coredata */ = {
 			isa = PBXGroup;
 			children = (

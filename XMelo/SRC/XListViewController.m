@@ -15,13 +15,10 @@
 #import "ImageValidationViewController.h"
 #import "TableViewAnimationKit.h"
 
-#import "CutOutViewController.h"
-
 #define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
 
 @interface XListViewController ()
 
-@property (nonatomic, strong) NSArray           *datas;
 @property (nonatomic, strong) NSArray           *controllers;
 @end
 
@@ -29,15 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.datas = @[@"core data",
-                   @"upload image cell",
-                   @"block picker",
-                   @"input",
-                   @"system fonts",
-                   @"image validation"
-                   ];
-
 
 	self.controllers = @[@"XCoreDataViewController",
 						 @"UploadImageViewController",
@@ -54,7 +42,7 @@
 
     self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
        
-        return selfWeak.datas.count;
+        return selfWeak.controllers.count;
     };
 
     self.heightForHeadrAtIndexPath = ^CGFloat(NSInteger section) {
@@ -65,7 +53,7 @@
     self.creatCellView = ^(UITableViewCell *cell, NSIndexPath *indexPath) {
         
         cell.textLabel.font = kFontTheme(15);
-        cell.textLabel.text = selfWeak.datas[indexPath.row];
+        cell.textLabel.text = selfWeak.controllers[indexPath.row];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     };
     
@@ -143,15 +131,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

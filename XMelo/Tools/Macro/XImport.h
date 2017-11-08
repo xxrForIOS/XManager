@@ -22,13 +22,13 @@
 //MARK: category
 #import "UIView+Add.h"
 #import "UIButton+ChangePosition.h"
-#import "UITextView+Rich.h"
 #import "UILabel+Frame.h"
 #import "UIImage+Scale.h"
 #import "NSString+Add.h"
 #import "NSString+Check.h"
 #import "NSData+Add.h"
 #import "UITextView+ZWPlaceHolder.h"
+#import "UIButton+ClickTimeInterval.h"
 
 //MARK: funtion
 #import "XImagePicker.h"

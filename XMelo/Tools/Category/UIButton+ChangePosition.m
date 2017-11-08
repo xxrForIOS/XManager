@@ -68,15 +68,10 @@
     }
 }
 
-
+//集成rac点击block
 - (void)addBlockWithTouchUpInside:(void(^)(UIButton *sender))nextBlock {
 
 	[[self rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:nextBlock];
-
-//	[[self rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-//
-//		!nextBlock ?: nextBlock(x);
-//	}];
 }
 
 

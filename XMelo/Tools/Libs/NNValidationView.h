@@ -10,6 +10,7 @@
 
 typedef void(^NNChangeValidationCodeBlock)(void);
 
+//随机图形验证码
 @interface NNValidationView : UIView
 
 @property (nonatomic, copy)     NSArray *charArray;

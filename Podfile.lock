@@ -13,6 +13,8 @@ PODS:
   - SDWebImage (4.2.1):
     - SDWebImage/Core (= 4.2.1)
   - SDWebImage/Core (4.2.1)
+  - ZWLimitCounter (0.0.4)
+  - ZWPlaceHolder (0.0.2)
 
 DEPENDENCIES:
   - DZNEmptyDataSet
@@ -25,6 +27,8 @@ DEPENDENCIES:
   - MLeaksFinder
   - ReactiveObjC
   - SDWebImage
+  - ZWLimitCounter
+  - ZWPlaceHolder
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
@@ -38,7 +42,9 @@ SPEC CHECKSUMS:
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   SDWebImage: 1fa4c9edf525b744f002db89f3f5a38b3cd4c541
+  ZWLimitCounter: 382d8a4f063980f18022749672b89e0558087007
+  ZWPlaceHolder: d55cce10c9930b48c31bf48e7f4748974a31f7e0
 
-PODFILE CHECKSUM: 68de82aa7a22740c47a1fc5c3e6c34177b3eac15
+PODFILE CHECKSUM: eccba1115317e4fc85dcaca0488e0e7f1f457cc1
 
 COCOAPODS: 1.4.0.beta.2

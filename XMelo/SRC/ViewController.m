@@ -48,8 +48,11 @@
 
 		theView.frame = CGRectMake(20, 20 + (150 + 10) * index, kScreenWidth - 40, 150);
 		[self.view addSubview:theView];
+		theView.timeInterval = 0.001;
+//		theView.timeInterval = index;
 		[theView addBlockWithTouchUpInside:^(UIButton *sender) {
 
+			NSLog(@"xxxxx get click");
 //			[XManager addRradualColorFor:sender
 //								  colors:@[(id)kColorRandom.CGColor,
 //										   (id)kColorRandom.CGColor]
@@ -58,10 +61,10 @@
 			[self addAnimation:sender];
 
 //			SignInViewController *firstVC = [[SignInViewController alloc] init];
-			ThirdSignViewController *firstVC = [[ThirdSignViewController alloc] init];
-
-			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:firstVC];
-			[self presentViewController:nav animated:YES completion:nil];
+//			ThirdSignViewController *firstVC = [[ThirdSignViewController alloc] init];
+//
+//			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:firstVC];
+//			[self presentViewController:nav animated:YES completion:nil];
 		}];
 		[XManager addRradualColorFor:theView
 							  colors:@[(id)kColorThemeRed.CGColor,
@@ -87,7 +90,6 @@
 //	[colorView.layer addSublayer:gradientLayer0];
 
 	
-//	kPush(<#pushFrom#>, <#pushTo#>)
     NSArray *animations = @[@"move",
                             @"alpha",
                             @"fall",

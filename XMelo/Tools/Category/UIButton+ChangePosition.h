@@ -27,5 +27,6 @@ typedef NS_ENUM(NSInteger, XRButtonDrawStyle) {
 ///改变图片和文字的位置
 - (void)changePosition:(XRButtonDrawStyle)style space:(CGFloat)space;
 
+///rac添加点击block
 - (void)addBlockWithTouchUpInside:(void(^)(UIButton *sender))nextBlock;
 @end

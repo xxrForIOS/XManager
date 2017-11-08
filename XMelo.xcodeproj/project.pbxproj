@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7D3691A56F3A55AD39BF3D88 /* libPods-XMelo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55944350D03FF90A8F8126C9 /* libPods-XMelo.a */; };
-		A7085D031F973D4300398477 /* XMeloDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7085D021F973D4300398477 /* XMeloDelegate.m */; };
+		A7085D031F973D4300398477 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		A70DA5231F564D730059935B /* UIScrollView+SpringHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A70DA5221F564D730059935B /* UIScrollView+SpringHeadView.m */; };
 		A713F8791F17A50F00FEA33E /* UIButton+ChangePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F8781F17A50F00FEA33E /* UIButton+ChangePosition.m */; };
 		A713F87F1F17A57300FEA33E /* XBaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F87E1F17A57300FEA33E /* XBaseTableController.m */; };
@@ -26,11 +26,10 @@
 		A72CD1A31F0D04EE002C90BD /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1901F0D04EE002C90BD /* NSString+Check.m */; };
 		A72CD1A61F0D04EE002C90BD /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1961F0D04EE002C90BD /* UIImage+Scale.m */; };
 		A72CD1A71F0D04EE002C90BD /* UILabel+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1981F0D04EE002C90BD /* UILabel+Frame.m */; };
-		A72CD1A91F0D04EE002C90BD /* UITextView+Rich.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD19C1F0D04EE002C90BD /* UITextView+Rich.m */; };
-		A72CD1AA1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD19E1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.m */; };
 		A72CD1AB1F0D04EE002C90BD /* UIView+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1A01F0D04EE002C90BD /* UIView+Add.m */; };
 		A72CD1AE1F0D0567002C90BD /* XConst.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1AD1F0D0567002C90BD /* XConst.m */; };
 		A72CD1EC1F10719D002C90BD /* DictModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1EB1F10719D002C90BD /* DictModel.m */; };
+		A73C81D11FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = A73C81D01FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.m */; };
 		A742543D1FB1AA650047B579 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A742543C1FB1AA650047B579 /* SignInViewController.m */; };
 		A74254411FB1AABA0047B579 /* NSDate+LYWCalendar_h.m in Sources */ = {isa = PBXBuildFile; fileRef = A74254401FB1AABA0047B579 /* NSDate+LYWCalendar_h.m */; };
 		A74254441FB1AB260047B579 /* LYWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74254431FB1AB260047B579 /* LYWCollectionViewCell.m */; };
@@ -40,7 +39,6 @@
 		A767F0F91F5560BD00432627 /* XImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A767F0F61F5560BD00432627 /* XImagePicker.m */; };
 		A767F0FA1F5560BD00432627 /* YVPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A767F0F81F5560BD00432627 /* YVPickerView.m */; };
 		A76E10651F2ED9EF00E09AAE /* XCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A76E10641F2ED9EF00E09AAE /* XCell.m */; };
-		A771A2D11F5CF7A800035284 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A771A2D01F5CF7A800035284 /* WebViewController.m */; };
 		A771A2EA1F5E6A5800035284 /* XUploadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A771A2E91F5E6A5800035284 /* XUploadCell.m */; };
 		A795B77A1F4EB91B003C7EAD /* YVAgreementView.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7791F4EB91B003C7EAD /* YVAgreementView.m */; };
 		A795B77F1F501735003C7EAD /* uploadImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A795B77E1F501735003C7EAD /* uploadImage.png */; };
@@ -53,7 +51,6 @@
 		A7B3722D1F30AA730087972B /* XMelo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7B3722B1F30AA730087972B /* XMelo.xcdatamodeld */; };
 		A7B372301F30B14C0087972B /* XCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B3722F1F30B14C0087972B /* XCoreDataViewController.m */; };
 		A7B6AE431F0BCB310078B268 /* XManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B6AE421F0BCB310078B268 /* XManager.m */; };
-		A7E92F321F8C796100F05F1F /* CutOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E92F311F8C796100F05F1F /* CutOutViewController.m */; };
 		A7F3B3E31F1A21A500E683D0 /* XStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F3B3E21F1A21A500E683D0 /* XStepper.m */; };
 /* End PBXBuildFile section */
 
@@ -93,16 +90,14 @@
 		A72CD1961F0D04EE002C90BD /* UIImage+Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scale.m"; sourceTree = "<group>"; };
 		A72CD1971F0D04EE002C90BD /* UILabel+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Frame.h"; sourceTree = "<group>"; };
 		A72CD1981F0D04EE002C90BD /* UILabel+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Frame.m"; sourceTree = "<group>"; };
-		A72CD19B1F0D04EE002C90BD /* UITextView+Rich.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Rich.h"; sourceTree = "<group>"; };
-		A72CD19C1F0D04EE002C90BD /* UITextView+Rich.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Rich.m"; sourceTree = "<group>"; };
-		A72CD19D1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+ZWPlaceHolder.h"; sourceTree = "<group>"; };
-		A72CD19E1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+ZWPlaceHolder.m"; sourceTree = "<group>"; };
 		A72CD19F1F0D04EE002C90BD /* UIView+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Add.h"; sourceTree = "<group>"; };
 		A72CD1A01F0D04EE002C90BD /* UIView+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Add.m"; sourceTree = "<group>"; };
 		A72CD1AC1F0D0567002C90BD /* XConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XConst.h; sourceTree = "<group>"; };
 		A72CD1AD1F0D0567002C90BD /* XConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XConst.m; sourceTree = "<group>"; };
 		A72CD1EA1F10719D002C90BD /* DictModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictModel.h; sourceTree = "<group>"; };
 		A72CD1EB1F10719D002C90BD /* DictModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictModel.m; sourceTree = "<group>"; };
+		A73C81CF1FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+ClickTimeInterval.h"; sourceTree = "<group>"; };
+		A73C81D01FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ClickTimeInterval.m"; sourceTree = "<group>"; };
 		A742543B1FB1AA650047B579 /* SignInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		A742543C1FB1AA650047B579 /* SignInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		A742543F1FB1AABA0047B579 /* NSDate+LYWCalendar_h.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+LYWCalendar_h.h"; sourceTree = "<group>"; };
@@ -122,8 +117,6 @@
 		A76E10621F2EBFCA00E09AAE /* XImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XImport.h; sourceTree = "<group>"; };
 		A76E10631F2ED9EF00E09AAE /* XCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCell.h; sourceTree = "<group>"; };
 		A76E10641F2ED9EF00E09AAE /* XCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCell.m; sourceTree = "<group>"; };
-		A771A2CF1F5CF7A800035284 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		A771A2D01F5CF7A800035284 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		A771A2E81F5E6A5800035284 /* XUploadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XUploadCell.h; sourceTree = "<group>"; };
 		A771A2E91F5E6A5800035284 /* XUploadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XUploadCell.m; sourceTree = "<group>"; };
 		A795B7781F4EB91B003C7EAD /* YVAgreementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YVAgreementView.h; sourceTree = "<group>"; };
@@ -147,8 +140,6 @@
 		A7B3722F1F30B14C0087972B /* XCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCoreDataViewController.m; sourceTree = "<group>"; };
 		A7B6AE411F0BCB310078B268 /* XManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XManager.h; sourceTree = "<group>"; };
 		A7B6AE421F0BCB310078B268 /* XManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XManager.m; sourceTree = "<group>"; };
-		A7E92F301F8C796100F05F1F /* CutOutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CutOutViewController.h; sourceTree = "<group>"; };
-		A7E92F311F8C796100F05F1F /* CutOutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CutOutViewController.m; sourceTree = "<group>"; };
 		A7F3B3E11F1A21A500E683D0 /* XStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XStepper.h; sourceTree = "<group>"; };
 		A7F3B3E21F1A21A500E683D0 /* XStepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XStepper.m; sourceTree = "<group>"; };
 		FFFA76AEF162E00BEC4508D1 /* Pods-XMelo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMelo.release.xcconfig"; path = "Pods/Target Support Files/Pods-XMelo/Pods-XMelo.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +171,8 @@
 			children = (
 				A713F8771F17A50F00FEA33E /* UIButton+ChangePosition.h */,
 				A713F8781F17A50F00FEA33E /* UIButton+ChangePosition.m */,
+				A73C81CF1FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.h */,
+				A73C81D01FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.m */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -204,10 +197,6 @@
 				A72CD1961F0D04EE002C90BD /* UIImage+Scale.m */,
 				A72CD1971F0D04EE002C90BD /* UILabel+Frame.h */,
 				A72CD1981F0D04EE002C90BD /* UILabel+Frame.m */,
-				A72CD19B1F0D04EE002C90BD /* UITextView+Rich.h */,
-				A72CD19C1F0D04EE002C90BD /* UITextView+Rich.m */,
-				A72CD19D1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.h */,
-				A72CD19E1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.m */,
 				A72CD19F1F0D04EE002C90BD /* UIView+Add.h */,
 				A72CD1A01F0D04EE002C90BD /* UIView+Add.m */,
 			);
@@ -237,8 +226,6 @@
 			children = (
 				A71D184F1F0BAE0700BAE515 /* AppDelegate.h */,
 				A71D18501F0BAE0700BAE515 /* AppDelegate.m */,
-				A7085D011F973D4300398477 /* XMeloDelegate.h */,
-				A7085D021F973D4300398477 /* XMeloDelegate.m */,
 				A7A8AB5D1F0BC33F001338B0 /* Resource */,
 				A7A8AB5F1F0BC33F001338B0 /* Tools */,
 				A7A8AB681F0BC737001338B0 /* SRC */,
@@ -288,6 +275,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A73C81D71FB2DCC500A0F6BB /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				A74AACE71F6786AB0053066D /* TableViewAnimationKit.h */,
+				A74AACE81F6786AB0053066D /* TableViewAnimationKit.m */,
+				A713F87D1F17A57300FEA33E /* XBaseTableController.h */,
+				A713F87E1F17A57300FEA33E /* XBaseTableController.m */,
+				A795B7971F51234D003C7EAD /* XBaseController.h */,
+				A795B7981F51234D003C7EAD /* XBaseController.m */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
 		A742543E1FB1AA690047B579 /* Sign */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,19 +303,6 @@
 			name = Sign;
 			sourceTree = "<group>";
 		};
-		A767F0FB1F5560CB00432627 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				A74AACE71F6786AB0053066D /* TableViewAnimationKit.h */,
-				A74AACE81F6786AB0053066D /* TableViewAnimationKit.m */,
-				A713F87D1F17A57300FEA33E /* XBaseTableController.h */,
-				A713F87E1F17A57300FEA33E /* XBaseTableController.m */,
-				A795B7971F51234D003C7EAD /* XBaseController.h */,
-				A795B7981F51234D003C7EAD /* XBaseController.m */,
-			);
-			name = Base;
-			sourceTree = "<group>";
-		};
 		A771A27A1F59903300035284 /* ImageValidation */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,15 +310,6 @@
 				A721BD2E1F5980EA008EBF9A /* ImageValidationViewController.m */,
 			);
 			name = ImageValidation;
-			sourceTree = "<group>";
-		};
-		A771A2D21F5CFE2500035284 /* Web */ = {
-			isa = PBXGroup;
-			children = (
-				A771A2CF1F5CF7A800035284 /* WebViewController.h */,
-				A771A2D01F5CF7A800035284 /* WebViewController.m */,
-			);
-			name = Web;
 			sourceTree = "<group>";
 		};
 		A795B7801F511201003C7EAD /* UploadImage */ = {
@@ -347,7 +325,6 @@
 			path = UploadImage;
 			sourceTree = "<group>";
 		};
-
 		A795B78E1F5117B5003C7EAD /* Coredata */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +386,8 @@
 			children = (
 				A721BD2A1F597FC0008EBF9A /* NNValidationView.h */,
 				A721BD2B1F597FC0008EBF9A /* NNValidationView.m */,
+				A70DA5211F564D730059935B /* UIScrollView+SpringHeadView.h */,
+				A70DA5221F564D730059935B /* UIScrollView+SpringHeadView.m */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -428,17 +407,15 @@
 		A7A8AB641F0BC33F001338B0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				A70DA5211F564D730059935B /* UIScrollView+SpringHeadView.h */,
-				A70DA5221F564D730059935B /* UIScrollView+SpringHeadView.m */,
 				A767F0F51F5560BD00432627 /* XImagePicker.h */,
 				A767F0F61F5560BD00432627 /* XImagePicker.m */,
 				A767F0F71F5560BD00432627 /* YVPickerView.h */,
 				A767F0F81F5560BD00432627 /* YVPickerView.m */,
-				A767F0FB1F5560CB00432627 /* Base */,
 				A795B7781F4EB91B003C7EAD /* YVAgreementView.h */,
 				A795B7791F4EB91B003C7EAD /* YVAgreementView.m */,
 				A7F3B3E11F1A21A500E683D0 /* XStepper.h */,
 				A7F3B3E21F1A21A500E683D0 /* XStepper.m */,
+				A73C81D71FB2DCC500A0F6BB /* BaseClass */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -453,9 +430,6 @@
 				A742543E1FB1AA690047B579 /* Sign */,
 				A713F8801F17A87200FEA33E /* XListViewController.h */,
 				A713F8811F17A87200FEA33E /* XListViewController.m */,
-				A7E92F301F8C796100F05F1F /* CutOutViewController.h */,
-				A7E92F311F8C796100F05F1F /* CutOutViewController.m */,
-				A771A2D21F5CFE2500035284 /* Web */,
 				A771A27A1F59903300035284 /* ImageValidation */,
 				A721BD291F5941F9008EBF9A /* Font */,
 				A721BD251F593B4C008EBF9A /* Input */,
@@ -621,8 +595,7 @@
 				A74254411FB1AABA0047B579 /* NSDate+LYWCalendar_h.m in Sources */,
 				A721BD2C1F597FC0008EBF9A /* NNValidationView.m in Sources */,
 				A76E10651F2ED9EF00E09AAE /* XCell.m in Sources */,
-				A72CD1A91F0D04EE002C90BD /* UITextView+Rich.m in Sources */,
-				A7085D031F973D4300398477 /* XMeloDelegate.m in Sources */,
+				A7085D031F973D4300398477 /* (null) in Sources */,
 				A795B7881F511201003C7EAD /* UploadImageViewController.m in Sources */,
 				A7B3722D1F30AA730087972B /* XMelo.xcdatamodeld in Sources */,
 				A767F0FA1F5560BD00432627 /* YVPickerView.m in Sources */,
@@ -631,9 +604,9 @@
 				A795B7921F5117EF003C7EAD /* XPickerViewController.m in Sources */,
 				A72CD1AE1F0D0567002C90BD /* XConst.m in Sources */,
 				A74254441FB1AB260047B579 /* LYWCollectionViewCell.m in Sources */,
-				A771A2D11F5CF7A800035284 /* WebViewController.m in Sources */,
 				A72CD1A71F0D04EE002C90BD /* UILabel+Frame.m in Sources */,
 				A767F0F91F5560BD00432627 /* XImagePicker.m in Sources */,
+				A73C81D11FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.m in Sources */,
 				A795B77A1F4EB91B003C7EAD /* YVAgreementView.m in Sources */,
 				A70DA5231F564D730059935B /* UIScrollView+SpringHeadView.m in Sources */,
 				A72CD1EC1F10719D002C90BD /* DictModel.m in Sources */,
@@ -647,14 +620,12 @@
 				A72CD1A31F0D04EE002C90BD /* NSString+Check.m in Sources */,
 				A713F8821F17A87200FEA33E /* XListViewController.m in Sources */,
 				A74254471FB1AB570047B579 /* LYWCollectionReusableView.m in Sources */,
-				A7E92F321F8C796100F05F1F /* CutOutViewController.m in Sources */,
 				A721BD281F593E56008EBF9A /* FontViewController.m in Sources */,
 				A713F87F1F17A57300FEA33E /* XBaseTableController.m in Sources */,
 				A795B7991F51234D003C7EAD /* XBaseController.m in Sources */,
 				A795B7871F511201003C7EAD /* UploadImageCell.m in Sources */,
 				A795B7961F511C56003C7EAD /* XInputViewController.m in Sources */,
 				A71D18511F0BAE0700BAE515 /* AppDelegate.m in Sources */,
-				A72CD1AA1F0D04EE002C90BD /* UITextView+ZWPlaceHolder.m in Sources */,
 				A72CD1AB1F0D04EE002C90BD /* UIView+Add.m in Sources */,
 				A71D184E1F0BAE0700BAE515 /* main.m in Sources */,
 				A7F3B3E31F1A21A500E683D0 /* XStepper.m in Sources */,

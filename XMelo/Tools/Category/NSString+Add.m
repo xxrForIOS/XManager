@@ -93,4 +93,29 @@
 }
 
 
++ (BOOL) empty:(id)obj {
+
+	if (!obj) {
+		return YES;
+	}
+	if ([obj isKindOfClass:[NSNull class]]){
+		return YES;
+	}
+	if (obj == (NSNull*)[NSNull null]) {
+		return YES;
+	}
+	if (![obj isKindOfClass:[NSString class]]) {
+		return YES;
+	}
+	if ([obj isEqualToString:@"(null)"]) {
+		return YES;
+	}
+	if ([obj isEqualToString:@""]) {
+		return YES;
+	}
+	if ([obj length]==0) {
+		return YES;
+	}
+	return NO;
+}
 @end

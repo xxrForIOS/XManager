@@ -7,14 +7,14 @@
 //
 
 #import "XBaseTableController.h"
-//#import "MJRefresh.h"
-//#import "UIScrollView+EmptyDataSet.h"
+#import "MJRefresh.h"
+#import "UIScrollView+EmptyDataSet.h"
 #import "YVAgreementView.h"
 #import "TableViewAnimationKit.h"
 
 #define kCellIdentifier @"baseCell"
 
-@interface XBaseTableController () //<DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
+@interface XBaseTableController () <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @end
 
@@ -84,7 +84,7 @@
 
 - (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView{
     
-//    [_tableView.mj_header beginRefreshing];
+    [_tableView.mj_header beginRefreshing];
 }
 
 - (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView{
@@ -257,111 +257,47 @@
 
 #pragma mark- 刷新
 - (void)updateDataFromHeadWith:(void(^)(void))block{
-//    MJRefreshNormalHeader *headerrrr = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-//        if (block) {
-//            block();
-//
-//            //[self.tableView reloadData];
-//            //[self.tableView.mj_header endRefreshing];
-//        }
-//    }];
-//
-//    [headerrrr setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
-//    headerrrr.lastUpdatedTimeLabel.hidden = YES;
-//    headerrrr.automaticallyChangeAlpha = YES;
-//    self.tableView.mj_header = headerrrr;
-//    [self.tableView.mj_header beginRefreshing];
+    MJRefreshNormalHeader *headerrrr = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (block) {
+            block();
+
+            //[self.tableView reloadData];
+            //[self.tableView.mj_header endRefreshing];
+        }
+    }];
+
+    [headerrrr setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
+    headerrrr.lastUpdatedTimeLabel.hidden = YES;
+    headerrrr.automaticallyChangeAlpha = YES;
+    self.tableView.mj_header = headerrrr;
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)updateDataFromFootWith:(void(^)(void))block{
-//    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-//        if (block) {
-//            block();
-//
-//            //[self.tableView reloadData];
-//            //[self.tableView.mj_footer endRefreshing];
-//            //[self.tableView.mj_footer endRefreshingWithNoMoreData];
-//        }
-//    }];
-//
-//    [footer setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
-//    self.tableView.mj_footer = footer;
-//    [self.tableView.mj_footer beginRefreshing];
+    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        if (block) {
+            block();
+
+            //[self.tableView reloadData];
+            //[self.tableView.mj_footer endRefreshing];
+            //[self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+    }];
+
+    [footer setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
+    self.tableView.mj_footer = footer;
+    [self.tableView.mj_footer beginRefreshing];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+- (BOOL)willDealloc
+{
+	__weak id weakSelf = self;
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3*NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 
-//- (BOOL)willDealloc
-//{
-//	__weak id weakSelf = self;
-//	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3*NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//
 //		[weakSelf assertNotDealloc];
-//	});
-//	return YES;
-//}
-
-- (void)assertNotDealloc
-{
-	[XBaseTableController getAllProperties:self];
-
-//	NSAssert(NO, @"");
+		NSLog(@"getMemoryLeak %@",weakSelf);
+	});
+	return YES;
 }
-
-+ (NSArray *)getAllProperties:(id)obj
-{
-	u_int count;
-
-	//使用class_copyPropertyList及property_getName获取类的属性列表及每个属性的名称
-
-	objc_property_t *properties  =class_copyPropertyList([obj class], &count);
-	NSMutableArray *propertiesArray = [NSMutableArray arrayWithCapacity:count];
-	for (int i = 0; i<count; i++)
-	{
-		const char* propertyName =property_getName(properties[i]);
-		NSLog(@"属性%@\n",[NSString stringWithUTF8String: propertyName]);
-		[propertiesArray addObject: [NSString stringWithUTF8String: propertyName]];
-	}
-	free(properties);
-	return propertiesArray;
-}
-
-- (instancetype)getProperties:(Class)cls{
-
-	// 获取当前类的所有属性
-	unsigned int count;// 记录属性个数
-	objc_property_t *properties = class_copyPropertyList(cls, &count);
-	// 遍历
-	NSMutableArray *mArray = [NSMutableArray array];
-	for (int i = 0; i < count; i++) {
-
-		// An opaque type that represents an Objective-C declared property.
-		// objc_property_t 属性类型
-		objc_property_t property = properties[i];
-		// 获取属性的名称 C语言字符串
-		const char *cName = property_getName(property);
-
-		NSLog(@"xxxxx %s",cName);
-
-
-		// 转换为Objective C 字符串
-		NSString *name = [NSString stringWithCString:cName encoding:NSUTF8StringEncoding];
-		[mArray addObject:name];
-	}
-
-	return mArray.copy;
-}
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

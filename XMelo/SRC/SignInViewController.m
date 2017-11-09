@@ -38,7 +38,6 @@ static NSString *footerID =@"footerID";
 	[super viewDidLoad];
 
 	self.view.backgroundColor = [UIColor whiteColor];
-	self.automaticallyAdjustsScrollViewInsets = NO;//关闭自动适应
 	NSArray *weekTitleArray =@[@"日",@"一",@"二",@"三",@"四",@"五",@"六"];
 	for (int i =0; i < weekTitleArray.count; i++) {
 		UILabel *weekTitleLable = [[UILabel alloc]initWithFrame:CGRectMake(i * ((ScreenWidth/(weekTitleArray.count))),64,ScreenWidth/(weekTitleArray.count ),30)];

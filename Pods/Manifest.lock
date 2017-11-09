@@ -10,9 +10,9 @@ PODS:
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
   - ReactiveObjC (3.0.0)
-  - SDWebImage (4.2.1):
-    - SDWebImage/Core (= 4.2.1)
-  - SDWebImage/Core (4.2.1)
+  - SDWebImage (4.2.2):
+    - SDWebImage/Core (= 4.2.2)
+  - SDWebImage/Core (4.2.2)
   - ZWLimitCounter (0.0.4)
   - ZWPlaceHolder (0.0.2)
 
@@ -41,10 +41,10 @@ SPEC CHECKSUMS:
   MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
-  SDWebImage: 1fa4c9edf525b744f002db89f3f5a38b3cd4c541
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   ZWLimitCounter: 382d8a4f063980f18022749672b89e0558087007
   ZWPlaceHolder: d55cce10c9930b48c31bf48e7f4748974a31f7e0
 
-PODFILE CHECKSUM: eccba1115317e4fc85dcaca0488e0e7f1f457cc1
+PODFILE CHECKSUM: d8bb78de69e4eafc51c493dab7f0769f6b060b3f
 
 COCOAPODS: 1.4.0.beta.2

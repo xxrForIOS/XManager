@@ -34,10 +34,10 @@
 						 @"FontViewController",
 						 @"ImageValidationViewController"];
     
-    self.tableView.height = kScreenHeight - 64 - 50;
-    self.tableView.rowHeight = 50;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.navigationItem.title = @"XMelo";
+    self.tableView.height 			= kScreenHeight - 64 - 50;
+    self.tableView.rowHeight 		= 50;
+    self.tableView.separatorStyle 	= UITableViewCellSeparatorStyleNone;
+    self.navigationItem.title 		= @"XMelo";
     @kWeakSelf;
 
     self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
@@ -60,26 +60,13 @@
     self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
 
 		Class cls = NSClassFromString(selfWeak.controllers[indexPath.row]);
-//		UIViewController *vc = [[cls alloc] init];
 		kPush(selfWeak, [[cls alloc] init]);
-
-//		[selfWeak.navigationController pushViewController:selfWeak.controllers[indexPath.row] animated:YES];
-//        kPush(selfWeak, selfWeak.controllers[indexPath.row]);
-
-
     };
 
-//	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),)
+	[[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"xxalert" object:nil] subscribeNext:^(NSNotification * _Nullable x) {
 
-	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-
-//		NSLog(@"xxx get",);
-	});
-
-//	[[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"xxalert" object:nil] subscribeNext:^(NSNotification * _Nullable x) {
-//
-//		YVLog(@"addobserver list");
-//	}];
+		YVLog(@"addobserver list");
+	}];
 
 
 	[XManager addRightBarItemInViewController:self itemTitle:@"dismiss" andItemBlock:^(UIButton *aButton) {
@@ -87,7 +74,7 @@
 		[[NSNotificationCenter defaultCenter]postNotificationName:@"xxalert" object:nil userInfo:nil];;
 	}];
 
-//    [self startWithAnimation:self.animation];
+    [self startWithAnimation:self.animation];
 }
 
 - (void)startWithAnimation:(NSString *)string {
@@ -109,23 +96,23 @@
     }];
 }
 
-//- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
-//	UIContextualAction *favourRowAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"收藏" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
-//
-//		UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//		CGFloat red   = (arc4random() % 256) / 256.0;
-//		CGFloat green = (arc4random() % 256) / 256.0;
-//		CGFloat blue  = (arc4random() % 256) / 256.0;
-//
-//		cell.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
-//
-//		completionHandler(YES);
-//	}];
-//	favourRowAction.backgroundColor = [UIColor orangeColor];
-//
-//	UISwipeActionsConfiguration *favourRowConfiguration = [UISwipeActionsConfiguration configurationWithActions:@[favourRowAction]];
-//	return favourRowConfiguration;
-//}
+- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
+	UIContextualAction *favourRowAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"收藏" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+
+		UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+		CGFloat red   = (arc4random() % 256) / 256.0;
+		CGFloat green = (arc4random() % 256) / 256.0;
+		CGFloat blue  = (arc4random() % 256) / 256.0;
+
+		cell.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+
+		completionHandler(YES);
+	}];
+	favourRowAction.backgroundColor = [UIColor orangeColor];
+
+	UISwipeActionsConfiguration *favourRowConfiguration = [UISwipeActionsConfiguration configurationWithActions:@[favourRowAction]];
+	return favourRowConfiguration;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

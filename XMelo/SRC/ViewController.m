@@ -21,6 +21,18 @@
 #define kColorThemeGray     kColorHex(0x959595)
 #define kColorThemeBlue     kColorHex(0x2a83fb)
 #define kColorThemeLine     kColorHex(0xeaeaea)
+
+
+#define STRINGIFY(S) #S
+#define DEFER_STRINGIFY(S) STRINGIFY(S)
+#define PRAGMA_MESSAGE(MSG) _Pragma(STRINGIFY(message(MSG)))
+#define FORMATTED_MESSAGE(MSG) "[TODO-" DEFER_STRINGIFY(__COUNTER__) "] " MSG " \n"
+#define KEYWORDIFY try {} @catch (...) {}
+
+// 最终使用下面的宏 	@TODO("showSomeThing");
+#define TODO(MSG) KEYWORDIFY PRAGMA_MESSAGE(FORMATTED_MESSAGE(MSG))
+
+
 @interface ViewController () 
 
 
@@ -32,8 +44,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    
+
+	@TODO("something nedd to do");
+
+
+
+	//	NSString *xx = @"";
+
+
 //	UIView *colorView = [[UIView alloc] init];
 //	[colorView setFrame:CGRectMake(10, 190,
 //								   self.view.frame.size.width - 20,

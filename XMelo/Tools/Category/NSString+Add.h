@@ -34,4 +34,5 @@
  */
 - (NSString *)toAESDecrypt;
 
++ (BOOL) empty:(id)obj;
 @end

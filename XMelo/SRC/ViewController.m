@@ -44,22 +44,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-
-	@TODO("something nedd to do");
-
-
-
-	//	NSString *xx = @"";
-
-
-//	UIView *colorView = [[UIView alloc] init];
-//	[colorView setFrame:CGRectMake(10, 190,
-//								   self.view.frame.size.width - 20,
-//								   35 * 3 + 40 + 10 * 2)];
-//	[self.view addSubview:colorView];
-
-//	[XManager addRradualColorFor:colorView colors:@[(id)kColor_chi.CGColor, (id)kColor_dailan.CGColor] showType:YVRradualColorShowTypeBottomToTop];
-
+	
+	@kTODO("something汉字");
 	for (int index = 0; index < 4; index ++) {
 
 		UIButton *theView = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -67,10 +53,9 @@
 		theView.frame = CGRectMake(20, 20 + (150 + 10) * index, kScreenWidth - 40, 150);
 		[self.view addSubview:theView];
 		theView.timeInterval = 0.001;
-//		theView.timeInterval = index;
 		[theView addBlockWithTouchUpInside:^(UIButton *sender) {
 
-			NSLog(@"xxxxx get click");
+			YVLog(@"xxxxx get click");
 //			[XManager addRradualColorFor:sender
 //								  colors:@[(id)kColorRandom.CGColor,
 //										   (id)kColorRandom.CGColor]
@@ -80,33 +65,16 @@
 
 //			SignInViewController *firstVC = [[SignInViewController alloc] init];
 //			ThirdSignViewController *firstVC = [[ThirdSignViewController alloc] init];
-//
-//			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:firstVC];
-//			[self presentViewController:nav animated:YES completion:nil];
+			
+			XListViewController *firstVC = [[XListViewController alloc]init];
+			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:firstVC];
+			[self presentViewController:nav animated:YES completion:nil];
 		}];
 		[XManager addRradualColorFor:theView
 							  colors:@[(id)kColorThemeRed.CGColor,
 									   (id)kColorThemeBlack.CGColor]
 							showType:index];
 	}
-//	CAGradientLayer *gradient = [CAGradientLayer layer];
-//	gradient.frame = colorView.bounds;
-//	gradient.colors = [NSArray arrayWithObjects:
-//					   (id)[UIColor colorWithRed:0 green:143/255.0 blue:234/255.0 alpha:1.0].CGColor,
-////					   (id)[UIColor colorWithRed:0 green:173/255.0 blue:234/255.0 alpha:1.0].CGColor,
-//					   (id)[UIColor whiteColor].CGColor, nil];
-//	[colorView.layer addSublayer:gradient];
-
-//	CAGradientLayer *gradientLayer0 = [[CAGradientLayer alloc] init];
-//	gradientLayer0.cornerRadius = 12.5;
-//	gradientLayer0.frame = colorView.bounds;
-//	gradientLayer0.colors = @[(id)kColor_chi.CGColor,
-//							  (id)kColor_dailan.CGColor];
-//	gradientLayer0.locations = @[@0.2, @1];
-//	[gradientLayer0 setStartPoint:CGPointMake(0, 0.5)];
-//	[gradientLayer0 setEndPoint:CGPointMake(1, 0.5)];
-//	[colorView.layer addSublayer:gradientLayer0];
-
 	
     NSArray *animations = @[@"move",
                             @"alpha",

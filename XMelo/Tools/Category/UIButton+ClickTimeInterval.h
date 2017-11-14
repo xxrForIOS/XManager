@@ -12,7 +12,7 @@
 
 @interface UIButton (ClickTimeInterval)
 
-///设置button的点击间隔 默认为1
+///设置button的点击间隔 默认为1 不需要设置0.001之类就可以
 @property(nonatomic,assign)NSTimeInterval timeInterval;
 
 ///YES不允许点击NO允许点击

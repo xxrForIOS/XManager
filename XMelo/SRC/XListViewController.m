@@ -15,8 +15,6 @@
 #import "ImageValidationViewController.h"
 #import "TableViewAnimationKit.h"
 
-#define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
-
 @interface XListViewController ()
 
 @property (nonatomic, strong) NSArray           *controllers;
@@ -71,7 +69,8 @@
 
 	[XManager addRightBarItemInViewController:self itemTitle:@"dismiss" andItemBlock:^(UIButton *aButton) {
 
-		[[NSNotificationCenter defaultCenter]postNotificationName:@"xxalert" object:nil userInfo:nil];;
+		[selfWeak dismissViewControllerAnimated:YES completion:nil];
+//		[[NSNotificationCenter defaultCenter]postNotificationName:@"xxalert" object:nil userInfo:nil];;
 	}];
 
     [self startWithAnimation:self.animation];

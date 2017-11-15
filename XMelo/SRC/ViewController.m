@@ -51,7 +51,7 @@
 		UIButton *theView = [UIButton buttonWithType:UIButtonTypeCustom];
 
 		theView.frame = CGRectMake(20, 20 + (150 + 10) * index, kScreenWidth - 40, 150);
-		[self.view addSubview:theView];
+//		[self.view addSubview:theView];
 		theView.timeInterval = 0.001;
 		[theView addBlockWithTouchUpInside:^(UIButton *sender) {
 
@@ -92,31 +92,27 @@
 
         UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
         theButton.frame = CGRectMake(20 + (theWidth + 10) * (index%4),
-									 200 + (35 + 20) * (index/4), theWidth, 35);
-//        theButton.layer.cornerRadius = theButton.height/2;
+									 200 + (35 + 20) * (index/4),
+									 theWidth, 35);
         theButton.layer.borderColor = [UIColor redColor].CGColor;
         [theButton setTitle:animations[index] forState:UIControlStateNormal];
         [theButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        theButton.backgroundColor = kColorRandom;
-//        theButton.layer.masksToBounds = YES;
-
+//        theButton.backgroundColor = kColorRandom;
+		[XManager addRradualColorFor:theButton
+							  colors:@[(id)kColorRandom.CGColor,
+									   (id)kColorRandom.CGColor]
+							showType:index];
 		[theButton changeCorner:UIRectCornerTopLeft | UIRectCornerBottomRight cornerRadii:theButton.height/2];
-//		theButton.layer.borderWidth = 1;
         theButton.titleLabel.font = kFontTheme(12);
-//        [self.view addSubview:theButton];
+        [self.view addSubview:theButton];
 
-		[theButton addBlockWithTouchUpInside:^(UIButton *sender) {
+		[[theButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIButton * _Nullable x) {
 
-			sender.backgroundColor = kColorRandom;
+			XListViewController *vcc = [[XListViewController alloc]init];
+			vcc.animation = x.currentTitle;
+			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vcc];
+			[self presentViewController:nav animated:YES completion:nil];
 		}];
-
-//		[[theButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIButton * _Nullable x) {
-//
-//			XListViewController *vcc = [[XListViewController alloc]init];
-//			vcc.animation = x.currentTitle;
-//			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vcc];
-//			[self presentViewController:nav animated:YES completion:nil];
-//		}];
     }
     
 //    NSInteger count = 4;

@@ -6,7 +6,7 @@
 //  Copyright © 2017年 欣欣然. All rights reserved.
 //
 
-#import "XBaseController.h"
+#import <UIKit/UIKit.h>
 #import "XBaseTableController.h"
 
 @interface XPickerViewController : XBaseTableController

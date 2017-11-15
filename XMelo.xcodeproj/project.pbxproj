@@ -13,6 +13,7 @@
 		A713F8791F17A50F00FEA33E /* UIButton+ChangePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F8781F17A50F00FEA33E /* UIButton+ChangePosition.m */; };
 		A713F87F1F17A57300FEA33E /* XBaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F87E1F17A57300FEA33E /* XBaseTableController.m */; };
 		A713F8821F17A87200FEA33E /* XListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F8811F17A87200FEA33E /* XListViewController.m */; };
+		A716C9971FBBEF1F00B38C36 /* UIScreen+SafeArea.m in Sources */ = {isa = PBXBuildFile; fileRef = A716C9961FBBEF1F00B38C36 /* UIScreen+SafeArea.m */; };
 		A71D184E1F0BAE0700BAE515 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D184D1F0BAE0700BAE515 /* main.m */; };
 		A71D18511F0BAE0700BAE515 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D18501F0BAE0700BAE515 /* AppDelegate.m */; };
 		A71D18571F0BAE0700BAE515 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71D18551F0BAE0700BAE515 /* Main.storyboard */; };
@@ -46,7 +47,6 @@
 		A795B7881F511201003C7EAD /* UploadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7841F511201003C7EAD /* UploadImageViewController.m */; };
 		A795B7921F5117EF003C7EAD /* XPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7911F5117EF003C7EAD /* XPickerViewController.m */; };
 		A795B7961F511C56003C7EAD /* XInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7951F511C56003C7EAD /* XInputViewController.m */; };
-		A795B7991F51234D003C7EAD /* XBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7981F51234D003C7EAD /* XBaseController.m */; };
 		A7A8AB6B1F0BC737001338B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A8AB6A1F0BC737001338B0 /* ViewController.m */; };
 		A7B3722D1F30AA730087972B /* XMelo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7B3722B1F30AA730087972B /* XMelo.xcdatamodeld */; };
 		A7B372301F30B14C0087972B /* XCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B3722F1F30B14C0087972B /* XCoreDataViewController.m */; };
@@ -66,6 +66,8 @@
 		A713F87E1F17A57300FEA33E /* XBaseTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBaseTableController.m; sourceTree = "<group>"; };
 		A713F8801F17A87200FEA33E /* XListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XListViewController.h; sourceTree = "<group>"; };
 		A713F8811F17A87200FEA33E /* XListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XListViewController.m; sourceTree = "<group>"; };
+		A716C9951FBBEF1F00B38C36 /* UIScreen+SafeArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+SafeArea.h"; sourceTree = "<group>"; };
+		A716C9961FBBEF1F00B38C36 /* UIScreen+SafeArea.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+SafeArea.m"; sourceTree = "<group>"; };
 		A71D18491F0BAE0700BAE515 /* XMelo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMelo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71D184D1F0BAE0700BAE515 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A71D184F1F0BAE0700BAE515 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -130,8 +132,6 @@
 		A795B7911F5117EF003C7EAD /* XPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPickerViewController.m; sourceTree = "<group>"; };
 		A795B7941F511C56003C7EAD /* XInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XInputViewController.h; sourceTree = "<group>"; };
 		A795B7951F511C56003C7EAD /* XInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XInputViewController.m; sourceTree = "<group>"; };
-		A795B7971F51234D003C7EAD /* XBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBaseController.h; sourceTree = "<group>"; };
-		A795B7981F51234D003C7EAD /* XBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBaseController.m; sourceTree = "<group>"; };
 		A7A8AB691F0BC737001338B0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A7A8AB6A1F0BC737001338B0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A7A8AB6D1F0BC7D0001338B0 /* XColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XColor.h; sourceTree = "<group>"; };
@@ -282,8 +282,8 @@
 				A74AACE81F6786AB0053066D /* TableViewAnimationKit.m */,
 				A713F87D1F17A57300FEA33E /* XBaseTableController.h */,
 				A713F87E1F17A57300FEA33E /* XBaseTableController.m */,
-				A795B7971F51234D003C7EAD /* XBaseController.h */,
-				A795B7981F51234D003C7EAD /* XBaseController.m */,
+				A716C9951FBBEF1F00B38C36 /* UIScreen+SafeArea.h */,
+				A716C9961FBBEF1F00B38C36 /* UIScreen+SafeArea.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -612,6 +612,7 @@
 				A72CD1EC1F10719D002C90BD /* DictModel.m in Sources */,
 				A771A2EA1F5E6A5800035284 /* XUploadCell.m in Sources */,
 				A7A8AB6B1F0BC737001338B0 /* ViewController.m in Sources */,
+				A716C9971FBBEF1F00B38C36 /* UIScreen+SafeArea.m in Sources */,
 				A72CD1A11F0D04EE002C90BD /* NSData+Add.m in Sources */,
 				A742544A1FB1B7580047B579 /* ThirdSignViewController.m in Sources */,
 				A72CD1A21F0D04EE002C90BD /* NSString+Add.m in Sources */,
@@ -622,7 +623,6 @@
 				A74254471FB1AB570047B579 /* LYWCollectionReusableView.m in Sources */,
 				A721BD281F593E56008EBF9A /* FontViewController.m in Sources */,
 				A713F87F1F17A57300FEA33E /* XBaseTableController.m in Sources */,
-				A795B7991F51234D003C7EAD /* XBaseController.m in Sources */,
 				A795B7871F511201003C7EAD /* UploadImageCell.m in Sources */,
 				A795B7961F511C56003C7EAD /* XInputViewController.m in Sources */,
 				A71D18511F0BAE0700BAE515 /* AppDelegate.m in Sources */,

@@ -11,6 +11,7 @@ pod 'DZNEmptyDataSet'
 pod 'IQKeyboardManager'
 pod 'ReactiveObjC'
 pod 'JTCalendar'
+pod 'Masonry'
 
 #给textView添加Placeholder, 可以设定限制字符长度
 pod 'FSTextView'

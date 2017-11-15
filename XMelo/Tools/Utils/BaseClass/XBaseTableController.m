@@ -42,36 +42,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    self.navigationItem.title = @"这里是标题";
-    
-    self.tableStyle = UITableViewStyleGrouped;
-    self.cellStyle = UITableViewCellStyleDefault;
-    
-    self.tableView = ({
-        UITableView *theTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64)
-                                                            style:self.tableStyle];
-        theTable.delegate = self;
-        theTable.dataSource = self;
-        [self.view addSubview:theTable];
-        theTable;
-    });
+	self.view.backgroundColor 	= [UIColor groupTableViewBackgroundColor];
+	self.tableStyle 			= UITableViewStyleGrouped;
+	self.cellStyle 				= UITableViewCellStyleDefault;
+	
+	self.tableView = ({
+		
+		UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectZero style:self.tableStyle];
+		tableView.delegate = self;
+		tableView.dataSource = self;
+		tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+		tableView.estimatedRowHeight = 0;
+		tableView.estimatedSectionHeaderHeight = 0;
+		tableView.estimatedSectionFooterHeight = 0;
+		[self.view addSubview:tableView];
+		[tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+			
+			make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0.0f, 0.0f, selectConstraint(30.0f, 0.0f), 0.0f));
+		}];
+		
+		if (@available(iOS 11.0, *)) {
+			
+			tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
+		}
+		tableView;
+	});
+	
+
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
-
-//    self.tableView.emptyDataSetSource = self;
-//    self.tableView.emptyDataSetDelegate = self;
-
-    //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
-    //cell.separatorInset = UIEdgeInsetsMake(0, kScreenWidth, 0, 0);
 
     //隐藏多余的cell
     self.tableView.tableFooterView = [[UIView alloc]init];
-    
-//    [self performSelector:@selector(loadData) withObject:nil afterDelay:1];
 }
 
-
+//
 - (BOOL) emptyDataSetShouldAllowImageViewAnimate:(UIScrollView *)scrollView {
     
     return YES;
@@ -98,38 +102,7 @@
 }
 
 
-
-
-- (void)showNewFooterAgreementTitle:(NSString *)fullStr clickString:(NSString *)clickStr buttonWithTitle:(NSString *)buttonTitle clickBlock:(void(^)(UIButton *aButton, BOOL isRead))aBlock {
-    
-    self.tableView.tableFooterView = ({
-        
-        UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 200)];
-        bgView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        
-        [YVAgreementView getCanClickViewWithTitle:fullStr clickString:clickStr addInView:bgView withFrame:CGRectMake(15, 15, bgView.width - 30, 30) handler:^{
-            
-//            YVWebViewController *vcc = [[YVWebViewController alloc]init];
-//            vcc.urlString = clickStr;
-//            [self.tableView.viewController cyl_pushViewController:vcc animated:YES];
-        }];
-        
-        UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        theButton.frame = CGRectMake(40, 45 + 30, kScreenWidth - 80, 45);
-        theButton.layer.cornerRadius = theButton.height/2;
-        theButton.layer.masksToBounds = YES;
-        theButton.backgroundColor = [UIColor redColor];
-        [theButton setTitle:buttonTitle forState:UIControlStateNormal];
-        [theButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [bgView addSubview:theButton];
-		[theButton addBlockWithTouchUpInside:^(UIButton *sender) {
-
-			!aBlock ?: aBlock(sender,[YVAgreementView sharedManager].isRead);
-		}];
-        bgView;
-    });
-}
-
+//MARK:- footer
 - (void)showFooerButtonWithTitle:(NSString *)title clickBlock:(void(^)(UIButton *aButton))aBlock {
     
     self.tableView.tableFooterView = ({
@@ -183,22 +156,20 @@
     });
 }
 
-
-
-
-
-
-
-
-
-
-
-
-#pragma mark- delegate
-//MARK:- tablview
+//MARK:- delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
 	return self.numberOfSections ?: 1;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+
+	return [UIView new];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+
+	return [UIView new];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -252,8 +223,6 @@
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	!self.creatCellView ?: self.creatCellView(cell, indexPath);
 }
-
-
 
 #pragma mark- 刷新
 - (void)updateDataFromHeadWith:(void(^)(void))block{

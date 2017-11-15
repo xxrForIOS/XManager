@@ -21,7 +21,10 @@
     
     self.fonts = [[UIFont familyNames] copy];
     self.navigationItem.title = @"系统字体一览";
-
+//	[self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//		
+//		make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0.0f, 0.0f, selectConstraint(30.0f, 0.0f), 0.0f));
+//	}];
     @kWeakSelf;
     self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
         

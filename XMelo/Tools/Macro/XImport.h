@@ -29,6 +29,7 @@
 #import "NSData+Add.h"
 #import "UITextView+ZWPlaceHolder.h"
 #import "UIButton+ClickTimeInterval.h"
+#import "UIScreen+SafeArea.h"
 
 //MARK: funtion
 #import "XImagePicker.h"
@@ -38,5 +39,6 @@
 #import "MBProgressHUD.h"
 #import "MJRefresh.h"
 #import "ReactiveObjC.h"
+#import "Masonry.h"
 
 #endif /* XImport_h */

@@ -26,36 +26,35 @@
 
 + (void)addRradualColorFor:(UIView *)theView colors:(NSArray *)colors showType:(YVRradualColorShowType)type {
 
-	CAGradientLayer *gradientLayer0 = [[CAGradientLayer alloc] init];
-	gradientLayer0.cornerRadius = 12.5;
-	gradientLayer0.frame = theView.bounds;
-	gradientLayer0.colors = colors;
+	CAGradientLayer *layer = [[CAGradientLayer alloc] init];
+	layer.frame = theView.bounds;
+	layer.colors = colors;
 
 	if (type == YVRradualColorShowTypeLeftRight) {
 
-		[gradientLayer0 setStartPoint:CGPointMake(0, 0.5)];
-		[gradientLayer0 setEndPoint:CGPointMake(1, 0.5)];
+		[layer setStartPoint:CGPointMake(0, 0.5)];
+		[layer setEndPoint:CGPointMake(1, 0.5)];
 	}
 
 	if (type == YVRradualColorShowTypeTopBottom) {
 
-		[gradientLayer0 setStartPoint:CGPointMake(0.5, 0)];
-		[gradientLayer0 setEndPoint:CGPointMake(0.5, 1.0)];
+		[layer setStartPoint:CGPointMake(0.5, 0)];
+		[layer setEndPoint:CGPointMake(0.5, 1.0)];
 	}
 
 	if (type == YVRradualColorShowTypeLTopToRBottom) {
 
-		[gradientLayer0 setStartPoint:CGPointMake(0, 0)];
-		[gradientLayer0 setEndPoint:CGPointMake(1, 1)];
+		[layer setStartPoint:CGPointMake(0, 0)];
+		[layer setEndPoint:CGPointMake(1, 1)];
 	}
 
 	if (type == YVRradualColorShowTypeLBottomToRTop) {
 
-		[gradientLayer0 setStartPoint:CGPointMake(0, 1)];
-		[gradientLayer0 setEndPoint:CGPointMake(1, 0)];
+		[layer setStartPoint:CGPointMake(0, 1)];
+		[layer setEndPoint:CGPointMake(1, 0)];
 	}
 
-	[theView.layer addSublayer:gradientLayer0];
+	[theView.layer addSublayer:layer];
 }
 
 #pragma mark- 纯色图片

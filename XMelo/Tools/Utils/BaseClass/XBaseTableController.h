@@ -51,8 +51,6 @@
 - (void)updateDataFromFootWith:(void(^)(void))block;
 
 
-///新按钮
-- (void)showNewFooterAgreementTitle:(NSString *)fullStr clickString:(NSString *)clickStr buttonWithTitle:(NSString *)title clickBlock:(void(^)(UIButton *aButton, BOOL isRead))aBlock;
 ///单个footer按钮
 - (void)showFooerButtonWithTitle:(NSString *)title clickBlock:(void(^)(UIButton *aButton))aBlock;
 ///两个footer按钮 右侧 kColorRGB(13, 192, 241);

@@ -32,12 +32,11 @@
 						 @"FontViewController",
 						 @"ImageValidationViewController"];
     
-    self.tableView.height 			= kScreenHeight - 64 - 50;
     self.tableView.rowHeight 		= 50;
     self.tableView.separatorStyle 	= UITableViewCellSeparatorStyleNone;
     self.navigationItem.title 		= @"XMelo";
-    @kWeakSelf;
-
+	
+	@kWeakSelf;
     self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
        
         return selfWeak.controllers.count;
@@ -52,7 +51,7 @@
         
         cell.textLabel.font = kFontTheme(15);
         cell.textLabel.text = selfWeak.controllers[indexPath.row];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.accessoryType 	= UITableViewCellAccessoryDisclosureIndicator;
     };
     
     self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
@@ -95,23 +94,23 @@
     }];
 }
 
-- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UIContextualAction *favourRowAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"收藏" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
-
-		UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-		CGFloat red   = (arc4random() % 256) / 256.0;
-		CGFloat green = (arc4random() % 256) / 256.0;
-		CGFloat blue  = (arc4random() % 256) / 256.0;
-
-		cell.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
-
-		completionHandler(YES);
-	}];
-	favourRowAction.backgroundColor = [UIColor orangeColor];
-
-	UISwipeActionsConfiguration *favourRowConfiguration = [UISwipeActionsConfiguration configurationWithActions:@[favourRowAction]];
-	return favourRowConfiguration;
-}
+//- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
+//	UIContextualAction *favourRowAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"收藏" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+//
+//		UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//		CGFloat red   = (arc4random() % 256) / 256.0;
+//		CGFloat green = (arc4random() % 256) / 256.0;
+//		CGFloat blue  = (arc4random() % 256) / 256.0;
+//
+//		cell.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+//
+//		completionHandler(YES);
+//	}];
+//	favourRowAction.backgroundColor = [UIColor orangeColor];
+//
+//	UISwipeActionsConfiguration *favourRowConfiguration = [UISwipeActionsConfiguration configurationWithActions:@[favourRowAction]];
+//	return favourRowConfiguration;
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

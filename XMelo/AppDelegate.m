@@ -19,6 +19,10 @@
 	///你说啥?!
     
     //导航条设置
+	
+	//还是用的教授的账号
+	
+	// 我的163注册不了 qq接不到邮箱
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
 
 //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];

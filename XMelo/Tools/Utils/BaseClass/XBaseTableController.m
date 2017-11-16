@@ -20,42 +20,28 @@
 
 @implementation XBaseTableController
 
-
-//+ (void)load {
-//
-//	static dispatch_once_t onceToken;
-//	dispatch_once(&onceToken, ^{
-//
-//		UINavigationBar *navigationBarAppearance = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[XBaseTableController class]]];
-//		NSDictionary *textAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
-//		UIImage *colorImage = [XManager getImageFromColor:kColorThemeOrange withSize:CGSizeMake(kScreenWidth, 64)];
-//		[navigationBarAppearance setBackgroundImage:colorImage forBarMetrics:UIBarMetricsDefault];
-//		[navigationBarAppearance setTitleTextAttributes:textAttributes];
-//		[navigationBarAppearance setTintColor:[UIColor whiteColor]];
-//		[navigationBarAppearance setBarTintColor:[UIColor whiteColor]];
-//		[navigationBarAppearance setShadowImage:[[UIImage alloc]init]];
-//		[[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : kColorThemeOrange} forState:UIControlStateNormal];
-//	});
-//}
-
-
 - (void)viewDidLoad {
+	
     [super viewDidLoad];
 
-	self.view.backgroundColor 	= [UIColor groupTableViewBackgroundColor];
 	self.tableStyle 			= UITableViewStyleGrouped;
 	self.cellStyle 				= UITableViewCellStyleDefault;
-	
+	self.view.backgroundColor 	= [UIColor groupTableViewBackgroundColor];
+
 	self.tableView = ({
 		
-		UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectZero style:self.tableStyle];
-		tableView.delegate = self;
-		tableView.dataSource = self;
-		tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-		tableView.estimatedRowHeight = 0;
-		tableView.estimatedSectionHeaderHeight = 0;
-		tableView.estimatedSectionFooterHeight = 0;
+		UITableView *tableView 		= [[UITableView alloc]initWithFrame:CGRectZero style:self.tableStyle];
+		tableView.delegate 			= self;
+		tableView.dataSource 		= self;
+		tableView.backgroundColor 	= [UIColor groupTableViewBackgroundColor];
+		tableView.separatorStyle 	= UITableViewCellSeparatorStyleNone;
+		tableView.tableFooterView 	= [[UIView alloc]init];
+		tableView.estimatedSectionHeaderHeight 	= 0;
+		tableView.estimatedSectionFooterHeight 	= 0;
+		tableView.estimatedRowHeight 			= 0;
+
 		[self.view addSubview:tableView];
+		
 		[tableView mas_makeConstraints:^(MASConstraintMaker *make) {
 			
 			make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0.0f, 0.0f, selectConstraint(30.0f, 0.0f), 0.0f));
@@ -70,13 +56,10 @@
 	
 
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
-
-    //隐藏多余的cell
-    self.tableView.tableFooterView = [[UIView alloc]init];
 }
 
-//
-- (BOOL) emptyDataSetShouldAllowImageViewAnimate:(UIScrollView *)scrollView {
+//MARK:- empty
+- (BOOL)emptyDataSetShouldAllowImageViewAnimate:(UIScrollView *)scrollView {
     
     return YES;
 }

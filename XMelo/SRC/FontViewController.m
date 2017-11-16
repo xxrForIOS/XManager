@@ -23,45 +23,24 @@
     self.navigationItem.title = @"系统字体一览";
 	self.numberOfSections = 2;
 	[self configBottomTool];
+	
     @kWeakSelf;
 	
 	self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
 		
-//		return [@[@(2), @(selfWeak.fonts.count)][section] integerValue];
-		
-		return [@[@(2), @(13)][section] integerValue];
-
-		//        return selfWeak.controllers.count;
+		return [@[@(3), @(selfWeak.fonts.count)][section] integerValue];
 	};
 	
 	self.heightForHeadrAtIndexPath = ^CGFloat(NSInteger section) {
 		
-//		if (section == 0) {
-//
-//			return [[NSNumber numberWithFloat:CGFLOAT_MIN] floatValue];
-//		} else {
-//
-//			return 10;
-//		}
-		
-		double xx = CGFLOAT_MIN;
-		id xd = @(CGFLOAT_MIN);
-		double xxd = [@(CGFLOAT_MIN) floatValue];
-		
-		NSArray *height = @[@(CGFLOAT_MIN), @(10)];
-		
-		NSNumber *height11 = height[0];
-		
-		CGFloat heighttttt = [height11 floatValue];
-		
-		return [@[@(CGFLOAT_MIN), @(10)][section] floatValue];
+		return [@[@(0.001), @(10)][section] floatValue];
 	};
 	
 //    self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
 //
 //        return selfWeak.fonts.count;
 //    };
-	
+//
     self.heightForRowAtIndexPath = ^CGFloat(NSIndexPath *indexPath) {
         
         return 50;
@@ -71,7 +50,7 @@
       
         cell.textLabel.font = [UIFont fontWithName:selfWeak.fonts[indexPath.row] size:15];
         cell.textLabel.text = selfWeak.fonts[indexPath.row];
-        cell.textLabel.textColor = [UIColor blackColor];
+		cell.textLabel.textColor = kColor_yan;
     };
     
     self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {

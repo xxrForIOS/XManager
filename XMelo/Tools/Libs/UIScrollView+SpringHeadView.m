@@ -46,10 +46,19 @@ static char UIScrollViewSpringHeadView;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 
     CGFloat offy = scrollView.contentOffset.y;
-    
+	
     if (offy < 0) {
-
-		self.topView.frame = CGRectMake(0, offy, self.topView.bounds.size.width, -offy);
+		
+		CGFloat theWidth = kScreenWidth;
+		CGFloat theLeft = 0;
+		if (offy < - 100) {
+			
+			theWidth = kScreenWidth - (offy + 100);
+			theLeft = (offy + 100)/2;
+		}
+		
+		YVLog(@"the width %.f -- %.f",theWidth,scrollView.contentOffset.y);
+		self.topView.frame = CGRectMake(theLeft, offy, theWidth, - offy);
     }
 }
 

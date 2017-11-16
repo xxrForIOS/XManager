@@ -7,7 +7,6 @@
 //
 
 #import "XListViewController.h"
-#import "XCoreDataViewController.h"
 #import "UploadImageViewController.h"
 #import "XPickerViewController.h"
 #import "XInputViewController.h"
@@ -25,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-	self.controllers = @[@"XCoreDataViewController",
+	self.controllers = @[
 						 @"UploadImageViewController",
 						 @"XPickerViewController",
 						 @"XInputViewController",

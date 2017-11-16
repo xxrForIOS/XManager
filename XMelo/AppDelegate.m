@@ -45,6 +45,9 @@
     manager.enableAutoToolbar = YES;
     manager.toolbarManageBehaviour = IQAutoToolbarByTag;
 
+	if (@available(iOS 11, *)) {
+		[UIScrollView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
+	}
     return YES;
 }
 

@@ -49,7 +49,6 @@
 		A795B7961F511C56003C7EAD /* XInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7951F511C56003C7EAD /* XInputViewController.m */; };
 		A7A8AB6B1F0BC737001338B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A8AB6A1F0BC737001338B0 /* ViewController.m */; };
 		A7B3722D1F30AA730087972B /* XMelo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7B3722B1F30AA730087972B /* XMelo.xcdatamodeld */; };
-		A7B372301F30B14C0087972B /* XCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B3722F1F30B14C0087972B /* XCoreDataViewController.m */; };
 		A7B6AE431F0BCB310078B268 /* XManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B6AE421F0BCB310078B268 /* XManager.m */; };
 		A7F3B3E31F1A21A500E683D0 /* XStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F3B3E21F1A21A500E683D0 /* XStepper.m */; };
 /* End PBXBuildFile section */
@@ -136,8 +135,6 @@
 		A7A8AB6A1F0BC737001338B0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A7A8AB6D1F0BC7D0001338B0 /* XColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XColor.h; sourceTree = "<group>"; };
 		A7B3722C1F30AA730087972B /* XMelo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = XMelo.xcdatamodel; sourceTree = "<group>"; };
-		A7B3722E1F30B14C0087972B /* XCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCoreDataViewController.h; sourceTree = "<group>"; };
-		A7B3722F1F30B14C0087972B /* XCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCoreDataViewController.m; sourceTree = "<group>"; };
 		A7B6AE411F0BCB310078B268 /* XManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XManager.h; sourceTree = "<group>"; };
 		A7B6AE421F0BCB310078B268 /* XManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XManager.m; sourceTree = "<group>"; };
 		A7F3B3E11F1A21A500E683D0 /* XStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XStepper.h; sourceTree = "<group>"; };
@@ -325,15 +322,6 @@
 			path = UploadImage;
 			sourceTree = "<group>";
 		};
-		A795B78E1F5117B5003C7EAD /* Coredata */ = {
-			isa = PBXGroup;
-			children = (
-				A7B3722E1F30B14C0087972B /* XCoreDataViewController.h */,
-				A7B3722F1F30B14C0087972B /* XCoreDataViewController.m */,
-			);
-			name = Coredata;
-			sourceTree = "<group>";
-		};
 		A795B78F1F5117C2003C7EAD /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,7 +423,6 @@
 				A721BD251F593B4C008EBF9A /* Input */,
 				A795B7931F511C37003C7EAD /* Picker */,
 				A795B7801F511201003C7EAD /* UploadImage */,
-				A795B78E1F5117B5003C7EAD /* Coredata */,
 				A795B78F1F5117C2003C7EAD /* Cell */,
 			);
 			path = SRC;
@@ -591,7 +578,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A742543D1FB1AA650047B579 /* SignInViewController.m in Sources */,
-				A7B372301F30B14C0087972B /* XCoreDataViewController.m in Sources */,
 				A74254411FB1AABA0047B579 /* NSDate+LYWCalendar_h.m in Sources */,
 				A721BD2C1F597FC0008EBF9A /* NNValidationView.m in Sources */,
 				A76E10651F2ED9EF00E09AAE /* XCell.m in Sources */,

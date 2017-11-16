@@ -13,8 +13,6 @@ pod 'ReactiveObjC'
 pod 'JTCalendar'
 pod 'Masonry'
 
-#给textView添加Placeholder, 可以设定限制字符长度
-pod 'FSTextView'
 #类别 textView添加Placeholder
 pod 'ZWPlaceHolder'
 #类别 统计限制textView输入字符

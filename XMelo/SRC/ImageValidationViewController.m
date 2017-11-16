@@ -51,7 +51,7 @@
                 @kWeakObj(theView);
                 theView.changeValidationCodeBlock = ^{
                   
-                    NSLog(@"new code %@",theViewWeak.charString);
+                    YVLog(@"new code %@",theViewWeak.charString);
                 };
                 theView;
             });

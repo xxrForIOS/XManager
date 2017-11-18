@@ -57,7 +57,6 @@ static char UIScrollViewSpringHeadView;
 			theLeft = (offy + 100)/2;
 		}
 		
-		YVLog(@"the width %.f -- %.f",theWidth,scrollView.contentOffset.y);
 		self.topView.frame = CGRectMake(theLeft, offy, theWidth, - offy);
     }
 }

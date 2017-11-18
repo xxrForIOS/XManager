@@ -40,10 +40,55 @@
 
 @implementation ViewController
 
+- (NSDate *)getMonthBegin{
+	
+	NSDateFormatter *format=[[NSDateFormatter alloc] init];
+	[format setDateFormat:@"yyyy-MM"];
+	NSDate *newDate = [NSDate date];//[format dateFromString:dateStr];
+	double interval = 0;
+	NSDate *beginDate = nil;
+	NSDate *endDate = nil;
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	[calendar setFirstWeekday:2];//设定周一为周首日
+	if ([calendar rangeOfUnit:NSCalendarUnitMonth startDate:&beginDate interval:&interval forDate:newDate]) {
+		
+		endDate = [beginDate dateByAddingTimeInterval:interval-1];
+	}else {
+		
+		return [NSDate new];;
+	}
+	
+	return beginDate;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+	
+	
+	NSDate *currentDate 	= [NSDate date];
+	NSCalendar *calendar 	= [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+	NSRange range 			= [calendar rangeOfUnit:NSCalendarUnitDay inUnit: NSCalendarUnitMonth forDate:currentDate];
+	
+	for (int index = 0; index < range.length; index ++) {
+		
+		NSDate *theDate 			= [NSDate dateWithTimeInterval:24*60*60*index sinceDate:[self getMonthBegin]];
+		NSTimeInterval timeBetween 	= [currentDate timeIntervalSinceDate:theDate];
+		
+		if (timeBetween > 0) {
+			
+			
+		} else {
+			
+			YVLog(@"out of today %@",theDate);
+		}
+	}
+	
+	
+	
+	
+	
+	
 	
 	@kTODO("something汉字");
 	for (int index = 0; index < 4; index ++) {

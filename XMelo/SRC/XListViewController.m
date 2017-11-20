@@ -24,26 +24,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-	self.controllers = @[
-						 @"UploadImageViewController",
-						 @"XPickerViewController",
-						 @"XInputViewController",
-						 @"FontViewController",
-						 @"ImageValidationViewController"];
-    
+
+	self.navigationItem.title 		= @"XMelo";
     self.tableView.rowHeight 		= 50;
     self.tableView.separatorStyle 	= UITableViewCellSeparatorStyleNone;
-    self.navigationItem.title 		= @"XMelo";
+	self.controllers 				= @[@"UploadImageViewController",
+										@"XPickerViewController",
+										@"XInputViewController",
+										@"FontViewController",
+										@"ImageValidationViewController"];
 	
 	@kWeakSelf;
     self.numberOfRowsInSection = ^NSInteger(NSInteger section) {
        
         return selfWeak.controllers.count;
-    };
-
-    self.heightForHeadrAtIndexPath = ^CGFloat(NSInteger section) {
-      
-        return 1;
     };
     
     self.creatCellView = ^(UITableViewCell *cell, NSIndexPath *indexPath) {
@@ -71,27 +65,25 @@
 //		[[NSNotificationCenter defaultCenter]postNotificationName:@"xxalert" object:nil userInfo:nil];;
 	}];
 
-    [self startWithAnimation:self.animation];
+	
+
+	self.tableView.hidden = YES;
+	[XManager dispatchAfter:0.5 completion:^{
+
+		self.tableView.hidden = NO;
+		[TableViewAnimationKit cellAnimationWithTableView:self.tableView animationType:self.type];
+	}];
 }
 
-- (void)startWithAnimation:(NSString *)string {
-
-    self.tableView.hidden = YES;
-    [XManager dispatchAfter:1 completion:^{
-
-        self.tableView.hidden = NO;
-        if ([string isEqualToString:@"move"])           [TableViewAnimationKit moveAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"alpha"])          [TableViewAnimationKit alphaAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"fall"])           [TableViewAnimationKit fallAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"shake"])          [TableViewAnimationKit shakeAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"over"])           [TableViewAnimationKit overTurnAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"toTop"])          [TableViewAnimationKit toTopAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"spring"])         [TableViewAnimationKit springListAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"shrink"])         [TableViewAnimationKit shrinkToTopAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"layDonw"])        [TableViewAnimationKit layDonwAnimationWithTableView:self.tableView];
-        if ([string isEqualToString:@"rote"])           [TableViewAnimationKit roteAnimationWithTableView:self.tableView];
-    }];
-}
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//	cell.hidden = YES;
+//	[XManager dispatchAfter:1 completion:^{
+//
+//		cell.hidden = YES;
+//		[TableViewAnimationKit cellAnimationWithTableView:tableView animationType:self.type];
+//	}];
+//}
 
 //- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
 //	UIContextualAction *favourRowAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"收藏" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {

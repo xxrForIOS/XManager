@@ -10,7 +10,6 @@
 #import "MJRefresh.h"
 #import "UIScrollView+EmptyDataSet.h"
 #import "YVAgreementView.h"
-#import "TableViewAnimationKit.h"
 
 #define kCellIdentifier @"baseCell"
 

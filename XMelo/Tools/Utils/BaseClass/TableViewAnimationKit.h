@@ -9,17 +9,21 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, XRCellAnimationType) {
+	
+	XRCellAnimationTypeMove 		= 1,
+	XRCellAnimationTypeAlpha 		= 2,
+	XRCellAnimationTypeFall 		= 3,
+	XRCellAnimationTypeShake 		= 4,
+	XRCellAnimationTypeOverTurn 	= 5,
+	XRCellAnimationTypeToTop 		= 6,
+	XRCellAnimationTypeSpring 		= 7,
+	XRCellAnimationTypeShrinkToTop 	= 8,
+	XRCellAnimationTypeLayDown 		= 9,
+	XRCellAnimationTypeRote 		= 10,
+};
 @interface TableViewAnimationKit : NSObject<UICollisionBehaviorDelegate>
 
-+ (void)moveAnimationWithTableView:(UITableView *)tableView;
-+ (void)alphaAnimationWithTableView:(UITableView *)tableView;
-+ (void)fallAnimationWithTableView:(UITableView *)tableView;
-+ (void)shakeAnimationWithTableView:(UITableView *)tableView;
-+ (void)overTurnAnimationWithTableView:(UITableView *)tableView;
-+ (void)toTopAnimationWithTableView:(UITableView *)tableView;
-+ (void)springListAnimationWithTableView:(UITableView *)tableView;
-+ (void)shrinkToTopAnimationWithTableView:(UITableView *)tableView;
-+ (void)layDonwAnimationWithTableView:(UITableView *)tableView;
-+ (void)roteAnimationWithTableView:(UITableView *)tableView;
++ (void)cellAnimationWithTableView:(UITableView *)tableView animationType:(XRCellAnimationType)type;
 
 @end

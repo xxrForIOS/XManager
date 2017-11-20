@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TableViewAnimationKit.h"
 
 
 #define xBaseHeadHeight CGFLOAT_MIN

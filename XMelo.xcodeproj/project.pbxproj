@@ -413,11 +413,11 @@
 			children = (
 				A7A8AB691F0BC737001338B0 /* ViewController.h */,
 				A7A8AB6A1F0BC737001338B0 /* ViewController.m */,
+				A713F8801F17A87200FEA33E /* XListViewController.h */,
+				A713F8811F17A87200FEA33E /* XListViewController.m */,
 				A74254481FB1B7580047B579 /* ThirdSignViewController.h */,
 				A74254491FB1B7580047B579 /* ThirdSignViewController.m */,
 				A742543E1FB1AA690047B579 /* Sign */,
-				A713F8801F17A87200FEA33E /* XListViewController.h */,
-				A713F8811F17A87200FEA33E /* XListViewController.m */,
 				A771A27A1F59903300035284 /* ImageValidation */,
 				A721BD291F5941F9008EBF9A /* Font */,
 				A721BD251F593B4C008EBF9A /* Input */,

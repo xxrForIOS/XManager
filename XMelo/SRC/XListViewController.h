@@ -10,5 +10,5 @@
 
 @interface XListViewController : XBaseTableController
 
-@property (nonatomic, copy) NSString        *animation;
+@property (nonatomic, assign) XRCellAnimationType        type;
 @end

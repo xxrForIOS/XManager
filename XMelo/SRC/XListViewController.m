@@ -61,14 +61,15 @@
 
 	[XManager addRightBarItemInViewController:self itemTitle:@"dismiss" andItemBlock:^(UIButton *aButton) {
 
+//		XListViewController *vcc = [[XListViewController alloc]init];
+//		vcc.type = XRCellAnimationTypeLayDown;
+//		kPush(selfWeak, vcc);
 		[selfWeak dismissViewControllerAnimated:YES completion:nil];
-//		[[NSNotificationCenter defaultCenter]postNotificationName:@"xxalert" object:nil userInfo:nil];;
+		[[NSNotificationCenter defaultCenter]postNotificationName:@"xxalert" object:nil userInfo:nil];;
 	}];
 
-	
-
 	self.tableView.hidden = YES;
-	[XManager dispatchAfter:0.5 completion:^{
+	[XManager dispatchAfter:1 completion:^{
 
 		self.tableView.hidden = NO;
 		[TableViewAnimationKit cellAnimationWithTableView:self.tableView animationType:self.type];

@@ -36,6 +36,26 @@
 	
     self.view.backgroundColor = [UIColor whiteColor];
 	
+	NSArray *aa1 = @[];
+	NSArray *aa2 = @[@"11"];
+	
+	if (aa1.count) {
+		
+		YVLog(@"111  非空");
+	} else {
+		
+		YVLog(@"111 空");
+	}
+	
+	if (aa2.count) {
+		
+		YVLog(@"222  非空");
+	} else {
+		
+		YVLog(@"222 空");
+	}
+	
+	
 	@kTODO("something汉字");
     NSArray *animations = @[@"move",
                             @"alpha",

@@ -36,7 +36,7 @@
 	textView.zw_limitCount 		= 20;
 	[self.view addSubview:textView];
 	
-	UITextView *theView = [[UITextView alloc]initWithFrame:CGRectMake(10, textView.maxY + 30, kScreenWidth - 20, 100)];
+	UITextView *theView = [[UITextView alloc]initWithFrame:CGRectMake(10, textView.bottom + 30, kScreenWidth - 20, 100)];
 	//            theView.contentMode = UIControlContentVerticalAlignmentTop;
 //	theView.layer.borderColor = [UIColor grayColor].CGColor;
 //	theView.layer.borderWidth = 1;

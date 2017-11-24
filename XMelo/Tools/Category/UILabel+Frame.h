@@ -29,5 +29,4 @@
 - (void)changeColor:(UIColor *)color range:(NSRange)range;
 - (void)changeColor:(UIColor *)color string:(NSString *)string;
 - (void)changeColor:(UIColor *)color string:(NSString *)string repetition:(BOOL)isRepetition;
-
 @end

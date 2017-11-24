@@ -8,79 +8,49 @@
 
 #import "UILabel+Frame.h"
 
-//计算高度时额外的边缘距离
-#define marginLeft      5
-
-
-//计算宽度时额外的边缘距离
-#define marginTop       5
-
 @implementation UILabel (Frame)
 
+/*
+ 
+ //富文本计算高度
+ NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+ style.lineBreakMode = self.lineBreakMode;
+ style.alignment = self.textAlignment;
+ 
+ NSAttributedString *string = [[NSAttributedString alloc]initWithString:self.text
+ attributes:@{NSFontAttributeName:self.font,
+ NSParagraphStyleAttributeName:style}];
+ 
+ 
+ CGSize size =  [string boundingRectWithSize:CGSizeMake(MAXFLOAT, 0.0)
+ options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+ context:nil].size;
+ */
 
 //MARK:- update frame
 - (void)updateHeight{
-    /*
-     
-     //富文本计算高度
-     NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-     style.lineBreakMode = self.lineBreakMode;
-     style.alignment = self.textAlignment;
-     
-     NSAttributedString *string = [[NSAttributedString alloc]initWithString:self.text
-     attributes:@{NSFontAttributeName:self.font,
-     NSParagraphStyleAttributeName:style}];
-     
-     
-     CGSize size =  [string boundingRectWithSize:CGSizeMake(MAXFLOAT, 0.0)
-     options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-     context:nil].size;
-     */
-    
-    
-    CGSize size = [self.text boundingRectWithSize:CGSizeMake(self.frame.size.width, MAXFLOAT)
-                                          options:NSStringDrawingUsesLineFragmentOrigin
-                                       attributes:@{NSFontAttributeName : self.font}
-                                          context:nil].size;
-    
-    CGRect tmpRect = self.frame;
-    tmpRect.size.height = size.height + marginTop * 2;
-    tmpRect.size.width = self.frame.size.width;
-    
-    self.numberOfLines = 0;
-    self.frame = tmpRect;
+
+	[self updateHeightMargin:0];
 }
 
 - (void)updateHeightMargin:(CGFloat)margin {
+	
     CGSize size = [self.text boundingRectWithSize:CGSizeMake(self.frame.size.width, MAXFLOAT)
                                           options:NSStringDrawingUsesLineFragmentOrigin
                                        attributes:@{NSFontAttributeName : self.font}
                                           context:nil].size;
     
-    CGRect tmpRect = self.frame;
+    CGRect tmpRect 		= self.frame;
     tmpRect.size.height = size.height + margin * 2;
-    tmpRect.size.width = self.frame.size.width;
-    
-    self.numberOfLines = 0;
-    self.frame = tmpRect;
+    tmpRect.size.width 	= self.frame.size.width;
+    self.numberOfLines 	= 0;
+    self.frame 			= tmpRect;
 }
 
 
 - (void)updateWidth{
 
-    
-    CGSize size = [self.text boundingRectWithSize:CGSizeMake(MAXFLOAT, self.frame.size.height)
-                                          options:NSStringDrawingUsesLineFragmentOrigin
-                                       attributes:@{NSFontAttributeName : self.font}
-                                          context:nil].size;
-    
-    CGRect tmpRect = self.frame;
-    tmpRect.size.width = size.width; //+ marginLeft * 2;
-    tmpRect.size.height = self.frame.size.height;
-    
-    self.textAlignment = NSTextAlignmentCenter;
-    self.numberOfLines = 0;
-    self.frame = tmpRect;
+	[self updateWidthMargin:0];
 }
 
 - (void)updateWidthMargin:(CGFloat)margin {
@@ -89,17 +59,16 @@
                                        attributes:@{NSFontAttributeName : self.font}
                                           context:nil].size;
     
-    CGRect tmpRect = self.frame;
-    tmpRect.size.width = size.width + margin * 2;
+    CGRect tmpRect 		= self.frame;
+    tmpRect.size.width 	= size.width + margin * 2;
     tmpRect.size.height = self.frame.size.height;
-    
-    self.textAlignment = NSTextAlignmentCenter;
-    self.numberOfLines = 0;
-    self.frame = tmpRect;
+    self.textAlignment 	= NSTextAlignmentCenter;
+    self.numberOfLines 	= 0;
+    self.frame 			= tmpRect;
 }
 
 
-//MARK:- change value
+//MARK:- changeFont
 - (void)changeFont:(UIFont *)font range:(NSRange)range{
     
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
@@ -135,7 +104,7 @@
     self.attributedText = str;
 }
 
-
+//MARK:- changeColor
 - (void)changeColor:(UIColor *)color range:(NSRange)range{
     
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];

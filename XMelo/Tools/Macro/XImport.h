@@ -13,6 +13,7 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 #import "AppDelegate.h"
+#import <MLeaksFinder/MLeaksFinder.h>
 
 //MARK: head
 #import "XColor.h"
@@ -20,7 +21,8 @@
 #import "XManager.h"
 
 //MARK: category
-#import "UIView+Add.h"
+#import "UIView+Melo.h"
+#import "UIButton+Melo.h"
 #import "UIButton+ChangePosition.h"
 #import "UILabel+Frame.h"
 #import "UIImage+Scale.h"

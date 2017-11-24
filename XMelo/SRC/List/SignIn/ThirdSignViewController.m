@@ -38,7 +38,7 @@
 	[self.calendarMenuView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changeContentPage)]];
 
 
-	self.calendarContentView = [[JTHorizontalCalendarView alloc]initWithFrame:CGRectMake(20, self.calendarMenuView.maxY,
+	self.calendarContentView = [[JTHorizontalCalendarView alloc]initWithFrame:CGRectMake(20, self.calendarMenuView.bottom,
 																						 kScreenWidth - 40, 300)];
 	[self.view addSubview:self.calendarContentView];
 

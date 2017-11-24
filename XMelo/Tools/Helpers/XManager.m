@@ -26,61 +26,57 @@
 
 + (void)addRradualColorFor:(UIView *)theView colors:(NSArray *)colors showType:(YVRradualColorShowType)type {
 
-	CAGradientLayer *layer = [[CAGradientLayer alloc] init];
-	layer.frame = theView.bounds;
-	layer.colors = colors;
-
+	/*
+	 layer.colors = @[(__bridge id)[UIColor redColor].CGColor,
+	 (__bridge id)[UIColor yellowColor].CGColor,
+	 (__bridge id)[UIColor blueColor].CGColor];
+	 */
+	CAGradientLayer *layer 	= [[CAGradientLayer alloc] init];
+	layer.frame 			= theView.bounds;
+	layer.colors 			= colors;
+	
 	if (type == YVRradualColorShowTypeLeftRight) {
-
+		
 		[layer setStartPoint:CGPointMake(0, 0.5)];
 		[layer setEndPoint:CGPointMake(1, 0.5)];
 	}
-
+	
 	if (type == YVRradualColorShowTypeTopBottom) {
-
+		
 		[layer setStartPoint:CGPointMake(0.5, 0)];
 		[layer setEndPoint:CGPointMake(0.5, 1.0)];
 	}
-
+	
 	if (type == YVRradualColorShowTypeLTopToRBottom) {
-
+		
 		[layer setStartPoint:CGPointMake(0, 0)];
 		[layer setEndPoint:CGPointMake(1, 1)];
 	}
-
+	
 	if (type == YVRradualColorShowTypeLBottomToRTop) {
-
+		
 		[layer setStartPoint:CGPointMake(0, 1)];
 		[layer setEndPoint:CGPointMake(1, 0)];
 	}
-
 	[theView.layer addSublayer:layer];
 }
 
 #pragma mark- 纯色图片
 + (UIImage *)getImageFromColor:(UIColor *)color withSize:(CGSize)size{
     
-    CGRect rect = CGRectMake(0.0f, 0.0f, size.width, size.height);
+    CGRect rect 			= CGRectMake(0.0f, 0.0f, size.width, size.height);
     UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context=UIGraphicsGetCurrentContext();
+    CGContextRef context	= UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [color CGColor]);
     CGContextFillRect(context, rect);
-    UIImage *theImage=UIGraphicsGetImageFromCurrentImageContext();
+    UIImage *theImage		= UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return theImage;
 }
 
-
 + (UIImage *)getImageFromColor:(UIColor *)color{
-    
-    CGRect rect = CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context=UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *theImage=UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return theImage;
+	
+	return [self getImageFromColor:color withSize:CGSizeMake(kScreenWidth, kScreenHeight)];
 }
 
 //MARK:- 获取当前界面所在vc
@@ -273,7 +269,7 @@
     [theButton setTitle:str forState:UIControlStateNormal];
     [theButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     theButton.titleLabel.font = kFontTheme(17);
-	[theButton addBlockWithTouchUpInside:aBlock];
+	[theButton addTouchUpInside:aBlock];
     vcc.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:theButton];
 }
 
@@ -300,18 +296,14 @@
 //MARK:- 时间格式化
 + (NSString *)timeGetDateFormat:(NSString *)dateString{
     
-    NSDate *currentDate = [NSDate date];
-    NSDate *otherDate = [NSDate dateWithTimeIntervalSince1970:[dateString longLongValue]/1000];
-    
+    NSDate *currentDate 		= [NSDate date];
+    NSDate *otherDate 			= [NSDate dateWithTimeIntervalSince1970:[dateString longLongValue]/1000];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
     [dateFormat setTimeZone:[NSTimeZone localTimeZone]];
-    
-    NSTimeInterval time = [currentDate timeIntervalSinceDate:otherDate];
-    
-    
-    NSString *dateStr = @"";
-    
+    NSTimeInterval time 		= [currentDate timeIntervalSinceDate:otherDate];
+	
+	NSString *dateStr = @"";
     if (time <= 60) {
         
         dateStr = @"刚刚";
@@ -452,33 +444,8 @@
     NSDate *_date = [gregorian dateFromComponents:comps];
     NSDateComponents *weekdayComponents = [gregorian components:NSCalendarUnitWeekday fromDate:_date];
     NSInteger week = [weekdayComponents weekday];
-    switch (week) {
-        case 1:
-            weekDayStr = @"星期日";
-            break;
-        case 2:
-            weekDayStr = @"星期一";
-            break;
-        case 3:
-            weekDayStr = @"星期二";
-            break;
-        case 4:
-            weekDayStr = @"星期三";
-            break;
-        case 5:
-            weekDayStr = @"星期四";
-            break;
-        case 6:
-            weekDayStr = @"星期五";
-            break;
-        case 7:
-            weekDayStr = @"星期六";
-            break;
-        default:
-            weekDayStr = @"";
-            break;
-    }
-    return weekDayStr;
+	NSArray *weekStrs = @[@"星期日, 星期一, 星期二, 星期三, 星期四, 星期五, 星期六"];
+	return weekStrs[week - 1];
 }
 
 

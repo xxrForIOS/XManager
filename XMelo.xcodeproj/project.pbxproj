@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7D3691A56F3A55AD39BF3D88 /* libPods-XMelo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55944350D03FF90A8F8126C9 /* libPods-XMelo.a */; };
 		A7085D031F973D4300398477 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		A70ADEA61FC7C2DC00ADBBA2 /* MainTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A70ADEA51FC7C2DC00ADBBA2 /* MainTestViewController.m */; };
+		A70ADEAC1FC7CCBB00ADBBA2 /* UIView+Melo.m in Sources */ = {isa = PBXBuildFile; fileRef = A70ADEAB1FC7CCBB00ADBBA2 /* UIView+Melo.m */; };
+		A70ADEAF1FC7E66500ADBBA2 /* UIButton+Melo.m in Sources */ = {isa = PBXBuildFile; fileRef = A70ADEAE1FC7E66500ADBBA2 /* UIButton+Melo.m */; };
 		A70DA5231F564D730059935B /* UIScrollView+SpringHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A70DA5221F564D730059935B /* UIScrollView+SpringHeadView.m */; };
 		A713F8791F17A50F00FEA33E /* UIButton+ChangePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F8781F17A50F00FEA33E /* UIButton+ChangePosition.m */; };
 		A713F87F1F17A57300FEA33E /* XBaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F87E1F17A57300FEA33E /* XBaseTableController.m */; };
@@ -27,24 +30,16 @@
 		A72CD1A31F0D04EE002C90BD /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1901F0D04EE002C90BD /* NSString+Check.m */; };
 		A72CD1A61F0D04EE002C90BD /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1961F0D04EE002C90BD /* UIImage+Scale.m */; };
 		A72CD1A71F0D04EE002C90BD /* UILabel+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1981F0D04EE002C90BD /* UILabel+Frame.m */; };
-		A72CD1AB1F0D04EE002C90BD /* UIView+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1A01F0D04EE002C90BD /* UIView+Add.m */; };
 		A72CD1AE1F0D0567002C90BD /* XConst.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1AD1F0D0567002C90BD /* XConst.m */; };
 		A72CD1EC1F10719D002C90BD /* DictModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1EB1F10719D002C90BD /* DictModel.m */; };
 		A73C81D11FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = A73C81D01FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.m */; };
-		A742543D1FB1AA650047B579 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A742543C1FB1AA650047B579 /* SignInViewController.m */; };
-		A74254411FB1AABA0047B579 /* NSDate+LYWCalendar_h.m in Sources */ = {isa = PBXBuildFile; fileRef = A74254401FB1AABA0047B579 /* NSDate+LYWCalendar_h.m */; };
-		A74254441FB1AB260047B579 /* LYWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74254431FB1AB260047B579 /* LYWCollectionViewCell.m */; };
-		A74254471FB1AB570047B579 /* LYWCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A74254461FB1AB570047B579 /* LYWCollectionReusableView.m */; };
 		A742544A1FB1B7580047B579 /* ThirdSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74254491FB1B7580047B579 /* ThirdSignViewController.m */; };
 		A74AACE91F6786AB0053066D /* TableViewAnimationKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A74AACE81F6786AB0053066D /* TableViewAnimationKit.m */; };
 		A767F0F91F5560BD00432627 /* XImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A767F0F61F5560BD00432627 /* XImagePicker.m */; };
 		A767F0FA1F5560BD00432627 /* YVPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A767F0F81F5560BD00432627 /* YVPickerView.m */; };
 		A76E10651F2ED9EF00E09AAE /* XCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A76E10641F2ED9EF00E09AAE /* XCell.m */; };
-		A771A2EA1F5E6A5800035284 /* XUploadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A771A2E91F5E6A5800035284 /* XUploadCell.m */; };
 		A795B77A1F4EB91B003C7EAD /* YVAgreementView.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7791F4EB91B003C7EAD /* YVAgreementView.m */; };
 		A795B77F1F501735003C7EAD /* uploadImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A795B77E1F501735003C7EAD /* uploadImage.png */; };
-		A795B7871F511201003C7EAD /* UploadImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7821F511201003C7EAD /* UploadImageCell.m */; };
-		A795B7881F511201003C7EAD /* UploadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7841F511201003C7EAD /* UploadImageViewController.m */; };
 		A795B7921F5117EF003C7EAD /* XPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7911F5117EF003C7EAD /* XPickerViewController.m */; };
 		A795B7961F511C56003C7EAD /* XInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A795B7951F511C56003C7EAD /* XInputViewController.m */; };
 		A7A8AB6B1F0BC737001338B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A8AB6A1F0BC737001338B0 /* ViewController.m */; };
@@ -57,6 +52,12 @@
 		55944350D03FF90A8F8126C9 /* libPods-XMelo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XMelo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		691E65A6553354E2B37952FD /* Pods-XMelo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMelo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XMelo/Pods-XMelo.debug.xcconfig"; sourceTree = "<group>"; };
 		A7086E751FA8A48900BA51B1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		A70ADEA41FC7C2DC00ADBBA2 /* MainTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTestViewController.h; sourceTree = "<group>"; };
+		A70ADEA51FC7C2DC00ADBBA2 /* MainTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTestViewController.m; sourceTree = "<group>"; };
+		A70ADEAA1FC7CCBB00ADBBA2 /* UIView+Melo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Melo.h"; sourceTree = "<group>"; };
+		A70ADEAB1FC7CCBB00ADBBA2 /* UIView+Melo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Melo.m"; sourceTree = "<group>"; };
+		A70ADEAD1FC7E66500ADBBA2 /* UIButton+Melo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Melo.h"; sourceTree = "<group>"; };
+		A70ADEAE1FC7E66500ADBBA2 /* UIButton+Melo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Melo.m"; sourceTree = "<group>"; };
 		A70DA5211F564D730059935B /* UIScrollView+SpringHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SpringHeadView.h"; sourceTree = "<group>"; };
 		A70DA5221F564D730059935B /* UIScrollView+SpringHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SpringHeadView.m"; sourceTree = "<group>"; };
 		A713F8771F17A50F00FEA33E /* UIButton+ChangePosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ChangePosition.h"; sourceTree = "<group>"; };
@@ -91,22 +92,12 @@
 		A72CD1961F0D04EE002C90BD /* UIImage+Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scale.m"; sourceTree = "<group>"; };
 		A72CD1971F0D04EE002C90BD /* UILabel+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Frame.h"; sourceTree = "<group>"; };
 		A72CD1981F0D04EE002C90BD /* UILabel+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Frame.m"; sourceTree = "<group>"; };
-		A72CD19F1F0D04EE002C90BD /* UIView+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Add.h"; sourceTree = "<group>"; };
-		A72CD1A01F0D04EE002C90BD /* UIView+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Add.m"; sourceTree = "<group>"; };
 		A72CD1AC1F0D0567002C90BD /* XConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XConst.h; sourceTree = "<group>"; };
 		A72CD1AD1F0D0567002C90BD /* XConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XConst.m; sourceTree = "<group>"; };
 		A72CD1EA1F10719D002C90BD /* DictModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictModel.h; sourceTree = "<group>"; };
 		A72CD1EB1F10719D002C90BD /* DictModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictModel.m; sourceTree = "<group>"; };
 		A73C81CF1FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+ClickTimeInterval.h"; sourceTree = "<group>"; };
 		A73C81D01FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ClickTimeInterval.m"; sourceTree = "<group>"; };
-		A742543B1FB1AA650047B579 /* SignInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
-		A742543C1FB1AA650047B579 /* SignInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
-		A742543F1FB1AABA0047B579 /* NSDate+LYWCalendar_h.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+LYWCalendar_h.h"; sourceTree = "<group>"; };
-		A74254401FB1AABA0047B579 /* NSDate+LYWCalendar_h.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LYWCalendar_h.m"; sourceTree = "<group>"; };
-		A74254421FB1AB260047B579 /* LYWCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYWCollectionViewCell.h; sourceTree = "<group>"; };
-		A74254431FB1AB260047B579 /* LYWCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYWCollectionViewCell.m; sourceTree = "<group>"; };
-		A74254451FB1AB570047B579 /* LYWCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYWCollectionReusableView.h; sourceTree = "<group>"; };
-		A74254461FB1AB570047B579 /* LYWCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYWCollectionReusableView.m; sourceTree = "<group>"; };
 		A74254481FB1B7580047B579 /* ThirdSignViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdSignViewController.h; sourceTree = "<group>"; };
 		A74254491FB1B7580047B579 /* ThirdSignViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdSignViewController.m; sourceTree = "<group>"; };
 		A74AACE71F6786AB0053066D /* TableViewAnimationKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewAnimationKit.h; sourceTree = "<group>"; };
@@ -118,15 +109,9 @@
 		A76E10621F2EBFCA00E09AAE /* XImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XImport.h; sourceTree = "<group>"; };
 		A76E10631F2ED9EF00E09AAE /* XCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCell.h; sourceTree = "<group>"; };
 		A76E10641F2ED9EF00E09AAE /* XCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCell.m; sourceTree = "<group>"; };
-		A771A2E81F5E6A5800035284 /* XUploadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XUploadCell.h; sourceTree = "<group>"; };
-		A771A2E91F5E6A5800035284 /* XUploadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XUploadCell.m; sourceTree = "<group>"; };
 		A795B7781F4EB91B003C7EAD /* YVAgreementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YVAgreementView.h; sourceTree = "<group>"; };
 		A795B7791F4EB91B003C7EAD /* YVAgreementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YVAgreementView.m; sourceTree = "<group>"; };
 		A795B77E1F501735003C7EAD /* uploadImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uploadImage.png; sourceTree = "<group>"; };
-		A795B7811F511201003C7EAD /* UploadImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadImageCell.h; sourceTree = "<group>"; };
-		A795B7821F511201003C7EAD /* UploadImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadImageCell.m; sourceTree = "<group>"; };
-		A795B7831F511201003C7EAD /* UploadImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadImageViewController.h; sourceTree = "<group>"; };
-		A795B7841F511201003C7EAD /* UploadImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadImageViewController.m; sourceTree = "<group>"; };
 		A795B7901F5117EF003C7EAD /* XPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPickerViewController.h; sourceTree = "<group>"; };
 		A795B7911F5117EF003C7EAD /* XPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPickerViewController.m; sourceTree = "<group>"; };
 		A795B7941F511C56003C7EAD /* XInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XInputViewController.h; sourceTree = "<group>"; };
@@ -163,6 +148,29 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A70ADEA81FC7C31A00ADBBA2 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				A70ADEA91FC7C41700ADBBA2 /* SignIn */,
+				A771A27A1F59903300035284 /* ImageValidation */,
+				A721BD291F5941F9008EBF9A /* SystemFont */,
+				A721BD251F593B4C008EBF9A /* InputLimit */,
+				A795B7931F511C37003C7EAD /* CustomPicker */,
+				A795B78F1F5117C2003C7EAD /* Cell */,
+				A72CD1E91F107178002C90BD /* Model */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		A70ADEA91FC7C41700ADBBA2 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				A74254481FB1B7580047B579 /* ThirdSignViewController.h */,
+				A74254491FB1B7580047B579 /* ThirdSignViewController.m */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		A713F87A1F17A51E00FEA33E /* Control */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +178,8 @@
 				A713F8781F17A50F00FEA33E /* UIButton+ChangePosition.m */,
 				A73C81CF1FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.h */,
 				A73C81D01FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.m */,
+				A70ADEAD1FC7E66500ADBBA2 /* UIButton+Melo.h */,
+				A70ADEAE1FC7E66500ADBBA2 /* UIButton+Melo.m */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -190,12 +200,12 @@
 		A713F87C1F17A53500FEA33E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A70ADEAA1FC7CCBB00ADBBA2 /* UIView+Melo.h */,
+				A70ADEAB1FC7CCBB00ADBBA2 /* UIView+Melo.m */,
 				A72CD1951F0D04EE002C90BD /* UIImage+Scale.h */,
 				A72CD1961F0D04EE002C90BD /* UIImage+Scale.m */,
 				A72CD1971F0D04EE002C90BD /* UILabel+Frame.h */,
 				A72CD1981F0D04EE002C90BD /* UILabel+Frame.m */,
-				A72CD19F1F0D04EE002C90BD /* UIView+Add.h */,
-				A72CD1A01F0D04EE002C90BD /* UIView+Add.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -226,7 +236,6 @@
 				A7A8AB5D1F0BC33F001338B0 /* Resource */,
 				A7A8AB5F1F0BC33F001338B0 /* Tools */,
 				A7A8AB681F0BC737001338B0 /* SRC */,
-				A72CD1E91F107178002C90BD /* Model */,
 				A71D184C1F0BAE0700BAE515 /* Supporting Files */,
 			);
 			path = XMelo;
@@ -245,22 +254,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A721BD251F593B4C008EBF9A /* Input */ = {
+		A721BD251F593B4C008EBF9A /* InputLimit */ = {
 			isa = PBXGroup;
 			children = (
 				A795B7941F511C56003C7EAD /* XInputViewController.h */,
 				A795B7951F511C56003C7EAD /* XInputViewController.m */,
 			);
-			name = Input;
+			name = InputLimit;
+			path = ..;
 			sourceTree = "<group>";
 		};
-		A721BD291F5941F9008EBF9A /* Font */ = {
+		A721BD291F5941F9008EBF9A /* SystemFont */ = {
 			isa = PBXGroup;
 			children = (
 				A721BD261F593E56008EBF9A /* FontViewController.h */,
 				A721BD271F593E56008EBF9A /* FontViewController.m */,
 			);
-			name = Font;
+			name = SystemFont;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		A72CD1E91F107178002C90BD /* Model */ = {
@@ -285,21 +296,6 @@
 			path = BaseClass;
 			sourceTree = "<group>";
 		};
-		A742543E1FB1AA690047B579 /* Sign */ = {
-			isa = PBXGroup;
-			children = (
-				A742543B1FB1AA650047B579 /* SignInViewController.h */,
-				A742543C1FB1AA650047B579 /* SignInViewController.m */,
-				A74254421FB1AB260047B579 /* LYWCollectionViewCell.h */,
-				A74254431FB1AB260047B579 /* LYWCollectionViewCell.m */,
-				A74254451FB1AB570047B579 /* LYWCollectionReusableView.h */,
-				A74254461FB1AB570047B579 /* LYWCollectionReusableView.m */,
-				A742543F1FB1AABA0047B579 /* NSDate+LYWCalendar_h.h */,
-				A74254401FB1AABA0047B579 /* NSDate+LYWCalendar_h.m */,
-			);
-			name = Sign;
-			sourceTree = "<group>";
-		};
 		A771A27A1F59903300035284 /* ImageValidation */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,19 +303,7 @@
 				A721BD2E1F5980EA008EBF9A /* ImageValidationViewController.m */,
 			);
 			name = ImageValidation;
-			sourceTree = "<group>";
-		};
-		A795B7801F511201003C7EAD /* UploadImage */ = {
-			isa = PBXGroup;
-			children = (
-				A795B7811F511201003C7EAD /* UploadImageCell.h */,
-				A795B7821F511201003C7EAD /* UploadImageCell.m */,
-				A771A2E81F5E6A5800035284 /* XUploadCell.h */,
-				A771A2E91F5E6A5800035284 /* XUploadCell.m */,
-				A795B7831F511201003C7EAD /* UploadImageViewController.h */,
-				A795B7841F511201003C7EAD /* UploadImageViewController.m */,
-			);
-			path = UploadImage;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		A795B78F1F5117C2003C7EAD /* Cell */ = {
@@ -329,15 +313,17 @@
 				A76E10641F2ED9EF00E09AAE /* XCell.m */,
 			);
 			name = Cell;
+			path = ..;
 			sourceTree = "<group>";
 		};
-		A795B7931F511C37003C7EAD /* Picker */ = {
+		A795B7931F511C37003C7EAD /* CustomPicker */ = {
 			isa = PBXGroup;
 			children = (
 				A795B7901F5117EF003C7EAD /* XPickerViewController.h */,
 				A795B7911F5117EF003C7EAD /* XPickerViewController.m */,
 			);
-			name = Picker;
+			name = CustomPicker;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		A7A8AB5D1F0BC33F001338B0 /* Resource */ = {
@@ -413,17 +399,11 @@
 			children = (
 				A7A8AB691F0BC737001338B0 /* ViewController.h */,
 				A7A8AB6A1F0BC737001338B0 /* ViewController.m */,
+				A70ADEA41FC7C2DC00ADBBA2 /* MainTestViewController.h */,
+				A70ADEA51FC7C2DC00ADBBA2 /* MainTestViewController.m */,
 				A713F8801F17A87200FEA33E /* XListViewController.h */,
 				A713F8811F17A87200FEA33E /* XListViewController.m */,
-				A74254481FB1B7580047B579 /* ThirdSignViewController.h */,
-				A74254491FB1B7580047B579 /* ThirdSignViewController.m */,
-				A742543E1FB1AA690047B579 /* Sign */,
-				A771A27A1F59903300035284 /* ImageValidation */,
-				A721BD291F5941F9008EBF9A /* Font */,
-				A721BD251F593B4C008EBF9A /* Input */,
-				A795B7931F511C37003C7EAD /* Picker */,
-				A795B7801F511201003C7EAD /* UploadImage */,
-				A795B78F1F5117C2003C7EAD /* Cell */,
+				A70ADEA81FC7C31A00ADBBA2 /* List */,
 			);
 			path = SRC;
 			sourceTree = "<group>";
@@ -577,26 +557,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A742543D1FB1AA650047B579 /* SignInViewController.m in Sources */,
-				A74254411FB1AABA0047B579 /* NSDate+LYWCalendar_h.m in Sources */,
 				A721BD2C1F597FC0008EBF9A /* NNValidationView.m in Sources */,
 				A76E10651F2ED9EF00E09AAE /* XCell.m in Sources */,
 				A7085D031F973D4300398477 /* (null) in Sources */,
-				A795B7881F511201003C7EAD /* UploadImageViewController.m in Sources */,
 				A7B3722D1F30AA730087972B /* XMelo.xcdatamodeld in Sources */,
 				A767F0FA1F5560BD00432627 /* YVPickerView.m in Sources */,
 				A7B6AE431F0BCB310078B268 /* XManager.m in Sources */,
+				A70ADEAF1FC7E66500ADBBA2 /* UIButton+Melo.m in Sources */,
 				A721BD2F1F5980EA008EBF9A /* ImageValidationViewController.m in Sources */,
 				A795B7921F5117EF003C7EAD /* XPickerViewController.m in Sources */,
 				A72CD1AE1F0D0567002C90BD /* XConst.m in Sources */,
-				A74254441FB1AB260047B579 /* LYWCollectionViewCell.m in Sources */,
 				A72CD1A71F0D04EE002C90BD /* UILabel+Frame.m in Sources */,
 				A767F0F91F5560BD00432627 /* XImagePicker.m in Sources */,
+				A70ADEA61FC7C2DC00ADBBA2 /* MainTestViewController.m in Sources */,
 				A73C81D11FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.m in Sources */,
 				A795B77A1F4EB91B003C7EAD /* YVAgreementView.m in Sources */,
+				A70ADEAC1FC7CCBB00ADBBA2 /* UIView+Melo.m in Sources */,
 				A70DA5231F564D730059935B /* UIScrollView+SpringHeadView.m in Sources */,
 				A72CD1EC1F10719D002C90BD /* DictModel.m in Sources */,
-				A771A2EA1F5E6A5800035284 /* XUploadCell.m in Sources */,
 				A7A8AB6B1F0BC737001338B0 /* ViewController.m in Sources */,
 				A716C9971FBBEF1F00B38C36 /* UIScreen+SafeArea.m in Sources */,
 				A72CD1A11F0D04EE002C90BD /* NSData+Add.m in Sources */,
@@ -606,13 +584,10 @@
 				A74AACE91F6786AB0053066D /* TableViewAnimationKit.m in Sources */,
 				A72CD1A31F0D04EE002C90BD /* NSString+Check.m in Sources */,
 				A713F8821F17A87200FEA33E /* XListViewController.m in Sources */,
-				A74254471FB1AB570047B579 /* LYWCollectionReusableView.m in Sources */,
 				A721BD281F593E56008EBF9A /* FontViewController.m in Sources */,
 				A713F87F1F17A57300FEA33E /* XBaseTableController.m in Sources */,
-				A795B7871F511201003C7EAD /* UploadImageCell.m in Sources */,
 				A795B7961F511C56003C7EAD /* XInputViewController.m in Sources */,
 				A71D18511F0BAE0700BAE515 /* AppDelegate.m in Sources */,
-				A72CD1AB1F0D04EE002C90BD /* UIView+Add.m in Sources */,
 				A71D184E1F0BAE0700BAE515 /* main.m in Sources */,
 				A7F3B3E31F1A21A500E683D0 /* XStepper.m in Sources */,
 				A713F8791F17A50F00FEA33E /* UIButton+ChangePosition.m in Sources */,

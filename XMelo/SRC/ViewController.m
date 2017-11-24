@@ -7,20 +7,7 @@
 //
 
 #import "ViewController.h"
-
 #import "XListViewController.h"
-#import <CoreText/CoreText.h>
-#import "NNValidationView.h"
-
-#import "SignInViewController.h"
-#import "ThirdSignViewController.h"
-
-#define kColorThemeOrange   kColorHex(0xfb6b2b)
-#define kColorThemeRed      kColorHex(0xfc4c4c)
-#define kColorThemeBlack    kColorHex(0x2a2e36)
-#define kColorThemeGray     kColorHex(0x959595)
-#define kColorThemeBlue     kColorHex(0x2a83fb)
-#define kColorThemeLine     kColorHex(0xeaeaea)
 
 @interface ViewController () 
 
@@ -36,123 +23,114 @@
 	
     self.view.backgroundColor = [UIColor whiteColor];
 	
-	NSArray *aa1 = @[];
-	NSArray *aa2 = @[@"11"];
 	
-	if (aa1.count) {
-		
-		YVLog(@"111  非空");
-	} else {
-		
-		YVLog(@"111 空");
-	}
-	
-	if (aa2.count) {
-		
-		YVLog(@"222  非空");
-	} else {
-		
-		YVLog(@"222 空");
-	}
-	
-	
-	@kTODO("something汉字");
-    NSArray *animations = @[@"move",
-                            @"alpha",
-                            @"fall",
-                            @"shake",
-                            @"over",
-                            @"toTop",
-                            @"spring",
-                            @"shrink",
-                            @"layDonw",
-                            @"rote"];
+    NSArray *animations = @[@"move", @"alpha", @"fall", @"shake", @"over", @"toTop", @"spring", @"shrink", @"layDonw", @"rote"];
    
-    CGFloat theWidth = (kScreenWidth - 40 - 10 * 3)/4;
+	CGFloat width = (kScreenWidth - 20 * 2 - 15 * 4)/5;
     for (int index = 0; index < animations.count; index ++) {
 
         UIButton *theButton 		= [UIButton buttonWithType:UIButtonTypeCustom];
-        theButton.frame 			= CGRectMake(20 + (theWidth + 10) * (index%4), 200 + (35 + 20) * (index/4), theWidth, 35);
+//        theButton.frame 			= CGRectMake(20 + (theWidth + 10) * (index%4), 200 + (35 + 20) * (index/4), theWidth, 35);
         theButton.layer.borderColor = [UIColor redColor].CGColor;
 		theButton.backgroundColor 	= kColorRandom;
 		theButton.titleLabel.font 	= kFontTheme(12);
 		theButton.tag 				= 100 + index;
         [theButton setTitle:animations[index] 			forState:UIControlStateNormal];
         [theButton setTitleColor:[UIColor blackColor] 	forState:UIControlStateNormal];
-		[theButton changeCorner:UIRectCornerTopLeft | UIRectCornerBottomRight cornerRadii:theButton.height/2];
+//		[theButton changeCorner:UIRectCornerTopLeft | UIRectCornerBottomRight cornerRadii:width/2];
         [self.view addSubview:theButton];
-
-		[theButton addBlockWithTouchUpInside:^(UIButton *sender) {
+		
+//		CGFloat theX = 20 + (theWidth + 10) * (index%4);
+//		CGFloat theY = 200 + (35 + 20) * (index/4);
+		
+		CGFloat theWidth = 20 + (width + 15) * (index % 5);
+		CGFloat theHeigh = 200 + (width + 15) * (index / 5);
+		[theButton mas_makeConstraints:^(MASConstraintMaker *make) {
+			
+			make.height.mas_equalTo(width);
+			make.width.mas_equalTo(width);
+			make.left.mas_equalTo(theWidth);
+			make.top.mas_equalTo(theHeigh);
+			
+		}];
+		
+		
+		[theButton addTouchUpInside:^(UIButton *sender) {
 			
 			XListViewController *vcc 	= [[XListViewController alloc]init];
 			vcc.type 					= sender.tag - 100 + 1;
 			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vcc];
-//			self.view.window.rootViewController = nav;
 			[self presentViewController:nav animated:YES completion:nil];
 		}];
     }
+	
+	[self.view addTap:^(UIGestureRecognizer *tap) {
+		
+	}];
+	
+//	[self justTesttt];
 }
 
-//MARK:- private
-- (void)getBeforTodayDate {
+- (void)justTesttt {
 	
-	NSDate *currentDate 	= [NSDate date];
-	NSCalendar *calendar 	= [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-	NSRange range 			= [calendar rangeOfUnit:NSCalendarUnitDay inUnit: NSCalendarUnitMonth forDate:currentDate];
 	
-	NSDateFormatter *format=[[NSDateFormatter alloc] init];
-	[format setDateFormat:@"yyyy-MM"];
-	NSDate *newDate = [NSDate date];//[format dateFromString:dateStr];
-	double interval = 0;
-	NSDate *beginDate = nil;
-	NSDate *endDate = nil;
-	//	NSCalendar *calendar = [NSCalendar currentCalendar];
-	[calendar setFirstWeekday:2];//设定周一为周首日
-	if ([calendar rangeOfUnit:NSCalendarUnitMonth startDate:&beginDate interval:&interval forDate:newDate]) {
+	
+	UIView *bgView = [[UIView alloc]init];
+	bgView.backgroundColor = [UIColor lightGrayColor];
+	[self.view addSubview:bgView];
+	
+	[bgView mas_makeConstraints:^(MASConstraintMaker *make) {
 		
-		endDate = [beginDate dateByAddingTimeInterval:interval-1];
+		make.top.mas_equalTo(kScreenHeight - 400);
+		make.left.mas_equalTo(0);
+		make.right.mas_equalTo(0);
+		make.height.mas_equalTo(350);
+	}];
+	
+	CGFloat width = (kScreenWidth - 20 * 2 - 15 * 4)/5;
+	
+	for (int i = 0; i < 17; i++) {
+		UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
+		
+		UIColor *theColor = kColorRandom;
+		theButton.backgroundColor = [UIColor whiteColor];
+		theButton.layer.cornerRadius = width/2;
+		theButton.layer.borderColor = theColor.CGColor;
+		theButton.layer.borderWidth = 1;
+		[theButton setTitleColor:theColor forState:UIControlStateNormal];
+		[theButton setTitle:[NSString stringWithFormat:@"🔥 %D",i] forState:UIControlStateNormal];
+		theButton.titleLabel.font = kFontTheme(12);
+		theButton.tag = 100 + i;
+		[bgView addSubview:theButton];
+		
+		[theButton addTap:^(UIGestureRecognizer *tap) {
+			
+		}];
+		
+		[theButton addTouchUpInside:^(UIButton *sender) {
+			
+		}];
+		
+		[theButton addTouchUpInside:^(UIButton *sender) {
+			
+			UIButton *button = (UIButton *)sender;
+//			[YVCoreManager showAlertWith:[NSString stringWithFormat:@"click %ld",button.tag - 100] showIn:self];
+		}];
+		
+		CGFloat theWidth = 20 + (width + 15) * (i % 5);
+		CGFloat theHeigh = 20 + (width + 15) * (i / 5);
+		[theButton mas_makeConstraints:^(MASConstraintMaker *make) {
+			
+			make.height.mas_equalTo(width);
+			make.width.mas_equalTo(width);
+			make.left.mas_equalTo(theWidth);
+			make.top.mas_equalTo(theHeigh);
+			
+		}];
 	}
 	
-	for (int index = 0; index < range.length; index ++) {
-		
-		NSDate *theDate 			= [NSDate dateWithTimeInterval:24*60*60*index sinceDate:beginDate];
-		NSTimeInterval timeBetween 	= [currentDate timeIntervalSinceDate:theDate];
-		
-		if (timeBetween < 0) {
-			
-			
-		} else {
-			
-			YVLog(@"out of today %@",theDate);
-		}
-	}
 }
 
-- (void) addAnimation:(UIView *)theView {
-	
-	CABasicAnimation *rotationAnimation;
-	rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.y"];
-	rotationAnimation.toValue = @(M_PI * 1);
-	rotationAnimation.duration = 1;
-	rotationAnimation.cumulative = YES;
-	//	rotationAnimation.repeatCount = 10
-	[theView.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
-	
-	//	theView.userInteractionEnabled = NO;
-	
-	//	CGAffineTransform transform = CGAffineTransformRotate(theView.transform,M_PI);
-	//	[UIView beginAnimations:@"rotate" context:nil ];
-	//	[UIView setAnimationDuration:0.5];
-	//	[UIView setAnimationDelegate:self];
-	//	theView.userInteractionEnabled = NO;
-	//	[theView setTransform:transform];
-	//	[UIView commitAnimations];
-	
-	//	[XManager dispatchAfter:1 completion:^{
-	//
-	//		theView.userInteractionEnabled = YES;
-	//	}];
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

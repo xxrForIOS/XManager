@@ -1,4 +1,8 @@
 platform:ios, '11.0'
+
+source 'https://gitee.com/fmdb/testPersion.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
 target 'XMelo’ do
 
 
@@ -12,7 +16,7 @@ pod 'IQKeyboardManager'
 pod 'ReactiveObjC'
 pod 'JTCalendar'
 pod 'Masonry'
-
+pod 'testPersion'
 #类别 textView添加Placeholder
 pod 'ZWPlaceHolder'
 #类别 统计限制textView输入字符

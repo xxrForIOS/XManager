@@ -86,36 +86,33 @@
                                           decryptSize,
                                           &actualOutSize);
     if (cryptStatus == kCCSuccess) {
-        return [[NSString alloc] initWithData:[NSData dataWithBytesNoCopy:decryptedBytes length:actualOutSize] encoding:NSUTF8StringEncoding];
+        return [[NSString alloc] initWithData:[NSData dataWithBytesNoCopy:decryptedBytes
+																   length:actualOutSize]
+									 encoding:NSUTF8StringEncoding];
     }
     free(decryptedBytes);
     return nil;
 }
 
 
-+ (BOOL) empty:(id)obj {
-
-	if (!obj) {
-		return YES;
-	}
-	if ([obj isKindOfClass:[NSNull class]]){
-		return YES;
-	}
-	if (obj == (NSNull*)[NSNull null]) {
-		return YES;
-	}
-	if (![obj isKindOfClass:[NSString class]]) {
-		return YES;
-	}
-	if ([obj isEqualToString:@"(null)"]) {
-		return YES;
-	}
-	if ([obj isEqualToString:@""]) {
-		return YES;
-	}
-	if ([obj length]==0) {
-		return YES;
-	}
-	return NO;
+- (NSRange)getRangeWithString:(NSString *)str {
+	
+	return [self rangeOfString:str];
 }
+
+
++ (NSString *)randomString:(int)length{
+	
+	NSString * strAll = @"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	NSString * result = [[NSMutableString alloc]initWithCapacity:length];
+	for (int i = 0; i < length; i++) {
+		
+		NSInteger index = arc4random() % (strAll.length-1);
+		char tempStr = [strAll characterAtIndex:index];
+		result = (NSMutableString *)[result stringByAppendingString:[NSString stringWithFormat:@"%c",tempStr]];
+	}
+	return result;
+}
+
+
 @end

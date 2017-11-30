@@ -269,7 +269,7 @@
     [theButton setTitle:str forState:UIControlStateNormal];
     [theButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     theButton.titleLabel.font = kFontTheme(17);
-	[theButton addTouchUpInside:aBlock];
+	[theButton addClick:aBlock];
     vcc.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:theButton];
 }
 

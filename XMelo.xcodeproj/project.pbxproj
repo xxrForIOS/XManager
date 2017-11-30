@@ -28,7 +28,6 @@
 		A72CD1A11F0D04EE002C90BD /* NSData+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD18C1F0D04EE002C90BD /* NSData+Add.m */; };
 		A72CD1A21F0D04EE002C90BD /* NSString+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD18E1F0D04EE002C90BD /* NSString+Add.m */; };
 		A72CD1A31F0D04EE002C90BD /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1901F0D04EE002C90BD /* NSString+Check.m */; };
-		A72CD1A61F0D04EE002C90BD /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1961F0D04EE002C90BD /* UIImage+Scale.m */; };
 		A72CD1A71F0D04EE002C90BD /* UILabel+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1981F0D04EE002C90BD /* UILabel+Frame.m */; };
 		A72CD1AE1F0D0567002C90BD /* XConst.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1AD1F0D0567002C90BD /* XConst.m */; };
 		A72CD1EC1F10719D002C90BD /* DictModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1EB1F10719D002C90BD /* DictModel.m */; };
@@ -88,8 +87,6 @@
 		A72CD18E1F0D04EE002C90BD /* NSString+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Add.m"; sourceTree = "<group>"; };
 		A72CD18F1F0D04EE002C90BD /* NSString+Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Check.h"; sourceTree = "<group>"; };
 		A72CD1901F0D04EE002C90BD /* NSString+Check.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Check.m"; sourceTree = "<group>"; };
-		A72CD1951F0D04EE002C90BD /* UIImage+Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scale.h"; sourceTree = "<group>"; };
-		A72CD1961F0D04EE002C90BD /* UIImage+Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scale.m"; sourceTree = "<group>"; };
 		A72CD1971F0D04EE002C90BD /* UILabel+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Frame.h"; sourceTree = "<group>"; };
 		A72CD1981F0D04EE002C90BD /* UILabel+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Frame.m"; sourceTree = "<group>"; };
 		A72CD1AC1F0D0567002C90BD /* XConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XConst.h; sourceTree = "<group>"; };
@@ -202,8 +199,6 @@
 			children = (
 				A70ADEAA1FC7CCBB00ADBBA2 /* UIView+Melo.h */,
 				A70ADEAB1FC7CCBB00ADBBA2 /* UIView+Melo.m */,
-				A72CD1951F0D04EE002C90BD /* UIImage+Scale.h */,
-				A72CD1961F0D04EE002C90BD /* UIImage+Scale.m */,
 				A72CD1971F0D04EE002C90BD /* UILabel+Frame.h */,
 				A72CD1981F0D04EE002C90BD /* UILabel+Frame.m */,
 			);
@@ -408,9 +403,17 @@
 			path = SRC;
 			sourceTree = "<group>";
 		};
+		A7B4DCF41FD022B300552157 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
 		A7B6AE441F0BCC790078B268 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				A7B4DCF41FD022B300552157 /* NSString */,
 				A713F87A1F17A51E00FEA33E /* Control */,
 				A713F87B1F17A52A00FEA33E /* Object */,
 				A713F87C1F17A53500FEA33E /* View */,
@@ -580,7 +583,6 @@
 				A72CD1A11F0D04EE002C90BD /* NSData+Add.m in Sources */,
 				A742544A1FB1B7580047B579 /* ThirdSignViewController.m in Sources */,
 				A72CD1A21F0D04EE002C90BD /* NSString+Add.m in Sources */,
-				A72CD1A61F0D04EE002C90BD /* UIImage+Scale.m in Sources */,
 				A74AACE91F6786AB0053066D /* TableViewAnimationKit.m in Sources */,
 				A72CD1A31F0D04EE002C90BD /* NSString+Check.m in Sources */,
 				A713F8821F17A87200FEA33E /* XListViewController.m in Sources */,

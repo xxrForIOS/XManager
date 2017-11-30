@@ -25,7 +25,6 @@
 #import "UIButton+Melo.h"
 #import "UIButton+ChangePosition.h"
 #import "UILabel+Frame.h"
-#import "UIImage+Scale.h"
 #import "NSString+Add.h"
 #import "NSString+Check.h"
 #import "NSData+Add.h"

@@ -11,28 +11,19 @@
 
 @interface NSString (Add)
 
-
-/**
- 转化data
-
- @return 转化后的data对象
- */
+///转化data
 -(NSData *)toData;
 
-/**
- aes加密
-
- @return 加密字符串
- */
+///aes加密
 - (NSString *)toAESEncrypt;
 
-
-/**
- aes解密
-
- @return 加密字符串
- */
+///aes解密
 - (NSString *)toAESDecrypt;
 
-+ (BOOL) empty:(id)obj;
+
+///获取指定字符串处于自身位置
+- (NSRange)getRangeWithString:(NSString *)str;
+
+///获取指定长度随机字符串
++ (NSString *)randomString:(int)length;
 @end

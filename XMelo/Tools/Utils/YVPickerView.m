@@ -78,7 +78,7 @@ static char     yvPickerViewKey;
     theButton.titleLabel.font = kFontTheme(15);
     theButton.backgroundColor = kColorRGB(240, 240, 240,1);
     [toolBar addSubview:theButton];
-	[theButton addTouchUpInside:^(UIButton *sender) {
+	[theButton addClick:^(UIButton *sender) {
 
 		[theView removeFromSuperview];
 		if (!theSelf.isChoose) {
@@ -87,7 +87,7 @@ static char     yvPickerViewKey;
 		}
 	}];
 
-	[theButton addTouchUpInside:^(UIButton *sender) {
+	[theButton addClick:^(UIButton *sender) {
 
 		[theView removeFromSuperview];
 		if (!theSelf.isChoose) {

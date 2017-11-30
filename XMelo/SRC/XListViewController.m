@@ -67,6 +67,8 @@
 		self.tableView.hidden = NO;
 		[TableViewAnimationKit cellAnimationWithTableView:self.tableView animationType:self.type];
 	}];
+	
+	[self configBottomTool];
 }
 
 - (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -83,6 +85,75 @@
 
 	UISwipeActionsConfiguration *favourRowConfiguration = [UISwipeActionsConfiguration configurationWithActions:@[favourRowAction]];
 	return favourRowConfiguration;
+}
+
+//评论按钮
+- (void)configBottomTool {
+	
+	@kWeakSelf;
+	[self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+		
+		make.edges.equalTo(selfWeak.view).insets(UIEdgeInsetsMake(0.0f, 0.0f, selectConstraint(85.0f, 55.0f), 0.0f));
+	}];
+	
+	UIButton *commentButton = ({
+		
+		UIButton *button            = [UIButton buttonWithType:UIButtonTypeCustom];
+		button.backgroundColor 		= [UIColor whiteColor];
+//		button.titleLabel.font 		= kFont15;
+		[button setTitle:@"评论" 						forState:UIControlStateNormal];
+		[button setImage:kImageName(@"sd_comment_s") 	forState:UIControlStateNormal];
+		[button setTitleColor:kColorHex(0x999999) 		forState:UIControlStateNormal];
+		[button changePosition:XRButtonDrawStyleLeft space:10];
+		[self.view addSubview:button];
+		
+		button;
+	});
+	
+	UIButton *toTopButton = ({
+		
+		UIButton *button            = [UIButton buttonWithType:UIButtonTypeCustom];
+		button.layer.cornerRadius 	= 29/2;
+		button.layer.masksToBounds 	= YES;
+		[button setImage:kImageName(@"sd_top") 	forState:UIControlStateNormal];
+		[self.view addSubview:button];
+		button;
+	});
+	
+	UIButton *rewardButton = ({
+		
+		UIButton *button            = [UIButton buttonWithType:UIButtonTypeCustom];
+		button.layer.cornerRadius 	= 29/2;
+		button.layer.masksToBounds 	= YES;
+		[button setImage:kImageName(@"sd_reward") 	forState:UIControlStateNormal];
+		[self.view addSubview:button];
+		button;
+	});
+	
+
+	
+	[commentButton mas_makeConstraints:^(MASConstraintMaker *make) {
+		
+		make.centerX.equalTo(selfWeak.view);
+		make.bottom.equalTo(selfWeak.view).offset(kIphoneXDevice ? -30.0f : 0);
+		make.size.mas_equalTo(CGSizeMake(kScreenWidth, 50));
+	}];
+	
+	[toTopButton mas_makeConstraints:^(MASConstraintMaker *make) {
+		
+		make.right.offset(-12);
+		make.height.width.offset(29.0f);
+		
+//		make.size.mas_equalTo(CGSizeMake(29.0f, 29.0f));
+		make.bottom.equalTo(commentButton.mas_top).with.offset(-46);
+	}];
+	
+	[rewardButton mas_makeConstraints:^(MASConstraintMaker *make) {
+		
+		make.right.equalTo(toTopButton);
+		make.size.equalTo(toTopButton);
+		make.bottom.equalTo(toTopButton.mas_top).with.offset(-27);
+	}];
 }
 
 - (void)didReceiveMemoryWarning {

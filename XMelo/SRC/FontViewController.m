@@ -77,7 +77,7 @@
 	[self.view addSubview:button];
 	
 	@kWeakSelf;
-	[button addTouchUpInside:^(UIButton * _Nullable button) {
+	[button addClick:^(UIButton * _Nullable button) {
 		
 		//		kPush(selfWeak, [[YVSDCommentPublishVC alloc]init]);
 	}];

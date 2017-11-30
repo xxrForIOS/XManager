@@ -18,10 +18,49 @@
 
 
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
     self.view.backgroundColor = [UIColor whiteColor];
+	
+
+	UILabel *theLabel 	= [[UILabel alloc]init];
+	theLabel.text 		= @"xjibaljxjibaljibaluanxuanxrixjibaljibaluanxuanxrixjibaljibaluanxuanxriibaluanxuanxri";
+	theLabel.font 		= kFontTheme(14);
+	theLabel.textColor 	= [UIColor blackColor];
+	theLabel.backgroundColor 	= [UIColor cyanColor];
+	theLabel.numberOfLines 		= 0;
+	[self.view addSubview:theLabel];
+	
+	[theLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+		
+		make.left.offset(20);
+		make.top.offset(500);
+		make.right.offset(-20);
+
+		make.width.lessThanOrEqualTo(theLabel.superview);
+	}];
+	
+	@kWeakObj(theLabel);
+	[theLabel addTap:^(UIGestureRecognizer *tap) {
+
+		NSString *str = [NSString randomString:(arc4random()%1000)];
+		YVLog(@"  %@",str);
+//		theLabelWeak.text = str;
+		UILabel *label = (UILabel *)tap.view;
+//		label.text = str;
+		((UILabel *)tap.view).text = str;
+	}];
+	
+//	[theLabel changeSize:XRLabelChangeTypeWidth maxValue:kScreenWidth - 40 marginSpace:10];
+//	[theLabel changeSize:XRLabelChangeTypeHeight marginSpace:0];
+//	[theLabel resizeWithType:XRLabelSizeTypeWidth marginSpace:0];
+	
+//	[theLabel reSetSizeWithType:XRLabelSizeTypeHeight marginSpace:200];
+	[theLabel reSetValueWithType:XRLabelValueTypeColor value:[UIColor redColor] range:[theLabel getRangeOf:@"ji"]];
+	
+	[theLabel reSetValueWithType:XRLabelValueTypeFont value:kFontTheme(20) range:[theLabel getRangeOf:@"a"]];
 	
 	
     NSArray *animations = @[@"move", @"alpha", @"fall", @"shake", @"over", @"toTop", @"spring", @"shrink", @"layDonw", @"rote"];
@@ -55,7 +94,7 @@
 		}];
 		
 		
-		[theButton addTouchUpInside:^(UIButton *sender) {
+		[theButton addClick:^(UIButton *sender) {
 			
 			XListViewController *vcc 	= [[XListViewController alloc]init];
 			vcc.type 					= sender.tag - 100 + 1;
@@ -107,11 +146,19 @@
 			
 		}];
 		
-		[theButton addTouchUpInside:^(UIButton *sender) {
+		[theButton addClick:^(UIButton *sender) {
+			
 			
 		}];
 		
-		[theButton addTouchUpInside:^(UIButton *sender) {
+		[theButton addClick:^(UIButton *sender) {
+			
+			
+		}];
+		
+		
+		
+		[theButton addClick:^(UIButton *sender) {
 			
 			UIButton *button = (UIButton *)sender;
 //			[YVCoreManager showAlertWith:[NSString stringWithFormat:@"click %ld",button.tag - 100] showIn:self];
@@ -128,6 +175,11 @@
 			
 		}];
 	}
+	
+}
+
+- (void)DOSOMETHING:(NSString *)str {
+	
 	
 }
 

@@ -12,27 +12,26 @@
     
 
 
-///字符串是否为空
-- (BOOL)isEmptyString;
+///判断非空
++ (BOOL)isEmpty:(id)obj;
 
 ///字符串是否纯整数字符
-- (BOOL)isIntegerString;
+- (BOOL)isInteger;
 
 ///是否为纯数字 带小数点
-- (BOOL)isNunmberString;
+- (BOOL)isNunmber;
 
 ///字符串是否为汉字
--(BOOL)isChineseStr;
+-(BOOL)isChinese;
 
 ///字符串是否为银行卡号
-- (BOOL)isValidBankCardNumberString;
+- (BOOL)isBankCardNumber;
 
 ///字符串是否为手机号码
-- (BOOL)isValidPhoneNumberString;
+- (BOOL)isPhoneNumber;
 
 ///字符串是否为身份证号码
-- (BOOL)isValidIDCardNumberString;
-
+- (BOOL)isIDCardNumber;
 
 ///不区分大小写对比
 - (BOOL)isSameCompareNoCaseWith:(NSString *)string;

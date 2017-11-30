@@ -12,8 +12,9 @@
 
 
 //集成rac点击block
-- (void)addTouchUpInside:(void(^)(UIButton *sender))nextBlock {
+- (void)addClick:(void(^)(UIButton *sender))clickBlock {
 	
-	[[self rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:nextBlock];
+	[[self rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:clickBlock];
 }
+
 @end

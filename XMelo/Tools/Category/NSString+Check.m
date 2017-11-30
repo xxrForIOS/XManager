@@ -12,37 +12,47 @@
 
 
 #pragma mark- 字符串为空判断
-- (BOOL)isEmptyString{
-    if (self == nil || self == NULL) return YES;
-    if ([self isKindOfClass:[NSNull class]]) return YES;
-    if ([[self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0) return YES;
-    return NO;
++ (BOOL)isEmpty:(id)obj {
+	
+	if (!obj) 	return YES;
+	if ([obj isKindOfClass:[NSNull class]]) 	return YES;
+	if (obj == (NSNull*)[NSNull null]) 	return YES;
+	if (![obj isKindOfClass:[NSString class]]) 	return YES;
+	if ([obj isEqualToString:@"(null)"]) 	return YES;
+	if ([obj isEqualToString:@""]) 	return YES;
+	if ([obj length]==0) 	return YES;
+	return NO;
 }
 
 #pragma mark- 字符串是否为数字
-- (BOOL)isIntegerString{
+- (BOOL)isInteger {
+	
     if([self stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]].length > 0){
-        return NO;
+		
+		return NO;
     }
     return YES;
 }
 
-- (BOOL)isNunmberString {
-    NSCharacterSet *cs;
-    cs = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789.\n"] invertedSet];
+- (BOOL)isNunmber {
+	
+    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789.\n"] invertedSet];
     NSString *filtered = [[self componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
     BOOL basicTest = [self isEqualToString:filtered];
-
     return basicTest;
 }
 
--(BOOL)isChineseStr {
+-(BOOL)isChinese {
+	
     BOOL isFullChinese = NO;
     for (int index = 0; index < [self length]; index ++) {
+		
         int a = [self characterAtIndex:index];
         if( a > 0x4e00 && a < 0x9fff) {
+			
             isFullChinese = YES;
         }else{
+			
             isFullChinese = NO;
         }
     }
@@ -58,10 +68,11 @@
  *  2，将奇位乘积的个十位全部相加，再加上所有偶数位上的数字
  *  3，将加法和加上校验位能被 10 整除。
  */
-- (BOOL)isValidBankCardNumberString{
+- (BOOL)isBankCardNumber {
     
     if (self.longLongValue == 0) {
-        return NO;
+		
+		return NO;
     }
     
     int oddsum = 0;     //奇数求和
@@ -72,24 +83,34 @@
     
     NSString *cNo = [self substringToIndex:cardNoLength - 1];
     for (int i = cardNoLength -1 ; i>=1;i--) {
+		
         NSString *tmpString = [cNo substringWithRange:NSMakeRange(i-1, 1)];
         int tmpVal = [tmpString intValue];
         if (cardNoLength % 2 ==1 ) {
+			
             if((i % 2) == 0){
+				
                 tmpVal *= 2;
-                if(tmpVal>=10)
-                    tmpVal -= 9;
+				if(tmpVal>=10) {
+					
+					tmpVal -= 9;
+				}
                 evensum += tmpVal;
             }else{
+				
                 oddsum += tmpVal;
             }
         }else{
             if((i % 2) == 1){
+				
                 tmpVal *= 2;
-                if(tmpVal>=10)
-                    tmpVal -= 9;
+				if(tmpVal>=10) {
+					
+					tmpVal -= 9;
+				}
                 evensum += tmpVal;
             }else{
+				
                 oddsum += tmpVal;
             }
         }
@@ -98,8 +119,10 @@
     allsum = oddsum + evensum;
     allsum += lastNum;
     if((allsum % 10) == 0) {
+		
         return YES;
     } else {
+		
         return NO;
     }
 }
@@ -169,7 +192,13 @@
 }
 
 #pragma mark- 手机号码验证
-- (BOOL)isValidPhoneNumberString{
+- (BOOL)isPhoneNumber{
+	
+	if ([NSString isEmpty:self]) {
+		
+		return NO;
+	}
+	
     NSString * MOBILE = @"^1(3[0-9]|5[0-35-9]|8[025-9])\\d{8}$";//整体
     NSString * CM = @"^1(34[0-8]|(3[5-9]|5[017-9]|8[278])\\d)\\d{7}$";//移动
     NSString * CU = @"^1(3[0-2]|5[256]|8[56])\\d{8}$";//联通
@@ -191,9 +220,14 @@
 }
 
 #pragma mark- 身份号码验证
-- (BOOL)isValidIDCardNumberString{
-    if (self.length != 18) return  NO;
-    NSArray *codeArray = @[@"7",@"9",@"10",@"5",@"8",@"4",@"2",@"1",@"6",@"3",@"7",@"9",@"10",@"5",@"8",@"4",@"2"];
+- (BOOL)isIDCardNumber{
+	
+	if (self.length != 18) {
+		
+		return  NO;
+	}
+	
+	NSArray *codeArray = @[@"7",@"9",@"10",@"5",@"8",@"4",@"2",@"1",@"6",@"3",@"7",@"9",@"10",@"5",@"8",@"4",@"2"];
     NSArray *arr1 = @[@"1",@"0",@"X",@"9",@"8",@"7",@"6",@"5",@"4",@"3",@"2"];
     NSArray *arr2 = @[@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10"];
     NSDictionary *checkCodeDic = [NSDictionary dictionaryWithObjects:arr1 forKeys:arr2];
@@ -204,6 +238,7 @@
     if (!isNum) return NO;
     int sumValue = 0;
     for (int i = 0; i < 17; i++) {
+		
         NSString *str1 = [self substringWithRange:NSMakeRange(i,1)];
         NSString *str2 = [codeArray objectAtIndex:i];
         sumValue += [str1 intValue] * [str2 intValue];

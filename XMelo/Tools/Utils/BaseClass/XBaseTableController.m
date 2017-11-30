@@ -98,7 +98,7 @@
         leftButton.backgroundColor = [UIColor redColor];
         [leftButton setTitle:title forState:UIControlStateNormal];
         [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-		[leftButton addTouchUpInside:aBlock];
+		[leftButton addClick:aBlock];
         [bgView addSubview:leftButton];
         bgView;
     });
@@ -121,7 +121,7 @@
         leftButton.backgroundColor = [UIColor orangeColor];
         [leftButton setTitle:lTitle forState:UIControlStateNormal];
         [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-		[leftButton addTouchUpInside:lBlock];
+		[leftButton addClick:lBlock];
 
         UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
         rightButton.frame = CGRectMake(15 + width + 10, 25, width * 2, 45);
@@ -130,7 +130,7 @@
         rightButton.backgroundColor = kColorRGB(13, 192, 241,1);
         [rightButton setTitle:rTitle forState:UIControlStateNormal];
         [rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-		[rightButton addTouchUpInside:rBlock];
+		[rightButton addClick:rBlock];
 
         [bgView addSubview:leftButton];
         [bgView addSubview:rightButton];

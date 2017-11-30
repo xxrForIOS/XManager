@@ -24,9 +24,9 @@
         return nil;
     }
     
-    self.textColor = [UIColor blueColor];
-    self.font = [UIFont systemFontOfSize:14];
-    self.textAlignment = NSTextAlignmentCenter;
+    self.textColor 		= [UIColor blueColor];
+    self.font 			= [UIFont systemFontOfSize:14];
+    self.textAlignment 	= NSTextAlignmentCenter;
     
     
     
@@ -70,8 +70,8 @@
 
 - (void)clickForPlusInptValue:(UIButton *)sender {
     
-    if (![self.text isNunmberString] )      return;
-    
+    if (![self.text isNunmber] )      return;
+	
     if (self.text.intValue + 1 > 0) {
         
         self.leftButton.alpha = 1;
@@ -85,7 +85,7 @@
 - (void)clickForMinusInptValue:(UIButton *)sender {
     
     
-    if (![self.text isNunmberString] )  return;
+    if (![self.text isNunmber] )  return;
     
     
     self.text =  kStringFormat(@"%d",self.text.intValue - 1);

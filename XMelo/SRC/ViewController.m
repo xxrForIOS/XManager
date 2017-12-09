@@ -24,9 +24,18 @@
 	
     self.view.backgroundColor = [UIColor whiteColor];
 	
-
+	UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	theButton.frame = CGRectMake(100, 40, 100, 100);
+	theButton.backgroundColor = [UIColor redColor];
+	[theButton addClick:^(UIButton *sender) {
+		
+		YVLog(@"xxx getclick");
+	}];
+	theButton.clickScope 			= UIEdgeInsetsMake(-20, 0, -20, 0);
+	[self.view addSubview:theButton];
+	
 	UILabel *theLabel 	= [[UILabel alloc]init];
-	theLabel.text 		= @"xjibaljxjibaljibaluanxuanxrixjibaljibaluanxuanxrixjibaljibaluanxuanxriibaluanxuanxri";
+	theLabel.text 		= @"xjibaljxjibaljibalbaljibaluanxuanxriibaluanxuanxri";
 	theLabel.font 		= kFontTheme(14);
 	theLabel.textColor 	= [UIColor blackColor];
 	theLabel.backgroundColor 	= [UIColor cyanColor];
@@ -38,14 +47,13 @@
 		make.left.offset(20);
 		make.top.offset(500);
 		make.right.offset(-20);
-
-		make.width.lessThanOrEqualTo(theLabel.superview);
+//		make.width.lessThanOrEqualTo(theLabel.superview);
 	}];
 	
 	@kWeakObj(theLabel);
 	[theLabel addTap:^(UIGestureRecognizer *tap) {
 
-		NSString *str = [NSString randomString:(arc4random()%1000)];
+		NSString *str = [NSString randomString:(arc4random()%10 + 1)];
 		YVLog(@"  %@",str);
 //		theLabelWeak.text = str;
 		UILabel *label = (UILabel *)tap.view;
@@ -151,12 +159,6 @@
 			
 		}];
 		
-		[theButton addClick:^(UIButton *sender) {
-			
-			
-		}];
-		
-		
 		
 		[theButton addClick:^(UIButton *sender) {
 			
@@ -175,10 +177,24 @@
 			
 		}];
 	}
-	
+
+	[self DOSOMETHING:^(BOOL successed, BOOL isAlright) {
+		
+	}];
 }
 
-- (void)DOSOMETHING:(NSString *)str {
++ (NSString *)getPayType:(YVServerPayType)type {
+	
+	if (type < 10) {
+		
+		return kStringFormat(@"0%lu",(unsigned long)type);
+	} else {
+		
+		return kStringFormat(@"%lu",(unsigned long)type);
+	}
+}
+
+- (void)DOSOMETHING:(YVHttpBlockBool)str {
 	
 	
 }

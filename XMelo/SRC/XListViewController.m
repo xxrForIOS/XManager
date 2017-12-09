@@ -28,7 +28,7 @@
 
 	self.navigationItem.title 		= @"XMelo";
     self.tableView.rowHeight 		= 50;
-    self.tableView.separatorStyle 	= UITableViewCellSeparatorStyleNone;
+//    self.tableView.separatorStyle 	= UITableViewCellSeparatorStyleNone;
 	self.controllers 				= @[@"UploadImageViewController",
 										@"XPickerViewController",
 										@"XInputViewController",
@@ -43,10 +43,23 @@
     };
     
     self.creatCellView = ^(UITableViewCell *cell, NSIndexPath *indexPath) {
-        
-        cell.textLabel.font = kFontTheme(15);
-        cell.textLabel.text = selfWeak.controllers[indexPath.row];
-        cell.accessoryType 	= UITableViewCellAccessoryDisclosureIndicator;
+		
+		UILabel *theLabel = [[UILabel alloc]init];
+		theLabel.text = selfWeak.controllers[indexPath.row];
+		theLabel.font = kFontTheme(12);
+		cell.backgroundColor = kColorRandom;
+		[cell.contentView addSubview:theLabel];
+		
+		[theLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+			
+			make.right.offset(-20);
+			make.centerY.offset(0);
+			make.height.offset(10);
+		}];
+		
+//        cell.textLabel.font = kFontTheme(15);
+//        cell.textLabel.text = selfWeak.controllers[indexPath.row];
+//        cell.accessoryType 	= UITableViewCellAccessoryDisclosureIndicator;
     };
     
     self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
@@ -69,6 +82,33 @@
 	}];
 	
 	[self configBottomTool];
+}
+
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//	return indexPath.row % 2 == 0;
+//}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+	
+	return UITableViewCellEditingStyleDelete;
+}
+
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	@kWeakSelf;
+	UITableViewRowAction *deleteRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"取消关注" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+		
+		[XManager alertControllerWithTitle:@"提示" message:@"取消关注" confirmButton:@"确定" cancelButton:@"取消" confirmBlock:^{
+			
+//			[selfWeak.datas removeObjectAtIndex:indexPath.row];
+//			[tableView beginUpdates];
+//			[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//			[tableView endUpdates];
+		} cancelBlock:nil];
+	}];
+	
+	return @[deleteRowAction];
 }
 
 - (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {

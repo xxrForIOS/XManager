@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D2E3AD54991FEADC460F53CD9AD950B8'
+               BlueprintIdentifier = 'F7A5EE213567F3C2F67B17DD9A1560D8'
                BlueprintName = 'ZWPlaceHolder'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libZWPlaceHolder.a'>

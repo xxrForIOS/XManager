@@ -14,6 +14,8 @@
 //DEPRECATED_MSG_ATTRIBUTE("替换")
 //__attribute__((deprecated("用addClick:替换")))
 
+@property(nonatomic, assign) UIEdgeInsets clickScope;
+
 ///rac添加点击block
 - (void)addClick:(void(^)(UIButton *sender))clickBlock;
 @end

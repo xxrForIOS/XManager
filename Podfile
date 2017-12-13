@@ -4,7 +4,7 @@ target 'XMelo’ do
 
 pod 'Masonry'
 pod 'ReactiveObjC'
-
+pod 'AFNetworking'
 pod 'MBProgressHUD'
 pod 'SDWebImage'
 pod 'MJRefresh'
@@ -12,7 +12,7 @@ pod 'MJExtension'
 pod 'DZNEmptyDataSet'
 pod 'IQKeyboardManager'
 pod 'JTCalendar'
-pod 'XRTools'
+#pod 'XRTools'
 #pod 'MWPhotoBrowserHelper'
 
 #类别 textView添加Placeholder

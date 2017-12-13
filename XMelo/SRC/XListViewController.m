@@ -22,6 +22,36 @@
 
 @implementation XListViewController
 
+- (void)shakeAnimationForView:(UIView *) view {
+	
+	CALayer *viewLayer = view.layer;
+	CGPoint position = viewLayer.position;
+	CGPoint x = CGPointMake(position.x + 5, position.y);
+	CGPoint y = CGPointMake(position.x - 5, position.y);
+	CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
+	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault]];
+	[animation setFromValue:[NSValue valueWithCGPoint:x]];
+	[animation setToValue:[NSValue valueWithCGPoint:y]];
+	[animation setAutoreverses:YES];
+	[animation setDuration:0.075];
+	[animation setRepeatCount:3];
+	[viewLayer addAnimation:animation forKey:nil];
+}
+
+- (void)shake:(UIView *)view {
+	
+	CABasicAnimation *shake = [CABasicAnimation animationWithKeyPath:@"transform"];
+	shake.duration = 0.13;
+	shake.autoreverses = YES;
+	shake.repeatCount = MAXFLOAT;
+	shake.removedOnCompletion = NO;
+	CGFloat rotation = 0.03;
+	shake.fromValue = [NSValue valueWithCATransform3D:CATransform3DRotate(view.layer.transform,-rotation, 0.0 ,0.0 ,1.0)];
+	shake.toValue = [NSValue valueWithCATransform3D:CATransform3DRotate(view.layer.transform, rotation, 0.0 ,0.0 ,1.0)];
+	
+	[view.layer addAnimation:shake forKey:@"shakeAnimation"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -47,6 +77,7 @@
 		UILabel *theLabel = [[UILabel alloc]init];
 		theLabel.text = selfWeak.controllers[indexPath.row];
 		theLabel.font = kFontTheme(12);
+		theLabel.backgroundColor = [UIColor whiteColor];
 		cell.backgroundColor = kColorRandom;
 		[cell.contentView addSubview:theLabel];
 		
@@ -56,16 +87,18 @@
 			make.centerY.offset(0);
 			make.height.offset(10);
 		}];
-		
-//        cell.textLabel.font = kFontTheme(15);
-//        cell.textLabel.text = selfWeak.controllers[indexPath.row];
-//        cell.accessoryType 	= UITableViewCellAccessoryDisclosureIndicator;
     };
     
     self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
 
-		Class cls = NSClassFromString(selfWeak.controllers[indexPath.row]);
-		kPush(selfWeak, [[cls alloc] init]);
+		if (indexPath.row % 2 == 0) {
+			
+			UITableViewCell *cell = [selfWeak.tableView cellForRowAtIndexPath:indexPath];
+			
+			[selfWeak shake:cell];
+		}
+//		Class cls = NSClassFromString(selfWeak.controllers[indexPath.row]);
+//		kPush(selfWeak, [[cls alloc] init]);
     };
 
 	[XManager addRightBarItemInViewController:self itemTitle:@"dismiss" andItemBlock:^(UIButton *aButton) {
@@ -96,7 +129,6 @@
 
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	@kWeakSelf;
 	UITableViewRowAction *deleteRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"取消关注" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
 		
 		[XManager alertControllerWithTitle:@"提示" message:@"取消关注" confirmButton:@"确定" cancelButton:@"取消" confirmBlock:^{

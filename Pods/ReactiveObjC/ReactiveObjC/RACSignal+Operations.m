@@ -331,7 +331,7 @@ static RACDisposable *subscribeForever (RACSignal *signal, void (^next)(id), voi
 		RACSerialDisposable *timerDisposable = [[RACSerialDisposable alloc] init];
 		NSMutableArray *values = [NSMutableArray array];
 
-		void (^flushValues)(void) = ^{
+		void (^flushValues)() = ^{
 			@synchronized (values) {
 				[timerDisposable.disposable dispose];
 
@@ -456,7 +456,7 @@ static RACDisposable *subscribeForever (RACSignal *signal, void (^next)(id), voi
 	}] setNameWithFormat:@"+combineLatest: %@", signals];
 }
 
-+ (RACSignal *)combineLatest:(id<NSFastEnumeration>)signals reduce:(id (^)(void))reduceBlock {
++ (RACSignal *)combineLatest:(id<NSFastEnumeration>)signals reduce:(id (^)())reduceBlock {
 	NSCParameterAssert(reduceBlock != nil);
 
 	RACSignal *result = [self combineLatest:signals];

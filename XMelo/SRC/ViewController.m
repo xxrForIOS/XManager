@@ -8,15 +8,22 @@
 
 #import "ViewController.h"
 #import "XListViewController.h"
+#import "XRHttpHelper.h"
+#import "XRLayout.h"
+#import "XRCCell.h"
 
-@interface ViewController () 
+@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+{
+	CGFloat          startX;
+	CGFloat          endX;
+	NSInteger        currentIndex;
+}
 
-
+@property (nonatomic, strong) UICollectionView 	*collectionView;
+@property (nonatomic, strong) NSArray 			*images;
 @end
 
 @implementation ViewController
-
-
 
 
 - (void)viewDidLoad {
@@ -24,74 +31,116 @@
 	
     self.view.backgroundColor = [UIColor whiteColor];
 	
-	UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	theButton.frame = CGRectMake(100, 40, 100, 100);
-	theButton.backgroundColor = [UIColor redColor];
-	[theButton addClick:^(UIButton *sender) {
-		
-		YVLog(@"xxx getclick");
-	}];
-	theButton.clickScope 			= UIEdgeInsetsMake(-20, 0, -20, 0);
-	[self.view addSubview:theButton];
-	
-	UILabel *theLabel 	= [[UILabel alloc]init];
-	theLabel.text 		= @"xjibaljxjibaljibalbaljibaluanxuanxriibaluanxuanxri";
-	theLabel.font 		= kFontTheme(14);
-	theLabel.textColor 	= [UIColor blackColor];
-	theLabel.backgroundColor 	= [UIColor cyanColor];
-	theLabel.numberOfLines 		= 0;
-	[self.view addSubview:theLabel];
-	
-	[theLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-		
-		make.left.offset(20);
-		make.top.offset(500);
-		make.right.offset(-20);
-//		make.width.lessThanOrEqualTo(theLabel.superview);
-	}];
-	
-	@kWeakObj(theLabel);
-	[theLabel addTap:^(UIGestureRecognizer *tap) {
+	self.images = @[@"wish_top"];
+	[self collection];
+	[self justTesttt];
+}
 
-		NSString *str = [NSString randomString:(arc4random()%10 + 1)];
-		YVLog(@"  %@",str);
-//		theLabelWeak.text = str;
-		UILabel *label = (UILabel *)tap.view;
-//		label.text = str;
-		((UILabel *)tap.view).text = str;
-	}];
+- (void)collection {
 	
-//	[theLabel changeSize:XRLabelChangeTypeWidth maxValue:kScreenWidth - 40 marginSpace:10];
-//	[theLabel changeSize:XRLabelChangeTypeHeight marginSpace:0];
-//	[theLabel resizeWithType:XRLabelSizeTypeWidth marginSpace:0];
+	CGRect frame = CGRectMake(0, 64, kScreenWidth, 150);
+	self.collectionView = [[UICollectionView alloc]initWithFrame:frame collectionViewLayout:[[XRLayout alloc]init]];
+	self.collectionView.delegate = self;
+	self.collectionView.dataSource = self;
+	self.collectionView.showsHorizontalScrollIndicator = NO;
+	[self.collectionView registerClass:[XRCCell class] forCellWithReuseIdentifier:@"cell"];
+	[self.view addSubview:self.collectionView];
+}
+
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
 	
-//	[theLabel reSetSizeWithType:XRLabelSizeTypeHeight marginSpace:200];
-	[theLabel reSetValueWithType:XRLabelValueTypeColor value:[UIColor redColor] range:[theLabel getRangeOf:@"ji"]];
+	return 1;
+}
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 	
-	[theLabel reSetValueWithType:XRLabelValueTypeFont value:kFontTheme(20) range:[theLabel getRangeOf:@"a"]];
+	return self.images.count;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 	
+	XRCCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+	cell.imageIV.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",self.images[indexPath.row]]];
+//	cell.imageIV.image = kImageName(@"%ld",(long)indexPath.row + 1);
+	return cell;
+}
+
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
 	
-    NSArray *animations = @[@"move", @"alpha", @"fall", @"shake", @"over", @"toTop", @"spring", @"shrink", @"layDonw", @"rote"];
-   
+	startX = scrollView.contentOffset.x;
+}
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+	endX = scrollView.contentOffset.x;
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[self cellToCenter];
+	});
+}
+-(void)cellToCenter{
+	//最小滚动距离
+	float  dragMinDistance = self.collectionView.bounds.size.width/20.0f;
+	if (startX - endX >= dragMinDistance) {
+		currentIndex -= 1; //向右
+	}else if (endX - startX >= dragMinDistance){
+		currentIndex += 1 ;//向左
+	}
+	NSInteger maxIndex  = [self.collectionView numberOfItemsInSection:0] - 1;
+	currentIndex = currentIndex <= 0 ? 0 :currentIndex;
+	currentIndex = currentIndex >= maxIndex ? maxIndex : currentIndex;
+
+	[self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:currentIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- (void)justTesttt {
+	
+	NSArray *animations = @[@"move", @"alpha", @"fall", @"shake", @"over", @"toTop", @"spring", @"shrink", @"layDonw", @"rote"];
+	
 	CGFloat width = (kScreenWidth - 20 * 2 - 15 * 4)/5;
-    for (int index = 0; index < animations.count; index ++) {
-
-        UIButton *theButton 		= [UIButton buttonWithType:UIButtonTypeCustom];
-//        theButton.frame 			= CGRectMake(20 + (theWidth + 10) * (index%4), 200 + (35 + 20) * (index/4), theWidth, 35);
-        theButton.layer.borderColor = [UIColor redColor].CGColor;
+	for (int index = 0; index < animations.count; index ++) {
+		
+		UIButton *theButton 		= [UIButton buttonWithType:UIButtonTypeCustom];
+		//        theButton.frame 			= CGRectMake(20 + (theWidth + 10) * (index%4), 200 + (35 + 20) * (index/4), theWidth, 35);
+		theButton.layer.borderColor = [UIColor redColor].CGColor;
 		theButton.backgroundColor 	= kColorRandom;
 		theButton.titleLabel.font 	= kFontTheme(12);
 		theButton.tag 				= 100 + index;
-        [theButton setTitle:animations[index] 			forState:UIControlStateNormal];
-        [theButton setTitleColor:[UIColor blackColor] 	forState:UIControlStateNormal];
-//		[theButton changeCorner:UIRectCornerTopLeft | UIRectCornerBottomRight cornerRadii:width/2];
-        [self.view addSubview:theButton];
+		[theButton setTitle:animations[index] 			forState:UIControlStateNormal];
+		[theButton setTitleColor:[UIColor blackColor] 	forState:UIControlStateNormal];
+		//		[theButton changeCorner:UIRectCornerTopLeft | UIRectCornerBottomRight cornerRadii:width/2];
+		[self.view addSubview:theButton];
 		
-//		CGFloat theX = 20 + (theWidth + 10) * (index%4);
-//		CGFloat theY = 200 + (35 + 20) * (index/4);
+		//		CGFloat theX = 20 + (theWidth + 10) * (index%4);
+		//		CGFloat theY = 200 + (35 + 20) * (index/4);
 		
 		CGFloat theWidth = 20 + (width + 15) * (index % 5);
-		CGFloat theHeigh = 200 + (width + 15) * (index / 5);
+		CGFloat theHeigh = 300 + (width + 15) * (index / 5);
 		[theButton mas_makeConstraints:^(MASConstraintMaker *make) {
 			
 			make.height.mas_equalTo(width);
@@ -104,99 +153,27 @@
 		
 		[theButton addClick:^(UIButton *sender) {
 			
+			//			[self shake:sender];
 			XListViewController *vcc 	= [[XListViewController alloc]init];
 			vcc.type 					= sender.tag - 100 + 1;
 			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vcc];
 			[self presentViewController:nav animated:YES completion:nil];
 		}];
-    }
-	
-	[self.view addTap:^(UIGestureRecognizer *tap) {
-		
-	}];
-	
-//	[self justTesttt];
-}
-
-- (void)justTesttt {
-	
-	
-	
-	UIView *bgView = [[UIView alloc]init];
-	bgView.backgroundColor = [UIColor lightGrayColor];
-	[self.view addSubview:bgView];
-	
-	[bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-		
-		make.top.mas_equalTo(kScreenHeight - 400);
-		make.left.mas_equalTo(0);
-		make.right.mas_equalTo(0);
-		make.height.mas_equalTo(350);
-	}];
-	
-	CGFloat width = (kScreenWidth - 20 * 2 - 15 * 4)/5;
-	
-	for (int i = 0; i < 17; i++) {
-		UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
-		
-		UIColor *theColor = kColorRandom;
-		theButton.backgroundColor = [UIColor whiteColor];
-		theButton.layer.cornerRadius = width/2;
-		theButton.layer.borderColor = theColor.CGColor;
-		theButton.layer.borderWidth = 1;
-		[theButton setTitleColor:theColor forState:UIControlStateNormal];
-		[theButton setTitle:[NSString stringWithFormat:@"🔥 %D",i] forState:UIControlStateNormal];
-		theButton.titleLabel.font = kFontTheme(12);
-		theButton.tag = 100 + i;
-		[bgView addSubview:theButton];
-		
-		[theButton addTap:^(UIGestureRecognizer *tap) {
-			
-		}];
-		
-		[theButton addClick:^(UIButton *sender) {
-			
-			
-		}];
-		
-		
-		[theButton addClick:^(UIButton *sender) {
-			
-			UIButton *button = (UIButton *)sender;
-//			[YVCoreManager showAlertWith:[NSString stringWithFormat:@"click %ld",button.tag - 100] showIn:self];
-		}];
-		
-		CGFloat theWidth = 20 + (width + 15) * (i % 5);
-		CGFloat theHeigh = 20 + (width + 15) * (i / 5);
-		[theButton mas_makeConstraints:^(MASConstraintMaker *make) {
-			
-			make.height.mas_equalTo(width);
-			make.width.mas_equalTo(width);
-			make.left.mas_equalTo(theWidth);
-			make.top.mas_equalTo(theHeigh);
-			
-		}];
-	}
-
-	[self DOSOMETHING:^(BOOL successed, BOOL isAlright) {
-		
-	}];
-}
-
-+ (NSString *)getPayType:(YVServerPayType)type {
-	
-	if (type < 10) {
-		
-		return kStringFormat(@"0%lu",(unsigned long)type);
-	} else {
-		
-		return kStringFormat(@"%lu",(unsigned long)type);
 	}
 }
 
-- (void)DOSOMETHING:(YVHttpBlockBool)str {
+- (void)shake:(UIView *)view {
 	
+	CABasicAnimation *shake = [CABasicAnimation animationWithKeyPath:@"transform"];
+	shake.duration = 0.13;
+	shake.autoreverses = YES;
+	shake.repeatCount = MAXFLOAT;
+	shake.removedOnCompletion = NO;
+	CGFloat rotation = 0.05;
+	shake.fromValue = [NSValue valueWithCATransform3D:CATransform3DRotate(view.layer.transform,-rotation, 0.0 ,0.0 ,1.0)];
+	shake.toValue = [NSValue valueWithCATransform3D:CATransform3DRotate(view.layer.transform, rotation, 0.0 ,0.0 ,1.0)];
 	
+	[view.layer addAnimation:shake forKey:@"shakeAnimation"];
 }
 
 - (void)didReceiveMemoryWarning {

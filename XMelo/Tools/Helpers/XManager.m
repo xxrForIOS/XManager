@@ -419,44 +419,27 @@
     return deviceString;
 }
 
-+ (NSString*)weekDayStr{
-    
-    NSString *weekDayStr = nil;
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
-    
-    NSString *str = [self description];
-    if (str.length >= 10) {
-        NSString *nowString = [str substringToIndex:10];
-        NSArray *array = [nowString componentsSeparatedByString:@"-"];
-        if (array.count == 0) {
-            array = [nowString componentsSeparatedByString:@"/"];
-        }
-        if (array.count >= 3) {
-            
-            [comps setYear:[[array objectAtIndex:0] integerValue]];
-            [comps setMonth:[[array objectAtIndex:1] integerValue]];
-            [comps setDay:[[array objectAtIndex:2] integerValue]];
-        }
-    }
-    
-    NSCalendar *gregorian = [[NSCalendar alloc]
-                             initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDate *_date = [gregorian dateFromComponents:comps];
-    NSDateComponents *weekdayComponents = [gregorian components:NSCalendarUnitWeekday fromDate:_date];
-    NSInteger week = [weekdayComponents weekday];
-	NSArray *weekStrs = @[@"星期日, 星期一, 星期二, 星期三, 星期四, 星期五, 星期六"];
-	return weekStrs[week - 1];
++ (NSString*)getWeekdayFromDate:(NSDate *)date {
+	
+	NSArray *weekdays = [NSArray arrayWithObjects:[NSNull null], @"周日", @"周一", @"周二", @"周三", @"周四", @"周五", @"周六", nil];
+	NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+	NSTimeZone *timeZone = [[NSTimeZone alloc] initWithName:@"Asia/Shanghai"];
+	[calendar setTimeZone: timeZone];
+	NSCalendarUnit calendarUnit = NSCalendarUnitWeekday;
+	NSDateComponents *theComponents = [calendar components:calendarUnit fromDate:date];
+	return [weekdays objectAtIndex:theComponents.weekday];
 }
 
 
-+ (NSString *)weekdayString{
+
++ (NSString *)weekdayString:(NSDate *)date{
     
     NSArray *weekdays = [NSArray arrayWithObjects: [NSNull null], @"星期天", @"星期一", @"星期二", @"星期三", @"星期四", @"星期五", @"星期六", nil];
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSTimeZone *timeZone = [[NSTimeZone alloc] initWithName:@"Asia/Shanghai"];
     [calendar setTimeZone: timeZone];
     NSCalendarUnit calendarUnit = NSCalendarUnitWeekday;
-    NSDateComponents *theComponents = [calendar components:calendarUnit fromDate:[NSDate date]];
+    NSDateComponents *theComponents = [calendar components:calendarUnit fromDate:date];
     NSString *currentString = [weekdays objectAtIndex:theComponents.weekday];
     return currentString;
 }

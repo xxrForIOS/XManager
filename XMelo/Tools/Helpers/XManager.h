@@ -98,8 +98,8 @@ typedef NS_ENUM(NSInteger, YVRradualColorShowType) {
 /** 获取距离时间戳*/
 + (NSString *)timeGetTimeStampSinceNow:(int)second;
 
-+ (NSString*)weekDayStr;
-    
-+ (NSString *)weekdayString;
++ (NSString*)getWeekdayFromDate:(NSDate *)date;
+
++ (NSString *)weekdayString:(NSDate *)date;
 
 @end

@@ -31,9 +31,10 @@
 	
     self.view.backgroundColor = [UIColor whiteColor];
 	
-	self.images = @[@"wish_top"];
-	[self collection];
+	self.images = @[@"wish_top", @"wish_top", @"wish_top", @"wish_top"];
+//	[self collection];
 	[self justTesttt];
+	
 }
 
 - (void)collection {
@@ -74,13 +75,16 @@
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
 	endX = scrollView.contentOffset.x;
+	
+	YVLog(@" %.f",scrollView.contentOffset.x);
+
 	dispatch_async(dispatch_get_main_queue(), ^{
 		[self cellToCenter];
 	});
 }
 -(void)cellToCenter{
 	//最小滚动距离
-	float  dragMinDistance = self.collectionView.bounds.size.width/20.0f;
+	float  dragMinDistance = self.collectionView.bounds.size.width/5;
 	if (startX - endX >= dragMinDistance) {
 		currentIndex -= 1; //向右
 	}else if (endX - startX >= dragMinDistance){
@@ -113,9 +117,16 @@
 
 
 
-
-
-
+- (NSString *)weekdayString:(NSDate *)datee{
+	
+	NSArray *weekdays 		= @[@"",@"星期天", @"星期一", @"星期二", @"星期三", @"星期四", @"星期五", @"星期六"];
+	NSCalendar *calendar 	= [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+	[calendar setTimeZone: [[NSTimeZone alloc] initWithName:@"Asia/Shanghai"]];
+	NSCalendarUnit calendarUnit 	= NSCalendarUnitWeekday;
+	NSDateComponents *theComponents = [calendar components:calendarUnit fromDate:datee];
+	NSString *currentString 		= [weekdays objectAtIndex:theComponents.weekday];
+	return currentString;
+}
 
 
 - (void)justTesttt {
@@ -150,14 +161,15 @@
 			
 		}];
 		
-		
+		theButton.clickScope = UIEdgeInsetsMake(0, 10, -20, -20);
 		[theButton addClick:^(UIButton *sender) {
 			
-			//			[self shake:sender];
-			XListViewController *vcc 	= [[XListViewController alloc]init];
-			vcc.type 					= sender.tag - 100 + 1;
-			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vcc];
-			[self presentViewController:nav animated:YES completion:nil];
+			YVLog(@"xxxxx");
+//			//			[self shake:sender];
+//			XListViewController *vcc 	= [[XListViewController alloc]init];
+//			vcc.type 					= sender.tag - 100 + 1;
+//			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vcc];
+//			[self presentViewController:nav animated:YES completion:nil];
 		}];
 	}
 }

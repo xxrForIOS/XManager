@@ -14,6 +14,8 @@
 
 @implementation AppDelegate
 
+//DEPRECATED_MSG_ATTRIBUTE("替换")
+//__attribute__((deprecated("用addClick:替换")))
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];

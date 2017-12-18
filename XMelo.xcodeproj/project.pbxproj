@@ -11,7 +11,6 @@
 		A7085D031F973D4300398477 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		A70ADEA61FC7C2DC00ADBBA2 /* MainTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A70ADEA51FC7C2DC00ADBBA2 /* MainTestViewController.m */; };
 		A70ADEAC1FC7CCBB00ADBBA2 /* UIView+Melo.m in Sources */ = {isa = PBXBuildFile; fileRef = A70ADEAB1FC7CCBB00ADBBA2 /* UIView+Melo.m */; };
-		A70ADEAF1FC7E66500ADBBA2 /* UIButton+Melo.m in Sources */ = {isa = PBXBuildFile; fileRef = A70ADEAE1FC7E66500ADBBA2 /* UIButton+Melo.m */; };
 		A70DA5231F564D730059935B /* UIScrollView+SpringHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A70DA5221F564D730059935B /* UIScrollView+SpringHeadView.m */; };
 		A713F8791F17A50F00FEA33E /* UIButton+ChangePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F8781F17A50F00FEA33E /* UIButton+ChangePosition.m */; };
 		A713F87F1F17A57300FEA33E /* XBaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F87E1F17A57300FEA33E /* XBaseTableController.m */; };
@@ -31,9 +30,10 @@
 		A72CD1A71F0D04EE002C90BD /* UILabel+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1981F0D04EE002C90BD /* UILabel+Frame.m */; };
 		A72CD1AE1F0D0567002C90BD /* XConst.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1AD1F0D0567002C90BD /* XConst.m */; };
 		A72CD1EC1F10719D002C90BD /* DictModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1EB1F10719D002C90BD /* DictModel.m */; };
-		A73C81D11FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = A73C81D01FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.m */; };
+		A73C81D11FB2B6D400A0F6BB /* UIButton+Melo.m in Sources */ = {isa = PBXBuildFile; fileRef = A73C81D01FB2B6D400A0F6BB /* UIButton+Melo.m */; };
 		A742544A1FB1B7580047B579 /* ThirdSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74254491FB1B7580047B579 /* ThirdSignViewController.m */; };
 		A74AACE91F6786AB0053066D /* TableViewAnimationKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A74AACE81F6786AB0053066D /* TableViewAnimationKit.m */; };
+		A75385581FE2114000DC476F /* YVBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75385571FE2113F00DC476F /* YVBaseViewController.m */; };
 		A767F0F91F5560BD00432627 /* XImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A767F0F61F5560BD00432627 /* XImagePicker.m */; };
 		A767F0FA1F5560BD00432627 /* YVPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A767F0F81F5560BD00432627 /* YVPickerView.m */; };
 		A76E10651F2ED9EF00E09AAE /* XCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A76E10641F2ED9EF00E09AAE /* XCell.m */; };
@@ -60,8 +60,6 @@
 		A70ADEA51FC7C2DC00ADBBA2 /* MainTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTestViewController.m; sourceTree = "<group>"; };
 		A70ADEAA1FC7CCBB00ADBBA2 /* UIView+Melo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Melo.h"; sourceTree = "<group>"; };
 		A70ADEAB1FC7CCBB00ADBBA2 /* UIView+Melo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Melo.m"; sourceTree = "<group>"; };
-		A70ADEAD1FC7E66500ADBBA2 /* UIButton+Melo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Melo.h"; sourceTree = "<group>"; };
-		A70ADEAE1FC7E66500ADBBA2 /* UIButton+Melo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Melo.m"; sourceTree = "<group>"; };
 		A70DA5211F564D730059935B /* UIScrollView+SpringHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SpringHeadView.h"; sourceTree = "<group>"; };
 		A70DA5221F564D730059935B /* UIScrollView+SpringHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SpringHeadView.m"; sourceTree = "<group>"; };
 		A713F8771F17A50F00FEA33E /* UIButton+ChangePosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ChangePosition.h"; sourceTree = "<group>"; };
@@ -98,12 +96,14 @@
 		A72CD1AD1F0D0567002C90BD /* XConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XConst.m; sourceTree = "<group>"; };
 		A72CD1EA1F10719D002C90BD /* DictModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictModel.h; sourceTree = "<group>"; };
 		A72CD1EB1F10719D002C90BD /* DictModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictModel.m; sourceTree = "<group>"; };
-		A73C81CF1FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+ClickTimeInterval.h"; sourceTree = "<group>"; };
-		A73C81D01FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ClickTimeInterval.m"; sourceTree = "<group>"; };
+		A73C81CF1FB2B6D400A0F6BB /* UIButton+Melo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Melo.h"; sourceTree = "<group>"; };
+		A73C81D01FB2B6D400A0F6BB /* UIButton+Melo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Melo.m"; sourceTree = "<group>"; };
 		A74254481FB1B7580047B579 /* ThirdSignViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdSignViewController.h; sourceTree = "<group>"; };
 		A74254491FB1B7580047B579 /* ThirdSignViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdSignViewController.m; sourceTree = "<group>"; };
 		A74AACE71F6786AB0053066D /* TableViewAnimationKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewAnimationKit.h; sourceTree = "<group>"; };
 		A74AACE81F6786AB0053066D /* TableViewAnimationKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewAnimationKit.m; sourceTree = "<group>"; };
+		A75385561FE2113F00DC476F /* YVBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YVBaseViewController.h; sourceTree = "<group>"; };
+		A75385571FE2113F00DC476F /* YVBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YVBaseViewController.m; sourceTree = "<group>"; };
 		A767F0F51F5560BD00432627 /* XImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XImagePicker.h; sourceTree = "<group>"; };
 		A767F0F61F5560BD00432627 /* XImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XImagePicker.m; sourceTree = "<group>"; };
 		A767F0F71F5560BD00432627 /* YVPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YVPickerView.h; sourceTree = "<group>"; };
@@ -188,10 +188,8 @@
 			children = (
 				A713F8771F17A50F00FEA33E /* UIButton+ChangePosition.h */,
 				A713F8781F17A50F00FEA33E /* UIButton+ChangePosition.m */,
-				A73C81CF1FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.h */,
-				A73C81D01FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.m */,
-				A70ADEAD1FC7E66500ADBBA2 /* UIButton+Melo.h */,
-				A70ADEAE1FC7E66500ADBBA2 /* UIButton+Melo.m */,
+				A73C81CF1FB2B6D400A0F6BB /* UIButton+Melo.h */,
+				A73C81D01FB2B6D400A0F6BB /* UIButton+Melo.m */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -296,6 +294,8 @@
 		A73C81D71FB2DCC500A0F6BB /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				A75385561FE2113F00DC476F /* YVBaseViewController.h */,
+				A75385571FE2113F00DC476F /* YVBaseViewController.m */,
 				A74AACE71F6786AB0053066D /* TableViewAnimationKit.h */,
 				A74AACE81F6786AB0053066D /* TableViewAnimationKit.m */,
 				A713F87D1F17A57300FEA33E /* XBaseTableController.h */,
@@ -428,17 +428,9 @@
 			path = SRC;
 			sourceTree = "<group>";
 		};
-		A7B4DCF41FD022B300552157 /* NSString */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NSString;
-			sourceTree = "<group>";
-		};
 		A7B6AE441F0BCC790078B268 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				A7B4DCF41FD022B300552157 /* NSString */,
 				A713F87A1F17A51E00FEA33E /* Control */,
 				A713F87B1F17A52A00FEA33E /* Object */,
 				A713F87C1F17A53500FEA33E /* View */,
@@ -592,7 +584,6 @@
 				A7B3722D1F30AA730087972B /* XMelo.xcdatamodeld in Sources */,
 				A767F0FA1F5560BD00432627 /* YVPickerView.m in Sources */,
 				A7B6AE431F0BCB310078B268 /* XManager.m in Sources */,
-				A70ADEAF1FC7E66500ADBBA2 /* UIButton+Melo.m in Sources */,
 				A721BD2F1F5980EA008EBF9A /* ImageValidationViewController.m in Sources */,
 				A795B7921F5117EF003C7EAD /* XPickerViewController.m in Sources */,
 				A72CD1AE1F0D0567002C90BD /* XConst.m in Sources */,
@@ -600,7 +591,8 @@
 				A767F0F91F5560BD00432627 /* XImagePicker.m in Sources */,
 				A70ADEA61FC7C2DC00ADBBA2 /* MainTestViewController.m in Sources */,
 				A7BE3E211FDFB4D000BB4B59 /* XRHttpHelper.m in Sources */,
-				A73C81D11FB2B6D400A0F6BB /* UIButton+ClickTimeInterval.m in Sources */,
+				A75385581FE2114000DC476F /* YVBaseViewController.m in Sources */,
+				A73C81D11FB2B6D400A0F6BB /* UIButton+Melo.m in Sources */,
 				A795B77A1F4EB91B003C7EAD /* YVAgreementView.m in Sources */,
 				A7BE3E241FDFC0E100BB4B59 /* XRHttpHelper+Custom.m in Sources */,
 				A7BE3E271FE0BFBD00BB4B59 /* XRLayout.m in Sources */,

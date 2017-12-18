@@ -23,13 +23,13 @@
 //MARK: category
 #import "UIView+Melo.h"
 #import "UIButton+Melo.h"
+
 #import "UIButton+ChangePosition.h"
 #import "UILabel+Frame.h"
 #import "NSString+Add.h"
 #import "NSString+Check.h"
 #import "NSData+Add.h"
 #import "UITextView+ZWPlaceHolder.h"
-#import "UIButton+ClickTimeInterval.h"
 #import "UIScreen+SafeArea.h"
 
 //MARK: funtion

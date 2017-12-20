@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <RongIMKit/RongIMKit.h>
 
 @interface AppDelegate ()
 
@@ -43,6 +44,10 @@
 	if (@available(iOS 11, *)) {
 		[UIScrollView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
 	}
+	
+	
+	[[RCIM sharedRCIM] initWithAppKey:@"pvxdm17jpiq4r"];
+
     return YES;
 }
 

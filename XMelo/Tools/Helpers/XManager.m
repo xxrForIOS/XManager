@@ -293,96 +293,6 @@
     });
 }
 
-//MARK:- 时间格式化
-+ (NSString *)timeGetDateFormat:(NSString *)dateString{
-    
-    NSDate *currentDate 		= [NSDate date];
-    NSDate *otherDate 			= [NSDate dateWithTimeIntervalSince1970:[dateString longLongValue]/1000];
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
-    [dateFormat setTimeZone:[NSTimeZone localTimeZone]];
-    NSTimeInterval time 		= [currentDate timeIntervalSinceDate:otherDate];
-	
-	NSString *dateStr = @"";
-    if (time <= 60) {
-        
-        dateStr = @"刚刚";
-    }else if(time <= 60 * 60){
-        
-        dateStr = [NSString stringWithFormat:@"%d分钟前",(int)time/60];
-    }else if(time <= 60 * 60 * 24){
-        
-        [dateFormat setDateFormat:@"YYYY/MM/dd"];
-        NSString *otherDay = [dateFormat stringFromDate:otherDate];
-        NSString *currentDay = [dateFormat stringFromDate:currentDate];
-        [dateFormat setDateFormat:@"HH:mm"];
-        
-        if ([otherDay isEqualToString:currentDay]) {
-            
-            dateStr = [NSString stringWithFormat:@"今天 %@",[dateFormat stringFromDate:otherDate]];
-        }else{
-            
-            dateStr = [NSString stringWithFormat:@"昨天 %@",[dateFormat stringFromDate:otherDate]];
-        }
-    }else {
-        
-        [dateFormat setDateFormat:@"yyyy"];
-        NSString    *otherYear = [dateFormat stringFromDate:otherDate];
-        NSString    *currentYear = [dateFormat stringFromDate:currentDate];
-        
-        if ([otherYear isEqualToString:currentYear]) {
-            
-            [dateFormat setDateFormat:@"MM-dd HH:mm"];
-            dateStr = [dateFormat stringFromDate:otherDate];
-        }else{
-            
-            [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
-            dateStr = [dateFormat stringFromDate:otherDate];
-        }
-    }
-    
-    return dateStr;
-}
-
-+ (NSString *)timeGetDateFormat:(NSString *)dateString format:(XRDateFormatType)type {
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    
-    switch (type) {
-        case XRDateFormatTypeYMDHM:
-            [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
-            break;
-        case XRDateFormatTypeMDHM:
-            [dateFormat setDateFormat:@"MM-dd HH:mm"];
-            break;
-            
-        case XRDateFormatTypeHM:
-            [dateFormat setDateFormat:@"HH分mm秒"];
-            break;
-            
-        default:
-            break;
-    }
-    
-    [dateFormat setTimeZone:[NSTimeZone localTimeZone]]; //Asia/shanghai +8:00
-    int64_t timestamp = [dateString longLongValue]/1000 ;//毫秒级别除以1000
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
-    NSString *str = [dateFormat stringFromDate:date];
-    return str;
-}
-
-+ (NSString *)timeGetTimeStampSinceNow{
-    
-    return [self timeGetTimeStampSinceNow:0];
-}
-
-+ (NSString *)timeGetTimeStampSinceNow:(int)second{
-    
-    NSDate *date = [NSDate dateWithTimeIntervalSinceNow:second];
-    NSTimeInterval time = [date timeIntervalSince1970]*1000;
-    NSString *timeString = [NSString stringWithFormat:@"%.0f", time];
-    return timeString;
-}
-
 #pragma mark- 获取设备名
 + (NSString *)getDeviceName
 {
@@ -418,31 +328,5 @@
     
     return deviceString;
 }
-
-+ (NSString*)getWeekdayFromDate:(NSDate *)date {
-	
-	NSArray *weekdays = [NSArray arrayWithObjects:[NSNull null], @"周日", @"周一", @"周二", @"周三", @"周四", @"周五", @"周六", nil];
-	NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-	NSTimeZone *timeZone = [[NSTimeZone alloc] initWithName:@"Asia/Shanghai"];
-	[calendar setTimeZone: timeZone];
-	NSCalendarUnit calendarUnit = NSCalendarUnitWeekday;
-	NSDateComponents *theComponents = [calendar components:calendarUnit fromDate:date];
-	return [weekdays objectAtIndex:theComponents.weekday];
-}
-
-
-
-+ (NSString *)weekdayString:(NSDate *)date{
-    
-    NSArray *weekdays = [NSArray arrayWithObjects: [NSNull null], @"星期天", @"星期一", @"星期二", @"星期三", @"星期四", @"星期五", @"星期六", nil];
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSTimeZone *timeZone = [[NSTimeZone alloc] initWithName:@"Asia/Shanghai"];
-    [calendar setTimeZone: timeZone];
-    NSCalendarUnit calendarUnit = NSCalendarUnitWeekday;
-    NSDateComponents *theComponents = [calendar components:calendarUnit fromDate:date];
-    NSString *currentString = [weekdays objectAtIndex:theComponents.weekday];
-    return currentString;
-}
-
 
 @end

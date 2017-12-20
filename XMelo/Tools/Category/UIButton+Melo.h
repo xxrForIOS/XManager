@@ -8,14 +8,38 @@
 
 #import <UIKit/UIKit.h>
 
-#define kClickIntervalDefa 1//默认时间间隔
+#define kClickTimeInterval 1
 
+///图片文字显示位置
+typedef NS_ENUM(NSInteger, XRButtonDrawStyle) {
+	
+	///图片左 文字右
+	XRButtonDrawStyleLeft    = 0,
+	///图片右 文字左
+	XRButtonDrawStyleRight   = 1,
+	///图片上 文字下
+	XRButtonDrawStyleTop     = 2,
+	///图片下 文字上
+	XRButtonDrawStyleBottom  = 3
+};
 @interface UIButton (Melo)
 
-///设置button的点击间隔 默认为1 不需要间隔设置0.001之类就可以
+//点击间隔 默认为1
 @property(nonatomic, assign) NSTimeInterval 	timeInterval;
+
+//YES不允许点击NO允许点击
 @property(nonatomic, assign) BOOL 				isIgnoreEvent;
+
+///点击范围
 @property(nonatomic, assign) UIEdgeInsets 		clickScope;
 
-- (void)addClick:(void(^)(UIButton *sender))clickBlock;
+///rac添加点击block
+- (void)addClick:(void(^_Nonnull)(UIButton * _Nullable sender))clickBlock;
+
+///改变图片文字的位置
+- (void)changePosition:(XRButtonDrawStyle)style space:(CGFloat)space;
+
+///设置不同状态下的颜色图片
+- (void)setBackgroundColor:(UIColor *_Nullable)backgroundColor forState:(UIControlState)state;
+
 @end

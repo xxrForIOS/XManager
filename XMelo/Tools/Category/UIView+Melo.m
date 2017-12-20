@@ -10,7 +10,7 @@
 
 @implementation UIView (Melo)
 
-
+#pragma mark- frame
 - (CGFloat)left {
 	
 	return self.frame.origin.x;
@@ -127,7 +127,7 @@
 	self.frame 		= frame;
 }
 
-//移除view上所有子控件
+#pragma mark- 移除view上所有子控件
 - (void)removeAllSubviews {
 	
 	while (self.subviews.count) {
@@ -136,7 +136,7 @@
 	}
 }
 
-//获取当前view的superView对应的控制器
+#pragma mark-  获取当前view的superView对应的控制器
 - (UIViewController *)viewController{
 	
 	UIResponder *next = [self nextResponder];
@@ -151,6 +151,7 @@
 	return nil;
 }
 
+#pragma mark- 切圆角
 - (void)changeCorner:(UIRectCorner)corners cornerRadii:(CGFloat)radii {
 	
 	CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
@@ -161,6 +162,7 @@
 	self.layer.mask = maskLayer;
 }
 
+#pragma mark- tap手势
 - (void)addTap:(void (^)(UIGestureRecognizer * tap))tapBlock{
 	
 	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]init];

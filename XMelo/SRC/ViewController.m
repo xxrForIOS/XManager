@@ -11,6 +11,7 @@
 #import "XRHttpHelper.h"
 #import "XRLayout.h"
 #import "XRCCell.h"
+#import <RongIMKit/RongIMKit.h>
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 {
@@ -34,7 +35,7 @@
 	self.images = @[@"wish_top", @"wish_top", @"wish_top", @"wish_top"];
 //	[self collection];
 	[self justTesttt];
-	
+	[self rongCloud];
 }
 
 - (void)collection {
@@ -98,35 +99,56 @@
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- (NSString *)weekdayString:(NSDate *)datee{
+- (void)rongCloud {
 	
-	NSArray *weekdays 		= @[@"",@"星期天", @"星期一", @"星期二", @"星期三", @"星期四", @"星期五", @"星期六"];
-	NSCalendar *calendar 	= [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-	[calendar setTimeZone: [[NSTimeZone alloc] initWithName:@"Asia/Shanghai"]];
-	NSCalendarUnit calendarUnit 	= NSCalendarUnitWeekday;
-	NSDateComponents *theComponents = [calendar components:calendarUnit fromDate:datee];
-	NSString *currentString 		= [weekdays objectAtIndex:theComponents.weekday];
-	return currentString;
+	NSString *str = @"1514652145000";
+	
+	
+	
+	UIColor *color1 = [UIColor colorWithHexString:@"#6cabdf"];
+	UIColor *color2 = [UIColor colorWithHexString:@"0x6cabdf"];
+	UIColor *color4 = kColorHex(0x6cabdf);
+
+	NSString *xx = [[NSDate date] toTimestampString];
+	
+	NSString *timeStr1 = [[str toDate] getFormatStringWithCustomFormat:@"yyyy-MMMM-dd HH:mm:ss"];
+	NSString *timeStr2 = [[str toDate] getFormatStringWithCustomFormat:@"YYYY-MM-dd HH:mm:ss"];
+
+	YVLog(@"xx %@ %@",timeStr1, timeStr2);
+//	NSString *nowStr = [[NSDate date] getTimestampMillisecondString];
+//
+//	NSDateComponents *com = [[NSDate date] getComponent];
+//
+//
+//	NSString *xx = @"1513750701473";
+//	NSString *shortStr = @"1513700989";
+//
+//	NSDate *date1 = [xx toDate];
+//	NSDate *date2 = [shortStr toDate];
+//
+//	NSString *dateNum1 = [date1 getTimestampMillisecondString];
+//	NSString *dateNum2 = [date2 getTimestampMillisecondString];
+
+	
+//	NSString *dateStr1 = [NSString timeGetDateFormat:dateNum1 format:XRDateFormatTypeMDHM];
+//	NSString *dateStr2 = [NSString timeGetDateFormat:dateNum2 format:XRDateFormatTypeMDHM];
+
+	for (int index = 0; index < 20; index ++) {
+
+		NSDate *datee = [NSDate dateWithTimeIntervalSinceNow:-60 * 60 * 24 * index];
+		
+		NSDateComponents *com = [datee getComponent];
+		
+		YVLog(@"%ld年%ld月%ld日 %ld:%ld:%ld 周%ld",com.year, com.month, com.day, com.hour, com.minute, com.second, com.weekday - 1);
+	}
 }
+
+
+
+
+
+
+
 
 
 - (void)justTesttt {
@@ -147,6 +169,10 @@
 		//		[theButton changeCorner:UIRectCornerTopLeft | UIRectCornerBottomRight cornerRadii:width/2];
 		[self.view addSubview:theButton];
 		
+		[theButton setBackgroundColor:[UIColor randomColor] forState:UIControlStateNormal];
+//		[theButton setBackgroundImage:[[UIColor redColor] toImage] forState:UIControlStateNormal];
+		//tintAdjustmentMode
+		
 		//		CGFloat theX = 20 + (theWidth + 10) * (index%4);
 		//		CGFloat theY = 200 + (35 + 20) * (index/4);
 		
@@ -161,6 +187,11 @@
 			
 		}];
 		
+		
+		[theButton addClick:^(UIButton * _Nullable sender) {
+			
+			
+		}];
 		theButton.clickScope = UIEdgeInsetsMake(0, 10, -20, -20);
 		[theButton addClick:^(UIButton *sender) {
 			

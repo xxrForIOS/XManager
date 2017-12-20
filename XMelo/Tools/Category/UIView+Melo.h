@@ -27,6 +27,9 @@
 ///获取view所在controller
 - (UIViewController *)viewController;
 
+///切任意圆角
+- (void)changeCorner:(UIRectCorner)corners cornerRadii:(CGFloat)radii;
+
 ///rac添加tap手势
 - (void)addTap:(void (^)(UIGestureRecognizer * tap))tapBlock;
 

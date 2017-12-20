@@ -9,16 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-///时间显示格式
-typedef NS_ENUM(NSInteger, XRDateFormatType) {
-    
-    ///2017-05-26 21:49
-    XRDateFormatTypeYMDHM,
-    //05-26 21:49
-    XRDateFormatTypeMDHM,
-    //21:49
-    XRDateFormatTypeHM,
-};
+
 
 ///渐变颜色显示方式
 typedef NS_ENUM(NSInteger, YVRradualColorShowType) {
@@ -85,21 +76,5 @@ typedef NS_ENUM(NSInteger, YVRradualColorShowType) {
                    confirmBlock:(void (^)(UITextField *inputTF))cfBlock
                     cancelBlock:(void (^)(UITextField *inputTF))ccBlock;
 
-
-
-///格式化时间 今天昨天
-+ (NSString *)timeGetDateFormat:(NSString *)dateString;
-///定制格式化时间
-+ (NSString *)timeGetDateFormat:(NSString *)dateString format:(XRDateFormatType)type;
-
-///获取当前时间戳
-+ (NSString *)timeGetTimeStampSinceNow;
-
-/** 获取距离时间戳*/
-+ (NSString *)timeGetTimeStampSinceNow:(int)second;
-
-+ (NSString*)getWeekdayFromDate:(NSDate *)date;
-
-+ (NSString *)weekdayString:(NSDate *)date;
 
 @end

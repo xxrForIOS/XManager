@@ -67,11 +67,8 @@
 	
 	self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
 		
-		UITableViewCell *cell = [selfWeak.tableView cellForRowAtIndexPath:indexPath];
-		[cell shake];
-		
-		//		Class cls = NSClassFromString(selfWeak.controllers[indexPath.row]);
-		//		kPush(selfWeak, [[cls alloc] init]);
+		Class cls = NSClassFromString(selfWeak.controllers[indexPath.row]);
+		kPush(selfWeak, [[cls alloc] init]);
 	};
 	
 	[XManager addRightBarItemInViewController:self itemTitle:@"dismiss" andItemBlock:^(UIButton *aButton) {
@@ -280,9 +277,6 @@
 	return _images;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+kDealloc;
 
 @end

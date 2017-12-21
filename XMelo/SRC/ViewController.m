@@ -22,19 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-    self.view.backgroundColor = [UIColor whiteColor];
+	self.view.backgroundColor = [UIColor randomColor];
 	[self buttons];
 	[self rongCloud];
 }
 
 #pragma mark- test
 - (void)rongCloud {
-
-	for (int index = 0; index < 100; index ++) {
-
-		CGFloat aOne = (CGFloat)RAND_MAX / random();
-		YVLog(@"--- %.0f",aOne);
-	}
 	
 	[self.view addTap:^(UIGestureRecognizer *tap) {
 		
@@ -58,9 +52,15 @@
 		[theButton setTitle:animations[index] 				forState:UIControlStateNormal];
 		[theButton setTitleColor:[UIColor blackColor] 		forState:UIControlStateNormal];
 		[theButton setBackgroundColor:[UIColor randomColor] forState:UIControlStateNormal];
-//		[theButton changeCorner:UIRectCornerTopLeft | UIRectCornerBottomRight cornerRadii:width/2];
 		theButton.clickScope = UIEdgeInsetsMake(0, 10, -20, -20);
 		[self.view addSubview:theButton];
+		
+		CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+		maskLayer.frame = theButton.bounds;
+		maskLayer.path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, width, width)
+											   byRoundingCorners:UIRectCornerTopLeft|UIRectCornerBottomRight
+													 cornerRadii:CGSizeMake(width/4,width/4)].CGPath;
+		theButton.layer.mask = maskLayer;
 		
 		CGFloat theWidth = 20 + (width + 15) * (index % 5);
 		CGFloat theHeigh = 300 + (width + 15) * (index / 5);

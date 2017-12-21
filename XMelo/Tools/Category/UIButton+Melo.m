@@ -197,7 +197,11 @@
 
 - (void)setBackgroundColor:(UIColor *_Nullable)backgroundColor forState:(UIControlState)state {
 	
-	if (!backgroundColor) return;
+	if (![backgroundColor isKindOfClass:[UIColor class]]) {
+		
+		YVLog(@"入参不是UIColor");
+		return;
+	}
 	
 	[self setBackgroundImage:[UIImage imageWithColor:backgroundColor size:self.size] forState:state];
 }

@@ -49,4 +49,6 @@
 //	textView.zw_inputLimitLabel.text = @"xxx";
 }
 
+kDealloc;
+
 @end

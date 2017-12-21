@@ -291,6 +291,8 @@
 		[_eventsByDate[key] addObject:randomDate];
 	}
 }
+
+kDealloc;
 /*
 #pragma mark - Navigation
 

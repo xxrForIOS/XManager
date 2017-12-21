@@ -21,6 +21,9 @@
 #define YVLog(...) 			{}
 #endif
 
+#define kDealloc -(void)dealloc {YVLog(@"%@ dealloc✅✅✅",self);}
+
+
 #define STRINGIFY(S) #S
 #define DEFER_STRINGIFY(S) STRINGIFY(S)
 #define PRAGMA_MESSAGE(MSG) _Pragma(STRINGIFY(message(MSG)))

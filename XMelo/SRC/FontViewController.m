@@ -93,6 +93,9 @@
 		make.edges.equalTo(selfWeak.view).insets(UIEdgeInsetsMake(0.0f, 0.0f, selectConstraint(85.0f, 55.0f), 0.0f));
 	}];
 }
+
+kDealloc;
+
 /*
 #pragma mark - Navigation
 

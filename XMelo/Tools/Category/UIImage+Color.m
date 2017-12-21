@@ -12,6 +12,10 @@
 
 + (UIImage *)imageWithColor:(UIColor *)aColor size:(CGSize)aSize{
 	
+	if (aSize.width == 0.0f || aSize.width == 0.0f) {
+		
+		aSize = CGSizeMake(kScreenWidth, kScreenHeight);
+	}
 	CGRect rect 			= CGRectMake(0.0f, 0.0f, aSize.width, aSize.height);
 	UIGraphicsBeginImageContext(rect.size);
 	CGContextRef context	= UIGraphicsGetCurrentContext();

@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import <RongIMKit/RongIMKit.h>
 
 @interface AppDelegate ()
 
@@ -24,7 +23,8 @@
 //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
     UIColor *theMeColor = [UIColor blackColor];
-    UIImage *colorImage = [XManager getImageFromColor:kColorIceBlue withSize:CGSizeMake(kScreenWidth, 64)];
+	
+    UIImage *colorImage = [UIImage imageWithColor:kColorIceBlue size:CGSizeMake(kScreenWidth, 64)];
     [navigationBarAppearance setBackgroundImage:colorImage forBarMetrics:UIBarMetricsDefault];
     [navigationBarAppearance setTintColor:theMeColor];
     [navigationBarAppearance setBarTintColor:theMeColor];
@@ -46,7 +46,7 @@
 	}
 	
 	
-	[[RCIM sharedRCIM] initWithAppKey:@"pvxdm17jpiq4r"];
+//	[[RCIM sharedRCIM] initWithAppKey:@"pvxdm17jpiq4r"];
 
     return YES;
 }

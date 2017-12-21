@@ -16,7 +16,7 @@
 
 // DEBUG模式下进行调试打印
 #ifdef DEBUG
-#define YVLog(fmt, ...)  	printf("(σ｀д′)σ-->> %s + %d %s \n\n", __TIME__ , __LINE__, [[NSString stringWithFormat:fmt, ##__VA_ARGS__]UTF8String])
+#define YVLog(fmt, ...)  	printf("(σ｀д′)σ-->> %s + %d %s \n", __TIME__ , __LINE__, [[NSString stringWithFormat:fmt, ##__VA_ARGS__]UTF8String])
 #else
 #define YVLog(...) 			{}
 #endif

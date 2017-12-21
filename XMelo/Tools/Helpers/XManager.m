@@ -24,60 +24,7 @@
     return _sharedManager;
 }
 
-+ (void)addRradualColorFor:(UIView *)theView colors:(NSArray *)colors showType:(YVRradualColorShowType)type {
 
-	/*
-	 layer.colors = @[(__bridge id)[UIColor redColor].CGColor,
-	 (__bridge id)[UIColor yellowColor].CGColor,
-	 (__bridge id)[UIColor blueColor].CGColor];
-	 */
-	CAGradientLayer *layer 	= [[CAGradientLayer alloc] init];
-	layer.frame 			= theView.bounds;
-	layer.colors 			= colors;
-	
-	if (type == YVRradualColorShowTypeLeftRight) {
-		
-		[layer setStartPoint:CGPointMake(0, 0.5)];
-		[layer setEndPoint:CGPointMake(1, 0.5)];
-	}
-	
-	if (type == YVRradualColorShowTypeTopBottom) {
-		
-		[layer setStartPoint:CGPointMake(0.5, 0)];
-		[layer setEndPoint:CGPointMake(0.5, 1.0)];
-	}
-	
-	if (type == YVRradualColorShowTypeLTopToRBottom) {
-		
-		[layer setStartPoint:CGPointMake(0, 0)];
-		[layer setEndPoint:CGPointMake(1, 1)];
-	}
-	
-	if (type == YVRradualColorShowTypeLBottomToRTop) {
-		
-		[layer setStartPoint:CGPointMake(0, 1)];
-		[layer setEndPoint:CGPointMake(1, 0)];
-	}
-	[theView.layer addSublayer:layer];
-}
-
-#pragma mark- 纯色图片
-+ (UIImage *)getImageFromColor:(UIColor *)color withSize:(CGSize)size{
-    
-    CGRect rect 			= CGRectMake(0.0f, 0.0f, size.width, size.height);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context	= UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *theImage		= UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return theImage;
-}
-
-+ (UIImage *)getImageFromColor:(UIColor *)color{
-	
-	return [self getImageFromColor:color withSize:CGSizeMake(kScreenWidth, kScreenHeight)];
-}
 
 //MARK:- 获取当前界面所在vc
 + (UIViewController *)currentViewController{

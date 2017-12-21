@@ -11,18 +11,6 @@
 
 
 
-///渐变颜色显示方式
-typedef NS_ENUM(NSInteger, YVRradualColorShowType) {
-
-	///从左到右
-	YVRradualColorShowTypeLeftRight = 0,
-	///从上到下
-	YVRradualColorShowTypeTopBottom = 1,
-	///左上到右下
-	YVRradualColorShowTypeLTopToRBottom = 2,
-	///左下到右上
-	YVRradualColorShowTypeLBottomToRTop = 3,
-};
 
 @interface XManager : NSObject
 
@@ -30,11 +18,6 @@ typedef NS_ENUM(NSInteger, YVRradualColorShowType) {
 ///单例
 + (XManager *)sharedManager;
 
-+ (void)addRradualColorFor:(UIView *)theView colors:(NSArray *)colors showType:(YVRradualColorShowType)type;
-
-///颜色图片
-+ (UIImage *)getImageFromColor:(UIColor *)color;
-+ (UIImage *)getImageFromColor:(UIColor *)color withSize:(CGSize)size;
 
 ///MARK:- gcd延时操作
 + (void)dispatchAfter:(int)time completion:(void(^)(void))timerOut;

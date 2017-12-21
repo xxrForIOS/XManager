@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+
+///渐变颜色显示方式
+typedef NS_ENUM(NSInteger, YVRradualColorShowType) {
+	
+	///从左到右
+	YVRradualColorShowTypeLeftRight = 0,
+	///从上到下
+	YVRradualColorShowTypeTopBottom = 1,
+	///左上到右下
+	YVRradualColorShowTypeLTopToRBottom = 2,
+	///左下到右上
+	YVRradualColorShowTypeLBottomToRTop = 3,
+};
 @interface UIView (Melo)
 
 @property (nonatomic) CGFloat left;
@@ -29,6 +42,11 @@
 
 ///切任意圆角
 - (void)changeCorner:(UIRectCorner)corners cornerRadii:(CGFloat)radii;
+
++ (void)addRradualColorFor:(UIView *)theView colors:(NSArray *)colors showType:(YVRradualColorShowType)type;
+
+///左右抖动
+- (void)shake;
 
 ///rac添加tap手势
 - (void)addTap:(void (^)(UIGestureRecognizer * tap))tapBlock;

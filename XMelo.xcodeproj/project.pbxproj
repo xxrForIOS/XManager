@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7D3691A56F3A55AD39BF3D88 /* libPods-XMelo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55944350D03FF90A8F8126C9 /* libPods-XMelo.a */; };
-		A7085D031F973D4300398477 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		A70ADEA61FC7C2DC00ADBBA2 /* MainTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A70ADEA51FC7C2DC00ADBBA2 /* MainTestViewController.m */; };
+		A7085D031F973D4300398477 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		A70ADEAC1FC7CCBB00ADBBA2 /* UIView+Melo.m in Sources */ = {isa = PBXBuildFile; fileRef = A70ADEAB1FC7CCBB00ADBBA2 /* UIView+Melo.m */; };
 		A70DA5231F564D730059935B /* UIScrollView+SpringHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A70DA5221F564D730059935B /* UIScrollView+SpringHeadView.m */; };
 		A713F87F1F17A57300FEA33E /* XBaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F87E1F17A57300FEA33E /* XBaseTableController.m */; };
@@ -30,6 +29,7 @@
 		A72CD1AE1F0D0567002C90BD /* XConst.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1AD1F0D0567002C90BD /* XConst.m */; };
 		A72CD1EC1F10719D002C90BD /* DictModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A72CD1EB1F10719D002C90BD /* DictModel.m */; };
 		A73C81D11FB2B6D400A0F6BB /* UIButton+Melo.m in Sources */ = {isa = PBXBuildFile; fileRef = A73C81D01FB2B6D400A0F6BB /* UIButton+Melo.m */; };
+		A73DCD8C1FEB4C3200599349 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = A73DCD8B1FEB4C3200599349 /* UIImage+Color.m */; };
 		A742544A1FB1B7580047B579 /* ThirdSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74254491FB1B7580047B579 /* ThirdSignViewController.m */; };
 		A74AACE91F6786AB0053066D /* TableViewAnimationKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A74AACE81F6786AB0053066D /* TableViewAnimationKit.m */; };
 		A75385581FE2114000DC476F /* YVBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75385571FE2113F00DC476F /* YVBaseViewController.m */; };
@@ -47,7 +47,6 @@
 		A7BE3E241FDFC0E100BB4B59 /* XRHttpHelper+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BE3E231FDFC0E100BB4B59 /* XRHttpHelper+Custom.m */; };
 		A7BE3E271FE0BFBD00BB4B59 /* XRLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BE3E261FE0BFBD00BB4B59 /* XRLayout.m */; };
 		A7BE3E2A1FE0C98E00BB4B59 /* XRCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BE3E291FE0C98E00BB4B59 /* XRCCell.m */; };
-		A7BE3E401FE102E000BB4B59 /* XRButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BE3E3F1FE102E000BB4B59 /* XRButtonCell.m */; };
 		A7C7C1631FE9427E000ECCD3 /* NSDate+String.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C7C1621FE9427E000ECCD3 /* NSDate+String.m */; };
 		A7C7C1661FEA87F2000ECCD3 /* UIColor+Melo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C7C1651FEA87F2000ECCD3 /* UIColor+Melo.m */; };
 		A7F3B3E31F1A21A500E683D0 /* XStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F3B3E21F1A21A500E683D0 /* XStepper.m */; };
@@ -57,8 +56,6 @@
 		55944350D03FF90A8F8126C9 /* libPods-XMelo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XMelo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		691E65A6553354E2B37952FD /* Pods-XMelo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMelo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XMelo/Pods-XMelo.debug.xcconfig"; sourceTree = "<group>"; };
 		A7086E751FA8A48900BA51B1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		A70ADEA41FC7C2DC00ADBBA2 /* MainTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTestViewController.h; sourceTree = "<group>"; };
-		A70ADEA51FC7C2DC00ADBBA2 /* MainTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTestViewController.m; sourceTree = "<group>"; };
 		A70ADEAA1FC7CCBB00ADBBA2 /* UIView+Melo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Melo.h"; sourceTree = "<group>"; };
 		A70ADEAB1FC7CCBB00ADBBA2 /* UIView+Melo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Melo.m"; sourceTree = "<group>"; };
 		A70DA5211F564D730059935B /* UIScrollView+SpringHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SpringHeadView.h"; sourceTree = "<group>"; };
@@ -97,6 +94,8 @@
 		A72CD1EB1F10719D002C90BD /* DictModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictModel.m; sourceTree = "<group>"; };
 		A73C81CF1FB2B6D400A0F6BB /* UIButton+Melo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Melo.h"; sourceTree = "<group>"; };
 		A73C81D01FB2B6D400A0F6BB /* UIButton+Melo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Melo.m"; sourceTree = "<group>"; };
+		A73DCD8A1FEB4C3200599349 /* UIImage+Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		A73DCD8B1FEB4C3200599349 /* UIImage+Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
 		A74254481FB1B7580047B579 /* ThirdSignViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdSignViewController.h; sourceTree = "<group>"; };
 		A74254491FB1B7580047B579 /* ThirdSignViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdSignViewController.m; sourceTree = "<group>"; };
 		A74AACE71F6786AB0053066D /* TableViewAnimationKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewAnimationKit.h; sourceTree = "<group>"; };
@@ -131,8 +130,6 @@
 		A7BE3E261FE0BFBD00BB4B59 /* XRLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRLayout.m; sourceTree = "<group>"; };
 		A7BE3E281FE0C98E00BB4B59 /* XRCCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRCCell.h; sourceTree = "<group>"; };
 		A7BE3E291FE0C98E00BB4B59 /* XRCCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRCCell.m; sourceTree = "<group>"; };
-		A7BE3E3E1FE102E000BB4B59 /* XRButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRButtonCell.h; sourceTree = "<group>"; };
-		A7BE3E3F1FE102E000BB4B59 /* XRButtonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRButtonCell.m; sourceTree = "<group>"; };
 		A7C7C1611FE9427E000ECCD3 /* NSDate+String.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+String.h"; sourceTree = "<group>"; };
 		A7C7C1621FE9427E000ECCD3 /* NSDate+String.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+String.m"; sourceTree = "<group>"; };
 		A7C7C1641FEA87F2000ECCD3 /* UIColor+Melo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Melo.h"; sourceTree = "<group>"; };
@@ -166,6 +163,7 @@
 		A70ADEA81FC7C31A00ADBBA2 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				A73DCD8E1FEB67AE00599349 /* Collection */,
 				A70ADEA91FC7C41700ADBBA2 /* SignIn */,
 				A771A27A1F59903300035284 /* ImageValidation */,
 				A721BD291F5941F9008EBF9A /* SystemFont */,
@@ -288,7 +286,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		A73C81D71FB2DCC500A0F6BB /* BaseClass */ = {
+		A73C81D71FB2DCC500A0F6BB /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				A75385561FE2113F00DC476F /* YVBaseViewController.h */,
@@ -300,7 +298,33 @@
 				A716C9951FBBEF1F00B38C36 /* UIScreen+SafeArea.h */,
 				A716C9961FBBEF1F00B38C36 /* UIScreen+SafeArea.m */,
 			);
-			path = BaseClass;
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A73DCD8D1FEB5B3500599349 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A767F0F51F5560BD00432627 /* XImagePicker.h */,
+				A767F0F61F5560BD00432627 /* XImagePicker.m */,
+				A767F0F71F5560BD00432627 /* YVPickerView.h */,
+				A767F0F81F5560BD00432627 /* YVPickerView.m */,
+				A795B7781F4EB91B003C7EAD /* YVAgreementView.h */,
+				A795B7791F4EB91B003C7EAD /* YVAgreementView.m */,
+				A7F3B3E11F1A21A500E683D0 /* XStepper.h */,
+				A7F3B3E21F1A21A500E683D0 /* XStepper.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A73DCD8E1FEB67AE00599349 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				A7BE3E251FE0BFBD00BB4B59 /* XRLayout.h */,
+				A7BE3E261FE0BFBD00BB4B59 /* XRLayout.m */,
+				A7BE3E281FE0C98E00BB4B59 /* XRCCell.h */,
+				A7BE3E291FE0C98E00BB4B59 /* XRCCell.m */,
+			);
+			path = Collection;
 			sourceTree = "<group>";
 		};
 		A771A27A1F59903300035284 /* ImageValidation */ = {
@@ -392,15 +416,8 @@
 		A7A8AB641F0BC33F001338B0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				A767F0F51F5560BD00432627 /* XImagePicker.h */,
-				A767F0F61F5560BD00432627 /* XImagePicker.m */,
-				A767F0F71F5560BD00432627 /* YVPickerView.h */,
-				A767F0F81F5560BD00432627 /* YVPickerView.m */,
-				A795B7781F4EB91B003C7EAD /* YVAgreementView.h */,
-				A795B7791F4EB91B003C7EAD /* YVAgreementView.m */,
-				A7F3B3E11F1A21A500E683D0 /* XStepper.h */,
-				A7F3B3E21F1A21A500E683D0 /* XStepper.m */,
-				A73C81D71FB2DCC500A0F6BB /* BaseClass */,
+				A73DCD8D1FEB5B3500599349 /* Utils */,
+				A73C81D71FB2DCC500A0F6BB /* Base */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -410,14 +427,6 @@
 			children = (
 				A7A8AB691F0BC737001338B0 /* ViewController.h */,
 				A7A8AB6A1F0BC737001338B0 /* ViewController.m */,
-				A7BE3E251FE0BFBD00BB4B59 /* XRLayout.h */,
-				A7BE3E261FE0BFBD00BB4B59 /* XRLayout.m */,
-				A7BE3E281FE0C98E00BB4B59 /* XRCCell.h */,
-				A7BE3E291FE0C98E00BB4B59 /* XRCCell.m */,
-				A7BE3E3E1FE102E000BB4B59 /* XRButtonCell.h */,
-				A7BE3E3F1FE102E000BB4B59 /* XRButtonCell.m */,
-				A70ADEA41FC7C2DC00ADBBA2 /* MainTestViewController.h */,
-				A70ADEA51FC7C2DC00ADBBA2 /* MainTestViewController.m */,
 				A713F8801F17A87200FEA33E /* XListViewController.h */,
 				A713F8811F17A87200FEA33E /* XListViewController.m */,
 				A70ADEA81FC7C31A00ADBBA2 /* List */,
@@ -436,6 +445,8 @@
 				A7C7C1621FE9427E000ECCD3 /* NSDate+String.m */,
 				A7C7C1641FEA87F2000ECCD3 /* UIColor+Melo.h */,
 				A7C7C1651FEA87F2000ECCD3 /* UIColor+Melo.m */,
+				A73DCD8A1FEB4C3200599349 /* UIImage+Color.h */,
+				A73DCD8B1FEB4C3200599349 /* UIImage+Color.m */,
 				A713F87A1F17A51E00FEA33E /* Control */,
 				A713F87B1F17A52A00FEA33E /* Object */,
 				A713F87C1F17A53500FEA33E /* View */,
@@ -583,9 +594,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A721BD2C1F597FC0008EBF9A /* NNValidationView.m in Sources */,
-				A7BE3E401FE102E000BB4B59 /* XRButtonCell.m in Sources */,
 				A76E10651F2ED9EF00E09AAE /* XCell.m in Sources */,
-				A7085D031F973D4300398477 /* BuildFile in Sources */,
+				A7085D031F973D4300398477 /* (null) in Sources */,
 				A7B3722D1F30AA730087972B /* XMelo.xcdatamodeld in Sources */,
 				A767F0FA1F5560BD00432627 /* YVPickerView.m in Sources */,
 				A7B6AE431F0BCB310078B268 /* XManager.m in Sources */,
@@ -595,7 +605,6 @@
 				A72CD1A71F0D04EE002C90BD /* UILabel+Frame.m in Sources */,
 				A767F0F91F5560BD00432627 /* XImagePicker.m in Sources */,
 				A7C7C1631FE9427E000ECCD3 /* NSDate+String.m in Sources */,
-				A70ADEA61FC7C2DC00ADBBA2 /* MainTestViewController.m in Sources */,
 				A7BE3E211FDFB4D000BB4B59 /* XRHttpHelper.m in Sources */,
 				A75385581FE2114000DC476F /* YVBaseViewController.m in Sources */,
 				A73C81D11FB2B6D400A0F6BB /* UIButton+Melo.m in Sources */,
@@ -619,6 +628,7 @@
 				A713F87F1F17A57300FEA33E /* XBaseTableController.m in Sources */,
 				A795B7961F511C56003C7EAD /* XInputViewController.m in Sources */,
 				A71D18511F0BAE0700BAE515 /* AppDelegate.m in Sources */,
+				A73DCD8C1FEB4C3200599349 /* UIImage+Color.m in Sources */,
 				A71D184E1F0BAE0700BAE515 /* main.m in Sources */,
 				A7F3B3E31F1A21A500E683D0 /* XStepper.m in Sources */,
 			);

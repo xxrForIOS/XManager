@@ -162,6 +162,60 @@
 	self.layer.mask = maskLayer;
 }
 
+
++ (void)addRradualColorFor:(UIView *)theView colors:(NSArray *)colors showType:(YVRradualColorShowType)type {
+	
+	/*
+	 layer.colors = @[(__bridge id)[UIColor redColor].CGColor,
+	 (__bridge id)[UIColor yellowColor].CGColor,
+	 (__bridge id)[UIColor blueColor].CGColor];
+	 */
+	CAGradientLayer *layer 	= [[CAGradientLayer alloc] init];
+	layer.frame 			= theView.bounds;
+	layer.colors 			= colors;
+	
+	if (type == YVRradualColorShowTypeLeftRight) {
+		
+		[layer setStartPoint:CGPointMake(0, 0.5)];
+		[layer setEndPoint:CGPointMake(1, 0.5)];
+	}
+	
+	if (type == YVRradualColorShowTypeTopBottom) {
+		
+		[layer setStartPoint:CGPointMake(0.5, 0)];
+		[layer setEndPoint:CGPointMake(0.5, 1.0)];
+	}
+	
+	if (type == YVRradualColorShowTypeLTopToRBottom) {
+		
+		[layer setStartPoint:CGPointMake(0, 0)];
+		[layer setEndPoint:CGPointMake(1, 1)];
+	}
+	
+	if (type == YVRradualColorShowTypeLBottomToRTop) {
+		
+		[layer setStartPoint:CGPointMake(0, 1)];
+		[layer setEndPoint:CGPointMake(1, 0)];
+	}
+	[theView.layer addSublayer:layer];
+}
+
+- (void)shake{
+
+	CALayer *viewLayer = self.layer;
+	CGPoint position = viewLayer.position;
+	CGPoint x = CGPointMake(position.x + 5, position.y);
+	CGPoint y = CGPointMake(position.x - 5, position.y);
+	CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
+	[animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault]];
+	[animation setFromValue:[NSValue valueWithCGPoint:x]];
+	[animation setToValue:[NSValue valueWithCGPoint:y]];
+	[animation setAutoreverses:YES];
+	[animation setDuration:0.075];
+	[animation setRepeatCount:3];
+	[viewLayer addAnimation:animation forKey:nil];
+}
+
 #pragma mark- tap手势
 - (void)addTap:(void (^)(UIGestureRecognizer * tap))tapBlock{
 	
@@ -170,4 +224,6 @@
 	self.userInteractionEnabled = YES;
 	[self addGestureRecognizer:tap];
 }
+
+
 @end

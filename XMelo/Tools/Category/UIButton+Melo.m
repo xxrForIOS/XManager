@@ -199,6 +199,6 @@
 	
 	if (!backgroundColor) return;
 	
-	[self setBackgroundImage:[backgroundColor toImageWithSize:self.size] forState:state];
+	[self setBackgroundImage:[UIImage imageWithColor:backgroundColor size:self.size] forState:state];
 }
 @end

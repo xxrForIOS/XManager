@@ -15,7 +15,7 @@
 	self = [super initWithFrame:frame];
 	if (self) {
 		
-//		self.backgroundColor = [UIColor whiteColor];
+		self.backgroundColor = [UIColor whiteColor];
 		self.layer.cornerRadius = 8;
 		self.layer.masksToBounds = YES;
 		self.imageIV = [[UIImageView alloc]initWithFrame:self.bounds];

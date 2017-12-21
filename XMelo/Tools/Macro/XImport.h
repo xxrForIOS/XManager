@@ -25,6 +25,7 @@
 #import "UIButton+Melo.h"
 #import "NSDate+String.h"
 #import "UIColor+Melo.h"
+#import "UIImage+Color.h"
 
 #import "UILabel+Frame.h"
 #import "NSString+Add.h"

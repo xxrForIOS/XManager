@@ -45,27 +45,14 @@ static char     yvPickerViewKey;
     theView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
     [theVC.navigationController.view addSubview:theView];
     theView.userInteractionEnabled = YES;
-
-//	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
-//	[theView addGestureRecognizer:tap];
-//	[[tap rac_gestureSignal] subscribeNext:^(id x) {
-//
-//		[theView removeFromSuperview];
-//		if (!theSelf.isChoose) {
-//
-//			!aBlock ?: aBlock(datas[0]);
-//		}
-//	}];
-
-
-//    [theView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithActionBlock:^(id sender) {
-//
-//        [theView removeFromSuperview];
-//        if (!theSelf.isChoose) {
-//
-//            !aBlock ?: aBlock(datas[0]);
-//        }
-//    }]];
+	[theView addTap:^(UIGestureRecognizer *tap) {
+		
+		[tap.view removeFromSuperview];
+		if (!theSelf.isChoose) {
+			
+			!aBlock ?: aBlock(datas[0]);
+		}
+	}];
 
     UIView *toolBar = [[UIView alloc]initWithFrame:CGRectMake(0, theView.height - 216 - 40, kScreenWidth, 40)];
     toolBar.backgroundColor = kColorRGB(240, 240, 240,1);

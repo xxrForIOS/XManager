@@ -19,10 +19,21 @@
 	return aColor;
 }
 
++ (UIColor *)xxrandomColor {
+	
+	CGFloat xxR = (CGFloat)RAND_MAX / random();
+	CGFloat xxG = (CGFloat)RAND_MAX / random();
+	CGFloat xxB = (CGFloat)RAND_MAX / random();
+	
+	UIColor *aColor = [UIColor colorWithRed:xxR green:xxG blue:xxB alpha:1];
+	return aColor;
+}
+
 + (UIColor *)colorWithHexString:(NSString *)string {
 	
 	//http://www.jianshu.com/p/79e4dd8a44bc
-	NSString *cString = [[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+	NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+	NSString *cString = [[string stringByTrimmingCharactersInSet:set] uppercaseString];
 	
 	if ([cString length] != 6)		return [UIColor clearColor];
 	if ([cString hasPrefix:@"0X"]) 	cString = [cString substringFromIndex:2];
@@ -50,24 +61,6 @@
 									  alpha:1.0f];
 	return aColor;
 }
-
-- (UIImage *)toImage {
-	
-	return [self toImageWithSize:[UIScreen mainScreen].bounds.size];
-}
-
-- (UIImage *)toImageWithSize:(CGSize)size {
-	
-	CGRect rect 			= CGRectMake(0.0f, 0.0f, size.width, size.height);
-	UIGraphicsBeginImageContext(rect.size);
-	CGContextRef context	= UIGraphicsGetCurrentContext();
-	CGContextSetFillColorWithColor(context, [self CGColor]);
-	CGContextFillRect(context, rect);
-	UIImage *theImage		= UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();
-	return theImage;
-}
-
 
 
 @end

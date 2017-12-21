@@ -15,10 +15,10 @@
 	if (self = [super init]) {
 		
 		//设置item的大小
-		CGFloat theWith 		= kScreenWidth - 20;
+		CGFloat theWith 		= kScreenWidth - 40;
 		self.itemSize 			= CGSizeMake(theWith, 140);
 		self.scrollDirection  	= UICollectionViewScrollDirectionHorizontal;
-		self.sectionInset 		= UIEdgeInsetsMake(-5, 10, -5, 10);
+		self.sectionInset 		= UIEdgeInsetsMake(-5, 20, -5, 20);
 		self.minimumLineSpacing = (kScreenWidth - theWith)/4;
 	}
 	return self;

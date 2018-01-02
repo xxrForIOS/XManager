@@ -19,16 +19,6 @@
 	return aColor;
 }
 
-+ (UIColor *)xxrandomColor {
-	
-	CGFloat xxR = (CGFloat)RAND_MAX / random();
-	CGFloat xxG = (CGFloat)RAND_MAX / random();
-	CGFloat xxB = (CGFloat)RAND_MAX / random();
-	
-	UIColor *aColor = [UIColor colorWithRed:xxR green:xxG blue:xxB alpha:1];
-	return aColor;
-}
-
 + (UIColor *)colorWithHexString:(NSString *)string {
 	
 	//http://www.jianshu.com/p/79e4dd8a44bc

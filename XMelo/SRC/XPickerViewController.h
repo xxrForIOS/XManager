@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XBaseTableController.h"
+#import "YVBaseViewController.h"
 
-@interface XPickerViewController : XBaseTableController
+@interface XPickerViewController : YVBaseViewController
 
 @end

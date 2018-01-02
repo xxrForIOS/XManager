@@ -6,9 +6,9 @@
 //  Copyright © 2017年 欣欣然. All rights reserved.
 //
 
-#import "XBaseTableController.h"
+#import "YVBaseViewController.h"
 
-@interface XListViewController : XBaseTableController
+@interface XListViewController : YVBaseViewController
 
 @property (nonatomic, assign) XRCellAnimationType        type;
 @end

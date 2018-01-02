@@ -6,8 +6,8 @@
 //  Copyright © 2017年 欣欣然. All rights reserved.
 //
 
-#import "XBaseTableController.h"
+#import "YVBaseViewController.h"
 
-@interface FontViewController : XBaseTableController
+@interface FontViewController : YVBaseViewController
 
 @end

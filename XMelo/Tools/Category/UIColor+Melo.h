@@ -12,7 +12,6 @@
 
 ///生成一个随机色
 + (UIColor *)randomColor;
-+ (UIColor *)xxrandomColor;
 
 ///16进制颜色转化
 + (UIColor *)colorWithHexString:(NSString *)string;

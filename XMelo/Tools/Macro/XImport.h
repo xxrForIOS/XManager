@@ -13,7 +13,7 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 #import "AppDelegate.h"
-//#import <MLeaksFinder/MLeaksFinder.h>
+#import <MLeaksFinder/MLeaksFinder.h>
 
 //MARK: head
 #import "XColor.h"

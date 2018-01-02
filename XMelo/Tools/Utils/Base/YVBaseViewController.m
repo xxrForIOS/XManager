@@ -124,42 +124,6 @@
     return kImageName(@"nodata");
 }
 
-
-//MARK:- footer
-- (void)showNewFooterAgreementTitle:(NSString *)fullStr clickString:(NSString *)clickStr buttonWithTitle:(NSString *)buttonTitle clickBlock:(void(^)(UIButton *aButton, BOOL isRead))aBlock {
-    
-    @kWeakSelf;
-    self.tableView.tableFooterView = ({
-        
-        UIView *bgView                  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 150)];
-        bgView.backgroundColor          = [UIColor groupTableViewBackgroundColor];
-//        [YVAgreementView getCanClickViewWithTitle:fullStr clickString:clickStr addInView:bgView withFrame:CGRectMake(15, 15, bgView.width - 30, 30) handler:^{
-//            YVWKWebViewController *vcc  = [[YVWKWebViewController alloc]init];
-//            vcc.urlString               = clickStr;
-//            [selfWeak.tableView.viewController.navigationController pushViewController:vcc animated:YES];
-//        }];
-		
-        UIButton *theButton           = [UIButton buttonWithType:UIButtonTypeCustom];
-        theButton.frame               = CGRectMake(40, 45 + 30, kScreenWidth - 80, 45);
-        theButton.layer.cornerRadius  = theButton.height/2;
-        theButton.layer.masksToBounds = YES;
-        theButton.backgroundColor     = kColorThemeRed;
-        [theButton setTitle:buttonTitle forState:UIControlStateNormal];
-        [theButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [bgView addSubview:theButton];
-        
-//        [theButton addBlockForControlEvents:UIControlEventTouchUpInside block:^(UIButton *button) {
-//            if (![YVAgreementView sharedManager].isRead) {
-//                kAlert(@"请阅读同意相关协议");
-//                return;
-//            }
-//            !aBlock ?: aBlock(button,[YVAgreementView sharedManager].isRead);
-//        }];
-		
-        bgView;
-    });
-}
-
 - (void)showFooerButtonWithTitle:(NSString *)title clickBlock:(void(^)(UIButton *aButton))aBlock {
     
     self.tableView.tableFooterView = ({
@@ -179,48 +143,6 @@
 		
         [bgView addSubview:leftButton];
         
-        bgView;
-    });
-}
-
-- (void)showFooerButtonWithleft:(NSString *)lTitle
-                         lBlock:(void(^)(UIButton *aButton))lBlock
-                          right:(NSString *)rTitle
-                         rBlock:(void(^)(UIButton *aButton))rBlock {
-    
-    self.tableView.tableFooterView = ({
-        UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 95)];
-        bgView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        
-        CGFloat width = (bgView.width - 30 - 10)/3;
-        UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        leftButton.frame = CGRectMake(15, 25, width, 45);
-        leftButton.layer.cornerRadius = 5;
-        leftButton.layer.masksToBounds = YES;
-        leftButton.backgroundColor = [UIColor orangeColor];
-        [leftButton setTitle:lTitle forState:UIControlStateNormal];
-        [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//        [leftButton addBlockForControlEvents:UIControlEventTouchUpInside block:^(UIButton *button) {
-//            if (lBlock) {
-//                lBlock(button);
-//            }
-//        }];
-		
-        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        rightButton.frame = CGRectMake(15 + width + 10, 25, width * 2, 45);
-        rightButton.layer.cornerRadius = 5;
-        rightButton.layer.masksToBounds = YES;
-//        rightButton.backgroundColor = kColorRGB(13, 192, 241);
-        [rightButton setTitle:rTitle forState:UIControlStateNormal];
-        [rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//        [rightButton addBlockForControlEvents:UIControlEventTouchUpInside block:^(UIButton *button) {
-//            if (rBlock) {
-//                rBlock(button);
-//            }
-//        }];
-		
-        [bgView addSubview:leftButton];
-        [bgView addSubview:rightButton];
         bgView;
     });
 }

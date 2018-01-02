@@ -10,7 +10,7 @@
 #import "XListViewController.h"
 #import "XRHttpHelper.h"
 #import "YVWishAlertView.h"
-
+#import "DictModel.h"
 #ifdef DEBUG
 #define SLog(format, ...) printf("class: <%p %s:(%d) > method: %s \n%s\n", self, [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __PRETTY_FUNCTION__, [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] )
 #else
@@ -32,16 +32,54 @@
     [super viewDidLoad];
 	
 	self.view.backgroundColor = [UIColor randomColor];
-	[self buttons];
+//	[self buttons];
 	[self rongCloud];
 }
 
 #pragma mark- test
 - (void)rongCloud {
-	
+
 	[self.view addTap:^(UIGestureRecognizer *tap) {
 		
 		tap.view.backgroundColor = [UIColor randomColor];
+	}];
+	
+
+	
+	
+	UIButton *aButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	[aButton setBackgroundColor:[UIColor redColor] forState:UIControlStateHighlighted];
+	aButton.backgroundColor = [UIColor randomColor];
+	[self.view addSubview:aButton];
+	aButton.timeInterval = 0.001;
+	aButton.clickScope = UIEdgeInsetsMake(100, 200, 200, 200);
+	[aButton addClick:^(UIButton * _Nullable sender) {
+		
+		YVLog(@"xxx getclickkkkkk");
+	}];
+	[aButton mas_makeConstraints:^(MASConstraintMaker *make) {
+		
+		//		make.left.equalTo(self.view).offset(150);
+		make.left.mas_offset(10);
+		make.top.mas_offset(250);
+		make.width.and.height.offset(100);
+	}];
+
+	UIButton *bButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	bButton.timeInterval = 0.001;
+	[bButton setBackgroundColor:[UIColor redColor] forState:UIControlStateHighlighted];
+	bButton.backgroundColor = [UIColor randomColor];
+	[self.view addSubview:bButton];
+	[bButton addClick:^(UIButton * _Nullable sender) {
+		
+		YVLog(@"bbbbbbbbb getclick");
+	}];
+	
+	[bButton mas_makeConstraints:^(MASConstraintMaker *make) {
+		
+		make.left.mas_offset(130);
+		make.top.offset(250);
+		make.width.and.height.offset(50);
 	}];
 }
 
@@ -62,6 +100,7 @@
 		[theButton setTitleColor:[UIColor blackColor] 		forState:UIControlStateNormal];
 		[theButton setBackgroundColor:[UIColor randomColor] forState:UIControlStateNormal];
 		theButton.clickScope = UIEdgeInsetsMake(0, 10, -20, -20);
+		theButton.timeInterval = 2;
 		[self.view addSubview:theButton];
 		
 		CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
@@ -83,14 +122,16 @@
 		
 		[theButton addClick:^(UIButton *sender) {
 
+			YVLog(@"xxxx getClick");
+			
 //			NSUInteger index = (sender.tag - 100) % 4 + 1017;
 //			YVWishAlertView *alert = [[YVWishAlertView alloc]initWithType:index];
 //			[alert showAlertView];
 			
-			XListViewController *vcc 	= [[XListViewController alloc]init];
-			vcc.type 					= sender.tag - 100 + 1;
-			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vcc];
-			[self presentViewController:nav animated:YES completion:nil];
+//			XListViewController *vcc 	= [[XListViewController alloc]init];
+//			vcc.type 					= sender.tag - 100 + 1;
+//			UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vcc];
+//			[self presentViewController:nav animated:YES completion:nil];
 		}];
 	}
 }

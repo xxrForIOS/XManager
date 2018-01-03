@@ -26,4 +26,7 @@
 
 ///获取指定长度随机字符串
 + (NSString *)randomString:(int)length;
+
+- (NSString *)idNumberHidden;
+
 @end

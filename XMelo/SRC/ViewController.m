@@ -22,10 +22,11 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) UICollectionView 	*collectionView;
-@property (nonatomic, strong) NSArray 			*images;
+@property (nonatomic, strong) NSArray 			*idNumbers;
 @end
 
 @implementation ViewController
+
 
 
 - (void)viewDidLoad {
@@ -36,15 +37,39 @@
 	[self rongCloud];
 }
 
+- (NSString *)idNumberHidden:(NSString *)str {
+	
+	NSString *string = @"";
+	NSRange range = NSMakeRange(10, 4);
+	for (int i = 0; i < range.length - 1; i++) {
+		
+		string = [string stringByAppendingString:@"*"];
+	}
+	
+	NSString *result = [str stringByReplacingCharactersInRange:range withString:string];
+	return result;
+}
+
 #pragma mark- test
 - (void)rongCloud {
 
+	//142326**********54
+	for (NSString *idNumer in self.idNumbers) {
+		
+		BOOL isAlright = [idNumer isIDCardNumber];
+		
+		if (isAlright) {
+			
+			YVLog(@"hidden %@",[idNumer idNumberHidden]);
+		}
+		YVLog(@"number %@",isAlright ? @"正确" : kStringFormat(@"不正确 %@",idNumer));
+	}
+	
 	[self.view addTap:^(UIGestureRecognizer *tap) {
 		
 		tap.view.backgroundColor = [UIColor randomColor];
 	}];
 	
-
 	
 	
 	UIButton *aButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -134,6 +159,17 @@
 //			[self presentViewController:nav animated:YES completion:nil];
 		}];
 	}
+}
+
+- (NSArray *)idNumbers {
+	
+	if (!_idNumbers) {
+		
+		_idNumbers = @[@"421121198811193424", @"360702198006218406", @"512111198803045555",
+					   @"510401199403318750", @"34122619850901051X", @"540127198908129048"];
+	}
+	
+	return _idNumbers;
 }
 
 - (void)didReceiveMemoryWarning {

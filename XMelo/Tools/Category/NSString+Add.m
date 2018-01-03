@@ -115,4 +115,27 @@
 }
 
 
+//142626**********54
+- (NSString *)idNumberHidden{
+	
+	if (![self isIDCardNumber]) {
+		
+		YVLog(@"身份证号码不正确");
+		return self;
+	}
+	
+	NSString *string = @"*";
+	NSRange range = NSMakeRange(6, self.length - 8);
+	for (int i = 0; i < range.length - 1; i++) {
+		
+		string = [string stringByAppendingString:@"*"];
+	}
+	NSString *result = [self stringByReplacingCharactersInRange:range withString:string];
+	return result;
+}
+
+
+
+
+
 @end

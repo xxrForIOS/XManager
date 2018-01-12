@@ -48,6 +48,9 @@ typedef NS_ENUM(NSInteger, YVRradualColorShowType) {
 ///左右抖动
 - (void)shake;
 
+- (void)addLine;
+
+
 ///rac添加tap手势
 - (void)addTap:(void (^)(UIGestureRecognizer * tap))tapBlock;
 

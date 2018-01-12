@@ -55,7 +55,7 @@
     
     self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
 
-        [XManager showAlertWith:selfWeak.fonts[indexPath.row]];
+        [XAlertController showAlertWith:selfWeak.fonts[indexPath.row]];
         YVLog(@"font: %@",selfWeak.fonts[indexPath.row]);
     };
 }
@@ -94,7 +94,6 @@
 	}];
 }
 
-kDealloc;
 
 /*
 #pragma mark - Navigation

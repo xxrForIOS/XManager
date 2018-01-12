@@ -11,6 +11,8 @@
 
 #import "XRLayout.h"
 #import "XRCCell.h"
+#import "UINavigationBar+ThemeColor.h"
+
 
 @interface XListViewController () <UICollectionViewDelegate, UICollectionViewDataSource> {
 	
@@ -34,6 +36,32 @@
 	[self setUpcollection];
 	[self setUpTableView];
 	[self configBottomTool];
+	
+//	[self.navigationController.navigationBar configThemeColor];
+	
+	///购物车
+	UIButton *cart = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 20, 20)];
+	cart.backgroundColor = [UIColor randomColor];
+	[cart setImage:kImageName(@"sd_like_s") forState:UIControlStateNormal];
+	[cart setImage:kImageName(@"sd_like_s") forState:UIControlStateHighlighted];
+
+//	[cart setBackgroundImage:kImageName(@"sd_like_s") forState:UIControlStateNormal];
+//	[cart setBackgroundImage:kImageName(@"sd_like_s") forState:UIControlStateHighlighted];
+	cart.userInteractionEnabled = YES;
+	cart.clickScope = UIEdgeInsetsMake(-10, -10, -10, -10);
+	cart.timeInterval = 0.0001;
+	[cart addClick:^(UIButton * _Nullable sender) {
+		
+		YVLog(@"click %@",[NSString randomString:6]);
+	}];
+	
+	UIBarButtonItem *carItem = [[UIBarButtonItem alloc] initWithCustomView:cart];
+	UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+	negativeSpacer.width = 20;
+
+	self.navigationItem.rightBarButtonItems = @[negativeSpacer, carItem];
+	
+	self.navigationItem.leftBarButtonItems = @[carItem, negativeSpacer];
 }
 
 #pragma mark- tableView
@@ -49,6 +77,10 @@
 	};
 	
 	self.creatCellView = ^(UITableViewCell *cell, NSIndexPath *indexPath) {
+
+		//分割线
+		//        cell.separatorInset = UIEdgeInsetsMake(0, self.nameTextField.left, 0, 0);
+
 		
 		cell.backgroundColor 		= kColorRandom;
 		UILabel *theLabel 			= [[UILabel alloc]init];
@@ -59,9 +91,12 @@
 		
 		[theLabel mas_makeConstraints:^(MASConstraintMaker *make) {
 			
-			make.right.offset(-20);
+//			make.edges.equalTo(weakSelf.view).with.insets(UIEdgeInsetsMake(padding, padding, padding, padding));
+
+//			make.edges.mas_offset(UIEdgeInsetsMake(10, 20, 10, -20));
+			make.left.offset(20);
 			make.centerY.offset(0);
-			make.height.offset(10);
+//			make.height.mas_lessThanOrEqualTo(cell.contentView);
 		}];
 	};
 	
@@ -71,11 +106,14 @@
 		kPush(selfWeak, [[cls alloc] init]);
 	};
 	
-	[XManager addRightBarItemInViewController:self itemTitle:@"dismiss" andItemBlock:^(UIButton *aButton) {
-		
-		[selfWeak dismissViewControllerAnimated:YES completion:nil];
-		[[NSNotificationCenter defaultCenter]postNotificationName:@"xxalert" object:nil userInfo:nil];;
-	}];
+//	[XManager addRightBarItemInViewController:self itemTitle:@"dismiss" andItemBlock:^(UIButton *aButton) {
+//
+////		[selfWeak dismissViewControllerAnimated:YES completion:nil];
+////		[[NSNotificationCenter defaultCenter]postNotificationName:@"xxalert" object:nil userInfo:nil];;
+//
+//		Class class     = NSClassFromString(@"ShowViewController");
+//		kPush(selfWeak, [[class alloc] init]);
+//	}];
 	
 	self.tableView.hidden = YES;
 	[XManager dispatchAfter:1 completion:^{
@@ -127,6 +165,7 @@
 		[self.view addSubview:button];
 		button;
 	});
+	rewardButton.clickScope = UIEdgeInsetsMake(-20, -20, -20, -20);
 	
 	[commentButton mas_makeConstraints:^(MASConstraintMaker *make) {
 		
@@ -167,25 +206,22 @@
 #pragma mark- delegate
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
 
-	return indexPath.row % 2 == 0;
-}
-
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
-	
-	return UITableViewCellEditingStyleDelete;
+	return YES;
 }
 
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	UITableViewRowAction *deleteRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"取消关注" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
 		
-		[XManager alertControllerWithTitle:@"提示"
-								   message:@"取消关注"
-							 confirmButton:@"确定"
-							  cancelButton:@"取消"
-							  confirmBlock:^{
-
-							  } cancelBlock:nil];
+		[XAlertController alertControllerWithTitle:@"xx"
+										   message:@"点我干啥"
+									 confirmButton:@"S"
+									  cancelButton:@"B"
+									  confirmBlock:^{
+										  
+									  } cancelBlock:^{
+										  
+									  }];
 	}];
 	
 	return @[deleteRowAction];
@@ -194,13 +230,13 @@
 - (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UIContextualAction *action = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"收藏" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
 
-//		sourceView.backgroundColor = [UIColor randomColor];
-//		UITableViewCell *cell 	= [tableView cellForRowAtIndexPath:indexPath];
-//		cell.backgroundColor 	= [UIColor randomColor];
+		UIColor *aColor = [UIColor randomColor];
+		sourceView.backgroundColor = aColor;
+		UITableViewCell *cell 	= [tableView cellForRowAtIndexPath:indexPath];
+		cell.backgroundColor 	= aColor;
 		completionHandler(YES);
 	}];
 	
-	action.backgroundColor = [UIColor orangeColor];
 	UISwipeActionsConfiguration *config = [UISwipeActionsConfiguration configurationWithActions:@[action]];
 	return config;
 }
@@ -277,6 +313,5 @@
 	return _images;
 }
 
-kDealloc;
 
 @end

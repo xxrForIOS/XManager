@@ -18,20 +18,19 @@
 //__attribute__((deprecated("用addClick:替换")))
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
-    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
 
 //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
-    UIColor *theMeColor = [UIColor blackColor];
-	
-    UIImage *colorImage = [UIImage imageWithColor:kColorIceBlue size:CGSizeMake(kScreenWidth, 64)];
-    [navigationBarAppearance setBackgroundImage:colorImage forBarMetrics:UIBarMetricsDefault];
-    [navigationBarAppearance setTintColor:theMeColor];
-    [navigationBarAppearance setBarTintColor:theMeColor];
-    [navigationBarAppearance setShadowImage:[UIImage new]];
-    [navigationBarAppearance setTitleTextAttributes:@{NSForegroundColorAttributeName:theMeColor,
-                                                      NSFontAttributeName:kFontTheme(17)}];
-//
+//    UIColor *theMeColor = kColorThemeOrange;
+//	UINavigationBar *navigation = [UINavigationBar appearance];
+//    UIImage *colorImage = [UIImage imageWithColor:kColorIceBlue size:CGSizeMake(kScreenWidth, 64)];
+//    [navigation setBackgroundImage:colorImage forBarMetrics:UIBarMetricsDefault];
+//    [navigation setTintColor:theMeColor];
+//    [navigation setBarTintColor:theMeColor];
+//    [navigation setShadowImage:[UIImage new]];
+//    [navigation setTitleTextAttributes:@{NSForegroundColorAttributeName:theMeColor,
+//                                                      NSFontAttributeName:kFontTheme(17)}];
+
 
 //    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
 //    manager.enable = YES;

@@ -37,25 +37,39 @@
     self.creatCellView = ^(UITableViewCell *cell, NSIndexPath *indexPath) {
     
         selfWeak.inputTF = ({
-            
-            UITextField *theTF = [[UITextField alloc]initWithFrame:CGRectMake(20, 5, kScreenWidth - 40, 50)];
-            theTF.placeholder = @"请输入右侧图片内字母";
-            theTF.font = kFontTheme(15);
-            theTF.textColor = kColor_yan;
+			
+			//WithFrame:CGRectMake(20, 5, kScreenWidth - 40, 50)
+            UITextField *theTF 	= [[UITextField alloc]init];
+            theTF.placeholder 	= @"请输入右侧图片内字母";
+            theTF.font 			= kFontTheme(15);
+            theTF.textColor 	= kColor_yan;
+			theTF.rightViewMode = UITextFieldViewModeAlways;
+			selfWeak.valView = ({
+				
+				NNValidationView *theView = [[NNValidationView alloc]initWithFrame:CGRectMake(0, 0, 100, 40)
+																	  andCharCount:4
+																	  andLineCount:10];
+				
+				@kWeakObj(theView);
+				theView.changeValidationCodeBlock = ^{
+					
+					YVLog(@"new code %@",theViewWeak.charString);
+				};
+				theView;
+			});
+			
+			theTF.rightView = selfWeak.valView;
             [cell.contentView addSubview:theTF];
-            theTF.rightViewMode = UITextFieldViewModeAlways;
-            selfWeak.valView = ({
-                
-                NNValidationView *theView = [[NNValidationView alloc]initWithFrame:CGRectMake(0, 5, 120, 40) andCharCount:4 andLineCount:10];
-                
-                @kWeakObj(theView);
-                theView.changeValidationCodeBlock = ^{
-                  
-                    YVLog(@"new code %@",theViewWeak.charString);
-                };
-                theView;
-            });
-            theTF.rightView = selfWeak.valView;
+			[theTF mas_makeConstraints:^(MASConstraintMaker *make) {
+				
+				make.left.mas_offset(20);
+				make.top.and.bottom.mas_offset(0);
+				make.right.offset(-20);
+//				make.edges.mas_offset(UIEdgeInsetsMake(0, 20, 0, 20));
+			}];
+			
+			
+
             theTF;
         });
     };
@@ -64,16 +78,16 @@
        
         if ([selfWeak.inputTF.text isEqualToString:@""]) {
             
-            [XManager showAlertWith:@"还没输入"];
+            [XAlertController showAlertWith:@"还没输入"];
             return;
         }
 
         if ([selfWeak.inputTF.text isSameCompareNoCaseWith:selfWeak.valView.charString]) {
             
-            [XManager showAlertWith:@"那你好胖胖哦"];
+            [XAlertController showAlertWith:@"那你好胖胖哦"];
         } else {
             
-            [XManager showAlertWith:@"打错了呢"];
+            [XAlertController showAlertWith:@"打错了呢"];
         }
     }];
 }
@@ -83,7 +97,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-kDealloc;
 
 /*
 #pragma mark - Navigation

@@ -135,11 +135,10 @@
         leftButton.backgroundColor = kColorThemeRed;
         [leftButton setTitle:title forState:UIControlStateNormal];
         [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//        [leftButton addBlockForControlEvents:UIControlEventTouchUpInside block:^(UIButton *button) {
-//            if (aBlock) {
-//                aBlock(button);
-//            }
-//        }];
+		[leftButton addClick:^(UIButton * _Nullable sender) {
+			
+			!aBlock ?: aBlock(sender);
+		}];
 		
         [bgView addSubview:leftButton];
         
@@ -273,5 +272,7 @@
 - (void) addBackButtonItemWithTarget:(id)target action:(SEL)sel {
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"backImage"] style:UIBarButtonItemStyleDone target:self action:sel];
 }
+
+kDealloc;
 
 @end

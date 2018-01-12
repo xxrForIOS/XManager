@@ -9,7 +9,6 @@
 #ifndef XColorHead_h
 #define XColorHead_h
 
-
 //define
 #define kColorRGB(r,g,b,a)  [UIColor colorWithRed:(CGFloat) r/255.0 green:(CGFloat) g/255.0 blue:(CGFloat) b/255 alpha:a]
 #define kColorRandom        [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1]

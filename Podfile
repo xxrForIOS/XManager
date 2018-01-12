@@ -4,6 +4,7 @@ target 'XMelo’ do
 
 pod 'Masonry'
 pod 'ReactiveObjC'
+
 pod 'AFNetworking'
 pod 'MBProgressHUD'
 pod 'SDWebImage'
@@ -12,9 +13,17 @@ pod 'MJExtension'
 pod 'DZNEmptyDataSet'
 pod 'IQKeyboardManager'
 pod 'JTCalendar'
+pod 'YYText'
+pod 'Weibo_SDK'
+#pod 'Weibo_SDK', :git => 'https://github.com/sinaweibosdk/weibo_ios_sdk.git'
 
-#pod 'XRTools' '~> 0.01'
-#pod 'MWPhotoBrowserHelper'
+
+
+
+#pod 'LCProgressHUD'
+
+#pod 'XRTools', '~> 0.01'
+
 
 #类别 textView添加Placeholder
 pod 'ZWPlaceHolder'
@@ -24,6 +33,5 @@ pod 'ZWLimitCounter'
 #扫描内存泄露弹窗提醒
 pod 'MLeaksFinder'
 
-#pod 'YVNetworkLib'
 
 end

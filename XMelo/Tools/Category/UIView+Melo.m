@@ -216,6 +216,18 @@
 	[viewLayer addAnimation:animation forKey:nil];
 }
 
+- (void)addLine {
+	
+	CAShapeLayer *imaginaryLine = [CAShapeLayer layer];
+	imaginaryLine.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+	imaginaryLine.path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:0].CGPath;
+	imaginaryLine.lineWidth = 1. / [[UIScreen mainScreen] scale];
+	imaginaryLine.lineDashPattern = @[@2, @2];
+	imaginaryLine.fillColor = [UIColor clearColor].CGColor;
+	imaginaryLine.strokeColor = [UIColor grayColor].CGColor;
+	[self.layer addSublayer:imaginaryLine];
+}
+
 #pragma mark- tap手势
 - (void)addTap:(void (^)(UIGestureRecognizer * tap))tapBlock{
 	

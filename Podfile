@@ -14,11 +14,6 @@ pod 'DZNEmptyDataSet'
 pod 'IQKeyboardManager'
 pod 'JTCalendar'
 pod 'YYText'
-pod 'Weibo_SDK'
-#pod 'Weibo_SDK', :git => 'https://github.com/sinaweibosdk/weibo_ios_sdk.git'
-
-
-
 
 #pod 'LCProgressHUD'
 

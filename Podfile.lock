@@ -28,7 +28,6 @@ PODS:
   - SDWebImage (4.2.2):
     - SDWebImage/Core (= 4.2.2)
   - SDWebImage/Core (4.2.2)
-  - Weibo_SDK (3.2.3)
   - YYText (1.0.7)
   - ZWLimitCounter (0.0.4)
   - ZWPlaceHolder (0.0.2)
@@ -45,7 +44,6 @@ DEPENDENCIES:
   - MLeaksFinder
   - ReactiveObjC
   - SDWebImage
-  - Weibo_SDK
   - YYText
   - ZWLimitCounter
   - ZWPlaceHolder
@@ -64,7 +62,6 @@ SPEC REPOS:
     - MLeaksFinder
     - ReactiveObjC
     - SDWebImage
-    - Weibo_SDK
     - YYText
     - ZWLimitCounter
     - ZWPlaceHolder
@@ -82,11 +79,10 @@ SPEC CHECKSUMS:
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
-  Weibo_SDK: 652ca78c2f7147a5de5e75e7cbea89838a81772a
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZWLimitCounter: 382d8a4f063980f18022749672b89e0558087007
   ZWPlaceHolder: d55cce10c9930b48c31bf48e7f4748974a31f7e0
 
-PODFILE CHECKSUM: 27b27c5dfc80ea7979c6231a630d2a818039203e
+PODFILE CHECKSUM: 7d1810c1c910acc7493c01516ab3d47b4dde8a23
 
 COCOAPODS: 1.5.3

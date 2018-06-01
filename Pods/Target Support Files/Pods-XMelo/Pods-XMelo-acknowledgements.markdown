@@ -281,10 +281,6 @@ THE SOFTWARE.
 
 
 
-## Weibo_SDK
-
-
-
 ## YYText
 
 The MIT License (MIT)

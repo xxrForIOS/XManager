@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7D3691A56F3A55AD39BF3D88 /* libPods-XMelo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55944350D03FF90A8F8126C9 /* libPods-XMelo.a */; };
-		A7085D031F973D4300398477 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		A7085D031F973D4300398477 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		A70ADEAC1FC7CCBB00ADBBA2 /* UIView+Melo.m in Sources */ = {isa = PBXBuildFile; fileRef = A70ADEAB1FC7CCBB00ADBBA2 /* UIView+Melo.m */; };
 		A70D69531FF098B300A0AF4B /* YVWishAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A70D69521FF098B300A0AF4B /* YVWishAlertView.m */; };
 		A70DA5231F564D730059935B /* UIScrollView+SpringHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A70DA5221F564D730059935B /* UIScrollView+SpringHeadView.m */; };
@@ -51,7 +51,6 @@
 		A7BE3E241FDFC0E100BB4B59 /* XRHttpHelper+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BE3E231FDFC0E100BB4B59 /* XRHttpHelper+Custom.m */; };
 		A7BE3E271FE0BFBD00BB4B59 /* XRLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BE3E261FE0BFBD00BB4B59 /* XRLayout.m */; };
 		A7BE3E2A1FE0C98E00BB4B59 /* XRCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BE3E291FE0C98E00BB4B59 /* XRCCell.m */; };
-		A7C682212005EE70007CB1D4 /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C682202005EE70007CB1D4 /* NSArray+Safe.m */; };
 		A7C68227200700B5007CB1D4 /* XAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C68226200700B5007CB1D4 /* XAlertController.m */; };
 		A7C68235200707EB007CB1D4 /* NSMutableDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C68234200707EB007CB1D4 /* NSMutableDictionary+Safe.m */; };
 		A7C7C1631FE9427E000ECCD3 /* NSDate+String.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C7C1621FE9427E000ECCD3 /* NSDate+String.m */; };
@@ -145,8 +144,6 @@
 		A7BE3E261FE0BFBD00BB4B59 /* XRLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRLayout.m; sourceTree = "<group>"; };
 		A7BE3E281FE0C98E00BB4B59 /* XRCCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRCCell.h; sourceTree = "<group>"; };
 		A7BE3E291FE0C98E00BB4B59 /* XRCCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRCCell.m; sourceTree = "<group>"; };
-		A7C6821F2005EE6F007CB1D4 /* NSArray+Safe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSArray+Safe.h"; path = "/Users/melo/Desktop/XRManager/XMelo/Tools/Category/NSArray+Safe.h"; sourceTree = "<absolute>"; };
-		A7C682202005EE70007CB1D4 /* NSArray+Safe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Safe.m"; path = "/Users/melo/Desktop/XRManager/XMelo/Tools/Category/NSArray+Safe.m"; sourceTree = "<absolute>"; };
 		A7C68225200700B5007CB1D4 /* XAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAlertController.h; sourceTree = "<group>"; };
 		A7C68226200700B5007CB1D4 /* XAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAlertController.m; sourceTree = "<group>"; };
 		A7C6823220070513007CB1D4 /* XCategoryHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCategoryHeader.h; sourceTree = "<group>"; };
@@ -459,8 +456,6 @@
 			isa = PBXGroup;
 			children = (
 				A7C6823220070513007CB1D4 /* XCategoryHeader.h */,
-				A7C6821F2005EE6F007CB1D4 /* NSArray+Safe.h */,
-				A7C682202005EE70007CB1D4 /* NSArray+Safe.m */,
 				A7C68233200707EB007CB1D4 /* NSMutableDictionary+Safe.h */,
 				A7C68234200707EB007CB1D4 /* NSMutableDictionary+Safe.m */,
 				A73C81CF1FB2B6D400A0F6BB /* UIButton+Melo.h */,
@@ -502,7 +497,6 @@
 				A71D18451F0BAE0700BAE515 /* Sources */,
 				A71D18461F0BAE0700BAE515 /* Frameworks */,
 				A71D18471F0BAE0700BAE515 /* Resources */,
-				E08F00C470A14EEDDE0D3E93 /* [CP] Embed Pods Frameworks */,
 				2D455F9DCD50E2D35A0B8B4E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -520,7 +514,7 @@
 		A71D18411F0BAE0700BAE515 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "欣欣然";
 				TargetAttributes = {
 					A71D18481F0BAE0700BAE515 = {
@@ -576,7 +570,9 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -601,21 +597,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E08F00C470A14EEDDE0D3E93 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XMelo/Pods-XMelo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -625,7 +606,7 @@
 			files = (
 				A721BD2C1F597FC0008EBF9A /* NNValidationView.m in Sources */,
 				A76E10651F2ED9EF00E09AAE /* XCell.m in Sources */,
-				A7085D031F973D4300398477 /* BuildFile in Sources */,
+				A7085D031F973D4300398477 /* (null) in Sources */,
 				A7B3722D1F30AA730087972B /* XMelo.xcdatamodeld in Sources */,
 				A76C96CA1FF2751B0026746F /* YVBaseViewController.m in Sources */,
 				A767F0FA1F5560BD00432627 /* YVPickerView.m in Sources */,
@@ -653,7 +634,6 @@
 				A72CD1A11F0D04EE002C90BD /* NSData+Add.m in Sources */,
 				A7BE3E2A1FE0C98E00BB4B59 /* XRCCell.m in Sources */,
 				A742544A1FB1B7580047B579 /* ThirdSignViewController.m in Sources */,
-				A7C682212005EE70007CB1D4 /* NSArray+Safe.m in Sources */,
 				A72CD1A21F0D04EE002C90BD /* NSString+Add.m in Sources */,
 				A7C7C1661FEA87F2000ECCD3 /* UIColor+Melo.m in Sources */,
 				A74AACE91F6786AB0053066D /* TableViewAnimationKit.m in Sources */,
@@ -707,6 +687,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -714,6 +695,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -761,6 +743,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -768,6 +751,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

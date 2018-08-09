@@ -19,6 +19,8 @@
 #import "UIColor+Melo.h"
 #import "UIImage+Color.h"
 
+
+#import "NSString+Check.h"
 #import "UILabel+ChangeValue.h"
 
 #import "NSUserDefaults+Save.h"

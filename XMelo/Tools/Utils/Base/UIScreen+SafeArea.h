@@ -43,5 +43,5 @@
 /**
  适配 iPhone X和其他设备约束
  */
-CGFloat selectConstraint(CGFloat iphonex , CGFloat iPhoneOhter);
+CGFloat setIphoneXSize(CGFloat iphonex , CGFloat iPhoneOhter);
 @end

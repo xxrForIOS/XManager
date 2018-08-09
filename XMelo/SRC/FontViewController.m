@@ -90,7 +90,7 @@
 	
 	[self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
 		
-		make.edges.equalTo(selfWeak.view).insets(UIEdgeInsetsMake(0.0f, 0.0f, selectConstraint(85.0f, 55.0f), 0.0f));
+		make.edges.equalTo(selfWeak.view).insets(UIEdgeInsetsMake(0.0f, 0.0f, setIphoneXSize(85.0f, 55.0f), 0.0f));
 	}];
 }
 

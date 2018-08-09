@@ -35,7 +35,7 @@
 	
     @kWeakSelf;
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(selfWeak.view).insets(UIEdgeInsetsMake(0.0f, 0.0f, selectConstraint(30.0f, 0.0f), 0.0f));
+        make.edges.equalTo(selfWeak.view).insets(UIEdgeInsetsMake(0.0f, 0.0f, setIphoneXSize(30.0f, 0.0f), 0.0f));
     }];
 	
 
@@ -62,38 +62,8 @@
     [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     [self.tableView setLayoutMargins:UIEdgeInsetsZero];
 
-	[self showRightTool];
     //隐藏分割线
     //    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-}
-
-//MARK:- 右上角首页按钮控制
-- (void)showRightTool{
-
-    @kWeakSelf;
-	UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	button.frame     = CGRectMake(0, 0, 20, 20);
-	[button setImage:kImageName(@"right_home") forState:UIControlStateNormal];
-	
-	[button addClick:^(UIButton *sender) {
-		
-		[selfWeak.navigationController popToRootViewControllerAnimated:NO];
-//		[AppDelegate appDelegate].tabBarController.selectedIndex = 0;
-	}];
-
-	UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithCustomView:button];
-	UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-																		   target:nil
-																		   action:nil];
-
-	space.width = -5;
-	//http://blog.csdn.net/spicyShrimp/article/details/78201042
-	self.navigationItem.rightBarButtonItems = @[space, right];
-}
-
-- (void)hiddenRightTool {
-
-	self.navigationItem.rightBarButtonItems = nil;
 }
 
 //MARK:- 空数据图
@@ -107,21 +77,19 @@
 	return YES;
 }
 
-- (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView{
-    
-    [self.tableView.mj_header beginRefreshing];
+- (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button {
+	
+	[self.tableView.mj_header beginRefreshing];
 }
-
 
 - (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView{
     
     return [UIColor groupTableViewBackgroundColor];
 }
 
-
 - (UIImage *)buttonImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state {
     
-    return kImageName(@"nodata");
+    return [UIImage imageNamed:[NSString stringWithFormat:@"nodata"]];
 }
 
 - (void)showFooerButtonWithTitle:(NSString *)title clickBlock:(void(^)(UIButton *aButton))aBlock {
@@ -146,23 +114,11 @@
     });
 }
 
-//MARK:- 刷新
-- (void)updateDataFromHeadWith:(void(^)(void))block {
-
-	//[self.tableView reloadData];
-	//[self.tableView.mj_header endRefreshing];
-	MJRefreshNormalHeader *headerrrr = [MJRefreshNormalHeader headerWithRefreshingBlock:block];
-	[headerrrr setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
-	headerrrr.lastUpdatedTimeLabel.hidden = YES;
-	headerrrr.automaticallyChangeAlpha = YES;
-	self.tableView.mj_header = headerrrr;
-	[self.tableView.mj_header beginRefreshing];
-}
-
+//MARK:- 下拉刷新 上拉加载
 - (void)updateDataFromHeadWith:(void(^)(void))block beginRefresh:(BOOL)justNow{
 
 	MJRefreshNormalHeader *headerrrr = [MJRefreshNormalHeader headerWithRefreshingBlock:block];
-	[headerrrr setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
+	[headerrrr setTitle:@"刷新一下" forState:MJRefreshStateRefreshing];
 	headerrrr.lastUpdatedTimeLabel.hidden = YES;
 	headerrrr.automaticallyChangeAlpha = YES;
 	self.tableView.mj_header = headerrrr;
@@ -172,20 +128,10 @@
 	}
 }
 
-- (void)updateDataFromFootWith:(void(^)(void))block{
-    
-//    MJRefreshBackStateFooter *footer = [MJRefreshBackStateFooter footerWithRefreshingBlock:block];
-//    [footer setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
-//    self.tableView.mj_footer = footer;
-//
-    [self updateDataFromFootWith:block beginRefresh:NO];
-    
-}
-
 - (void)updateDataFromFootWith:(void(^)(void))block beginRefresh:(BOOL)justNow {
 
     MJRefreshBackStateFooter *footer = [MJRefreshBackStateFooter footerWithRefreshingBlock:block];
-    [footer setTitle:@"一喂一下,服务到家..." forState:MJRefreshStateRefreshing];
+    [footer setTitle:@"刷新一下" forState:MJRefreshStateRefreshing];
 	if (justNow) {
 		[footer beginRefreshing];
 	}
@@ -217,6 +163,7 @@
 }
 
 - (CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section {
+	
 	return self.heightForHeadrAtIndexPath ? self.heightForHeadrAtIndexPath(section) : CGFLOAT_MIN;
 }
 
@@ -268,11 +215,9 @@
     !self.creatCellView ?: self.creatCellView(cell, indexPath);
 }
 
-///添加左边返回按钮
-- (void) addBackButtonItemWithTarget:(id)target action:(SEL)sel {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"backImage"] style:UIBarButtonItemStyleDone target:self action:sel];
+-(void)dealloc {
+	
+	YVLog(@"%@ dealloc✅✅✅",self);
 }
-
-kDealloc;
 
 @end

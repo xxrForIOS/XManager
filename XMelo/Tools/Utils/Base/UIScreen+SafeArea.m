@@ -90,7 +90,7 @@ static inline CGSize kSafeArea() {
 /**
  适配 iPhone X和其他设备约束
  */
-CGFloat selectConstraint(CGFloat iphonex , CGFloat iPhoneOhter) {
+CGFloat setIphoneXSize(CGFloat iphonex , CGFloat iPhoneOhter) {
 	CGFloat constraint = [UIScreen mainScreen].safeArea.height == 734.0f ? iphonex : iPhoneOhter;
 	return constraint;
 }

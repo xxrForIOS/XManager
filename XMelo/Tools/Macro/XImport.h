@@ -13,7 +13,6 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 #import "AppDelegate.h"
-#import <MLeaksFinder/MLeaksFinder.h>
 
 //MARK: head
 #import "XColor.h"
@@ -29,7 +28,6 @@
 
 //MARK: funtion
 #import "XImagePicker.h"
-#import "XStepper.h"
 
 //Mark: libs
 #import "MBProgressHUD.h"

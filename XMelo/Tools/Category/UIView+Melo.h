@@ -43,6 +43,7 @@ typedef NS_ENUM(NSInteger, YVRradualColorShowType) {
 ///切任意圆角
 - (void)changeCorner:(UIRectCorner)corners cornerRadii:(CGFloat)radii;
 
+/// 添加渐变颜色
 + (void)addRradualColorFor:(UIView *)theView colors:(NSArray *)colors showType:(YVRradualColorShowType)type;
 
 ///左右抖动

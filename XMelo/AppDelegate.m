@@ -14,39 +14,13 @@
 
 @implementation AppDelegate
 
-//DEPRECATED_MSG_ATTRIBUTE("替换")
-//__attribute__((deprecated("用addClick:替换")))
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	
-
-//[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-
-//    UIColor *theMeColor = kColorThemeOrange;
-//	UINavigationBar *navigation = [UINavigationBar appearance];
-//    UIImage *colorImage = [UIImage imageWithColor:kColorIceBlue size:CGSizeMake(kScreenWidth, 64)];
-//    [navigation setBackgroundImage:colorImage forBarMetrics:UIBarMetricsDefault];
-//    [navigation setTintColor:theMeColor];
-//    [navigation setBarTintColor:theMeColor];
-//    [navigation setShadowImage:[UIImage new]];
-//    [navigation setTitleTextAttributes:@{NSForegroundColorAttributeName:theMeColor,
-//                                                      NSFontAttributeName:kFontTheme(17)}];
-
-
-//    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
-//    manager.enable = YES;
-//    manager.shouldResignOnTouchOutside = YES;
-//    manager.shouldToolbarUsesTextFieldTintColor = YES;
-//    manager.toolbarDoneBarButtonItemText = @"完成";
-//    manager.enableAutoToolbar = YES;
-//    manager.toolbarManageBehaviour = IQAutoToolbarByTag;
 
 	if (@available(iOS 11, *)) {
+
 		[UIScrollView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
 	}
 	
-	
-//	[[RCIM sharedRCIM] initWithAppKey:@"pvxdm17jpiq4r"];
-
     return YES;
 }
 

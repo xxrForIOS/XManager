@@ -61,7 +61,7 @@
 		[self safe_removeObjectForKey:key];
 	}else{
 		
-		NSLog(@"safe_removeObjectForKey: %@对应值不能为空;",key);
+//		NSLog(@"safe_removeObjectForKey: %@对应值不能为空;",key);
 	}
 }
 

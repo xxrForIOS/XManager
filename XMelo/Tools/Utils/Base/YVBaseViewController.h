@@ -34,8 +34,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)    NSArray*(^sectionIndexTitlesForTableView)(void);
 
 
-//隐藏界面右上角按钮
-- (void)hiddenRightTool;
 
 ///单个footer按钮
 - (void)showFooerButtonWithTitle:(NSString *)title clickBlock:(void(^)(UIButton *aButton))aBlock;
@@ -48,9 +46,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///上拉footer加载
 - (void) updateDataFromFootWith:(void(^)(void))block beginRefresh:(BOOL)justNow;
-
-///添加左边返回按钮
-- (void) addBackButtonItemWithTarget:(id)target action:(SEL)sel;
 
 NS_ASSUME_NONNULL_END
 

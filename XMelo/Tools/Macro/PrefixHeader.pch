@@ -26,7 +26,6 @@
 #define PRAGMA_MESSAGE(MSG) _Pragma(STRINGIFY(message(MSG)))
 #define FORMATTED_MESSAGE(MSG) "[TODO-" DEFER_STRINGIFY(__COUNTER__) "] " MSG " \n"
 #define KEYWORDIFY try {} @catch (...) {}
-
 // 最终使用下面的宏 	@TODO("showSomeThing");
 #define kTODO(MSG) 			KEYWORDIFY PRAGMA_MESSAGE(FORMATTED_MESSAGE(MSG))
 
@@ -39,49 +38,21 @@
 
 
 ///image
-#define kImageName(f,...)   [UIImage imageNamed:[NSString stringWithFormat:f,##__VA_ARGS__]]
-#define kImageUrl(f,...)    [NSURL URLWithString:[NSString stringWithFormat:f,##__VA_ARGS__]]
-#define kPlaceholderImage   kImageName(@"custom_image.png")
+#define kImageName(f,...) 		[UIImage imageNamed:[NSString stringWithFormat:f,##__VA_ARGS__]]
+#define kImageUrl(f,...) 		[NSURL URLWithString:[NSString stringWithFormat:f,##__VA_ARGS__]]
+#define kPlaceholderImage 		kImageName(@"custom_image.png")
 
-///block
-#define kWeakSelf           autoreleasepool{} __weak typeof(self) selfWeak = self;
-#define kWeakObj(o)         autoreleasepool{} __weak typeof(o) o##Weak = o;
+#define kWeakSelf 				autoreleasepool{} __weak typeof(self) selfWeak = self;
+#define kWeakObj(o) 			autoreleasepool{} __weak typeof(o) o##Weak = o;
+#define kSFormat(f,...) 		[NSString stringWithFormat:f,##__VA_ARGS__]
 
-///userDefault
-#define kUserDefault_set(__object, __key) ({\
-NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];\
-@synchronized([NSUserDefaults standardUserDefaults]){\
-[defaults setObject:__object forKey:__key];\
-[defaults synchronize];}})
+#define kPush(From,to) 			[From.navigationController pushViewController:to animated:YES]
+#define kPop(current) 			[current.navigationController popViewControllerAnimated:YES]
 
-#define kUserDefault_get(k)     [[NSUserDefaults standardUserDefaults] objectForKey:k]
-#define kUserDefault_removeAll  [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]]
-#define kUserDefault_remove(n)  [[NSUserDefaults standardUserDefaults]removeObjectForKey:n]
-
-///hud
-#define kCurrentController      [UIApplication sharedApplication].keyWindow.rootViewController
-#define kActivityHUDShowStr(s)  MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:(kCurrentController).view  animated:YES];hud.label.text = s
-#define kActivityHUDShow        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:(kCurrentController).view  animated:YES];hud.label.text = @"加载数据"
-#define kActivityHUDHidden      [MBProgressHUD hideHUDForView:(kCurrentController).view animated:YES];
-
-///simulator
-#if TARGET_IPHONE_SIMULATOR
-#define kSimulator 1
-#elif TARGET_OS_IPHONE
-#define kSimulator 0
-#endif
-
-#define kPush(pushFrom,pushTo)  [pushFrom.navigationController pushViewController:pushTo animated:YES]
-#define kPop(current)           [current.navigationController popViewControllerAnimated:YES]
-
-
-#define kStringFormat(f,...)    [NSString stringWithFormat:f,##__VA_ARGS__]
-#define kContext                ((AppDelegate *)[UIApplication sharedApplication].delegate).persistentContainer.viewContext
-#define kDelegate               (AppDelegate *)[[UIApplication sharedApplication] delegate]
-
-
-#define kScreenWidth            [UIScreen mainScreen].bounds.size.width
-#define kScreenHeight           [UIScreen mainScreen].bounds.size.height
+#define kScreenSize 			[UIScreen mainScreen].bounds.size
+#define kScreenWidth 			[UIScreen mainScreen].bounds.size.width
+#define kScreenHeight 			[UIScreen mainScreen].bounds.size.height
+#define kDelegate 				(AppDelegate *)[[UIApplication sharedApplication] delegate]
 
 
 #endif /* PrefixHeader_pch */

@@ -46,8 +46,16 @@
 #define kWeakObj(o) 			autoreleasepool{} __weak typeof(o) o##Weak = o;
 #define kSFormat(f,...) 		[NSString stringWithFormat:f,##__VA_ARGS__]
 
+//	Class cls = NSClassFromString(selfWeak.controllers[indexPath.row]);
+//	kPush(selfWeak, [[cls alloc] init]);
+
+#define kVcc(string) 			[[NSClassFromString(selfWeak.controllers[indexPath.row])
 #define kPush(From,to) 			[From.navigationController pushViewController:to animated:YES]
-#define kPop(current) 			[current.navigationController popViewControllerAnimated:YES]
+#define kPopVC(current) 		[current.navigationController popViewControllerAnimated:YES]
+#define kPop 					[self.navigationController popViewControllerAnimated:YES]
+#define kPresent(vcc) 			[self presentViewController:vcc animated:YES completion:nil]
+#define kDismiss 				[self dismissViewControllerAnimated:YES completion:nil]
+
 
 #define kScreenSize 			[UIScreen mainScreen].bounds.size
 #define kScreenWidth 			[UIScreen mainScreen].bounds.size.width

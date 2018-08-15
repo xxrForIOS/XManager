@@ -194,29 +194,23 @@
 #pragma mark- 手机号码验证
 - (BOOL)isPhoneNumber{
 	
-	if ([NSString isEmpty:self]) {
+	/// 号段太多 仅作最简单验证
+	if ([self isEqualToString:@""] && self.length != 11) {
 		
 		return NO;
 	}
 	
-    NSString * MOBILE = @"^1(3[0-9]|5[0-35-9]|8[025-9])\\d{8}$";//整体
-    NSString * CM = @"^1(34[0-8]|(3[5-9]|5[017-9]|8[278])\\d)\\d{7}$";//移动
-    NSString * CU = @"^1(3[0-2]|5[256]|8[56])\\d{8}$";//联通
-    NSString * CT = @"^1((33|53|8[09])[0-9]|349)\\d{7}$";//电信
-    
-    NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
-    NSPredicate *regextestcm = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CM];
-    NSPredicate *regextestcu = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CU];
-    NSPredicate *regextestct = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CT];
-    
-    if ([regextestmobile evaluateWithObject:self]||
-        [regextestcm evaluateWithObject:self]||
-        [regextestct evaluateWithObject:self]||
-        [regextestcu evaluateWithObject:self]){
-        return YES;
-    }else{
-        return NO;
-    }
+	NSString *regularStr = @"^1\\d{10}$";
+	NSError *error = nil;
+	NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regularStr options:NSRegularExpressionCaseInsensitive error:&error];
+	NSTextCheckingResult *result = [regex firstMatchInString:self
+													 options:NSMatchingReportProgress
+													   range:NSMakeRange(0, self.length)];
+	if (result) {
+		return YES;
+	} else {
+		return NO;
+	}
 }
 
 #pragma mark- 身份号码验证

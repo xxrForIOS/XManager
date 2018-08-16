@@ -25,25 +25,45 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.view.backgroundColor = kColorIceBlue1;//[UIColor randomColor];
+	self.view.backgroundColor = [UIColor randomColor];
 	
 	
 	@kWeakSelf;
 	
-//	BOOL isGoList = YES;
-	BOOL isGoList = NO;
+	BOOL isGoList = YES;
+//	BOOL isGoList = NO;
 
-	if (isGoList) {
+//	[self.view addTap:^(UIGestureRecognizer *tap) {
+//
+//		NSLog(@"xxxxxx");
+//		//			[selfWeak functionForTest];
+//	}];
+	
+	
+	UIButton *theButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	theButton.frame = CGRectMake(20, 200, 100, 100);
+	theButton.backgroundColor = [UIColor randomColor];
+	[self.view addSubview:theButton];
+	[theButton addClick:^(UIButton * _Nullable sender) {
 		
+		
+		self.view.backgroundColor = [UIColor randomColor];
+	}];
+
+//
+	if (isGoList) {
+
+		self.view.userInteractionEnabled = YES;
 		[self.view addTap:^(UIGestureRecognizer *tap) {
-			
+
 			[selfWeak goPresentViewController];
 		}];
 	} else {
-		
+
 		[self.view addTap:^(UIGestureRecognizer *tap) {
-			
-			[selfWeak functionForTest];
+
+			NSLog(@"xxxxxx");
+//			[selfWeak functionForTest];
 		}];
 	}
 }
@@ -61,14 +81,15 @@
 
 - (void)functionForTest {
 
+	NSLog(@"xxxxxx");
 //	Class cls = NSClassFromString(selfWeak.controllers[indexPath.row]);
 //	kPush(selfWeak, [[cls alloc] init]);
 //	NSClassFromString(selfWeak.controllers[indexPath.row])
-	
-		Class cls = NSClassFromString(@"FontViewController");
-
-//	FontViewController *vcc = [[FontViewController alloc]init];
-	kPresent([[NSClassFromString(@"FontViewControlle") alloc]init]);
+//	
+//		Class cls = NSClassFromString(@"FontViewController");
+//
+////	FontViewController *vcc = [[FontViewController alloc]init];
+//	kPresent([[cls alloc]init]);
 	
 //	[self presentViewController:[[cls alloc]init] animated:YES completion:nil];
 }

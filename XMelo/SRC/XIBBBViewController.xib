@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XIBBBViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BK2-u4-cDo">
+                    <rect key="frame" x="20" y="607" width="339" height="48"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="0t3-qm-CHj"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="uCT-Nl-cxA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="提交" backgroundImage="2">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="btn_blue_on"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZe-Bt-0hQ">
+                    <rect key="frame" x="16" y="84" width="198" height="83"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="83" id="J1z-bd-CFK"/>
+                    </constraints>
+                    <state key="normal" title="Button" backgroundImage="3"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="BK2-u4-cDo" secondAttribute="bottom" constant="12" id="0iX-kQ-6B8"/>
+                <constraint firstItem="oZe-Bt-0hQ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="BfH-bA-6II"/>
+                <constraint firstItem="oZe-Bt-0hQ" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="NqH-tk-YfN"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="BK2-u4-cDo" secondAttribute="trailing" constant="16" id="PUI-FW-KqH"/>
+                <constraint firstItem="BK2-u4-cDo" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="c89-fc-Txa"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="oZe-Bt-0hQ" secondAttribute="trailing" constant="161" id="y3l-5z-m7h"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="-99.5" y="26.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="2" width="266" height="150"/>
+        <image name="3" width="533" height="300"/>
+        <image name="btn_blue_on" width="16" height="16"/>
+    </resources>
+</document>

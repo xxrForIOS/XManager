@@ -55,8 +55,8 @@
     
     self.didSelectRowAtIndexPath = ^(NSIndexPath *indexPath) {
 
-        [XAlertController showAlertWith:selfWeak.fonts[indexPath.row]];
-        YVLog(@"font: %@",selfWeak.fonts[indexPath.row]);
+		[XAlertController showAlertWith:selfWeak.fonts[indexPath.row]];
+		YVLog(@"font: %@",selfWeak.fonts[indexPath.row]);
     };
 }
 

@@ -11,6 +11,8 @@
 		A7085D031F973D4300398477 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		A70ADEAC1FC7CCBB00ADBBA2 /* UIView+Melo.m in Sources */ = {isa = PBXBuildFile; fileRef = A70ADEAB1FC7CCBB00ADBBA2 /* UIView+Melo.m */; };
 		A70DA5231F564D730059935B /* UIScrollView+SpringHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A70DA5221F564D730059935B /* UIScrollView+SpringHeadView.m */; };
+		A712A0C4212D07CB00F79CFD /* XIBBBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A712A0C2212D07CB00F79CFD /* XIBBBViewController.m */; };
+		A712A0C5212D07CB00F79CFD /* XIBBBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A712A0C3212D07CB00F79CFD /* XIBBBViewController.xib */; };
 		A713F8821F17A87200FEA33E /* XListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A713F8811F17A87200FEA33E /* XListViewController.m */; };
 		A716C9971FBBEF1F00B38C36 /* UIScreen+SafeArea.m in Sources */ = {isa = PBXBuildFile; fileRef = A716C9961FBBEF1F00B38C36 /* UIScreen+SafeArea.m */; };
 		A71D184E1F0BAE0700BAE515 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D184D1F0BAE0700BAE515 /* main.m */; };
@@ -55,6 +57,9 @@
 		A70ADEAB1FC7CCBB00ADBBA2 /* UIView+Melo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Melo.m"; sourceTree = "<group>"; };
 		A70DA5211F564D730059935B /* UIScrollView+SpringHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SpringHeadView.h"; sourceTree = "<group>"; };
 		A70DA5221F564D730059935B /* UIScrollView+SpringHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SpringHeadView.m"; sourceTree = "<group>"; };
+		A712A0C1212D07CB00F79CFD /* XIBBBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XIBBBViewController.h; sourceTree = "<group>"; };
+		A712A0C2212D07CB00F79CFD /* XIBBBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XIBBBViewController.m; sourceTree = "<group>"; };
+		A712A0C3212D07CB00F79CFD /* XIBBBViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XIBBBViewController.xib; sourceTree = "<group>"; };
 		A713F8801F17A87200FEA33E /* XListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XListViewController.h; sourceTree = "<group>"; };
 		A713F8811F17A87200FEA33E /* XListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XListViewController.m; sourceTree = "<group>"; };
 		A716C9951FBBEF1F00B38C36 /* UIScreen+SafeArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+SafeArea.h"; sourceTree = "<group>"; };
@@ -383,6 +388,9 @@
 			children = (
 				A7A8AB691F0BC737001338B0 /* ViewController.h */,
 				A7A8AB6A1F0BC737001338B0 /* ViewController.m */,
+				A712A0C1212D07CB00F79CFD /* XIBBBViewController.h */,
+				A712A0C2212D07CB00F79CFD /* XIBBBViewController.m */,
+				A712A0C3212D07CB00F79CFD /* XIBBBViewController.xib */,
 				A713F8801F17A87200FEA33E /* XListViewController.h */,
 				A713F8811F17A87200FEA33E /* XListViewController.m */,
 				A70ADEA81FC7C31A00ADBBA2 /* List */,
@@ -433,6 +441,7 @@
 				A71D18461F0BAE0700BAE515 /* Frameworks */,
 				A71D18471F0BAE0700BAE515 /* Resources */,
 				2D455F9DCD50E2D35A0B8B4E /* [CP] Copy Pods Resources */,
+				A7671406212AB7A700CF63EB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -483,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A71D185C1F0BAE0700BAE515 /* LaunchScreen.storyboard in Resources */,
+				A712A0C5212D07CB00F79CFD /* XIBBBViewController.xib in Resources */,
 				A71D18591F0BAE0700BAE515 /* Assets.xcassets in Resources */,
 				A795B77F1F501735003C7EAD /* uploadImage.png in Resources */,
 				A71D18571F0BAE0700BAE515 /* Main.storyboard in Resources */,
@@ -528,6 +538,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A7671406212AB7A700CF63EB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbuildNumber=$(date +%Y%m%d%H%M%S)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -561,6 +584,7 @@
 				A7C7C1661FEA87F2000ECCD3 /* UIColor+Melo.m in Sources */,
 				A74AACE91F6786AB0053066D /* TableViewAnimationKit.m in Sources */,
 				A72CD1A31F0D04EE002C90BD /* NSString+Check.m in Sources */,
+				A712A0C4212D07CB00F79CFD /* XIBBBViewController.m in Sources */,
 				A713F8821F17A87200FEA33E /* XListViewController.m in Sources */,
 				A721BD281F593E56008EBF9A /* FontViewController.m in Sources */,
 				A71D18511F0BAE0700BAE515 /* AppDelegate.m in Sources */,

@@ -13,17 +13,26 @@
 //MARK:- 弹窗
 + (void)showAlertWith:(NSString *)str{
 	
-	[self alertControllerWithTitle:@"提示" message:str confirmButton:@"确定" cancelButton:nil confirmBlock:nil cancelBlock:nil];
+	dispatch_async(dispatch_get_main_queue(), ^{
+		
+		[self alertControllerWithTitle:@"提示" message:str confirmButton:@"确定" cancelButton:nil confirmBlock:nil cancelBlock:nil];
+	});
 }
 
 + (void)showAlertWith:(NSString *)str confirm:(void(^)(void))aBlock{
 	
-	[self alertControllerWithTitle:@"提示" message:str confirmButton:@"确定" cancelButton:nil confirmBlock:aBlock cancelBlock:nil];
+	dispatch_async(dispatch_get_main_queue(), ^{
+		
+		[self alertControllerWithTitle:@"提示" message:str confirmButton:@"确定" cancelButton:nil confirmBlock:aBlock cancelBlock:nil];
+	});
 }
 
 + (void)showAlertWith:(NSString *)str confirm:(void(^)(void))afBlock cancel:(void(^)(void))ccBlock{
 	
-	[self alertControllerWithTitle:@"提示" message:str confirmButton:@"确定" cancelButton:@"取消" confirmBlock:afBlock cancelBlock:ccBlock];
+	dispatch_async(dispatch_get_main_queue(), ^{
+		
+		[self alertControllerWithTitle:@"提示" message:str confirmButton:@"确定" cancelButton:@"取消" confirmBlock:afBlock cancelBlock:ccBlock];
+	});
 }
 
 //弹窗基础方法

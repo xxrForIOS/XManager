@@ -24,13 +24,13 @@ typedef NS_ENUM(NSInteger, XRButtonDrawStyle) {
 };
 @interface UIButton (Melo)
 
-//点击间隔 默认为1
+/// 点击间隔 默认为1
 @property(nonatomic, assign) NSTimeInterval 	timeInterval;
 
-//YES不允许点击NO允许点击
+/// YES不允许点击NO允许点击
 @property(nonatomic, assign) BOOL 				isIgnoreEvent;
 
-///点击范围
+/// 点击范围
 @property(nonatomic, assign) UIEdgeInsets 		clickScope;
 
 ///rac添加点击block
